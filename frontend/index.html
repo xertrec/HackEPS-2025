@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enviar valoración general de la zona</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+    fieldset { margin-bottom: 1rem; padding: 1rem; border-radius:6px; }
+    label { display: block; margin: .5rem 0; }
+    .inline { display:flex; gap:1rem; align-items:center; flex-wrap:wrap; }
+    .msg { margin-top:1rem; }
+    textarea { width:100%; min-height:56px; resize:vertical; }
+    button { padding: .5rem 1rem; }
+    .small { font-size:.9rem; color:#555; margin-bottom:.5rem; }
+  </style>
+</head>
+<body>
+  <h1>House </h1>
+  <p class="small">Selecciona una valoración general para cada categoría.</p>
+
+  <form id="zonaForm">
+    <fieldset>
+      <legend>Servicios</legend>
+      <div class="inline">
+        <label>
+          Nivel
+          <select name="servicios.nivel" required>
+            <option>Alto</option>
+            <option>Normal</option>
+            <option>Bajo</option>
+          </select>
+        </label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Transporte</legend>
+      <div class="inline">
+        <label>
+          Nivel
+          <select name="transporte.nivel" required>
+            <option>Alto</option>
+            <option>Normal</option>
+            <option>Bajo</option>
+          </select>
+        </label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Seguridad</legend>
+      <div class="inline">
+        <label>
+          Nivel
+          <select name="seguridad.nivel" required>
+            <option>Alta</option>
+            <option>Normal</option>
+            <option>Baja</option>
+          </select>
+        </label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Estilo de vida</legend>
+      <div class="inline">
+        <label>
+          Nivel
+          <select name="estiloVida.nivel" required>
+            <option>Alto</option>
+            <option>Normal</option>
+            <option>Bajo</option>
+          </select>
+        </label>
+      </div>
+    </fieldset>
+
+    <button type="submit">Enviar</button>
+    <div id="status" class="msg" role="status" aria-live="polite"></div>
+  </form>
+
+  <script>
+    const form = document.getElementById('zonaForm');
+    const statusEl = document.getElementById('status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      statusEl.textContent = 'Enviando...';
+
+      const formData = new FormData(form);
+      const payload = {};
+      for (const [key, value] of formData.entries()) {
+        // Construir objeto anidado a partir de nombres con punto: "categoria.campo"
+        if (key.includes('.')) {
+          const [parent, child] = key.split('.');
+          payload[parent] = payload[parent] || {};
+          payload[parent][child] = value.trim();
+        } else {
+          payload[key] = value.trim();
+        }
+      }
+
+      try {
+        const res = await fetch('http://localhost:3000', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
+        const data = await res.json().catch(() => null);
+        statusEl.textContent = 'Enviado correctamente' + (data ? ': ' + JSON.stringify(data) : '.');
+      } catch (err) {
+        statusEl.textContent = 'Error al enviar: ' + err.message;
+      }
+    });
+  </script>
+</body>
+</html>

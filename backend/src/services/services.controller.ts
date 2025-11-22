@@ -181,5 +181,6 @@ export class ServicesController {
       total: neighborhoodsWithShops.length,
       neighborhoods: neighborhoodsWithShops,
     };
+
   }
 }
