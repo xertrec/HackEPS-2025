@@ -148,4 +148,19 @@ db.serialize(() => {
       }
     });
   });
+
+  db.run(`
+    CREATE TABLE lifestyle (
+      neighborhood_name TEXT PRIMARY KEY,
+      score INTEGER NOT NULL,
+      note TEXT,
+      FOREIGN KEY (neighborhood_name) REFERENCES neighborhoods(name)
+    );
+  `, (err) => {
+    if (err) {
+      console.error('Error al crear tabla lifestyle:', err);
+      return;
+    }
+    console.log('✓ Tabla lifestyle creada');
+  });
 });
