@@ -21,8 +21,12 @@
     "init-db": "ts-node scripts/init-db.ts"
   },
   "dependencies": {
+<<<<<<< Updated upstream
     "@esri/arcgis-rest-feature-service": "^4.4.1",
     "@esri/arcgis-rest-request": "^4.7.3",
+=======
+    "@nestjs/axios": "^4.0.1",
+>>>>>>> Stashed changes
     "@nestjs/common": "^11.0.1",
     "@nestjs/core": "^11.0.1",
     "@nestjs/platform-express": "^11.0.1",

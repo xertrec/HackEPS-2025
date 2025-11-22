@@ -4,17 +4,22 @@ import { ServicesService } from './services.service';
 
 @Controller('services')
 export class ServicesController {
+<<<<<<< Updated upstream
   constructor(
     private readonly databaseService: DatabaseService,
     private readonly servicesService: ServicesService,
   ) {}
+=======
+	constructor(private readonly databaseService: DatabaseService) {}
+>>>>>>> Stashed changes
 
-  // Endpoint de prueba
-  @Get('test')
-  test() {
-    return { status: 'OK', message: 'Controller funcionando' };
-  }
+	// Endpoint de prueba
+	@Get('test')
+	test() {
+		return { status: 'OK', message: 'Controller funcionando' };
+	}
 
+<<<<<<< Updated upstream
   // Endpoint para limpiar el caché
   @Get('clear-cache')
   clearCache() {
@@ -164,4 +169,48 @@ export class ServicesController {
       neighborhoods: neighborhoodsWithShops,
     };
   }
+=======
+	// Endpoint para obtener todos los barrios
+	@Get('neighborhoods')
+	async getAllNeighborhoods() {
+		try {
+			const neighborhoods = await this.databaseService.getAllNeighborhoods();
+			return {
+				total: neighborhoods.length,
+				neighborhoods,
+			};
+		} catch (error) {
+			return {
+				error: 'Error al obtener barrios',
+				message: error.message,
+				stack: error.stack,
+			};
+		}
+	}
+
+	// Endpoint para obtener un barrio específico
+	@Get('neighborhoods/:name')
+	async getNeighborhood(@Param('name') name: string) {
+		const neighborhood = await this.databaseService.getNeighborhoodByName(name);
+		if (!neighborhood) {
+			return {
+				error: 'Barrio no encontrado',
+				name,
+			};
+		}
+		return neighborhood;
+	}
+
+	// Endpoint para obtener los mejores barrios
+	@Get('neighborhoods/top/:limit')
+	async getTopNeighborhoods(@Param('limit') limit: string) {
+		const neighborhoods = await this.databaseService.getTopNeighborhoods(
+			parseInt(limit, 10),
+		);
+		return {
+			total: neighborhoods.length,
+			neighborhoods,
+		};
+	}
+>>>>>>> Stashed changes
 }
