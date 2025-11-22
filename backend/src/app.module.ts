@@ -5,15 +5,18 @@ import { LifestyleModule } from './lifestyle/lifestyle.module';
 import { ServicesModule } from './services/services.module';
 import { DatabaseModule } from './database/database.module';
 
-@Module({
-  imports: [DatabaseModule, ServicesModule],
-  controllers: [AppController],
 import { MobilityController } from './mobility/mobility.controller';
 import { MobilityModule } from './mobility/mobility.module';
 import { SecurityModule } from './security/security.module';
 
 @Module({
-  imports: [LifestyleModule, ServicesModule, MobilityModule, SecurityModule],
+  imports: [
+    DatabaseModule,
+    LifestyleModule,
+    ServicesModule,
+    MobilityModule,
+    SecurityModule,
+  ],
   controllers: [AppController, MobilityController],
   providers: [AppService],
 })
