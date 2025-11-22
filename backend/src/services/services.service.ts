@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import axios from 'axios';
 import * as sqlite3 from 'sqlite3';
 import * as path from 'path';
+import * as fs from 'fs';
 
 interface LABusinessData {
   location_account: string;
@@ -48,16 +49,88 @@ interface FireStation {
   organization: string;
 }
 
+interface OverpassElement {
+  type: string;
+  id: number;
+  lat: number;
+  lon: number;
+  tags?: Record<string, string>;
+}
+
 @Injectable()
 export class ServicesService {
   private readonly LA_OPEN_DATA_API = 'https://data.lacity.org/resource/6rrh-rzua.json';
   private businessCache: Map<string, number> = new Map();
   private cacheTimestamp: number = 0;
   private readonly CACHE_DURATION = 3600000; // 1 hora en milisegundos
+  private readonly OVERPASS_API = 'https://overpass-api.de/api/interpreter';
   private hospitalsDb: sqlite3.Database;
   private hospitalsData: Hospital[] | null = null;
   private policeStationsData: PoliceStation[] | null = null;
   private fireStationsData: FireStation[] | null = null;
+  private nightlifeData: OverpassElement[] | null = null;
+  private dayLeisureData: OverpassElement[] | null = null;
+  private allShopsData: LABusinessData[] | null = null;
+  private allSchoolsData: LABusinessData[] | null = null;
+  private dataLoadPromise: Promise<void> | null = null;
+
+  /**
+   * Carga todos los datos de LA Open Data una sola vez al inicio
+   */
+  private async loadAllLAOpenData(): Promise<void> {
+    if (this.dataLoadPromise) {
+      return this.dataLoadPromise;
+    }
+
+    this.dataLoadPromise = (async () => {
+      console.log('🔄 Cargando todos los datos de LA Open Data...');
+      
+      try {
+        // Cargar todas las tiendas (NAICS 44* y 45*)
+        if (!this.allShopsData) {
+          console.log('  📦 Descargando datos de tiendas...');
+          const shopsResponse = await axios.get(this.LA_OPEN_DATA_API, {
+            params: {
+              $limit: 50000,
+              $where: `location_1.latitude IS NOT NULL AND 
+                       location_1.longitude IS NOT NULL AND
+                       (naics LIKE '44%' OR naics LIKE '45%')`,
+            },
+            timeout: 30000,
+          });
+          this.allShopsData = shopsResponse.data;
+          console.log(`  ✓ ${this.allShopsData?.length || 0} tiendas cargadas`);
+        }
+
+        // Esperar 2 segundos para evitar rate limiting
+        await new Promise(resolve => setTimeout(resolve, 2000));
+
+        // Cargar todas las escuelas (NAICS 611*)
+        if (!this.allSchoolsData) {
+          console.log('  🏫 Descargando datos de escuelas...');
+          const schoolsResponse = await axios.get(this.LA_OPEN_DATA_API, {
+            params: {
+              $limit: 50000,
+              $where: `location_1.latitude IS NOT NULL AND 
+                       location_1.longitude IS NOT NULL AND
+                       naics LIKE '611%'`,
+            },
+            timeout: 30000,
+          });
+          this.allSchoolsData = schoolsResponse.data;
+          console.log(`  ✓ ${this.allSchoolsData?.length || 0} escuelas cargadas`);
+        }
+
+        console.log('✅ Todos los datos de LA Open Data cargados correctamente');
+      } catch (error) {
+        console.error('❌ Error al cargar datos de LA Open Data:', error.message);
+        this.dataLoadPromise = null; // Resetear para reintentar
+        throw error;
+      }
+    })();
+
+    return this.dataLoadPromise;
+  }
 
   /**
    * Calcula el porcentaje de tiendas en un barrio específico
@@ -80,40 +153,36 @@ export class ServicesService {
         return this.businessCache.get(cacheKey) || 0;
       }
 
-      // Radio de búsqueda en grados (aproximadamente 1-2 km)
-      const radiusDegrees = 0.015;
+      // Cargar todos los datos si no están cargados
+      await this.loadAllLAOpenData();
 
-      // Consultar la API de Los Angeles Open Data
-      // Filtramos por negocios de retail/tiendas según el código NAICS
-      const response = await axios.get(this.LA_OPEN_DATA_API, {
-        params: {
-          $limit: 5000,
-          $where: `location_1.latitude IS NOT NULL AND 
-                   location_1.longitude IS NOT NULL AND
-                   naics LIKE '44%' OR naics LIKE '45%'`, // Códigos NAICS para retail
-        },
-        timeout: 10000,
-      });
+      if (!this.allShopsData) {
+        console.error('No se pudieron cargar los datos de tiendas');
+        return 0;
+      }
 
-      const businesses: LABusinessData[] = response.data;
+      // Radio de búsqueda: 2 km
+      const searchRadius = 2.0; // en km
 
-      // Filtrar negocios dentro del radio del barrio
-      const businessesInNeighborhood = businesses.filter((business) => {
+      // Filtrar negocios dentro del radio REAL del barrio (circular)
+      const businessesInNeighborhood = this.allShopsData.filter((business) => {
         if (!business.location_1) return false;
         
         const bizLat = parseFloat(business.location_1.latitude);
         const bizLon = parseFloat(business.location_1.longitude);
         
-        const latDiff = Math.abs(bizLat - latitude);
-        const lonDiff = Math.abs(bizLon - longitude);
-        
-        return latDiff <= radiusDegrees && lonDiff <= radiusDegrees;
+        const distance = this.calculateDistance(latitude, longitude, bizLat, bizLon);
+        return distance <= searchRadius;
       });
 
-      // Calcular el porcentaje basado en la densidad de tiendas
-      // Normalizamos considerando que 100+ tiendas = 100%
+      // Calcular el porcentaje basado en densidad realista
+      // Koreatown/Downtown tienen 600-800 tiendas
+      // Barrios comerciales tienen 300-500 tiendas
+      // Barrios mixtos tienen 100-200 tiendas
+      // Barrios residenciales tienen 20-80 tiendas
+      // Normalizamos: 600+ tiendas = 100%
       const shopsCount = businessesInNeighborhood.length;
-      const percentage = Math.min(Math.round((shopsCount / 100) * 100), 100);
+      const percentage = Math.min(Math.round((shopsCount / 600) * 100), 100);
 
       // Guardar en caché
       this.businessCache.set(cacheKey, percentage);
@@ -148,38 +217,33 @@ export class ServicesService {
         return this.businessCache.get(cacheKey) || 0;
       }
 
-      // Radio de búsqueda en grados (aproximadamente 1-2 km)
-      const radiusDegrees = 0.015;
+      // Cargar todos los datos si no están cargados
+      await this.loadAllLAOpenData();
 
-      // Consultar la API de Los Angeles Open Data para escuelas
-      // NAICS 611 corresponde a servicios educativos
-      const response = await axios.get(this.LA_OPEN_DATA_API, {
-        params: {
-          $limit: 5000,
-          $where: `location_1.latitude IS NOT NULL AND 
-                   location_1.longitude IS NOT NULL AND
-                   naics LIKE '611%'`, // Código NAICS para servicios educativos
-        },
-        timeout: 10000,
-      });
+      if (!this.allSchoolsData) {
+        console.error('No se pudieron cargar los datos de escuelas');
+        return 0;
+      }
 
-      const schools: LABusinessData[] = response.data;
+      // Radio de búsqueda: 2 km
+      const searchRadius = 2.0; // en km
 
-      // Filtrar escuelas dentro del radio del barrio
-      const schoolsInNeighborhood = schools.filter((school) => {
+      // Filtrar escuelas dentro del radio REAL del barrio (circular)
+      const schoolsInNeighborhood = this.allSchoolsData.filter((school) => {
         if (!school.location_1) return false;
         
         const schoolLat = parseFloat(school.location_1.latitude);
         const schoolLon = parseFloat(school.location_1.longitude);
         
-        const latDiff = Math.abs(schoolLat - latitude);
-        const lonDiff = Math.abs(schoolLon - longitude);
-        
-        return latDiff <= radiusDegrees && lonDiff <= radiusDegrees;
+        const distance = this.calculateDistance(latitude, longitude, schoolLat, schoolLon);
+        return distance <= searchRadius;
       });
 
-      // Calcular el porcentaje basado en la densidad de escuelas
-      // Normalizamos considerando que 50+ escuelas = 100%
+      // Calcular el porcentaje basado en densidad realista
+      // Barrios grandes tienen 40-60 establecimientos educativos (incluye academias, centros de formación)
+      // Barrios típicos tienen 20-30
+      // Barrios pequeños tienen 5-15
+      // Normalizamos: 50+ escuelas/centros educativos = 100%
       const schoolsCount = schoolsInNeighborhood.length;
       const percentage = Math.min(Math.round((schoolsCount / 50) * 100), 100);
 
@@ -286,20 +350,31 @@ export class ServicesService {
         return 0;
       }
 
-      // Calcular porcentaje basado en:
-      // 1. Distancia al hospital más cercano (peso 60%)
-      // 2. Cantidad de hospitales en un radio de 5km (peso 40%)
+      // Calcular porcentaje basado en accesibilidad a hospitales
+      // Tiempo promedio de ambulancia en LA: 8-15 minutos
+      // Distancia equivalente: 3-8 km
       
-      // Porcentaje por distancia (100% si está a menos de 1km, 0% si está a más de 10km)
-      const distanceScore = Math.max(0, Math.min(100, 100 - (nearestHospital.distance - 1) * 11.11));
+      const distance = nearestHospital.distance;
       
-      // Contar hospitales en un radio de 5km
-      const hospitalsNearby = hospitalsWithDistance.filter(h => h.distance <= 5).length;
-      // Porcentaje por cantidad (100% si hay 5 o más hospitales cerca)
-      const quantityScore = Math.min(100, (hospitalsNearby / 5) * 100);
+      // Escala realista:
+      // - 0-2 km = Excelente (85-100%) - Hospital muy cercano
+      // - 2-5 km = Bueno (65-85%) - Buena accesibilidad
+      // - 5-10 km = Aceptable (40-65%) - Distancia razonable
+      // - 10-15 km = Bajo (20-40%) - Lejos
+      // - 15+ km = Muy bajo (0-20%) - Muy lejos
       
-      // Combinación ponderada
-      const percentage = Math.round((distanceScore * 0.6) + (quantityScore * 0.4));
+      let percentage: number;
+      if (distance <= 2) {
+        percentage = Math.round(85 + (15 * (2 - distance) / 2));
+      } else if (distance <= 5) {
+        percentage = Math.round(65 + (20 * (5 - distance) / 3));
+      } else if (distance <= 10) {
+        percentage = Math.round(40 + (25 * (10 - distance) / 5));
+      } else if (distance <= 15) {
+        percentage = Math.round(20 + (20 * (15 - distance) / 5));
+      } else {
+        percentage = Math.round(Math.max(0, 20 * (25 - distance) / 10));
+      }
 
       // Guardar en caché
       this.businessCache.set(cacheKey, percentage);
@@ -387,20 +462,32 @@ export class ServicesService {
         return 0;
       }
 
-      // Calcular porcentaje basado en:
-      // 1. Distancia a la comisaría más cercana (peso 70%)
-      // 2. Cantidad de comisarías en un radio de 10km (peso 30%)
+      // Calcular porcentaje basado en accesibilidad realista:
+      // - Distancia a la comisaría más cercana es el factor principal
+      // - En LA hay 21 comisarías para ~4 millones de personas
+      // - La distancia promedio debería ser ~5-8km
       
-      // Porcentaje por distancia (100% si está a menos de 2km, 0% si está a más de 15km)
-      const distanceScore = Math.max(0, Math.min(100, 100 - ((nearestStation.distance - 2) / 13) * 100));
+      const distance = nearestStation.distance;
       
-      // Contar comisarías en un radio de 10km
-      const stationsNearby = stationsWithDistance.filter(s => s.distance <= 10).length;
-      // Porcentaje por cantidad (100% si hay 3 o más comisarías cerca)
-      const quantityScore = Math.min(100, (stationsNearby / 3) * 100);
+      // Escala realista:
+      // - 0-3 km = Excelente (80-100%)
+      // - 3-6 km = Bueno (60-80%)
+      // - 6-10 km = Aceptable (40-60%)
+      // - 10-15 km = Bajo (20-40%)
+      // - 15+ km = Muy bajo (0-20%)
       
-      // Combinación ponderada
-      const percentage = Math.round((distanceScore * 0.7) + (quantityScore * 0.3));
+      let percentage: number;
+      if (distance <= 3) {
+        percentage = Math.round(80 + (20 * (3 - distance) / 3));
+      } else if (distance <= 6) {
+        percentage = Math.round(60 + (20 * (6 - distance) / 3));
+      } else if (distance <= 10) {
+        percentage = Math.round(40 + (20 * (10 - distance) / 4));
+      } else if (distance <= 15) {
+        percentage = Math.round(20 + (20 * (15 - distance) / 5));
+      } else {
+        percentage = Math.round(Math.max(0, 20 * (25 - distance) / 10));
+      }
 
       // Guardar en caché
       this.businessCache.set(cacheKey, percentage);
@@ -488,20 +575,31 @@ export class ServicesService {
         return 0;
       }
 
-      // Calcular porcentaje basado en:
-      // 1. Distancia a la estación más cercana (peso 70%)
-      // 2. Cantidad de estaciones en un radio de 8km (peso 30%)
+      // Calcular porcentaje basado en distancia a la estación más cercana
+      // Los bomberos tienen tiempos de respuesta objetivo de 4-6 minutos
+      // Esto equivale a ~2-3 km en áreas urbanas
       
-      // Porcentaje por distancia (100% si está a menos de 1.5km, 0% si está a más de 12km)
-      const distanceScore = Math.max(0, Math.min(100, 100 - ((nearestStation.distance - 1.5) / 10.5) * 100));
+      const distance = nearestStation.distance;
       
-      // Contar estaciones en un radio de 8km
-      const stationsNearby = stationsWithDistance.filter(s => s.distance <= 8).length;
-      // Porcentaje por cantidad (100% si hay 4 o más estaciones cerca)
-      const quantityScore = Math.min(100, (stationsNearby / 4) * 100);
+      // Escala realista basada en estándares NFPA:
+      // - 0-2 km = Excelente (90-100%) - Respuesta <5 min
+      // - 2-4 km = Bueno (70-90%) - Respuesta 5-8 min
+      // - 4-6 km = Aceptable (50-70%) - Respuesta 8-12 min
+      // - 6-10 km = Bajo (25-50%) - Respuesta 12-20 min
+      // - 10+ km = Muy bajo (0-25%) - Respuesta >20 min
       
-      // Combinación ponderada
-      const percentage = Math.round((distanceScore * 0.7) + (quantityScore * 0.3));
+      let percentage: number;
+      if (distance <= 2) {
+        percentage = Math.round(90 + (10 * (2 - distance) / 2));
+      } else if (distance <= 4) {
+        percentage = Math.round(70 + (20 * (4 - distance) / 2));
+      } else if (distance <= 6) {
+        percentage = Math.round(50 + (20 * (6 - distance) / 2));
+      } else if (distance <= 10) {
+        percentage = Math.round(25 + (25 * (10 - distance) / 4));
+      } else {
+        percentage = Math.round(Math.max(0, 25 * (15 - distance) / 5));
+      }
 
       // Guardar en caché
       this.businessCache.set(cacheKey, percentage);
@@ -511,6 +609,167 @@ export class ServicesService {
     } catch (error) {
       console.error(`Error al calcular porcentaje de estaciones de bomberos para ${neighborhoodName}:`, error.message);
       // En caso de error, retornar 0
+      return 0;
+    }
+  }
+
+  /**
+   * Carga datos de ocio nocturno desde archivo local
+   */
+  private loadNightlifeData(): void {
+    if (this.nightlifeData !== null) {
+      return; // Ya cargado
+    }
+
+    try {
+      // Buscar siempre en la raíz del proyecto
+      const filePath = path.join(process.cwd(), 'nightlife_data.json');
+      
+      const fileContent = fs.readFileSync(filePath, 'utf-8');
+      this.nightlifeData = JSON.parse(fileContent);
+      if (this.nightlifeData) {
+        console.log(`✓ Cargados ${this.nightlifeData.length} lugares de ocio nocturno`);
+      }
+    } catch (error) {
+      console.error('Error al cargar datos de ocio nocturno:', error.message);
+      console.error(`Ruta buscada: ${path.join(process.cwd(), 'nightlife_data.json')}`);
+      console.error('Ejecuta: npm run fetch-leisure para descargar los datos');
+      this.nightlifeData = [];
+    }
+  }
+
+  /**
+   * Carga datos de ocio diurno desde archivo local
+   */
+  private loadDayLeisureData(): void {
+    if (this.dayLeisureData !== null) {
+      return; // Ya cargado
+    }
+
+    try {
+      // Buscar siempre en la raíz del proyecto
+      const filePath = path.join(process.cwd(), 'dayleisure_data.json');
+      
+      const fileContent = fs.readFileSync(filePath, 'utf-8');
+      this.dayLeisureData = JSON.parse(fileContent);
+      if (this.dayLeisureData) {
+        console.log(`✓ Cargados ${this.dayLeisureData.length} lugares de ocio diurno`);
+      }
+    } catch (error) {
+      console.error('Error al cargar datos de ocio diurno:', error.message);
+      console.error(`Ruta buscada: ${path.join(process.cwd(), 'dayleisure_data.json')}`);
+      console.error('Ejecuta: npm run fetch-leisure para descargar los datos');
+      this.dayLeisureData = [];
+    }
+  }
+
+  /**
+   * Filtra lugares dentro de un radio específico
+   */
+  private filterByRadius(
+    elements: OverpassElement[],
+    centerLat: number,
+    centerLon: number,
+    radiusMeters: number,
+  ): OverpassElement[] {
+    const radiusKm = radiusMeters / 1000; // Convertir metros a km
+    return elements.filter(element => {
+      const distanceKm = this.calculateDistance(
+        centerLat,
+        centerLon,
+        element.lat,
+        element.lon,
+      );
+      return distanceKm <= radiusKm;
+    });
+  }
+
+  /**
+   * Calcula el porcentaje de ocio nocturno para un barrio
+   */
+  async calculateNightlifePercentage(
+    neighborhoodName: string,
+    latitude: number,
+    longitude: number,
+  ): Promise<number> {
+    try {
+      const cacheKey = `nightlife_${neighborhoodName}`;
+      const now = Date.now();
+      if (this.businessCache.has(cacheKey) && 
+          (now - this.cacheTimestamp) < this.CACHE_DURATION) {
+        return this.businessCache.get(cacheKey) || 0;
+      }
+
+      // Cargar datos si no están cargados
+      this.loadNightlifeData();
+
+      // Filtrar lugares de ocio nocturno en un radio de 2km
+      const nightlifeSpots = this.filterByRadius(
+        this.nightlifeData || [],
+        latitude,
+        longitude,
+        2000,
+      );
+
+      // Normalización realista:
+      // - Hollywood/DTLA tienen 25-30+ locales nocturnos en 2km
+      // - Barrios de ocio (West Hollywood, Silver Lake) tienen 15-20
+      // - Barrios residenciales tienen 0-5
+      // - Barrios comerciales tienen 5-10
+      // Escala: 50+ lugares = 100%
+      const percentage = Math.min(Math.round((nightlifeSpots.length / 50) * 100), 100);
+
+      this.businessCache.set(cacheKey, percentage);
+      this.cacheTimestamp = now;
+
+      return percentage;
+    } catch (error) {
+      console.error(`Error al calcular ocio nocturno para ${neighborhoodName}:`, error.message);
+      return 0;
+    }
+  }
+
+  /**
+   * Calcula el porcentaje de ocio diurno para un barrio
+   */
+  async calculateDayLeisurePercentage(
+    neighborhoodName: string,
+    latitude: number,
+    longitude: number,
+  ): Promise<number> {
+    try {
+      const cacheKey = `dayleisure_${neighborhoodName}`;
+      const now = Date.now();
+      if (this.businessCache.has(cacheKey) && 
+          (now - this.cacheTimestamp) < this.CACHE_DURATION) {
+        return this.businessCache.get(cacheKey) || 0;
+      }
+
+      // Cargar datos si no están cargados
+      this.loadDayLeisureData();
+
+      // Filtrar lugares de ocio diurno en un radio de 2km
+      const leisureSpots = this.filterByRadius(
+        this.dayLeisureData || [],
+        latitude,
+        longitude,
+        2000,
+      );
+
+      // Normalización realista:
+      // - Barrios turísticos/culturales (Santa Monica, Hollywood) tienen 80-100+ lugares
+      // - Barrios comerciales tienen 40-60 lugares
+      // - Barrios residenciales tienen 10-20 lugares
+      // Nota: Incluye cafeterías que son muy comunes en LA (994 en total)
+      // Escala: 100+ lugares = 100%
+      const percentage = Math.min(Math.round((leisureSpots.length / 100) * 100), 100);
+
+      this.businessCache.set(cacheKey, percentage);
+      this.cacheTimestamp = now;
+
+      return percentage;
+    } catch (error) {
+      console.error(`Error al calcular ocio diurno para ${neighborhoodName}:`, error.message);
       return 0;
     }
   }

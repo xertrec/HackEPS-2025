@@ -22,16 +22,16 @@ export class ServicesController {
     return { status: 'OK', message: 'Caché limpiado correctamente' };
   }
 
-  // Endpoint principal que devuelve barrios con porcentaje de tiendas, escuelas, hospitales, comisarías y bomberos
+  // Endpoint principal que devuelve barrios con todos los servicios
   @Get()
   async getServices() {
     try {
       const neighborhoods = await this.databaseService.getAllNeighborhoods();
       
-      // Obtener el porcentaje de tiendas, escuelas, hospitales, comisarías y bomberos para cada barrio
+      // Obtener todos los porcentajes para cada barrio
       const result = await Promise.all(
         neighborhoods.map(async (neighborhood) => {
-          const [botigues, escoles, hospitals, comissaries, bombers] = await Promise.all([
+          const [botigues, escoles, hospitals, comissaries, bombers, ociNocturno, ociDiurno] = await Promise.all([
             this.servicesService.calculateShopsPercentage(
               neighborhood.name,
               neighborhood.latitude,
@@ -57,6 +57,16 @@ export class ServicesController {
               neighborhood.latitude,
               neighborhood.longitude,
             ),
+            this.servicesService.calculateNightlifePercentage(
+              neighborhood.name,
+              neighborhood.latitude,
+              neighborhood.longitude,
+            ),
+            this.servicesService.calculateDayLeisurePercentage(
+              neighborhood.name,
+              neighborhood.latitude,
+              neighborhood.longitude,
+            ),
           ]);
           
           return {
@@ -66,6 +76,8 @@ export class ServicesController {
             hospitals,
             comissaries,
             bombers,
+            ociNocturno,
+            ociDiurno,
           };
         }),
       );
