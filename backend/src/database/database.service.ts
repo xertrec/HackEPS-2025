@@ -14,35 +14,22 @@ export interface Neighborhood {
 	last_updated: string;
 }
 
+export class Lifestyle {
+	neighborhood_name: string;
+	score: number;
+	note?: string;
+}
+
 @Injectable()
 export class DatabaseService implements OnModuleInit, OnModuleDestroy {
 	private db: sqlite3.Database;
 	private dbPath: string;
 
-<<<<<<< Updated upstream
-  onModuleInit() {
-    // Buscar la base de datos en la raíz del proyecto
-    // process.cwd() nos da la raíz del proyecto donde se ejecuta npm
-    this.dbPath = path.join(process.cwd(), 'neighborhoods.db');
-    console.log('Intentando conectar a la base de datos en:', this.dbPath);
-    
-    this.db = new sqlite3.Database(this.dbPath, (err) => {
-      if (err) {
-        console.error('Error al conectar con la base de datos:', err);
-        console.error('Ruta intentada:', this.dbPath);
-      } else {
-        console.log('✓ Conectado a la base de datos neighborhoods.db');
-        console.log('✓ Ruta:', this.dbPath);
-      }
-    });
-  }
-=======
 	onModuleInit() {
-		// En producción (dist), __dirname es dist/database
-		// En desarrollo, necesitamos ir a la raíz del proyecto
-		this.dbPath = path.join(__dirname, '..', '..', 'neighborhoods.db');
+		// Buscar la base de datos en la raíz del proyecto
+		// process.cwd() nos da la raíz del proyecto donde se ejecuta npm
+		this.dbPath = path.join(process.cwd(), 'neighborhoods.db');
 		console.log('Intentando conectar a la base de datos en:', this.dbPath);
->>>>>>> Stashed changes
 
 		this.db = new sqlite3.Database(this.dbPath, (err) => {
 			if (err) {
@@ -187,6 +174,58 @@ export class DatabaseService implements OnModuleInit, OnModuleDestroy {
 						reject(err);
 					} else {
 						resolve(rows);
+					}
+				},
+			);
+		});
+	}
+
+	insertLifestyle(
+		neighborhoodName: string,
+		score: number,
+		note: string | undefined,
+	): Promise<void> {
+		return new Promise((resolve, reject) => {
+			this.db.run(
+				`INSERT INTO lifestyle (neighborhood_name, score, note) VALUES (?, ?, ?)`,
+				[neighborhoodName, score, note],
+				(err) => {
+					if (err) reject(err);
+					else resolve();
+				},
+			);
+		});
+	}
+
+	updateLifestyle(
+		neighborhoodName: string,
+		score: number,
+		note: string | undefined,
+	): Promise<void> {
+		return new Promise((resolve, reject) => {
+			this.db.run(
+				`UPDATE lifestyle SET score = ?, note = ? WHERE neighborhood_name = ?`,
+				[score, note, neighborhoodName],
+				(err) => {
+					if (err) reject(err);
+					else resolve();
+				},
+			);
+		});
+	}
+
+	getLifestyleByNeighborhoodName(
+		neighborhoodName: string,
+	): Promise<Lifestyle | undefined> {
+		return new Promise((resolve, reject) => {
+			this.db.get(
+				'SELECT * FROM lifestyle WHERE neighborhood_name = ?',
+				[neighborhoodName],
+				(err, row: Lifestyle) => {
+					if (err) {
+						reject(err);
+					} else {
+						resolve(row);
 					}
 				},
 			);

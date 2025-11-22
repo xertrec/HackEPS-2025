@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common';
 import { ConnectivityResultDto } from './dto/connectivity_result.dto';
 import { ConnectivityCollectionResultDto } from './dto/connectivity_collection_result.dto';
 import { AxiosResponse } from 'axios';
-import { firstValueFrom } from 'rxjs';
+import { delay, firstValueFrom } from 'rxjs';
 import { DatabaseService, Neighborhood } from 'src/database/database.service';
 
 @Injectable()
@@ -18,11 +18,38 @@ export class LifestyleService {
 			await this.databaseService.getAllNeighborhoods();
 
 		const connectivityPromises = neighborhoods.map(async (neighborhood) => {
-			const connectivity = await this.getConnectivityDataForLocation(
-                neighborhood.name,
-				neighborhood.latitude,
-				neighborhood.longitude,
-			);
+            let connectivity = await this.databaseService.getLifestyleByNeighborhoodName(
+                neighborhood.name
+            );
+
+            if (!connectivity || connectivity.score == 0) {
+                const apiResult = await this.getConnectivityDataForLocation(
+                    neighborhood.name,
+                    neighborhood.latitude,
+                    neighborhood.longitude,
+                );
+                delay(30000); // To avoid hitting Overpass API rate limits
+
+                if (connectivity?.score == 0) {
+                    await this.databaseService.updateLifestyle(
+                        apiResult.neighborhood_name,
+                        apiResult.score,
+                        apiResult.note
+                    );
+                } else {
+                    await this.databaseService.insertLifestyle(
+                        apiResult.neighborhood_name,
+                        apiResult.score,
+                        apiResult.note
+                    );
+                }
+                
+                connectivity = {
+                    neighborhood_name: apiResult.neighborhood_name,
+                    score: apiResult.score,
+                    note: apiResult.note,
+                };
+            }
 
 			return connectivity;
 		});
@@ -34,56 +61,86 @@ export class LifestyleService {
 	}
 
 	private async getConnectivityDataForLocation(
-        neighborhood_name: string,
+		neighborhood_name: string,
 		lat: number,
 		lon: number,
 	): Promise<ConnectivityResultDto> {
-		const apiUrl = `https://broadbandmap.fcc.gov/api/broadband/summary/location?lat=${lat}&long=${lon}`;
+		// Query for telecom towers, masts, and antennas within 1000 meters
+		const radius = 1000;
+		const query = `
+            [out:json];
+            (
+                node["man_made"="mast"](around:${radius},${lat},${lon});
+                node["man_made"="antenna"](around:${radius},${lat},${lon});
+                node["communication:mobile_phone"](around:${radius},${lat},${lon});
+                node["tower:type"="communication"](around:${radius},${lat},${lon});
+            );
+            out count;
+        `;
+
+		const apiUrl = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(query)}`;
 
 		try {
 			const { data }: AxiosResponse = await firstValueFrom(
 				this.httpService.get(apiUrl),
 			);
+            
+			let count = 0;
+			if (data?.elements && data.elements.length > 0) {
+				// 'out count' usually returns { type: 'count', tags: { nodes: 'X', ways: 'Y', relations: 'Z', total: 'T' } }
+				const tags = data.elements[0].tags;
+				if (tags) {
+					count = parseInt(tags.total || tags.nodes || '0', 10);
+				}
+			}
 
-			// Calculate Score (0-100)
-			const score = this.calculateConnectivityScore(data?.technologies || []);
+			// Logic: 5+ nodes nearby = 100/100 score
+			const score = Math.min(count * 20, 100);
+
+			let note = `Infrastructure Density: ${count} nodes found via OpenStreetMap`;
+			if (score === 100) note += ' (Excellent Coverage)';
+			else if (score === 0) note += ' (Limited Infrastructure detected)';
 
 			return {
-                neighborhood_name: neighborhood_name,
+				neighborhood_name: neighborhood_name,
 				score: score,
+				note: note,
 			};
 		} catch (error) {
-			console.error('Connectivity API Error:', error.message);
-			// Hackathon Fallback: Return a randomized but realistic mock if API fails/limits
-			// This ensures your demo never crashes in front of judges.
-			const mockScore = Math.random() > 0.3 ? 100 : 60;
+			console.error(
+				`Overpass API Error for ${neighborhood_name}:`,
+				error.message,
+			);
+
+			// Fallback to Deterministic Simulation
+			const simulated = this.getSimulatedConnectivity(lat, lon);
 			return {
-                neighborhood_name: neighborhood_name,
-				score: mockScore,
-				note: 'Data simulated due to API limits (Hackathon Mode)',
+				neighborhood_name: neighborhood_name,
+				score: 0, //simulated.score,
+				note: simulated.note,
 			};
 		}
 	}
 
-	private calculateConnectivityScore(technologies: any[]): number {
-		if (!technologies || technologies.length === 0) return 0;
+	private getSimulatedConnectivity(lat: number, lon: number): any {
+		// Create a pseudo-random number based on coordinates
+		const hash = Math.sin(lat * 1000) + Math.cos(lon * 1000);
+		const normalized = Math.abs(hash); // 0 to 1ish
 
-		// Check for Fiber (Tech Code 50) - The Gold Standard for Bran
-		const hasFiber = technologies.some((t) => t.technology_code === 50);
-		if (hasFiber) return 100;
+		let score = 0;
+		let note = '';
 
-		// Check for Cable (Tech Code 40-43)
-		const hasCable = technologies.some(
-			(t) => t.technology_code >= 40 && t.technology_code <= 43,
-		);
-		if (hasCable) return 70;
+		if (normalized > 0.7) {
+			score = 100;
+			note = 'Fiber Optic (Simulated High Speed)';
+		} else if (normalized > 0.4) {
+			score = 70;
+			note = 'Cable/4G (Simulated Medium Speed)';
+		} else {
+			score = 40;
+			note = 'DSL (Simulated Low Speed)';
+		}
 
-		// Check for DSL (Tech Code 10-20)
-		const hasDSL = technologies.some(
-			(t) => t.technology_code >= 10 && t.technology_code <= 20,
-		);
-		if (hasDSL) return 40;
-
-		return 10; // Only Satellite or low-speed fixed wireless
+		return { score, note };
 	}
 }
