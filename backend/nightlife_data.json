@@ -1,0 +1,4787 @@
+[
+  {
+    "type": "node",
+    "id": 256884236,
+    "lat": 34.0833871,
+    "lon": -118.385144,
+    "tags": {
+      "addr:city": "West Hollywood",
+      "addr:housenumber": "692",
+      "addr:postcode": "90069",
+      "addr:state": "CA",
+      "addr:street": "North Robertson Blvd.",
+      "amenity": "bar",
+      "contact:phone": "+1 310 289 8410",
+      "email": "abbey@theabbeyweho.com",
+      "lgbtq": "primary",
+      "name": "The Abbey",
+      "opening_hours": "Mo-Th 11:00-02:00, Fr 10:00-02:00, Sa,Su 09:00-02:00",
+      "phone": "+1-310-289-8410",
+      "website": "https://www.theabbeyweho.com",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 346300785,
+    "lat": 34.2594656,
+    "lon": -118.3028134,
+    "tags": {
+      "amenity": "pub",
+      "created_by": "Potlatch 0.10f"
+    }
+  },
+  {
+    "type": "node",
+    "id": 437773582,
+    "lat": 34.029328,
+    "lon": -118.4984834,
+    "tags": {
+      "addr:city": "Santa Monica",
+      "addr:housenumber": "1018",
+      "addr:postcode": "90403",
+      "addr:state": "CA",
+      "addr:street": "Montana Avenue",
+      "amenity": "pub",
+      "name": "Father's Office",
+      "opening_hours": "Mo-Th 17:00-22:00; Fr 12:00-23:00; Sa,Su 12:00-22:00",
+      "phone": "+1-310-736-2224",
+      "website": "https://fathersoffice.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 470868182,
+    "lat": 34.0484694,
+    "lon": -118.2557823,
+    "tags": {
+      "amenity": "pub",
+      "name": "Casey's Irish"
+    }
+  },
+  {
+    "type": "node",
+    "id": 470888603,
+    "lat": 34.0510825,
+    "lon": -118.2452603,
+    "tags": {
+      "amenity": "bar",
+      "name": "The Edison",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "type": "node",
+    "id": 471255289,
+    "lat": 34.0491116,
+    "lon": -118.2564869,
+    "tags": {
+      "amenity": "bar",
+      "name": "Library Bar"
+    }
+  },
+  {
+    "type": "node",
+    "id": 557241369,
+    "lat": 34.0453657,
+    "lon": -118.252907,
+    "tags": {
+      "amenity": "bar",
+      "name": "Clifton's Republic",
+      "phone": "+1 213.627.1673",
+      "website": "https://theneverlands.com/cliftons-republic/",
+      "wikidata": "Q5133122",
+      "wikipedia": "en:Clifton's Cafeteria"
+    }
+  },
+  {
+    "type": "node",
+    "id": 560066659,
+    "lat": 34.0486256,
+    "lon": -118.2476319,
+    "tags": {
+      "addr:country": "US",
+      "amenity": "bar",
+      "name": "Bar 107",
+      "wheelchair": "limited"
+    }
+  },
+  {
+    "type": "node",
+    "id": 672875645,
+    "lat": 34.0619255,
+    "lon": -118.4476983,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "1000",
+      "addr:postcode": "90024",
+      "addr:state": "CA",
+      "addr:street": "Gayley Avenue",
+      "amenity": "bar",
+      "name": "Rocco's Tavern",
+      "old_name": "Maloney's",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 853984751,
+    "lat": 34.0434571,
+    "lon": -118.258201,
+    "tags": {
+      "amenity": "nightclub",
+      "name": "Club Galaxy"
+    }
+  },
+  {
+    "type": "node",
+    "id": 902322522,
+    "lat": 34.10374,
+    "lon": -118.286982,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "1800",
+      "addr:postcode": "90027",
+      "addr:state": "CA",
+      "addr:street": "Hillhurst Avenue",
+      "amenity": "bar",
+      "name": "Drawing Room",
+      "opening_hours": "Mo-Su 06:00-02:00",
+      "phone": "+1-323-665-0135"
+    }
+  },
+  {
+    "type": "node",
+    "id": 902322554,
+    "lat": 34.1028381,
+    "lon": -118.291931,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "1739",
+      "addr:postcode": "90027",
+      "addr:state": "CA",
+      "addr:street": "North Vermont Avenue",
+      "amenity": "pub",
+      "name": "Closed (Was 1739 Pub)"
+    }
+  },
+  {
+    "type": "node",
+    "id": 911489261,
+    "lat": 34.1031021,
+    "lon": -118.2921523,
+    "tags": {
+      "amenity": "bar",
+      "name": "Agave"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1028757169,
+    "lat": 34.0183407,
+    "lon": -118.4893192,
+    "tags": {
+      "amenity": "bar",
+      "historic": "monument",
+      "name": "Bodega"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1028759192,
+    "lat": 34.0007973,
+    "lon": -118.482601,
+    "tags": {
+      "addr:city": "Santa Monica",
+      "addr:housenumber": "2702",
+      "addr:postcode": "90405",
+      "addr:state": "CA",
+      "addr:street": "Main Street",
+      "amenity": "pub",
+      "bar": "yes",
+      "check_date": "2024-11-23",
+      "cuisine": "irish",
+      "name": "Jameson's Pub",
+      "opening_hours": "Mo-Su 09:00-24:00",
+      "phone": "+1-424-330-0069",
+      "website": "http://www.jamesonsirishpub.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1028939683,
+    "lat": 34.0854465,
+    "lon": -118.383787,
+    "tags": {
+      "addr:city": "West Hollywood",
+      "addr:housename": "Micky's",
+      "addr:housenumber": "8857",
+      "addr:postcode": "90069",
+      "addr:state": "CA",
+      "addr:street": "Santa Monica Blvd.",
+      "amenity": "nightclub",
+      "contact:facebook": "https://www.facebook.com/MickysWestHollywood",
+      "contact:instagram": "https://www.instagram.com/mickysweho/",
+      "contact:twitter": "https://twitter.com/MickysWeho",
+      "lgbtq": "primary",
+      "name": "Micky's",
+      "opening_hours": "Mo-Th 16:00-02:00, Fr 16:00-04:00, Sa 15:00-04:00, 14:00-02:00",
+      "phone": "+1-310-657-1176",
+      "website": "https://www.mickys.com"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1028939685,
+    "lat": 34.0838612,
+    "lon": -118.38516,
+    "tags": {
+      "addr:city": "West Hollywood",
+      "addr:housenumber": "8944",
+      "addr:postcode": "90069",
+      "addr:state": "CA",
+      "addr:street": "Santa Monica Boulevard",
+      "amenity": "bar",
+      "lgbtq": "primary",
+      "name": "Motherlode",
+      "opening_hours": "Mo-Su 15:00-02:00",
+      "phone": "+1-310-659-9700",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1028939711,
+    "lat": 34.0855201,
+    "lon": -118.383621,
+    "tags": {
+      "addr:city": "West Hollywood",
+      "addr:housename": "Revolver",
+      "addr:housenumber": "8851",
+      "addr:postcode": "90069",
+      "addr:state": "CA",
+      "addr:street": "Santa Monica Blvd.",
+      "alt_name": "East West Lounge",
+      "amenity": "bar",
+      "lgbtq": "primary",
+      "name": "Revolver Video Bar",
+      "opening_hours": "Mo-Su 17:00-02:00",
+      "phone": "+1-310-694-0430",
+      "website": "https://www.revolverweho.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1584084274,
+    "lat": 34.0499523,
+    "lon": -118.2574447,
+    "tags": {
+      "addr:housename": "Pegasus Building",
+      "addr:housenumber": "612",
+      "addr:postcode": "90017",
+      "addr:street": "South Flower St",
+      "amenity": "bar",
+      "name": "Public School 213",
+      "website": "https://publicschool612.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1584092680,
+    "lat": 34.0470366,
+    "lon": -118.255926,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:country": "US",
+      "addr:housenumber": "513",
+      "addr:postcode": "90014",
+      "addr:state": "CA",
+      "addr:street": "West 7th Street",
+      "amenity": "bar",
+      "level": "2",
+      "name": "Seven Grand Whiskey Bar",
+      "opening_hours": "24/7",
+      "website": "http://www.sevengrand.la/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1598988435,
+    "lat": 34.090449,
+    "lon": -118.3847153,
+    "tags": {
+      "addr:city": "West Hollywood",
+      "addr:housenumber": "8852",
+      "addr:postcode": "90069",
+      "addr:state": "CA",
+      "addr:street": "West Sunset Boulevard",
+      "amenity": "nightclub",
+      "email": "info@viperroom.com",
+      "fax": "+1-310-652-8471",
+      "name": "The Viper Room",
+      "opening_hours": "Mo-Su 20:00-02:00",
+      "phone": "+1-310-358-1881",
+      "website": "https://www.viperroom.com/",
+      "wikidata": "Q1303059",
+      "wikipedia": "en:The Viper Room"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1709435007,
+    "lat": 34.1459592,
+    "lon": -118.1483521,
+    "tags": {
+      "addr:city": "Pasadena",
+      "addr:country": "US",
+      "addr:housenumber": "99",
+      "addr:postcode": "91105",
+      "addr:state": "CA",
+      "addr:street": "East Colorado Boulevard",
+      "amenity": "bar",
+      "branch": "Pasadena",
+      "check_date": "2025-11-02",
+      "contact:instagram": "https://www.instagram.com/barneysbeanerypasadena/",
+      "contact:yelp": "https://www.yelp.com/biz/barneys-beanery-pasadena-2",
+      "name": "Barney's Beanery",
+      "opening_hours": "Mo-Fr 10:00-02:00; Sa-Su 9:00-02:00",
+      "phone": "+1-626-405-9777",
+      "website": "https://www.barneysbeanery.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1726855252,
+    "lat": 34.1453634,
+    "lon": -118.15004,
+    "tags": {
+      "addr:city": "Pasadena",
+      "addr:housenumber": "20",
+      "addr:postcode": "91105",
+      "addr:state": "CA",
+      "addr:street": "East Colorado Boulevard",
+      "addr:unit": "102",
+      "amenity": "pub",
+      "check_date": "2025-11-02",
+      "contact:facebook": "https://www.facebook.com/kingsrowpub",
+      "contact:instagram": "https://www.instagram.com/kingsrowpub/",
+      "contact:yelp": "https://www.yelp.com/biz/kings-row-gastropub-pasadena-2",
+      "email": "contact@kingsrowpub.com",
+      "name": "King's Row Gastropub",
+      "opening_hours": "Mo-Th 11:30-23:00; Fr 11:30-01:00; Sa 09:30-01:00; Su 09:30-23:00",
+      "phone": "+1 626-793-3010",
+      "website": "https://www.kingsrowpub.com/",
+      "website:menu": "https://www.kingsrowpub.com/menu"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1738802896,
+    "lat": 34.04738,
+    "lon": -118.2498732,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:country": "US",
+      "addr:housenumber": "501",
+      "addr:postcode": "90013",
+      "addr:state": "CA",
+      "addr:street": "South Spring Street",
+      "amenity": "pub",
+      "name": "Down and Out",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1770590831,
+    "lat": 34.0505326,
+    "lon": -118.2641492,
+    "tags": {
+      "amenity": "pub",
+      "name": "Jardin des Tuileries"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1771061776,
+    "lat": 34.0245985,
+    "lon": -118.39461,
+    "tags": {
+      "addr:housenumber": "3839",
+      "addr:street": "Main Street",
+      "amenity": "bar",
+      "cuisine": "pizza",
+      "drink:beer": "draught",
+      "drink:liquor": "yes",
+      "drink:wine": "yes",
+      "indoor_seating": "yes",
+      "level": "0",
+      "name": "Rocco's Tavern",
+      "outdoor_seating": "yes",
+      "panoramax": "aa731cc0-4096-41f8-a680-920d7f489b65"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1792518214,
+    "lat": 34.0146174,
+    "lon": -118.497164,
+    "tags": {
+      "amenity": "pub",
+      "name": "Ye Olde King's Head",
+      "smoking": "outside"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1887254620,
+    "lat": 34.0154517,
+    "lon": -118.4767172,
+    "tags": {
+      "addr:housenumber": "1326",
+      "addr:postcode": "90405",
+      "addr:street": "Pico Boulevard",
+      "amenity": "bar",
+      "name": "Nostalgia Bar and Lounge"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1924396787,
+    "lat": 34.2570135,
+    "lon": -118.5969479,
+    "tags": {
+      "addr:city": "Chatsworth",
+      "addr:housenumber": "21356",
+      "addr:postcode": "91311",
+      "addr:state": "CA",
+      "addr:street": "Devonshire Street",
+      "amenity": "pub",
+      "name": "West End Tavern",
+      "note": "formerly McG's Pub & Grill",
+      "opening_hours": "11:30-02:00",
+      "smoking": "outside"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1956156321,
+    "lat": 34.0999488,
+    "lon": -118.2901366,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "4628",
+      "addr:postcode": "90027",
+      "addr:state": "CA",
+      "addr:street": "Hollywood Boulevard",
+      "amenity": "bar",
+      "check_date": "2024-10-01",
+      "cuisine": "wine;beer",
+      "name": "Covell",
+      "opening_hours": "17:00-24:00",
+      "phone": "+1-323-660-4400",
+      "website": "https://www.barcovell.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2021110482,
+    "lat": 34.0502596,
+    "lon": -118.2454369,
+    "tags": {
+      "amenity": "pub",
+      "contact:facebook": "https://www.facebook.com/The-New-Jalisco-Bar-183128448397893/",
+      "lgbtq": "primary",
+      "name": "The New Jalisco Bar",
+      "website": "https://new-jalisco-bar-the.hub.biz/",
+      "wifi": "no"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2027448381,
+    "lat": 34.0504991,
+    "lon": -118.2458647,
+    "tags": {
+      "amenity": "nightclub",
+      "name": "The Smell",
+      "wheelchair": "limited",
+      "wikidata": "Q7764894"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2058508776,
+    "lat": 34.0982094,
+    "lon": -118.3174969,
+    "tags": {
+      "amenity": "bar",
+      "name": "Cocktails"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2164968669,
+    "lat": 34.1012925,
+    "lon": -118.3415868,
+    "tags": {
+      "amenity": "bar",
+      "name": "Library Bar",
+      "opening_hours": "17:30:",
+      "website": "https://www.thompsonhotels.com/hotels/la/hollywood-roosevelt/drink/library-bar"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2164968701,
+    "lat": 34.1011399,
+    "lon": -118.3417933,
+    "tags": {
+      "amenity": "nightclub",
+      "name": "Teddys",
+      "website": "https://www.thompsonhotels.com/hotels/la/hollywood-roosevelt/drink/teddy%27s"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2164968703,
+    "lat": 34.1007872,
+    "lon": -118.3422466,
+    "tags": {
+      "amenity": "bar",
+      "name": "Tropicana Bar",
+      "opening_hours": "Mo-Th 10:00-21:00; Fr-Sa 22:00-2:00",
+      "website": "https://www.thompsonhotels.com/hotels/la/hollywood-roosevelt/drink/tropicana-bar"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2165116983,
+    "lat": 34.1014014,
+    "lon": -118.3316234,
+    "tags": {
+      "amenity": "nightclub",
+      "name": "Hollywood Hookah Lounge",
+      "opening_hours": "Mo-Su 16:00 - 04:00",
+      "phone": "+1 323-469-4622",
+      "website": "http://hollywoodhookahlounge.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2165194436,
+    "lat": 34.0999116,
+    "lon": -118.329773,
+    "tags": {
+      "amenity": "nightclub",
+      "name": "AV Nightclub",
+      "opening_hours": "Mo 22:30-03:00; Fr-Sa 22:30-03:00",
+      "phone": "+1 323-466-1400",
+      "website": "http://www.avnightclub.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2165194437,
+    "lat": 34.100137,
+    "lon": -118.3297497,
+    "tags": {
+      "amenity": "pub",
+      "name": "Blue Boar Pub",
+      "opening_hours": "Mo-Su 17:00 - 02:00",
+      "phone": "+1 323-465-1750",
+      "website": "http://www.blueboarpub.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2165269005,
+    "lat": 34.1010713,
+    "lon": -118.3293482,
+    "tags": {
+      "amenity": "nightclub",
+      "email": "INFO@DANNYBPRODUCTIONS.COM",
+      "name": "Ecco Ultra Lounge",
+      "phone": "+1-323-464-2065",
+      "website": "https://eccohollywood.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2165269062,
+    "lat": 34.1007865,
+    "lon": -118.3293676,
+    "tags": {
+      "amenity": "nightclub",
+      "name": "The Room",
+      "website": "https://www.theroomhollywood.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2247888852,
+    "lat": 34.0990808,
+    "lon": -118.3090907,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "1532",
+      "addr:postcode": "90027",
+      "addr:state": "CA",
+      "addr:street": "N Western Ave",
+      "amenity": "bar",
+      "name": "Girl At The White Horse",
+      "opening_hours": "Th-Su 20:00-02:00",
+      "outdoor_seating": "no",
+      "phone": "+1-323-577-9419",
+      "website": "https://www.girlatthewhitehorse.com"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2247891565,
+    "lat": 34.0518917,
+    "lon": -118.2514359,
+    "tags": {
+      "addr:housenumber": "350",
+      "addr:street": "S Grand Ave",
+      "amenity": "nightclub",
+      "name": "Grand Performances",
+      "source": "(213) 687-2190",
+      "website": "https://www.grandperformances.org/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2247897599,
+    "lat": 34.0981258,
+    "lon": -118.331898,
+    "tags": {
+      "addr:housenumber": "6523",
+      "addr:postcode": "90028",
+      "addr:street": "West Sunset Boulevard",
+      "amenity": "nightclub",
+      "name": "Eden Sunset",
+      "note": "Formerly Boulevard 3."
+    }
+  },
+  {
+    "type": "node",
+    "id": 2247900618,
+    "lat": 34.0620838,
+    "lon": -118.3455769,
+    "tags": {
+      "addr:housenumber": "5364",
+      "addr:postcode": "90036",
+      "addr:street": "Wilshire Boulevard",
+      "amenity": "nightclub",
+      "name": "Busby's East",
+      "source": "(323) 525-2615",
+      "website": "https://www.busbysla.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2247907642,
+    "lat": 34.0501821,
+    "lon": -118.2568186,
+    "tags": {
+      "addr:housenumber": "550",
+      "addr:postcode": "90069",
+      "addr:street": "South Flower Street",
+      "amenity": "bar",
+      "name": "The Rooftop Bar",
+      "source": "(213) 892-8080 ",
+      "website": "https://www.standardhotels.com/downtown-la/food-drink/the-rooftop"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2343943499,
+    "lat": 34.1463143,
+    "lon": -118.1490833,
+    "tags": {
+      "addr:city": "Pasadena",
+      "addr:housenumber": "25",
+      "addr:postcode": "91103",
+      "addr:state": "CA",
+      "addr:street": "North Raymond Ave",
+      "amenity": "bar",
+      "check_date": "2025-11-02",
+      "contact:facebook": "https://www.facebook.com/speakeasypasadena",
+      "contact:instagram": "https://instagram.com/thespeakeasy",
+      "contact:twitter": "https://www.twitter.com/thespeakeasy",
+      "contact:yelp": "https://www.yelp.com/biz/the-speakeasy-pasadena",
+      "email": "info@speakeasypasadena.com",
+      "name": "The Speakeasy",
+      "source": "field survey by kr4z33",
+      "was:name": "New York Deli",
+      "website": "https://www.speakeasypasadena.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2359467063,
+    "lat": 34.0617224,
+    "lon": -118.4466561,
+    "tags": {
+      "addr:housenumber": "1037",
+      "addr:postcode": "90024",
+      "addr:street": "Broxton Avenue",
+      "amenity": "pub",
+      "name": "Barney's Beanery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2450176012,
+    "lat": 34.0853431,
+    "lon": -118.383962,
+    "tags": {
+      "addr:city": "West Hollywood",
+      "addr:housenumber": "8865",
+      "addr:postcode": "90069",
+      "addr:state": "CA",
+      "addr:street": "Santa Monica Boulevard",
+      "amenity": "bar",
+      "email": "FiestaWeHo@FiestaCantina.net",
+      "lgbtq": "primary",
+      "name": "Fiesta Cantina",
+      "opening_hours": "Mo-Su 12:00-02:00",
+      "phone": "+1-310-652-8865",
+      "website": "http://www.fiestacantina.net"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2568700616,
+    "lat": 34.1000498,
+    "lon": -118.3293758,
+    "tags": {
+      "addr:city": "Hollywood",
+      "addr:housename": "The Powder Room",
+      "addr:housenumber": "1606",
+      "addr:postcode": "90028",
+      "addr:street": "North Cahuenga Boulevard",
+      "amenity": "bar",
+      "name": "The Powder Room"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2611810013,
+    "lat": 34.0604833,
+    "lon": -118.2843867,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housename": "Rain Karoki",
+      "addr:housenumber": "685",
+      "addr:postcode": "90005",
+      "addr:street": "S. Hoover Street",
+      "amenity": "bar",
+      "name": "Rain Karoki"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2652212927,
+    "lat": 34.0995269,
+    "lon": -118.2894422,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "4600",
+      "addr:postcode": "90027-5517",
+      "addr:street": "Hollywood Boulevard",
+      "amenity": "bar",
+      "name": "Cheetah's",
+      "toilets:wheelchair": "no",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2652655490,
+    "lat": 34.0230593,
+    "lon": -118.394847,
+    "tags": {
+      "addr:city": "Culver City",
+      "addr:housenumber": "9546",
+      "addr:postcode": "90232",
+      "addr:state": "CA",
+      "addr:street": "Washington Boulevard",
+      "amenity": "pub",
+      "check_date": "2024-02-26",
+      "indoor_seating": "yes",
+      "name": "Jameson's",
+      "outdoor_seating": "yes",
+      "panoramax": "6bb079a3-6c37-4b7f-b685-42d245a25555",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2674512372,
+    "lat": 34.1148345,
+    "lon": -118.24334,
+    "tags": {
+      "amenity": "pub",
+      "name": "Eagle Rock Brewery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2697735222,
+    "lat": 34.0755263,
+    "lon": -118.308959,
+    "tags": {
+      "amenity": "bar",
+      "nem": "Pipers"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2863150332,
+    "lat": 34.1087932,
+    "lon": -118.1940237,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "5570",
+      "addr:street": "Figueroa Street",
+      "amenity": "bar",
+      "name": "The Greyhound",
+      "smoking": "no",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2988516857,
+    "lat": 34.0619593,
+    "lon": -118.3010462,
+    "tags": {
+      "amenity": "bar",
+      "name": "POT",
+      "operator": "Line Hotel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3013308280,
+    "lat": 34.0956922,
+    "lon": -118.284251,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "4356",
+      "addr:postcode": "90029",
+      "addr:state": "CA",
+      "addr:street": "Sunset Boulevard",
+      "amenity": "bar",
+      "name": "Akbar"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3064189462,
+    "lat": 34.1400486,
+    "lon": -118.1485879,
+    "tags": {
+      "addr:city": "Pasadena",
+      "addr:housenumber": "300",
+      "addr:postcode": "91105",
+      "addr:state": "CA",
+      "addr:street": "South Raymond Avenue",
+      "amenity": "pub",
+      "microbrewery": "yes",
+      "name": "Congregation Ale House",
+      "opening_hours": "Mo-Tu 11:30-01:00, Fr 11:30-02:00, Sa 11:00-02:00, Su 11:00-24:00",
+      "phone": "626-403-2337",
+      "website": "https://congregationalehouse.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3134132928,
+    "lat": 34.1156343,
+    "lon": -118.1567792,
+    "tags": {
+      "addr:city": "South Pasadena",
+      "addr:housenumber": "1007",
+      "addr:postcode": "91030",
+      "addr:state": "CA",
+      "addr:street": "Mission Street",
+      "amenity": "bar",
+      "name": "Griffin's of Kinsale",
+      "opening_hours": "We-Sa 16:00-02:00; Mo-Tu 16:00-01:00",
+      "phone": "+1-626-799-0926",
+      "website": "https://griffinsofkinsale.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3177800791,
+    "lat": 34.1460307,
+    "lon": -118.1412343,
+    "tags": {
+      "addr:city": "Pasadena",
+      "addr:housenumber": "443",
+      "addr:postcode": "91101",
+      "addr:state": "CA",
+      "addr:street": "East Colorado Boulevard",
+      "amenity": "bar",
+      "check_date": "2025-11-05",
+      "contact:yelp": "https://www.yelp.com/biz/the-mixx-pasadena-pasadena",
+      "email": "info@themixxpasadena.com",
+      "name": "The Mixx",
+      "phone": "+1 626-500-0017",
+      "source": "Bing",
+      "website": "https://www.themixxclub.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3180394110,
+    "lat": 34.1453789,
+    "lon": -118.137039,
+    "tags": {
+      "addr:city": "Pasadena",
+      "addr:housenumber": "21",
+      "addr:state": "CA",
+      "addr:street": "South El Molino Avenue",
+      "amenity": "bar",
+      "craft": "winery",
+      "name": "Monopole Wine",
+      "phone": "+1 626-577-9463",
+      "website": "https://www.monopolewine.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3358087096,
+    "lat": 34.0470584,
+    "lon": -118.2480296,
+    "tags": {
+      "amenity": "bar",
+      "name": "Love Song Bar"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3364596647,
+    "lat": 34.1468671,
+    "lon": -118.1492822,
+    "tags": {
+      "addr:city": "Pasadena",
+      "addr:country": "US",
+      "addr:housenumber": "53",
+      "addr:postcode": "91103",
+      "addr:state": "CA",
+      "addr:street": "East Union Street",
+      "amenity": "bar",
+      "branch": "Pasadena",
+      "check_date": "2025-11-02",
+      "contact:yelp": "https://www.yelp.com/biz/the-blind-donkey-pasadena",
+      "email": "pasadena@theblinddonkey.com",
+      "name": "The Blind Donkey",
+      "opening_hours": "Mo-Fr 17:00-01:00; Sa-Su 13:00-01:00",
+      "phone": "+1 626-486-2379",
+      "website": "http://www.theblinddonkey.com/pasadena"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3439778857,
+    "lat": 34.0102984,
+    "lon": -118.4955622,
+    "tags": {
+      "addr:city": "Santa Monica",
+      "addr:housenumber": "1615",
+      "addr:postcode": "90401",
+      "addr:state": "CA",
+      "addr:street": "Ocean Front Walk",
+      "amenity": "bar",
+      "name": "Big Dean's OceanFront Cafe",
+      "phone": "+1-310-393-2666"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3449722142,
+    "lat": 34.0478985,
+    "lon": -118.2397855,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "366",
+      "addr:postcode": "90012",
+      "addr:state": "CA",
+      "addr:street": "East 2nd Street",
+      "amenity": "bar",
+      "name": "Wolf and Crane"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3686111967,
+    "lat": 34.0909258,
+    "lon": -118.3882177,
+    "tags": {
+      "addr:city": "West Hollywood",
+      "addr:housenumber": "9015",
+      "addr:postcode": "90069",
+      "addr:state": "CA",
+      "addr:street": "West Sunset Boulevard",
+      "amenity": "bar",
+      "email": "contact@rainbowbarandgrill.com",
+      "name": "Rainbow Bar & Grill",
+      "opening_hours": "Mo-Fr 11:00-02:00, Sa-Su 17:00-02:00",
+      "toilets:wheelchair": "no",
+      "website": "https://www.rainbowbarandgrill.com/",
+      "wheelchair": "yes",
+      "wikidata": "Q7284581",
+      "wikipedia": "en:Rainbow Bar and Grill"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3779901418,
+    "lat": 34.0833062,
+    "lon": -118.347683,
+    "tags": {
+      "amenity": "bar",
+      "name": "The Parlor",
+      "year": "2009"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3780628668,
+    "lat": 34.0834077,
+    "lon": -118.3492399,
+    "tags": {
+      "amenity": "bar",
+      "name": "BL/NKBAR"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3833300147,
+    "lat": 34.0835394,
+    "lon": -118.3552046,
+    "tags": {
+      "amenity": "bar",
+      "name": "Blown Out"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3834333244,
+    "lat": 34.1679965,
+    "lon": -118.6163051,
+    "tags": {
+      "addr:housenumber": "22456",
+      "addr:street": "Ventura Boulevard",
+      "amenity": "pub",
+      "name": "White Harte"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3839971780,
+    "lat": 34.1686019,
+    "lon": -118.602046,
+    "tags": {
+      "addr:city": "Woodland Hills",
+      "addr:housenumber": "21733",
+      "addr:postcode": "91364",
+      "addr:state": "CA",
+      "addr:street": "Ventura Boulevard",
+      "amenity": "bar",
+      "name": "The Copper Mine",
+      "opening_hours": "closed"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3840242088,
+    "lat": 34.1654572,
+    "lon": -118.625898,
+    "tags": {
+      "amenity": "pub",
+      "name": "JJ Sullivan's Irish Pub"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3840429399,
+    "lat": 34.2011872,
+    "lon": -118.6074743,
+    "tags": {
+      "amenity": "pub",
+      "music": "live",
+      "name": "Scotland Yard"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3840429400,
+    "lat": 34.2012063,
+    "lon": -118.6070736,
+    "tags": {
+      "amenity": "bar",
+      "music": "jazz",
+      "name": "Caseys"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3847799465,
+    "lat": 34.1785384,
+    "lon": -118.603861,
+    "tags": {
+      "amenity": "bar",
+      "name": "Q Bar"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3861449033,
+    "lat": 34.101755,
+    "lon": -118.3358181,
+    "tags": {
+      "amenity": "pub",
+      "name": "Jameson's Irish Pub",
+      "opening_hours": "Mo-Fr 11:30-02:00, Sa,Su 09:30-02:00"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3861449034,
+    "lat": 34.1013926,
+    "lon": -118.3364747,
+    "tags": {
+      "amenity": "bar",
+      "name": "Juicy Factory",
+      "website": "http://www.juicyfactory.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3861449041,
+    "lat": 34.1017354,
+    "lon": -118.3378177,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:country": "US",
+      "addr:housenumber": "6757",
+      "addr:postcode": "90028",
+      "addr:state": "CA",
+      "addr:street": "Hollywood Boulevard",
+      "amenity": "nightclub",
+      "name": "The Day After"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3898615855,
+    "lat": 34.0494266,
+    "lon": -118.2538656,
+    "tags": {
+      "amenity": "bar",
+      "name": "Gallery Bar",
+      "source": "Bing"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3936731657,
+    "lat": 34.201225,
+    "lon": -118.6005277,
+    "tags": {
+      "amenity": "bar",
+      "name": "The Back Room Jazz Bar"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3939355528,
+    "lat": 34.2008573,
+    "lon": -118.5998048,
+    "tags": {
+      "amenity": "nightclub"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3960923746,
+    "lat": 34.0277506,
+    "lon": -118.409791,
+    "tags": {
+      "amenity": "bar",
+      "atm": "yes",
+      "cuisine": "burger;pizza",
+      "drink:beer": "draught",
+      "drink:liquor": "yes",
+      "drink:wine": "yes",
+      "happy_hours": "Mo-Fr 16:00-19:00",
+      "name": "The Garage",
+      "opening_hours": "Mo-Tu 11:30-24:00; We-Sa 11:30-02:00; Su 11:30-24:00",
+      "outdoor_seating": "yes",
+      "phone": "+1-310-559-3400",
+      "toilets": "yes",
+      "toilets:unisex": "no",
+      "wikidata": "Q104536858"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4064504856,
+    "lat": 34.2570279,
+    "lon": -118.5963507,
+    "tags": {
+      "amenity": "bar"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4064539870,
+    "lat": 34.2492623,
+    "lon": -118.5896748,
+    "tags": {
+      "amenity": "bar"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4092055892,
+    "lat": 34.0952957,
+    "lon": -118.2830176,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "4321",
+      "addr:postcode": "90029",
+      "addr:state": "CA",
+      "addr:street": "Sunset Boulevard",
+      "amenity": "pub",
+      "level": "1",
+      "name": "Jay's Bar",
+      "opening_hours": "Mo-Fr 17:00-02:00; Sa-Su 11:00-02:00",
+      "phone": "+1-323-666-1898",
+      "website": "https://jaysbarla.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4094216682,
+    "lat": 34.0739777,
+    "lon": -118.2515339,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "1391",
+      "addr:postcode": "90026",
+      "addr:state": "CA",
+      "addr:street": "Sunset Boulevard",
+      "amenity": "pub",
+      "check_date": "2024-09-27",
+      "contact:instagram": "https://www.instagram.com/buttonmashla",
+      "leisure": "amusement_arcade",
+      "name": "Button Mash",
+      "opening_hours": "Mo off; Tu-Th 17:00-24:00; Fr 17:00-02:00; Sa 13:00-02:00; Su 13:00-24:00",
+      "phone": "+1 213 250 9903",
+      "smoking": "no",
+      "website": "http://buttonmashla.com/",
+      "website:menu": "https://www.buttonmashla.com/#bar-menu"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4096426251,
+    "lat": 34.0439931,
+    "lon": -118.2510659,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "656",
+      "addr:postcode": "90014",
+      "addr:street": "South Main Street",
+      "amenity": "bar",
+      "name": "Wendell",
+      "website": "https://www.wendellbardtla.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4096433309,
+    "lat": 34.0427618,
+    "lon": -118.253728,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "810",
+      "addr:postcode": "90014",
+      "addr:street": "South Spring Street",
+      "amenity": "bar",
+      "name": "Crane's Bar"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4096435814,
+    "lat": 34.0428385,
+    "lon": -118.2553548,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "830",
+      "addr:postcode": "90014",
+      "addr:street": "South Broadway",
+      "amenity": "bar",
+      "name": "Broadway Bar"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4098487069,
+    "lat": 34.0773398,
+    "lon": -118.2654762,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "2150",
+      "addr:postcode": "90026",
+      "addr:state": "CA",
+      "addr:street": "Sunset Boulevard",
+      "amenity": "bar",
+      "name": "Bar Bandini"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4113561297,
+    "lat": 34.0769567,
+    "lon": -118.2918928,
+    "tags": {
+      "amenity": "bar",
+      "name": "Goody Goody"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4114812780,
+    "lat": 34.1809321,
+    "lon": -118.5366016,
+    "tags": {
+      "amenity": "nightclub",
+      "name": "Paladino's"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4114862398,
+    "lat": 34.1793079,
+    "lon": -118.5365508,
+    "tags": {
+      "amenity": "bar",
+      "name": "Petie's"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4129351437,
+    "lat": 34.0908909,
+    "lon": -118.278242,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "3725",
+      "addr:postcode": "90026",
+      "addr:state": "CA",
+      "addr:street": "West Sunset Boulevard",
+      "amenity": "pub",
+      "brewery": "various",
+      "check_date": "2024-09-30",
+      "contact:instagram": "https://www.instagram.com/33taps",
+      "contact:phone": "+1-323-338-7777",
+      "contact:website": "http://www.33taps.com/",
+      "cuisine": "american;burger;wings",
+      "diet:vegan": "yes",
+      "name": "33 Taps Silver Lake",
+      "opening_hours": "Mo-Tu 11:30-22:00; We-Sa 11:30-24:00; Su 10:00-22:00",
+      "start_date": "2001-06-12"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4140126386,
+    "lat": 34.1243001,
+    "lon": -118.2665453,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "3100",
+      "addr:postcode": "90039",
+      "addr:state": "CA",
+      "addr:street": "Los Feliz Boulevard",
+      "amenity": "bar",
+      "name": "The Roost",
+      "opening_hours": "Mo-Sa 12:00-02:00; Su 12:00-00:00",
+      "phone": "+1-323-664-7272"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4166615843,
+    "lat": 34.0800319,
+    "lon": -118.259923,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "1412",
+      "addr:postcode": "90026",
+      "addr:state": "CA",
+      "addr:street": "Glendale Boulevard",
+      "amenity": "bar",
+      "check_date": "2024-09-27",
+      "cocktails": "yes",
+      "contact:instagram": "https://www.instagram.com/thesemitropic",
+      "cuisine": "mexican;eclectic;brunch",
+      "drink:beer": "draught",
+      "drink:coffee": "yes",
+      "drink:liquor": "yes",
+      "drink:tea": "yes",
+      "drink:wine": "yes",
+      "happy_hours": "Mo-Su 09:00-17:00",
+      "internet_access": "wlan",
+      "internet_access:fee": "no",
+      "name": "The Semi-Tropic",
+      "opening_hours": "Mo-Th,Su 14:00-01:00; Fr-Sa 14:00-02:00",
+      "opening_hours:kitchen": "Mo-Su 09:00-24:00",
+      "phone": "+1-213-568-3827",
+      "toilets": "yes",
+      "website": "https://thesemitropic.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4166615846,
+    "lat": 34.0764796,
+    "lon": -118.2571172,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "1558",
+      "addr:postcode": "90026",
+      "addr:state": "CA",
+      "addr:street": "Sunset Boulevard",
+      "amenity": "bar",
+      "check_date": "2024-09-27",
+      "contact:facebook": "https://www.facebook.com/The-Gold-Room-100049891878523/",
+      "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi4.ypcdn.com%2Fblob%2Fe456b10b944961f3b55b54e14fdf01c7faed6856&f=1&nofb=1&ipt=c4b467e80da038216b23399ea8f53b50b86ffbf013d1231331463aeb6dbb550e&ipo=images",
+      "name": "Gold Room",
+      "opening_hours": "12:00-02:00",
+      "phone": "+1 213-482-5259"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4231137012,
+    "lat": 34.0718215,
+    "lon": -118.360937,
+    "tags": {
+      "amenity": "bar",
+      "name": "Moruno/Bar Vermut",
+      "phone": "+1 323 372 1251"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4302258131,
+    "lat": 34.0331901,
+    "lon": -118.4806602,
+    "tags": {
+      "addr:city": "Santa Monica",
+      "addr:housenumber": "2226",
+      "addr:postcode": "90403",
+      "addr:state": "CA",
+      "addr:street": "Wilshire Boulevard",
+      "amenity": "pub",
+      "name": "O'Brien's",
+      "phone": "+1 310 829 5303",
+      "website": "https://www.obriensla.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4317785190,
+    "lat": 34.0451875,
+    "lon": -118.2514598,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "626-B",
+      "addr:postcode": "90014",
+      "addr:state": "CA",
+      "addr:street": "South Spring Street",
+      "amenity": "bar",
+      "name": "Spring St Bar",
+      "smoking": "outside",
+      "toilets:wheelchair": "yes",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4317785191,
+    "lat": 34.0452421,
+    "lon": -118.2514183,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "626",
+      "addr:postcode": "90014",
+      "addr:state": "CA",
+      "addr:street": "South Spring Street",
+      "amenity": "bar",
+      "name": "The Falls",
+      "smoking": "outside"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4400518198,
+    "lat": 34.0456934,
+    "lon": -118.2643582,
+    "tags": {
+      "amenity": "bar",
+      "name": "Veranda Poolside Lounge",
+      "opening_hours": "Mo-Th 13:00-24:00; Fr-Sa 12:00-02:00; Su 12:00-24:00",
+      "operator": "Figueroa Hotel",
+      "outdoor_seating": "yes",
+      "phone": "+1 213-627-8971"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4465182833,
+    "lat": 34.1788437,
+    "lon": -118.3084191,
+    "tags": {
+      "addr:housenumber": "150",
+      "addr:street": "East Angeleno Avenue",
+      "amenity": "bar",
+      "check_date": "2024-03-31",
+      "name": "The Bar",
+      "payment:cash": "yes",
+      "payment:debit_cards": "yes",
+      "website": "https://oso.co/eat-drink/the-bar/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4465182834,
+    "lat": 34.1791211,
+    "lon": -118.3081079,
+    "tags": {
+      "addr:floor": "1",
+      "addr:housenumber": "150",
+      "addr:street": "East Angeleno Avenue",
+      "amenity": "bar",
+      "check_date": "2024-03-31",
+      "level": "0",
+      "name": "The Burbank Cafe",
+      "opening_hours": "Mo-Fr 06:00-22:00; Sa-Su 06:30-22:00",
+      "payment:cash": "yes",
+      "payment:debit_cards": "yes",
+      "phone": "+1 818-841-4770",
+      "website": "https://oso.co/eat-drink/burbank-cafe/",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4467204590,
+    "lat": 34.0909636,
+    "lon": -118.3626206,
+    "tags": {
+      "addr:city": "West Hollywood",
+      "addr:housenumber": "7929",
+      "addr:postcode": "90046",
+      "addr:state": "CA",
+      "addr:street": "Santa Monica Boulevard",
+      "amenity": "bar",
+      "name": "Surly Goat",
+      "name:en": "Surly Goat"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4580768557,
+    "lat": 34.0974797,
+    "lon": -118.285763,
+    "tags": {
+      "addr:housenumber": "4427",
+      "addr:street": "Sunset Boulevard",
+      "amenity": "bar",
+      "name": "Tiki-Ti",
+      "opening_hours": "We-Sa 16:00-02:00",
+      "phone": "+1-323-669-9381",
+      "theme": "tiki",
+      "website": "http://www.tiki-ti.com",
+      "wikidata": "Q7801925"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4683183607,
+    "lat": 34.1647911,
+    "lon": -118.3624954,
+    "tags": {
+      "addr:city": "North Hollywood",
+      "addr:housenumber": "10622",
+      "addr:postcode": "91601",
+      "addr:state": "CA",
+      "addr:street": "Magnolia Boulevard",
+      "amenity": "bar",
+      "description": "Dimly lit, relaxed spot offering cocktails, pool & an indie/alt jukebox.",
+      "name": "NoBAR",
+      "opening_hours": "Mo-Th 19:00-02:00; Fr 18:00-02:00; Sa, Su 20:00-02:00",
+      "outdoor_seating": "no",
+      "phone": "+1 818-753-0545",
+      "website": "http://www.vintagebargroup.com/no-bar.php"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4683224552,
+    "lat": 34.164669,
+    "lon": -118.3735657,
+    "tags": {
+      "addr:housenumber": "11130",
+      "addr:street": "W Magnolia Blvd",
+      "amenity": "pub",
+      "description": "Rustic bar & grill for pub grub & 150+ craft beers in a brick lined space with a pool room.",
+      "name": "The Brickyard Pub",
+      "opening_hours": "Mo-Su 17:00-02:00",
+      "phone": "+1 818-505-0460",
+      "website": "https://www.brickyardnoho.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4711222943,
+    "lat": 34.1523646,
+    "lon": -118.3523416,
+    "tags": {
+      "addr:city": "Toluca Lake",
+      "addr:housenumber": "10149",
+      "addr:postcode": "91602",
+      "addr:state": "CA",
+      "addr:street": "Riverside Drive",
+      "amenity": "pub",
+      "amenity_1": "bar",
+      "description": "Grilled meats & whiskey served in a casual environment.",
+      "name": "Forman's Tavern",
+      "opening_hours": "Mo, Tu, Su 12:00-24:00; We, Th 12:00-01:00; Fr, Sa 12:00-02:00",
+      "phone": "+1-818-760-6900",
+      "website": "https://www.formansla.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4711222946,
+    "lat": 34.1523766,
+    "lon": -118.3521486,
+    "tags": {
+      "addr:city": "Toluca Lake",
+      "addr:housenumber": "10139",
+      "addr:postcode": "91602",
+      "addr:state": "CA",
+      "addr:street": "Riverside Drive",
+      "amenity": "bar",
+      "description": "Hybrid retail wine shop/wine bar featuring small production artisanal wines from around the world.",
+      "email": "info@spinthebottlewines.com",
+      "name": "Spin The Bottle Wine Studio",
+      "opening_hours": "Mo 16:00-21:00; Tu, We 13:00-21:00; Th-Sa 13:00-22:00",
+      "phone": "+1-818-509-7813",
+      "shop": "wine",
+      "website": "https://www.spinthebottlewines.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4756989769,
+    "lat": 34.1383668,
+    "lon": -118.356003,
+    "tags": {
+      "amenity": "pub",
+      "name": "Mulligan's Irish Pub",
+      "website": "https://www.universalstudioshollywood.com/web/en/us/things-to-do/dining/mulligans-irish-pub"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4757073040,
+    "lat": 34.139488,
+    "lon": -118.3545724,
+    "tags": {
+      "amenity": "pub",
+      "name": "Duff Brewery Beer Garden",
+      "website": "https://www.universalstudioshollywood.com/web/en/us/things-to-do/dining/duff-brewery-beer-garden"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4757145086,
+    "lat": 34.1387135,
+    "lon": -118.3540516,
+    "tags": {
+      "amenity": "pub",
+      "name": "Hogs Head",
+      "website": "https://www.universalstudioshollywood.com/web/en/us/things-to-do/dining/hogs-head"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4796075798,
+    "lat": 34.1453206,
+    "lon": -118.1510874,
+    "tags": {
+      "addr:city": "Pasadena",
+      "addr:housenumber": "22",
+      "addr:postcode": "91105",
+      "addr:state": "CA",
+      "addr:street": "Mills Place",
+      "amenity": "bar",
+      "check_date": "2025-11-03",
+      "contact:yelp": "https://www.yelp.com/biz/edwin-mills-by-equator-pasadena-2",
+      "email": "party@edwinmills.com",
+      "name": "Edwin Mills by Equator",
+      "phone": "+1-626-564-8656",
+      "website": "https://edwinmills.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4891612668,
+    "lat": 34.0139844,
+    "lon": -118.4956736,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:street": "2nd Street",
+      "amenity": "bar",
+      "name": "Bar Chloe"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4908681428,
+    "lat": 34.1026303,
+    "lon": -118.3395727,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:country": "US",
+      "addr:housenumber": "6801",
+      "addr:postcode": "90028",
+      "addr:state": "CA",
+      "addr:street": "Hollywood Boulevard",
+      "amenity": "nightclub",
+      "contact:email": "info@ohmnightclubla.com",
+      "contact:phone": "+1 323 3371315",
+      "contact:website": "http://www.clubdv8la.com",
+      "level": "4",
+      "name": "Club DV8",
+      "opening_hours": "Sa 22:00-03:00"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4934720675,
+    "lat": 34.1504909,
+    "lon": -118.274389,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "5410",
+      "addr:postcode": "90039",
+      "addr:state": "CA",
+      "addr:street": "San Fernando Road",
+      "amenity": "pub",
+      "cuisine": "american;pub;gastropub",
+      "microbrewery": "yes",
+      "name": "Golden Road Brewing Los Angeles",
+      "outdoor_seating": "yes",
+      "phone": "+1(213) 373-4677",
+      "website": "https://goldenroad.la/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4938411658,
+    "lat": 34.1430803,
+    "lon": -118.3920419,
+    "tags": {
+      "addr:city": "Studio City",
+      "addr:housenumber": "11938",
+      "addr:postcode": "91604",
+      "addr:state": "CA",
+      "addr:street": "Ventura Boulevard",
+      "amenity": "bar",
+      "cuisine": "american",
+      "name": "Laurel Tavern",
+      "opening_hours": "12:00-01:00",
+      "outdoor_seating": "yes",
+      "phone": "+1-818-506-0777",
+      "website": "https://www.laureltavern.com/studio-city"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5027582622,
+    "lat": 34.0600391,
+    "lon": -118.3626075,
+    "tags": {
+      "amenity": "bar",
+      "name": "Tom Bergin's Public House",
+      "name:en": "Tom Bergin's Public House",
+      "wikidata": "Q7814945"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5027595421,
+    "lat": 34.0652782,
+    "lon": -118.3616658,
+    "tags": {
+      "amenity": "bar",
+      "name": "Molly Malone's",
+      "name:en": "Molly Malone's"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5104442127,
+    "lat": 34.1647674,
+    "lon": -118.3723979,
+    "tags": {
+      "amenity": "bar"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5112100828,
+    "lat": 34.0619557,
+    "lon": -118.297217,
+    "tags": {
+      "addr:housenumber": "3357",
+      "addr:street": "Wilshire Boulevard",
+      "alt_name": "Food & Grog",
+      "amenity": "pub",
+      "cuisine": "steak_house;pub",
+      "drink:beer": "bottled",
+      "drink:liquor": "yes",
+      "drink:wine": "yes",
+      "jukebox": "yes",
+      "name": "H.M.S. Bounty",
+      "phone": "+1-213-385-7275"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5112114622,
+    "lat": 34.0619789,
+    "lon": -118.2947408,
+    "tags": {
+      "amenity": "nightclub",
+      "name": "The Arena"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5113578770,
+    "lat": 34.0907488,
+    "lon": -118.3930114,
+    "tags": {
+      "addr:city": "West Hollywood",
+      "addr:housenumber": "9201",
+      "addr:postcode": "90069",
+      "addr:state": "CA",
+      "addr:street": "Sunset Hills Road",
+      "amenity": "bar",
+      "email": "info@blinddragon.com",
+      "name": "Blind Dragon Bar",
+      "phone": "+1-310-595-1091",
+      "source": "mapillary",
+      "website": "https://blinddragon.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5113578783,
+    "lat": 34.0903007,
+    "lon": -118.3931554,
+    "tags": {
+      "addr:city": "West Hollywood",
+      "addr:housenumber": "9229",
+      "addr:postcode": "90069",
+      "addr:state": "CA",
+      "addr:street": "West Sunset Boulevard",
+      "amenity": "nightclub",
+      "name": "Bootsy Bellows",
+      "phone": "+1-310-274-7500",
+      "source": "mapillary",
+      "website": "https://bootsybellows.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5113578787,
+    "lat": 34.0907779,
+    "lon": -118.3916181,
+    "tags": {
+      "addr:city": "West Hollywood",
+      "addr:housenumber": "9159",
+      "addr:postcode": "90069",
+      "addr:state": "CA",
+      "addr:street": "West Sunset Boulevard",
+      "amenity": "bar",
+      "cocktails": "yes",
+      "contact:email": "info@barnextdoor.com",
+      "contact:instagram": "https://instagram.com/barnextdoor_",
+      "contact:yelp": "https://yelp.com/biz/bar-next-door-west-hollywood",
+      "description": "Intimate craft cocktail bar, renowned for its expertly crafted classic and artisanal cocktails in a vintage, Hollywood-inspired setting. Recognized as one of North America's top 100 bars in 2025, it blends modern mixology with nostalgic charm.",
+      "description:en": "Intimate craft cocktail bar, renowned for its expertly crafted classic and artisanal cocktails in a vintage, Hollywood-inspired setting. Recognized as one of North America's top 100 bars in 2025, it blends modern mixology with nostalgic charm.",
+      "description:es": "Bar íntimo de cócteles artesanales, reconocido por sus cócteles clásicos y creativos en un ambiente vintage inspirado en Hollywood. Uno de los 100 mejores bares de Norteamérica en 2025.",
+      "description:fr": "Bar intimiste de cocktails artisanaux, réputé pour ses cocktails classiques et créatifs dans un cadre vintage inspiré d’Hollywood. Classé parmi les 100 meilleurs bars d’Amérique du Nord en 2025.",
+      "description:ja": "親密なクラフトカクテルバーで、ビンテージでハリウッドにインスパイアされた雰囲気の中、熟練の技で作られたクラシックかつ職人技のカクテルで知られています。2025年に北米トップ100バーの一つに認定され、現代のミクソロジーと懐かしい魅力を融合しています。",
+      "description:ko": "낭만적인 크래프트 칵테일 바로, 빈티지하고 할리우드에서 영감을 받은 분위기에서 정성스럽게 만든 클래식과 수제 칵테일로 유명합니다. 2025년 북미 100대 바 중 하나로 선정되었으며, 현대 믹솔로지와 향수를 불러일으키는 매력을 결합합니다.",
+      "description:zh": "一家亲密的精酿鸡尾酒吧，以其在复古好莱坞风格环境中精心调制的经典和手工鸡尾酒而闻名。被评为2025年北美百强酒吧之一，融合了现代调酒术与怀旧魅力。",
+      "drink:cocktail": "served",
+      "email": "info@barnextdoor.com",
+      "internet_access": "wlan",
+      "name": "Bar Next Door",
+      "name:en": "Bar Next Door",
+      "opening_hours": "Mo-Th 18:00-01:00; Fr-Sa 17:00-02:00; Su off",
+      "outdoor_seating": "no",
+      "phone": "+1-424-278-1790",
+      "smoking": "no",
+      "start_date": "2023-05",
+      "website": "https://barnextdoor.com",
+      "website:menu": "https://barnextdoor.com/menu-1",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5119897618,
+    "lat": 34.0908064,
+    "lon": -118.385988,
+    "tags": {
+      "addr:city": "West Hollywood",
+      "addr:housenumber": "8911",
+      "addr:postcode": "90069",
+      "addr:state": "CA",
+      "addr:street": "West Sunset Boulevard",
+      "amenity": "pub",
+      "name": "Rock & Reilley's Irish Pub",
+      "opening_hours": "Mo-Fr 11:30+, Sa 08:30+, Su 09:30+",
+      "outdoor_seating": "yes",
+      "source": "mapillary",
+      "website": "https://rockandreillys.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5141857649,
+    "lat": 34.1806281,
+    "lon": -118.3330643,
+    "tags": {
+      "amenity": "bar",
+      "check_date": "2025-10-09",
+      "name": "The Park"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5141868827,
+    "lat": 34.1583581,
+    "lon": -118.370049,
+    "tags": {
+      "addr:city": "North Hollywood",
+      "addr:housenumber": "4824",
+      "addr:postcode": "91601",
+      "addr:street": "Vineland Avenue",
+      "amenity": "bar",
+      "brewery": "various",
+      "min_age": "21",
+      "name": "Idle Hour",
+      "opening_hours": "Mo-Fr 15:00-02:00; Sa 13:00-02:00; Su 11:00-02:00",
+      "phone": "+1-323-831-0256",
+      "website": "https://www.idlehourbar.com/",
+      "wikimedia_commons": "File:Idle_Hour_Cafe_North_Hollywood_(vertical)_2015-02-15.jpg"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5167064027,
+    "lat": 34.0946222,
+    "lon": -118.3746245,
+    "tags": {
+      "addr:city": "West Hollywood",
+      "addr:housenumber": "8440",
+      "addr:postcode": "90069",
+      "addr:state": "CA",
+      "addr:street": "West Sunset Boulevard",
+      "amenity": "bar",
+      "name": "Skybar",
+      "opening_hours": "Mo-Su 11:00-02:00",
+      "operator": "Mondrian Los Angeles Hotel",
+      "phone": "+1-323-848-6025",
+      "source": "mapillary",
+      "website": "https://www.morganshotelgroup.com/mondrian/mondrian-los-angeles/eat-drink/skybar"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5207270058,
+    "lat": 34.0835426,
+    "lon": -118.3853057,
+    "tags": {
+      "addr:city": "West Hollywood",
+      "addr:housenumber": "696",
+      "addr:postcode": "90069",
+      "addr:state": "CA",
+      "addr:street": "North Robertson Boulevard",
+      "amenity": "nightclub",
+      "email": "abbey@theabbeyweho.com",
+      "name": "The Chapel at The Abbey",
+      "phone": "+1-310-289-8410",
+      "website": "https://www.theabbeyweho.com/thechapel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5207270063,
+    "lat": 34.0840542,
+    "lon": -118.3848702,
+    "tags": {
+      "addr:city": "West Hollywood",
+      "addr:housenumber": "8932",
+      "addr:postcode": "90069",
+      "addr:state": "CA",
+      "addr:street": "Santa Monica Boulevard",
+      "amenity": "bar",
+      "name": "Tom Tom Bar",
+      "phone": "+1-310-360-0963",
+      "source": "mapillary",
+      "website": "https://tomtombar.la/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5207270080,
+    "lat": 34.0845472,
+    "lon": -118.3841399,
+    "tags": {
+      "addr:city": "West Hollywood",
+      "addr:housenumber": "8900",
+      "addr:postcode": "90069",
+      "addr:state": "CA",
+      "addr:street": "Santa Monica Boulevard",
+      "amenity": "bar",
+      "lgbtq": "primary",
+      "name": "Rocco’s",
+      "opening_hours": "Mo-Su 12:00-02:00",
+      "phone": "+-1424-343-0123",
+      "website": "https://www.roccosweho.com/",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5207270096,
+    "lat": 34.0843661,
+    "lon": -118.3853217,
+    "tags": {
+      "addr:city": "West Hollywood",
+      "addr:housenumber": "8939",
+      "addr:postcode": "90069",
+      "addr:state": "CA",
+      "addr:street": "Santa Monica Boulevard",
+      "amenity": "bar",
+      "lgbtq": "primary",
+      "name": "The Bayou",
+      "opening_hours": "Mo-Su 16:00-02:00",
+      "phone": "+1-310-273-3303",
+      "source": "mapillary",
+      "website": "https://www.thebayouweho.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5246350527,
+    "lat": 34.0870816,
+    "lon": -118.3813879,
+    "tags": {
+      "addr:city": "West Hollywood",
+      "addr:housenumber": "8737",
+      "addr:postcode": "90069",
+      "addr:state": "CA",
+      "addr:street": "Santa Monica Boulevard",
+      "amenity": "bar",
+      "name": "Schmitty's",
+      "opening_hours": "Mo-Fr 16:00-02:00, Sa-Su 10:00-02:00",
+      "phone": "+1-310-659-2004",
+      "source": "mapillary",
+      "website": "https://www.schmittyswesthollywood.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5248240248,
+    "lat": 34.0944572,
+    "lon": -118.127942,
+    "tags": {
+      "addr:city": "Alhambra",
+      "addr:housenumber": "100",
+      "addr:postcode": "91801",
+      "addr:state": "CA",
+      "addr:street": "West Main Street",
+      "amenity": "pub",
+      "check_date": "2025-10-15",
+      "contact:facebook": "https://www.facebook.com/38degreesla/",
+      "contact:instagram": "https://www.instagram.com/38degreesla",
+      "contact:phone": "+1-626-282-2038",
+      "contact:website": "https://www.38degreesalehouse.com/",
+      "contact:yelp": "https://www.yelp.com/biz/38-degrees-ale-house-and-grill-alhambra",
+      "email": "Brian@38degreesalehouse.com",
+      "name": "38 Degrees Ale House & Grill",
+      "opening_hours": "Mo,Su 12:00-21:00; Tu-Th 12:00-22:00; Fr-Sa 12:00-23:00"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5308846421,
+    "lat": 34.0144044,
+    "lon": -118.4978552,
+    "tags": {
+      "addr:city": "Santa Monica",
+      "addr:housenumber": "109",
+      "addr:postcode": "90401",
+      "addr:state": "CA",
+      "addr:street": "Santa Monica Boulevard",
+      "amenity": "bar",
+      "check_date:opening_hours": "2024-07-20",
+      "name": "Bar Monette",
+      "opening_hours:signed": "no"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5396021621,
+    "lat": 34.1010035,
+    "lon": -118.3359353,
+    "tags": {
+      "amenity": "bar",
+      "name": "Sound Nightclub"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5436448731,
+    "lat": 34.1083467,
+    "lon": -118.2715334,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "2810",
+      "addr:postcode": "90027",
+      "addr:state": "CA",
+      "addr:street": "Hyperion Avenue",
+      "amenity": "bar",
+      "name": "Tenants of the Trees",
+      "opening_hours": "Mo-Sa 19:00-02:00; Su 17:00-23:00",
+      "phone": "+1-323-284-8631",
+      "website": "https://tenantsofthetrees.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5436455933,
+    "lat": 34.1060181,
+    "lon": -118.2728052,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "2611",
+      "addr:postcode": "90027",
+      "addr:state": "CA",
+      "addr:street": "Hyperion Avenue",
+      "amenity": "bar",
+      "name": "The Friend",
+      "opening_hours": "Mo-Sa 19:00-02:00; Su 19:00-00:00",
+      "phone": "+1-323-522-6835",
+      "website": "https://www.thefriendbar.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5436501391,
+    "lat": 34.1252715,
+    "lon": -118.2647157,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "3000",
+      "addr:postcode": "90039",
+      "addr:state": "CA",
+      "addr:street": "Los Feliz Boulevard",
+      "amenity": "bar",
+      "name": "The Flight Low",
+      "opening_hours": "Mo-Su 16:00-02:00",
+      "phone": "+1-323-644-0444"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5436514624,
+    "lat": 34.1236129,
+    "lon": -118.2679451,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "3172",
+      "addr:postcode": "90039",
+      "addr:state": "CA",
+      "addr:street": "Los Feliz Boulevard",
+      "amenity": "bar",
+      "name": "Bigfoot Lodge",
+      "opening_hours": "Mo-Su 17:00-02:00",
+      "phone": "+1-323-662-9227",
+      "website": "https://www.instagram.com/bigfootwest/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5436538080,
+    "lat": 34.0929435,
+    "lon": -118.2814474,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "1087",
+      "addr:postcode": "90029",
+      "addr:state": "CA",
+      "addr:street": "Manzanita Street",
+      "amenity": "bar",
+      "brewery": "various",
+      "check_date": "2024-09-30",
+      "name": "4100 Bar",
+      "opening_hours": "Mo-We 20:00-02:00; Th-Su 18:00-02:00",
+      "phone": "+1-323-666-4460",
+      "website": "https://www.4100bar.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5451344729,
+    "lat": 34.0483579,
+    "lon": -118.2477353,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:country": "US",
+      "addr:housenumber": "118",
+      "addr:state": "CA",
+      "addr:street": "West 4th Street",
+      "amenity": "bar",
+      "name": "Bar Ama",
+      "website": "http://www.bar-ama.com"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5453015517,
+    "lat": 34.0836919,
+    "lon": -118.2737845,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "2939",
+      "addr:postcode": "90026",
+      "addr:state": "CA",
+      "addr:street": "Sunset Boulevard",
+      "amenity": "bar",
+      "name": "The Thirsty Crow",
+      "opening_hours": "Mo-Sa 17:00-02:00; Su 14:00-02:00",
+      "phone": "+1-323-661-6007",
+      "website": "https://www.thirstycrowbar.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5453034257,
+    "lat": 34.0829347,
+    "lon": -118.2736459,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "2906",
+      "addr:postcode": "90026",
+      "addr:state": "CA",
+      "addr:street": "Sunset Boulevard",
+      "amenity": "bar",
+      "check_date": "2024-09-28",
+      "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.oXZl4dDAjU-GjAFFf8R6vQHaEK%26pid%3DApi&f=1&ipt=b2a62e0a592b744619f0135cf1da35f43b5cbb210a4359bc1e73c27af5f087e0&ipo=images",
+      "name": "Silverlake Lounge",
+      "opening_hours": "18:00-01:00",
+      "phone": "+1-323-663-9636",
+      "website": "https://www.thesilverlakelounge.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5466079442,
+    "lat": 34.0459946,
+    "lon": -118.2513244,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:country": "US",
+      "addr:housenumber": "206",
+      "addr:postcode": "90014",
+      "addr:state": "CA",
+      "addr:street": "West 6th Street",
+      "amenity": "pub",
+      "level": "-1",
+      "name": "Rhythm Room"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5492354091,
+    "lat": 34.0211038,
+    "lon": -118.466132,
+    "tags": {
+      "addr:city": "Santa Monica",
+      "addr:housenumber": "2310",
+      "addr:postcode": "90405",
+      "addr:state": "CA",
+      "addr:street": "Pico Boulevard",
+      "amenity": "bar",
+      "name": "The Daily Pint",
+      "opening_hours": "Mo-Fr 14:00-02:00; Sa-Su 11:00-02:00",
+      "panoramax:0": "819eeb6e-7802-4b9e-a1f4-17af69989ceb",
+      "phone": "+1-310-450-7631",
+      "website": "https://thedailypint.net/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5512810084,
+    "lat": 34.1811332,
+    "lon": -118.3088605,
+    "tags": {
+      "addr:housenumber": "114",
+      "addr:postcode": "91502",
+      "addr:street": "North San Fernando Boulevard",
+      "amenity": "bar",
+      "check_date": "2023-03-31",
+      "cuisine": "balkan;mediterranean",
+      "name": "Terrace"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5512810094,
+    "lat": 34.1813289,
+    "lon": -118.3095655,
+    "tags": {
+      "amenity": "bar",
+      "name": "Fantasia Bar"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5512816202,
+    "lat": 34.1806488,
+    "lon": -118.3081318,
+    "tags": {
+      "addr:city": "Burbank",
+      "addr:housenumber": "150",
+      "addr:postcode": "91502",
+      "addr:state": "CA",
+      "addr:street": "South San Fernando Boulevard",
+      "addr:unit": "40",
+      "amenity": "pub",
+      "brewery": "various",
+      "check_date": "2024-03-31",
+      "name": "Story Tavern",
+      "opening_hours": "we-fr 17:00-22:00; sa-su 12:00-22:00",
+      "payment:cash": "yes",
+      "payment:debit_cards": "yes",
+      "phone": "+1-818-567-4200",
+      "website": "https://www.storytavernburbank.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5567714035,
+    "lat": 34.0272278,
+    "lon": -118.2877886,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "1146",
+      "addr:postcode": "90007",
+      "addr:state": "CA",
+      "addr:street": "West 30th Street",
+      "amenity": "bar",
+      "brewery": "guinness;Crispy_Boys",
+      "name": "The Pearl",
+      "opening_hours": "24/7",
+      "operator": "USNR",
+      "outdoor_seating": "yes",
+      "smoking": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5596276321,
+    "lat": 34.0920862,
+    "lon": -118.3094112,
+    "tags": {
+      "addr:housenumber": "1159",
+      "addr:postcode": "90039",
+      "addr:street": "Western Avenue",
+      "amenity": "bar",
+      "name": "la descarga",
+      "opening_hours": "Tu-Sa 20:00-02:00"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5615949714,
+    "lat": 34.0448078,
+    "lon": -118.2518604,
+    "tags": {
+      "amenity": "nightclub",
+      "name": "The Reserve"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5644457037,
+    "lat": 34.0821538,
+    "lon": -118.3767682,
+    "tags": {
+      "amenity": "bar",
+      "name": "L.P."
+    }
+  },
+  {
+    "type": "node",
+    "id": 5706722632,
+    "lat": 34.0657422,
+    "lon": -118.233389,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "1220",
+      "addr:postcode": "90012",
+      "addr:state": "CA",
+      "addr:street": "North Spring Street",
+      "amenity": "pub",
+      "brewery": "yes",
+      "email": "main@hpb.la",
+      "microbrewery": "yes",
+      "name": "Highland Park Brewery Chinatown",
+      "opening_hours": "Mo-Th 16:00-23:00; Sa 12:00-24:00; Su 12:00-23:00",
+      "outdoor_seating": "yes",
+      "phone": "+1 213 878-9017",
+      "website": "https://hpb.la"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5879660376,
+    "lat": 34.09936,
+    "lon": -118.2594479,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "2375",
+      "addr:postcode": "90039",
+      "addr:state": "CA",
+      "addr:street": "Glendale Boulevard",
+      "amenity": "bar",
+      "name": "Cha Cha Lounge",
+      "opening_hours": "Mo-Su 17:00-02:00",
+      "outdoor_seating": "no",
+      "phone": "+1-323-660-7595",
+      "website": "https://chachalounge.com/losangeles"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5908815773,
+    "lat": 34.0704496,
+    "lon": -118.292005,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "191",
+      "addr:postcode": "90004",
+      "addr:state": "CA",
+      "addr:street": "South Vermont Avenue",
+      "amenity": "bar",
+      "description": "'Feature' should be Karoke, but that type does not exist.",
+      "name": "Vermont Karaoke and Billiards",
+      "opening_hours": "Mo-Th 14:00-02:00, Fr-Sa 14:00-04:00, Su 14:00-02:00",
+      "outdoor_seating": "no",
+      "phone": "+1-213-385-3337"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5919896368,
+    "lat": 34.0453545,
+    "lon": -118.2512654,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "618",
+      "addr:postcode": "90014",
+      "addr:state": "CA",
+      "addr:street": "South Spring Street",
+      "amenity": "nightclub",
+      "name": "Exchange LA",
+      "phone": "+1-213-627-8070",
+      "website": "https://exchangela.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5921263660,
+    "lat": 34.0905978,
+    "lon": -118.3125671,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "5632",
+      "addr:postcode": "90038",
+      "addr:state": "CA",
+      "addr:street": "Santa Monica Boulevard",
+      "amenity": "bar",
+      "email": "hotelinfo@gold-diggers.com",
+      "name": "Gold Diggers",
+      "opening_hours": "17:00-02:00",
+      "phone": "+1-323-610-6972",
+      "website": "https://gold-diggers.com/",
+      "wikidata": "Q63457301"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5960175000,
+    "lat": 34.0634433,
+    "lon": -118.300716,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "3612",
+      "addr:postcode": "90020",
+      "addr:state": "CA",
+      "addr:street": "West 6th Street",
+      "amenity": "bar",
+      "name": "The Normandie Club",
+      "opening_hours": "Mo-Su 18:00-02:00",
+      "outdoor_seating": "no",
+      "phone": "+1-213-263-2709",
+      "smoking": "no",
+      "website": "https://www.thenormandieclub.com"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5965553971,
+    "lat": 34.0344566,
+    "lon": -118.2325798,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "1936",
+      "addr:postcode": "90021",
+      "addr:state": "CA",
+      "addr:street": "East 7th Street",
+      "amenity": "bar",
+      "description": "Also known as E.R.B.",
+      "email": "hello@erbla.com",
+      "name": "Everson Royce Bar",
+      "opening_hours": "Mo-Th 17:00-02:00; Fr 16:00-02:00; Sa 17:00-02:00; Su 14:00-24:00",
+      "outdoor_seating": "yes",
+      "payment:cash": "yes",
+      "payment:credit_cards": "yes",
+      "phone": "+1-213-335-6166",
+      "website": "https://rbla.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6045035789,
+    "lat": 34.0242828,
+    "lon": -118.2841064,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "3201",
+      "addr:postcode": "90007",
+      "addr:state": "CA",
+      "addr:street": "Hoover Street",
+      "addr:unit": "1810",
+      "amenity": "bar",
+      "food": "yes",
+      "name": "Rock & Reilly's",
+      "opening_hours": "Mo-Su 10:00-26:00",
+      "outdoor_seating": "yes",
+      "phone": "+1-213-536-5584",
+      "smoking": "no"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6045038065,
+    "lat": 34.0256314,
+    "lon": -118.2773956,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "2902",
+      "addr:postcode": "90007",
+      "addr:state": "CA",
+      "addr:street": "Figueroa Street",
+      "amenity": "bar",
+      "food": "yes",
+      "name": "901 Bar & Grill",
+      "opening_hours": "Mo-Su 11:30-02:00",
+      "outdoor_seating": "no"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6107947447,
+    "lat": 34.0318667,
+    "lon": -118.482238,
+    "tags": {
+      "addr:city": "Santa Monica",
+      "addr:housenumber": "2030",
+      "addr:postcode": "90403",
+      "addr:state": "CA",
+      "addr:street": "Wilshire Boulevard",
+      "amenity": "bar",
+      "email": "info@thegaslite.com",
+      "name": "The Gaslite",
+      "opening_hours": "Mo-Su 16:00-26:00",
+      "phone": "310-829-2382",
+      "website": "https://thegaslite.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6109915123,
+    "lat": 34.1019569,
+    "lon": -118.3014699,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "5125",
+      "addr:postcode": "90027",
+      "addr:state": "CA",
+      "addr:street": "Hollywood Boulevard",
+      "amenity": "bar",
+      "email": "TABULARASABAR@GMAIL.COM",
+      "name": "Tabula Rasa Bar",
+      "opening_hours": "Mo-Th 17:00-01:00; Fr-Sa 14:00-02:00; Su 14:00-01:00",
+      "outdoor_seating": "no",
+      "smoking": "no",
+      "website": "https://www.tabularasabar.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6171102185,
+    "lat": 34.0242093,
+    "lon": -118.4860858,
+    "tags": {
+      "addr:housenumber": "1348",
+      "addr:postcode": "90404",
+      "addr:street": "14th Street",
+      "amenity": "bar",
+      "name": "The Chestnut Club"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6171102186,
+    "lat": 34.0934892,
+    "lon": -118.3268614,
+    "tags": {
+      "addr:housenumber": "1233",
+      "addr:postcode": "90038",
+      "addr:street": "Vine Street",
+      "amenity": "bar",
+      "name": "Sassafras Saloon",
+      "website": "https://www.sassafrassaloon.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6287726385,
+    "lat": 34.0499384,
+    "lon": -118.2598612,
+    "tags": {
+      "addr:housenumber": "900",
+      "addr:street": "Wilshire Boulevard",
+      "amenity": "bar",
+      "name": "Spire73"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6300624871,
+    "lat": 34.0996297,
+    "lon": -118.3314153,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "6500",
+      "addr:street": "Selma Avenue",
+      "addr:zip": "90028",
+      "amenity": "bar",
+      "name": "Mama's rooftop",
+      "website": "https://www.mamashelter.com/en/los-angeles/restaurants/rooftop"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6405383844,
+    "lat": 34.1021439,
+    "lon": -118.3385447,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:country": "US",
+      "addr:housenumber": "1714",
+      "addr:state": "CA",
+      "addr:street": "Highland Avenue",
+      "amenity": "bar",
+      "entrance": "yes",
+      "name": "Power House",
+      "opening_hours": "Mo-Su 16:00-02:00",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6422124318,
+    "lat": 34.115625,
+    "lon": -118.1563771,
+    "tags": {
+      "addr:city": "South Pasadena",
+      "addr:housenumber": "1019",
+      "addr:postcode": "91030",
+      "addr:state": "CA",
+      "addr:street": "Mission Street",
+      "amenity": "bar",
+      "name": "Aro Latin"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6466088479,
+    "lat": 34.0439955,
+    "lon": -118.265476,
+    "tags": {
+      "amenity": "pub",
+      "name": "Tom's Watch Bar"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6481578311,
+    "lat": 34.0372109,
+    "lon": -118.2323622,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "634",
+      "addr:postcode": "90021",
+      "addr:state": "CA",
+      "addr:street": "Mateo Street",
+      "amenity": "bar",
+      "name": "Two Bit Circus"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6486195540,
+    "lat": 34.0454561,
+    "lon": -118.237501,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:country": "US",
+      "addr:housenumber": "707",
+      "addr:postcode": "90013",
+      "addr:state": "CA",
+      "addr:street": "East 4th Place",
+      "amenity": "bar",
+      "name": "EightyTwo"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6486195544,
+    "lat": 34.0498331,
+    "lon": -118.2493274,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "357",
+      "addr:postcode": "90013",
+      "addr:state": "CA",
+      "addr:street": "South Broadway",
+      "amenity": "bar",
+      "happy_hours": "Tu-Sa 18:00-21:00",
+      "indoor_seating": "yes",
+      "level": "1",
+      "lgbtq": "primary",
+      "lgbtq:men": "primary",
+      "name": "Precinct DTLA",
+      "opening_hours": "Tu-Sa 18:00-02:00; Su 11:30-02:00",
+      "phone": "+1 213-232-4666",
+      "website": "https://precinctdtla.com"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6486288335,
+    "lat": 34.044836,
+    "lon": -118.2490136,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "131",
+      "addr:postcode": "90014",
+      "addr:state": "CA",
+      "addr:street": "East 6th Street",
+      "amenity": "bar",
+      "name": "Redline"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6486288336,
+    "lat": 34.044946,
+    "lon": -118.256277,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "417",
+      "addr:postcode": "90014",
+      "addr:state": "CA",
+      "addr:street": "West 8th Street",
+      "amenity": "bar",
+      "name": "Golden Gopher"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6486288337,
+    "lat": 34.0471713,
+    "lon": -118.2471951,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:country": "US",
+      "addr:housenumber": "117",
+      "addr:postcode": "90013",
+      "addr:state": "CA",
+      "addr:street": "Winston Street",
+      "amenity": "bar",
+      "name": "The Lash"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6486352170,
+    "lat": 34.0555803,
+    "lon": -118.2366121,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "800",
+      "addr:postcode": "90012",
+      "addr:state": "CA",
+      "addr:street": "North Alameda Street",
+      "amenity": "pub",
+      "name": "Homebound Brewhaus",
+      "toilets": "yes",
+      "website": "https://www.homeboundbrewhaus.com/",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6488926470,
+    "lat": 34.0443082,
+    "lon": -118.2323651,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "300",
+      "addr:postcode": "90013",
+      "addr:state": "CA",
+      "addr:street": "Santa Fe Avenue",
+      "addr:unit": "n",
+      "amenity": "bar",
+      "name": "Here & Now Cocktail Bar"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6488926471,
+    "lat": 34.0453411,
+    "lon": -118.2353397,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "811",
+      "addr:postcode": "90013",
+      "addr:state": "CA",
+      "addr:street": "Traction Avenue",
+      "amenity": "bar",
+      "name": "Pali Wine Co."
+    }
+  },
+  {
+    "type": "node",
+    "id": 6585413182,
+    "lat": 34.1453686,
+    "lon": -118.1491142,
+    "tags": {
+      "addr:city": "Pasadena",
+      "addr:housenumber": "17",
+      "addr:postcode": "91105",
+      "addr:state": "CA",
+      "addr:street": "South Raymond Avenue",
+      "amenity": "pub",
+      "branch": "Old Town",
+      "check_date": "2025-11-02",
+      "contact:yelp": "https://www.yelp.com/biz/lucky-baldwins-pub-pasadena-3",
+      "name": "Lucky Baldwins Pub",
+      "opening_hours": "09:00-01:30",
+      "phone": "+1 626-795-0652",
+      "website": "https://luckybaldwins.com/old-town/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6587552287,
+    "lat": 34.0777328,
+    "lon": -118.2601037,
+    "tags": {
+      "amenity": "nightclub",
+      "name": "Echo",
+      "wikidata": "Q7731483"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6599923976,
+    "lat": 34.0780015,
+    "lon": -118.3763536,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "370",
+      "addr:postcode": "90048",
+      "addr:state": "CA",
+      "addr:street": "North La Cienega Boulevard",
+      "amenity": "bar",
+      "name": "The Roger Room",
+      "phone": "+1-310-854-1300",
+      "website": "http://www.therogerroom.com"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6600055249,
+    "lat": 34.0152529,
+    "lon": -118.49904,
+    "tags": {
+      "addr:city": "Santa Monica",
+      "addr:floor": "PH",
+      "addr:housenumber": "1301",
+      "addr:postcode": "90401",
+      "addr:state": "CA",
+      "addr:street": "Ocean Avenue",
+      "amenity": "bar",
+      "check_date": "2024-02-27",
+      "level": "7",
+      "name": "The Coco Club",
+      "payment:cash": "yes",
+      "payment:credit_cards": "yes",
+      "payment:debit_cards": "yes",
+      "phone": "+1-310-394-2791",
+      "website": "https://www.shangrila-hotel.com/dining.html",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6600313104,
+    "lat": 34.0194549,
+    "lon": -118.4935844,
+    "tags": {
+      "addr:city": "Santa Monica",
+      "addr:housenumber": "1314",
+      "addr:postcode": "90401",
+      "addr:state": "CA",
+      "addr:street": "7th Street",
+      "amenity": "bar",
+      "check_date": "2024-03-27",
+      "name": "Esters Wine Shop & Bar",
+      "opening_hours": "Mo-Th 16:00-22:00; Fr,Sa 12:00-23:00,12:00-21:00",
+      "phone": "+1-310-899-6900",
+      "website": "https://www.esterswineshop.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6622714854,
+    "lat": 34.0133081,
+    "lon": -118.4960365,
+    "tags": {
+      "addr:city": "Santa Monica",
+      "addr:housenumber": "119",
+      "addr:postcode": "90401",
+      "addr:state": "CA",
+      "addr:street": "Broadway",
+      "amenity": "pub",
+      "name": "The Craftsman Bar and Kitchen",
+      "phone": "+1-310-573-8426",
+      "website": "https://thecraftsmanbar.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6622950256,
+    "lat": 34.049667,
+    "lon": -118.2581853,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "811",
+      "addr:postcode": "90017",
+      "addr:state": "CA",
+      "addr:street": "Wilshire Boulevard",
+      "addr:unit": "21st Floor",
+      "amenity": "bar",
+      "name": "Elevate Lounge",
+      "phone": "+1-213-623-7100",
+      "website": "http://www.elevatelounge.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6655857386,
+    "lat": 34.1002356,
+    "lon": -118.324029,
+    "tags": {
+      "addr:housenumber": "1611",
+      "addr:street": "El Centro Avenue",
+      "amenity": "bar",
+      "name": "Good Times at Davey Wayne's",
+      "not:brand:wikidata": "Q5583024"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6765453950,
+    "lat": 34.151317,
+    "lon": -118.2552723,
+    "tags": {
+      "amenity": "bar",
+      "name": "JAX Bar & Grill",
+      "outdoor_seating": "no"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6810621785,
+    "lat": 34.0447111,
+    "lon": -118.2565088,
+    "tags": {
+      "amenity": "bar",
+      "name": "broken shaker"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6835821248,
+    "lat": 34.0509541,
+    "lon": -118.2494168,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "317",
+      "addr:postcode": "90013",
+      "addr:state": "CA",
+      "addr:street": "South Broadway",
+      "amenity": "pub",
+      "branch": "Grand Central Market",
+      "check_date": "2023-11-16",
+      "microbrewery": "yes",
+      "name": "Golden Road Brewery",
+      "phone": "+1-213-628-3336",
+      "website": "https://www.goldenroad.la"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6858432227,
+    "lat": 34.1733841,
+    "lon": -118.3548338,
+    "tags": {
+      "amenity": "bar",
+      "name": "Champs Sports Bar"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6967916333,
+    "lat": 34.129672,
+    "lon": -118.21664,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "4680",
+      "addr:postcode": "90041",
+      "addr:state": "CA",
+      "addr:street": "Eagle Rock Boulevard",
+      "amenity": "bar",
+      "brewery": "yes",
+      "min_age": "21",
+      "name": "Walt's Bar",
+      "phone": "+1-323-739-6767"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6969879585,
+    "lat": 34.0822627,
+    "lon": -118.3769683,
+    "tags": {
+      "amenity": "bar",
+      "internet_access": "wlan",
+      "name": "Meleose Rooftop",
+      "name:en": "Melrose Rooftop movie theater"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6994358888,
+    "lat": 34.1025943,
+    "lon": -118.3324004,
+    "tags": {
+      "addr:housenumber": "1727",
+      "addr:street": "North Hudson Avenue",
+      "amenity": "bar",
+      "name": "No Vacancy"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7042338233,
+    "lat": 34.2650581,
+    "lon": -118.5186284,
+    "tags": {
+      "addr:housenumber": "17633",
+      "addr:street": "Chatsworth Street",
+      "amenity": "bar",
+      "name": "Oh Grady's"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7111313185,
+    "lat": 34.0440948,
+    "lon": -118.26335,
+    "tags": {
+      "amenity": "bar",
+      "name": "Caña"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7224286303,
+    "lat": 34.0548722,
+    "lon": -118.3833397,
+    "tags": {
+      "addr:housenumber": "8771",
+      "addr:postcode": "90035",
+      "addr:street": "West Pico Boulevard",
+      "amenity": "pub",
+      "cocktails": "yes",
+      "cuisine": "pub",
+      "diet:gluten_free": "limited",
+      "diet:vegan": "yes",
+      "drink:beer": "draught",
+      "drink:liquor": "yes",
+      "drink:wine": "yes",
+      "happy_hours": "Mo-We 16:00-19:00; Th-Fr 12:00-19:00; Sa 11:30-19:00",
+      "name": "Founders Ale House",
+      "opening_hours": "Mo-We 16:00-01:00; Th 12:00-01:00; Fr 12:00-01:45; Sa 11:30-01:45; Su 13:00-24:00",
+      "phone": "+1-424-777-0079",
+      "sport": "darts;kicker",
+      "website": "https://www.foundersalehouse.com"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7229098286,
+    "lat": 34.0334027,
+    "lon": -118.4427,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "11501",
+      "addr:postcode": "90064",
+      "addr:street": "West Pico Boulevard",
+      "amenity": "bar",
+      "name": "Rosegold Saloon",
+      "old_name": "San Francisco Saloon"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7276249456,
+    "lat": 34.2068661,
+    "lon": -118.2313869,
+    "tags": {
+      "amenity": "bar",
+      "name": "Wine Cave"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7276249459,
+    "lat": 34.2064323,
+    "lon": -118.2312259,
+    "tags": {
+      "amenity": "bar",
+      "name": "Thee Elbow Room"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8365286741,
+    "lat": 34.0094831,
+    "lon": -118.4130782,
+    "tags": {
+      "amenity": "bar",
+      "name": "Cozy Inn"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8372778394,
+    "lat": 34.0818178,
+    "lon": -118.4134477,
+    "tags": {
+      "amenity": "bar",
+      "name": "Bar Nineteen 12"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8385994261,
+    "lat": 34.0528019,
+    "lon": -118.2554085,
+    "tags": {
+      "amenity": "bar",
+      "name": "BonaVista Lounge"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8389693196,
+    "lat": 34.0610885,
+    "lon": -118.4456681,
+    "tags": {
+      "amenity": "pub",
+      "microbrewery": "yes",
+      "name": "The Broxton",
+      "opening_hours": "Mo-Th 11:00-22:00; Fr,Sa 11:00-24:00; Su 11:00-20:00"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8398392451,
+    "lat": 34.0477021,
+    "lon": -118.2495565,
+    "tags": {
+      "amenity": "nightclub",
+      "name": "The Crocker Club"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8409457121,
+    "lat": 34.0657509,
+    "lon": -118.2375604,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "475",
+      "addr:postcode": "90012",
+      "addr:state": "CA",
+      "addr:street": "Gin Ling Way",
+      "amenity": "bar",
+      "name": "General Lee's"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8462756059,
+    "lat": 34.0032598,
+    "lon": -118.4071408,
+    "tags": {
+      "amenity": "pub",
+      "microbrewery": "yes",
+      "name": "Harajuku Taproom"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8462756075,
+    "lat": 34.0078477,
+    "lon": -118.4123805,
+    "tags": {
+      "amenity": "pub",
+      "name": "Joxer Daly's"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8462936624,
+    "lat": 34.1210378,
+    "lon": -118.2038147,
+    "tags": {
+      "amenity": "bar",
+      "name": "The Hermosillo"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8470629497,
+    "lat": 34.1124671,
+    "lon": -118.3385469,
+    "tags": {
+      "amenity": "bar",
+      "name": "Ann’s Wine Bar"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8500945317,
+    "lat": 34.0277411,
+    "lon": -118.429181,
+    "tags": {
+      "amenity": "bar",
+      "name": "Banter Bar"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8569870511,
+    "lat": 34.0398263,
+    "lon": -118.4425012,
+    "tags": {
+      "amenity": "bar",
+      "karaoke": "yes",
+      "name": "Karaoke Bleu"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8600081889,
+    "lat": 34.0042755,
+    "lon": -118.4095393,
+    "tags": {
+      "amenity": "bar",
+      "bar": "hookah",
+      "check_date": "2024-02-26",
+      "name": "Blow Hookah Bar",
+      "outdoor_seating": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8756620417,
+    "lat": 34.0390205,
+    "lon": -118.4415548,
+    "tags": {
+      "amenity": "bar",
+      "karaoke": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8790183852,
+    "lat": 34.0247988,
+    "lon": -118.3941023,
+    "tags": {
+      "amenity": "pub",
+      "indoor_seating": "yes",
+      "name": "The Auld Fella",
+      "outdoor_seating": "yes",
+      "panoramax": "7a34754c-9977-4770-90e1-c1d8b18f24f1",
+      "pub": "irish"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8791075317,
+    "lat": 34.0457227,
+    "lon": -118.2357151,
+    "tags": {
+      "amenity": "bar",
+      "name": "Death & Co - Los Angeles"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8947033574,
+    "lat": 34.0304881,
+    "lon": -118.3805478,
+    "tags": {
+      "amenity": "bar",
+      "name": "El Alteño"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8950224298,
+    "lat": 34.2405696,
+    "lon": -118.5564681,
+    "tags": {
+      "addr:city": "Northridge",
+      "addr:postcode": "91324",
+      "addr:state": "CA",
+      "amenity": "bar",
+      "name": "Bar Louie"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8958963550,
+    "lat": 34.0254853,
+    "lon": -118.476763,
+    "tags": {
+      "addr:city": "Santa Monica",
+      "addr:housenumber": "1920",
+      "addr:postcode": "90404",
+      "addr:state": "CA",
+      "addr:street": "Colorado Avenue",
+      "addr:unit": "C",
+      "amenity": "pub",
+      "brewery": "yes",
+      "craft": "brewery",
+      "email": "info@santamonicabrewworks.com",
+      "microbrewery": "yes",
+      "name": "Santa Monica Brew Works",
+      "opening_hours": "Mo-Fr 17:00-22:30; Sa 12:00-22:00; Su 12:00-20:00",
+      "outdoor_seating": "yes",
+      "phone": "+1 310 828-7629",
+      "website": "https://www.santamonicabrewworks.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8968918703,
+    "lat": 34.0160095,
+    "lon": -118.49547,
+    "tags": {
+      "amenity": "pub",
+      "name": "Britannia"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8996713089,
+    "lat": 34.0155335,
+    "lon": -118.4131335,
+    "tags": {
+      "amenity": "bar",
+      "name": "Bigfoot West"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8996713090,
+    "lat": 34.0162827,
+    "lon": -118.4118434,
+    "tags": {
+      "amenity": "bar",
+      "name": "Oldfield's"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9046292293,
+    "lat": 34.0259521,
+    "lon": -118.457564,
+    "tags": {
+      "amenity": "music_venue",
+      "musical_instrument": "guitar",
+      "name": "McCabe's",
+      "panoramax": "62bcff14-544e-4d4b-9db7-ca681a2d2833",
+      "shop": "musical_instrument",
+      "wikidata": "Q6800066"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9098867401,
+    "lat": 34.0042113,
+    "lon": -118.4309057,
+    "tags": {
+      "addr:housenumber": "3817",
+      "addr:postcode": "90066",
+      "addr:street": "Grand View Boulevard",
+      "amenity": "pub",
+      "contact:facebook": "RasselbockLA",
+      "contact:instagram": "rasselbockla",
+      "cuisine": "german",
+      "name": "Rasselbock",
+      "opening_hours": "Mo-We 16:00-22:30; Th 16:00-23:00; Fr-Sa 12:00-23:00; Su 12:00-22:00",
+      "phone": "+1-310-439-2938",
+      "website": "https://www.rasselbockla.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9212925717,
+    "lat": 34.0156806,
+    "lon": -118.4945589,
+    "tags": {
+      "addr:housenumber": "1432",
+      "addr:postcode": "90401",
+      "addr:street": "4th Street",
+      "amenity": "bar",
+      "name": "Harvelle",
+      "opening_hours": "Mo-Su 20:00-02:00"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9280888348,
+    "lat": 34.0137786,
+    "lon": -118.4954605,
+    "tags": {
+      "amenity": "pub",
+      "name": "The Independence"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9280888351,
+    "lat": 34.0139954,
+    "lon": -118.4951977,
+    "tags": {
+      "amenity": "bar",
+      "name": "Lanea"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9324843232,
+    "lat": 34.0257601,
+    "lon": -118.3418926,
+    "tags": {
+      "amenity": "bar",
+      "diet:vegan": "yes",
+      "microbrewery": "yes",
+      "name": "Party Beer Co.",
+      "outdoor_seating": "yes",
+      "website": "https://www.partybeer.co"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9382717150,
+    "lat": 34.0449882,
+    "lon": -118.432502,
+    "tags": {
+      "amenity": "bar",
+      "name": "West End"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9451467965,
+    "lat": 34.1425977,
+    "lon": -118.4060703,
+    "tags": {
+      "amenity": "bar",
+      "lgbtq": "primary",
+      "name": "Seventy7 North"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9462840502,
+    "lat": 34.1017778,
+    "lon": -118.329066,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "6377",
+      "addr:postcode": "90028",
+      "addr:state": "CA",
+      "addr:street": "Hollywood Boulevard",
+      "amenity": "bar",
+      "min_age": "21",
+      "name": "Scum and Villainy Cantina",
+      "opening_hours": "18:00 - 00:00",
+      "phone": "+1-424-501-4229",
+      "theme": "sci-fi",
+      "website": "https://scumandvillainycantina.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9500000259,
+    "lat": 34.0923281,
+    "lon": -118.3384243,
+    "tags": {
+      "amenity": "nightclub",
+      "name": "Next Door Lounge"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9525315829,
+    "lat": 34.033796,
+    "lon": -118.37615,
+    "tags": {
+      "amenity": "bar",
+      "name": "Mandrake"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9576842812,
+    "lat": 34.0157356,
+    "lon": -118.49462,
+    "tags": {
+      "amenity": "pub",
+      "name": "West 4th and Jane"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9678486252,
+    "lat": 34.0490796,
+    "lon": -118.2591044,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "815",
+      "addr:postcode": "90017",
+      "addr:state": "CA",
+      "addr:street": "West 7th Street",
+      "amenity": "pub",
+      "check_date": "2025-07-13",
+      "name": "Dublin's Irish Whiskey Pub",
+      "opening_hours": "12:00-02:00",
+      "phone": "+1 213-905-8713",
+      "theme": "irish",
+      "website": "https://www.dublinson7th.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9709701261,
+    "lat": 34.2241356,
+    "lon": -118.3788299,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "11343",
+      "addr:street": "Penrose street",
+      "amenity": "bar",
+      "brewery": "yes",
+      "name": "La Vida Gentlemen's Club",
+      "opening_hours": "Mo-Su 12:00-04:00"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9742168232,
+    "lat": 34.0383643,
+    "lon": -118.441999,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "11301",
+      "addr:postcode": "90064",
+      "addr:state": "CA",
+      "addr:street": "West Olympic Boulevard",
+      "addr:unit": "#116-117",
+      "amenity": "bar",
+      "name": "7 Kingdoms",
+      "opening_hours": "Mo-Su 14:00-22:00",
+      "phone": "+1-424-317-0006",
+      "website": "https://7kingdomsbar.com"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9904601186,
+    "lat": 34.0257547,
+    "lon": -118.3940738,
+    "tags": {
+      "amenity": "nightclub",
+      "name": "Carbon"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9924941885,
+    "lat": 34.1604076,
+    "lon": -118.3722162,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "4923",
+      "addr:postcode": "91601",
+      "addr:state": "CA",
+      "addr:street": "Lankershim Boulevard",
+      "amenity": "bar",
+      "brewery": "various",
+      "description": "Swanky, relaxed lounge with cocktails & live music in an open 1970s-inspired interior.",
+      "name": "Skinny's Lounge",
+      "opening_hours": "Tu-Su 21:00-02:00",
+      "website": "https://skinnyslounge.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9941709439,
+    "lat": 34.0602937,
+    "lon": -118.344517,
+    "tags": {
+      "alt_name": "All Season Brewery",
+      "amenity": "pub",
+      "brewery": "yes",
+      "microbrewery": "yes",
+      "name": "All Season Brewing",
+      "outdoor_seating": "yes",
+      "website": "https://www.allseasonbrewing.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9949740787,
+    "lat": 34.0306971,
+    "lon": -118.4472046,
+    "tags": {
+      "alt_name": "Neat",
+      "amenity": "bar",
+      "name": "neat."
+    }
+  },
+  {
+    "type": "node",
+    "id": 9968370869,
+    "lat": 34.0244017,
+    "lon": -118.3948732,
+    "tags": {
+      "alt_name": "Seventy Seven Lounge",
+      "amenity": "bar",
+      "name": "Seventy7 Lounge",
+      "panoramax": "e436aa12-93c7-43f2-8891-455030d97cec"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9968370879,
+    "lat": 34.0250314,
+    "lon": -118.3940847,
+    "tags": {
+      "amenity": "bar",
+      "level": "1",
+      "name": "Bar Bohemien"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10000071460,
+    "lat": 34.0460369,
+    "lon": -118.450742,
+    "tags": {
+      "amenity": "pub",
+      "name": "The Nickel Mine"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10004676431,
+    "lat": 34.0280289,
+    "lon": -118.3881135,
+    "tags": {
+      "amenity": "pub",
+      "check_date": "2024-02-28",
+      "level": "0",
+      "microbrewery": "yes",
+      "name": "Los Angeles Ale Works",
+      "opening_hours": "Mo-Th 15:00-22:00, Fr,Sa 12:00-24:00, Su 12:00-22:00"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10043659526,
+    "lat": 34.0318278,
+    "lon": -118.2642817,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "1815",
+      "addr:postcode": "90015",
+      "addr:state": "CA",
+      "addr:street": "South Main Street",
+      "amenity": "music_venue",
+      "name": "Coaxial Arts Foundation",
+      "website": "https://coaxialarts.org/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10048784548,
+    "lat": 34.3813536,
+    "lon": -118.5292534,
+    "tags": {
+      "addr:city": "Newhall",
+      "addr:housenumber": "24480",
+      "addr:postcode": "91321",
+      "addr:state": "CA",
+      "addr:street": "Main Street",
+      "addr:unit": "140",
+      "amenity": "pub",
+      "name": "Maginn's Pub: Beer, Whiskey & Fine Food",
+      "opening_hours": "Fr 12:00-01:00, Sa 11:00-01:00, Su 11:00-20:00, Mo closed, Tu 00:00-22:00, We 00:00-22:00, Th 00:00-22:00"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10147926913,
+    "lat": 34.039414,
+    "lon": -118.4303955,
+    "tags": {
+      "amenity": "bar",
+      "name": "The Wellesbourne"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10234461258,
+    "lat": 34.0909142,
+    "lon": -118.3696564,
+    "tags": {
+      "addr:city": "West Hollywood",
+      "addr:housenumber": "8273",
+      "addr:postcode": "90046",
+      "addr:state": "CA",
+      "addr:street": "Santa Monica Boulevard",
+      "amenity": "bar",
+      "name": "Holy Water"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10276554624,
+    "lat": 34.0396746,
+    "lon": -118.4649283,
+    "tags": {
+      "amenity": "bar",
+      "name": "Mom's Bar"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10543794298,
+    "lat": 34.0246878,
+    "lon": -118.4600528,
+    "tags": {
+      "amenity": "bar",
+      "indoor_seating": "yes",
+      "name": "Weary Livers",
+      "outdoor_seating": "no"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10675391895,
+    "lat": 34.0847455,
+    "lon": -118.3846841,
+    "tags": {
+      "addr:city": "West Hollywood",
+      "addr:housenumber": "8919",
+      "addr:postcode": "90069",
+      "addr:state": "CA",
+      "addr:street": "Santa Monica Boulevard",
+      "amenity": "bar",
+      "min_age": "21",
+      "name": "Gym Bar WeHo",
+      "opening_hours": "Mo-Th 15:00-24:00; Fr 15:00-02:00; Sa 12:00-02:00; Su 10:00-24:00",
+      "phone": "+1-424-313-8202",
+      "website": "https://www.gymbarweho.com",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10733405406,
+    "lat": 34.1818887,
+    "lon": -118.312527,
+    "tags": {
+      "addr:housenumber": "102",
+      "addr:postcode": "91502",
+      "addr:street": "Magnolia Boulevard",
+      "amenity": "nightclub",
+      "check_date": "2023-03-31",
+      "contact:instagram": "flapperscomedy",
+      "contact:twitter": "FlappersComedy",
+      "name": "Flappers Comedy Club",
+      "opening_hours": "Tu-Fr 17:00-01:00; Sa 11:30-01:00; Su 10:00-01:00",
+      "outdoor_seating": "no",
+      "phone": "+1-818-845-9721",
+      "website": "https://www.flapperscomedy.com",
+      "wikidata": "Q30594232",
+      "wikipedia": "en:Flappers Comedy Club"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10776431605,
+    "lat": 34.1480878,
+    "lon": -118.2722384,
+    "tags": {
+      "addr:housenumber": "5200",
+      "addr:street": "San Fernando Road",
+      "amenity": "bar",
+      "name": "The San Fernando"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10815020808,
+    "lat": 34.1446855,
+    "lon": -118.2547313,
+    "tags": {
+      "addr:housenumber": "158",
+      "addr:street": "South Brand Boulevard",
+      "amenity": "bar",
+      "name": "Underdogs Sports Bar"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10858356651,
+    "lat": 34.0094152,
+    "lon": -118.4146503,
+    "tags": {
+      "amenity": "bar",
+      "name": "The Cinema"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10933394759,
+    "lat": 34.0610589,
+    "lon": -118.2989093,
+    "tags": {
+      "amenity": "bar",
+      "karaoke": "yes",
+      "name": "The Brass Monkey"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10938996374,
+    "lat": 34.0014804,
+    "lon": -118.4833359,
+    "tags": {
+      "amenity": "nightclub",
+      "name": "The Victorian",
+      "website": "https://www.thevictorian.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11036084429,
+    "lat": 34.2333158,
+    "lon": -118.5889155,
+    "tags": {
+      "addr:city": "Canoga Park",
+      "addr:housenumber": "8953",
+      "addr:postcode": "91304",
+      "addr:state": "CA",
+      "addr:street": "De Soto Avenue",
+      "amenity": "bar",
+      "name": "8ONE8 Brewing-Tasting Room",
+      "opening_hours": "Mo-We 17:00-23:00; Th 17:00-00:00; Fr-Sa 13:00-01:00; Su 13:00-23:00"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11056107805,
+    "lat": 34.1423537,
+    "lon": -118.1427107,
+    "tags": {
+      "addr:housenumber": "200",
+      "addr:postcode": "91101",
+      "addr:street": "South Euclid Avenue",
+      "amenity": "nightclub",
+      "email": "danxe@lindygroove.com",
+      "name": "Lindygroove",
+      "opening_hours": "Th 18:45-00:00",
+      "website": "https://www.lindygroove.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11077192280,
+    "lat": 34.0446735,
+    "lon": -118.2653549,
+    "tags": {
+      "amenity": "nightclub",
+      "name": "The Novo"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11158289406,
+    "lat": 34.1722935,
+    "lon": -118.4322044,
+    "tags": {
+      "addr:housenumber": "13721",
+      "addr:postcode": "91401",
+      "addr:street": "Burbank Boulevard",
+      "amenity": "bar",
+      "cuisine": "american",
+      "name": "Ireland's 32",
+      "opening_hours": "Tu-Fr 14:00-02:00; Sa 16:00-02:00; Su 12:00-22:00",
+      "website": "https://irelands32.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11159391812,
+    "lat": 34.0878509,
+    "lon": -118.2867299,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "904",
+      "addr:postcode": "90029",
+      "addr:state": "CA",
+      "addr:street": "Virgil Avenue",
+      "amenity": "bar",
+      "name": "Alma's Cider and Beer"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11159397217,
+    "lat": 34.0873311,
+    "lon": -118.2867138,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "864",
+      "addr:postcode": "90029",
+      "addr:state": "CA",
+      "addr:street": "Virgil Avenue",
+      "amenity": "bar",
+      "name": "Bolita"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11242628272,
+    "lat": 34.109755,
+    "lon": -118.1933767,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "5635",
+      "addr:postcode": "90042",
+      "addr:state": "CA",
+      "addr:street": "N Figueroa Street",
+      "amenity": "bar",
+      "ele": "168.5",
+      "lacounty:ain": "5468033021",
+      "lacounty:bld_id": "503136862378",
+      "name": "Good Housekeeping HLP",
+      "opening_hours": "Su-Th 07:00-24:00; Fr,Sa 07:00-02:00",
+      "start_date": "1928",
+      "website": "http://www.goodhousekeepinghlp.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11242628273,
+    "lat": 34.1091965,
+    "lon": -118.1939586,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "5607",
+      "addr:postcode": "90042",
+      "addr:state": "CA",
+      "addr:street": "N Figueroa Street",
+      "amenity": "bar",
+      "name": "Gold Line"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11244417388,
+    "lat": 34.1101119,
+    "lon": -118.1925784,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "5715",
+      "addr:postcode": "90042",
+      "addr:state": "CA",
+      "addr:street": "N Figueroa Street",
+      "amenity": "bar",
+      "name": "Blind Barber"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11290774914,
+    "lat": 34.0742216,
+    "lon": -118.2523164,
+    "tags": {
+      "amenity": "pub",
+      "name": "The Douglas",
+      "outdoor_seating": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11378679120,
+    "lat": 34.0763098,
+    "lon": -118.2567329,
+    "tags": {
+      "addr:housenumber": "1540",
+      "addr:postcode": "90026",
+      "addr:street": "Sunset Boulevard",
+      "amenity": "bar",
+      "brewery": "various",
+      "check_date": "2024-09-27",
+      "description": "Lowboy is the standard for neighborhood hospitality in Echo Park. Creating community within our community through solid drinks and genuine fun. No themes, theatrics or gimmicks; just good times, good drinks and good company.",
+      "email": "info@parkbars.com",
+      "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.ANb_TY6cFUUeLKKrahIYWwHaFj%26pid%3DApi&f=1&ipt=857f99470f4261362e52ef3c73b46476095ee9bc9651378f4faeae8acb92c5df&ipo=images",
+      "name": "Lowboy",
+      "opening_hours": "Mo-Th 16:00-01:00; Fr 16:00-02:00; Sa 12:00-14:00; Su 12:00-01:00",
+      "phone": "+1 213-266-8161",
+      "website": "https://lowboybar.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11391069621,
+    "lat": 34.0951709,
+    "lon": -118.2837283,
+    "tags": {
+      "amenity": "bar",
+      "name": "Drugstore Cowboy"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11609687508,
+    "lat": 34.1664718,
+    "lon": -118.5913116,
+    "tags": {
+      "addr:housenumber": "21010",
+      "addr:street": "Ventura Boulevard",
+      "amenity": "pub",
+      "check_date": "2025-08-21",
+      "name": "Pickwick Pub"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11609834958,
+    "lat": 34.1729712,
+    "lon": -118.5598622,
+    "tags": {
+      "amenity": "bar",
+      "name": "Fuego Bar and Grill"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11657341769,
+    "lat": 34.0446919,
+    "lon": -118.2585637,
+    "tags": {
+      "amenity": "bar",
+      "name": "Hanks Bar"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11657397169,
+    "lat": 34.0013135,
+    "lon": -118.4832635,
+    "tags": {
+      "amenity": "bar",
+      "name": "Basement Tavern"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11657468072,
+    "lat": 34.0921856,
+    "lon": -118.3775439,
+    "tags": {
+      "amenity": "bar",
+      "name": "Bar 1200"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11657472969,
+    "lat": 34.0146645,
+    "lon": -118.4935419,
+    "tags": {
+      "amenity": "pub",
+      "name": "Harvelle‘s"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11666044078,
+    "lat": 34.0393849,
+    "lon": -118.25883,
+    "tags": {
+      "amenity": "bar",
+      "name": "Dahlia"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11669809677,
+    "lat": 34.0405818,
+    "lon": -118.2673607,
+    "tags": {
+      "amenity": "pub",
+      "name": "33 Taps",
+      "website": "https://www.eatdrink33.com/location/downtown-la/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11679293222,
+    "lat": 34.086507,
+    "lon": -118.4461409,
+    "tags": {
+      "amenity": "bar",
+      "name": "Bar & Lounge",
+      "website": "https://www.dorchestercollection.com/los-angeles/hotel-bel-air/dining/bar-lounge"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11704746236,
+    "lat": 34.1392424,
+    "lon": -118.3542184,
+    "tags": {
+      "amenity": "pub",
+      "name": "Moe's Tavern",
+      "not:brand:wikidata": "Q6889938",
+      "website": "https://www.universalstudioshollywood.com/web/en/us/things-to-do/dining/moes-tavern/menu.html"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11722152052,
+    "lat": 34.1018931,
+    "lon": -118.3043117,
+    "tags": {
+      "addr:city": "Thai Town",
+      "addr:housenumber": "5221",
+      "addr:postcode": "90027",
+      "addr:state": "CA",
+      "addr:street": "Hollywood Boulevard",
+      "amenity": "bar",
+      "name": "Harvard & Stone Bar",
+      "opening_hours": "Mo-Su 20:00-02:00",
+      "phone": "+1-323-848-4016",
+      "website": "https://harvardandstone.com"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11725356369,
+    "lat": 34.1613004,
+    "lon": -118.2643894,
+    "tags": {
+      "addr:housenumber": "1114",
+      "addr:postcode": "91202",
+      "addr:street": "North Pacific Avenue",
+      "amenity": "bar",
+      "name": "Gold Rail Bar"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11789393827,
+    "lat": 34.0689256,
+    "lon": -118.292228,
+    "tags": {
+      "addr:housenumber": "3514",
+      "addr:postcode": "90020",
+      "addr:state": "CA",
+      "addr:street": "West 3rd Street",
+      "amenity": "bar",
+      "name": "Monte Carlo"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11789400400,
+    "lat": 34.0689052,
+    "lon": -118.2951054,
+    "tags": {
+      "amenity": "nightclub",
+      "name": "쉘부르"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11822603370,
+    "lat": 34.1306594,
+    "lon": -118.2612011,
+    "tags": {
+      "addr:housenumber": "4227",
+      "addr:postcode": "91204",
+      "addr:street": "Magnolia Avenue",
+      "amenity": "bar",
+      "name": "Glendale Tap"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11891879498,
+    "lat": 34.0477091,
+    "lon": -118.4633187,
+    "tags": {
+      "amenity": "pub",
+      "name": "The Auld Fella"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11903069869,
+    "lat": 34.1943437,
+    "lon": -118.5706441,
+    "tags": {
+      "addr:housenumber": "6816",
+      "addr:postcode": "91306",
+      "addr:street": "Winnetka Avenue",
+      "amenity": "nightclub",
+      "name": "The Candy Cat Too",
+      "opening_hours": "Tu-Sa 13:00-02:00; Su-Mo 16:00-02:00",
+      "phone": "+1-818-999-3187"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11970887709,
+    "lat": 34.0803313,
+    "lon": -118.2553629,
+    "tags": {
+      "amenity": "bar",
+      "name": "Tila"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12080927170,
+    "lat": 34.1017836,
+    "lon": -118.3321849,
+    "tags": {
+      "addr:housenumber": "1719",
+      "addr:postcode": "90028",
+      "addr:street": "North Hudson Avenue",
+      "amenity": "nightclub",
+      "name": "Black Rabbit Rose Magic"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12083845070,
+    "lat": 34.1611228,
+    "lon": -118.3725886,
+    "tags": {
+      "addr:city": "North Hollywood",
+      "addr:housenumber": "5013",
+      "addr:postcode": "91601",
+      "addr:state": "CA",
+      "addr:street": "Lankershim Boulevard",
+      "amenity": "bar",
+      "brewery": "various",
+      "min_age": "21",
+      "name": "Hop Merchants Bottle Shop and Taproom",
+      "opening_hours": "Mo-Th 14:00-23:00; Fr-Sa 14:00-00:00",
+      "website": "https://www.hop-merchants.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12083845369,
+    "lat": 34.1637955,
+    "lon": -118.3736814,
+    "tags": {
+      "addr:city": "North Hollywood",
+      "addr:housenumber": "5126",
+      "addr:postcode": "91601",
+      "addr:state": "CA",
+      "addr:street": "Lankershim Boulevard",
+      "amenity": "nightclub",
+      "description": "Cool watering hole featuring computer games, pinball machines & music from the 1980s & '90s.",
+      "name": "Player One",
+      "opening_hours": "Mo-Th 18:00-01:30; Fr 18:00-02:00; Sa 17:00-02:00; Su 17:00-01:30",
+      "phone": "+1-818-358-4451",
+      "website": "https://www.playeronearcadebar.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12109318506,
+    "lat": 34.0508975,
+    "lon": -118.2332154,
+    "tags": {
+      "amenity": "pub",
+      "craft": "brewery",
+      "name": "Boomtown Brewery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12121014096,
+    "lat": 34.1022591,
+    "lon": -118.2916414,
+    "tags": {
+      "addr:housenumber": "1714",
+      "addr:postcode": "90027",
+      "addr:street": "North Vermont Avenue",
+      "amenity": "pub",
+      "brewery": "various",
+      "check_date": "2024-10-01",
+      "description": "Hi Tops Los Feliz will feature Trivia Night, a monthly Lesbian Night, DJs spanning all sorts of genres, and other things to do alongside the Sports Game. Like Patios? Love Brunch? We got got you covered.",
+      "email": "info@hitopsbar.com",
+      "name": "Hi Tops Sports Bar",
+      "opening_hours": "Mo-We 12:00-24:00; Th-Sa 12:00-02:00; Su 10:00-22:00",
+      "phone": "+1 323-284-8799",
+      "website": "https://www.hitopsbar.com/",
+      "website:menu": "https://hitopsbar.com/los-feliz-menu/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12197869601,
+    "lat": 34.1743839,
+    "lon": -118.3269699,
+    "tags": {
+      "addr:housenumber": "1710",
+      "addr:postcode": "91506",
+      "addr:street": "West Magnolia Boulevard",
+      "amenity": "bar",
+      "brewery": "various",
+      "check_date": "2024-09-24",
+      "description": "We are offering patio dining, indoor dining, as well as to-go food, and some of the best Craft beer California has to offer.  As always we have a highly vegan menu, but with Non-Vegan options so all can enjoy.",
+      "name": "Tony's Darts Away",
+      "opening_hours": "Mo-Su 12:00-22:00",
+      "outdoor_seating": "yes",
+      "phone": "+1 818-253-1710",
+      "website": "https://www.tonysda.com"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12207977998,
+    "lat": 34.1864924,
+    "lon": -118.4121953,
+    "tags": {
+      "addr:city": "North Hollywood",
+      "addr:housenumber": "12808",
+      "addr:postcode": "91606",
+      "addr:state": "CA",
+      "addr:street": "Victory Boulevard",
+      "amenity": "bar",
+      "name": "Tonga Hut",
+      "opening_hours": "Su 00:00-01:00,14:00-24:00; Mo-Th 16:00-24:00; Fr 16:00-24:00; Sa 00:00-01:00,14:00-24:00"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12210051907,
+    "lat": 34.1686606,
+    "lon": -118.532822,
+    "tags": {
+      "amenity": "bar",
+      "name": "Maui Sugar Mill Saloon"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12249749416,
+    "lat": 34.0764443,
+    "lon": -118.3021691,
+    "tags": {
+      "addr:city": "Wilshire Center",
+      "addr:housenumber": "4289",
+      "addr:postcode": "90004",
+      "addr:state": "CA",
+      "addr:street": "Beverly Boulevard",
+      "amenity": "nightclub",
+      "name": "Xpress"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12366582001,
+    "lat": 34.0665232,
+    "lon": -118.2542208,
+    "tags": {
+      "amenity": "bar",
+      "name": "Thunderbolt"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12597004442,
+    "lat": 34.1012041,
+    "lon": -118.3416561,
+    "tags": {
+      "amenity": "bar",
+      "name": "The Lobby Bar"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12749136850,
+    "lat": 34.0497338,
+    "lon": -118.2493896,
+    "tags": {
+      "addr:housenumber": "361",
+      "addr:street": "South Broadway",
+      "amenity": "bar",
+      "name": "Kippered",
+      "opening_hours": "Th-Sa 17:00-24:00, Mo-We 17:00-22:00, Su 15:00-22:00"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12852392969,
+    "lat": 34.2853507,
+    "lon": -118.4396231,
+    "tags": {
+      "addr:city": "San Fernando",
+      "addr:housenumber": "1116",
+      "addr:postcode": "91340",
+      "addr:state": "CA",
+      "addr:street": "2nd Street",
+      "amenity": "pub",
+      "microbrewery": "yes",
+      "name": "Shadow Grove Brewing"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12870701812,
+    "lat": 34.145782,
+    "lon": -118.0004562,
+    "tags": {
+      "addr:city": "Monrovia",
+      "addr:housenumber": "108",
+      "addr:postcode": "91016",
+      "addr:state": "CA",
+      "addr:street": "East Colorado Boulevard",
+      "amenity": "bar",
+      "brewery": "hellus_pale_lager_germany;almanac_love_hazy_ipa_usa;menabrea_amber_it;menabrea_blonde_it",
+      "cuisine": "charcuterie;cicchetti",
+      "description": "The Saltner is a wine bar and restaurant.",
+      "name": "The Saltner Wine & Cicchetti",
+      "outdoor_seating": "yes",
+      "payment:american_express": "yes",
+      "payment:cash": "yes",
+      "payment:credit_cards": "yes",
+      "payment:debit_cards": "yes",
+      "payment:mastercard": "yes",
+      "payment:visa": "yes",
+      "phone": "+1-626-775-4025",
+      "website": "http://www.thesaltner.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12893870842,
+    "lat": 34.1529332,
+    "lon": -118.4598691,
+    "tags": {
+      "amenity": "bar",
+      "name": "Tipsy Cow"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13030785816,
+    "lat": 34.0238008,
+    "lon": -118.1809255,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "4148",
+      "addr:postcode": "90023",
+      "addr:state": "CA",
+      "addr:street": "Whittier Boulevard",
+      "amenity": "bar",
+      "min_age": "21",
+      "name": "Dos De Oro"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13032504755,
+    "lat": 34.1665032,
+    "lon": -118.5915275,
+    "tags": {
+      "addr:housenumber": "21020",
+      "addr:street": "Ventura Boulevard",
+      "amenity": "bar",
+      "check_date": "2025-08-21",
+      "name": "Paoli's Piano Bar"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13075001864,
+    "lat": 34.193686,
+    "lon": -118.554092,
+    "tags": {
+      "amenity": "bar",
+      "name": "Canby"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13095777246,
+    "lat": 34.0842864,
+    "lon": -118.3854084,
+    "tags": {
+      "addr:city": "West Hollywood",
+      "addr:housenumber": "8941",
+      "addr:postcode": "90069",
+      "addr:state": "CA",
+      "addr:street": "Santa Monica Boulevard",
+      "amenity": "bar",
+      "min_age": "21",
+      "name": "33 Taps",
+      "opening_hours": "Su 10:00-22:00, Mo-Th 12:00-23:00, Th 12:00-23:00, Fr-Sa 12:00-00:00"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13111339784,
+    "lat": 34.2054595,
+    "lon": -118.2271266,
+    "tags": {
+      "amenity": "pub",
+      "name": "Basin 141"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13115718805,
+    "lat": 34.0499406,
+    "lon": -118.2493081,
+    "tags": {
+      "addr:city": "Long Beach",
+      "addr:country": "US",
+      "addr:housenumber": "351",
+      "addr:postcode": "90013",
+      "addr:state": "CA",
+      "addr:street": "South Broadway",
+      "air_conditioning": "yes",
+      "amenity": "bar",
+      "contact:facebook": "https://www.facebook.com/thegraysonbar/",
+      "indoor_seating": "yes",
+      "level": "0",
+      "name": "The Grayson",
+      "opening_hours": "Mo-Su 17:00-02:00",
+      "toilets": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13115718814,
+    "lat": 34.0500099,
+    "lon": -118.2494117,
+    "tags": {
+      "addr:city": "Long Beach",
+      "addr:country": "US",
+      "addr:housenumber": "351",
+      "addr:postcode": "90013",
+      "addr:state": "CA",
+      "addr:street": "South Broadway",
+      "amenity": "nightclub",
+      "contact:facebook": "https://www.facebook.com/theslipperclutch",
+      "contact:instagram": "https://www.instagram.com/theslipperclutch",
+      "name": "Slipper Clutch",
+      "shop": "music",
+      "website": "https://www.theslipperclutch.com"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13115718817,
+    "lat": 34.0466569,
+    "lon": -118.2385087,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:country": "US",
+      "addr:housenumber": "428",
+      "addr:postcode": "90012",
+      "addr:state": "CA",
+      "addr:street": "East 2nd Street",
+      "air_conditioning": "yes",
+      "amenity": "bar",
+      "contact:instagram": "https://www.instagram.com/themermaidla",
+      "happy_hours": "Mo-Fr 18:00-20:00; Sa 16:00-18:00; Su all day",
+      "indoor_seating": "yes",
+      "name": "The Mermaid",
+      "toilets": "yes",
+      "toilets:access": "customers",
+      "website": "https://www.themermaid.la",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13198618867,
+    "lat": 34.1929862,
+    "lon": -118.5718399,
+    "tags": {
+      "amenity": "bar",
+      "brewery": "various",
+      "karaoke": "yes",
+      "min_age": "21",
+      "name": "Lane 33 Bar & Grill",
+      "opening_hours": "Su-Th 12:00-23:00; Fr-Sa 12:00-24:00"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13198713201,
+    "lat": 34.0693707,
+    "lon": -118.2919001,
+    "tags": {
+      "addr:housenumber": "239",
+      "addr:postcode": "90004",
+      "addr:street": "South Vermont Avenue",
+      "amenity": "bar",
+      "name": "Lock & Key"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13247181442,
+    "lat": 34.0219766,
+    "lon": -118.396634,
+    "tags": {
+      "amenity": "bar",
+      "name": "33 Taps",
+      "panoramax": "c5a3beae-8cd0-4f10-bfbe-b94738c6d6fd"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13306710992,
+    "lat": 34.048993,
+    "lon": -118.2450952,
+    "tags": {
+      "addr:city": "Los Angeles",
+      "addr:housenumber": "129",
+      "addr:postcode": "90013",
+      "addr:state": "CA",
+      "addr:street": "East 3rd Street",
+      "amenity": "bar",
+      "check_date": "2025-11-15",
+      "currency:XBT": "yes",
+      "name": "The Lexington Bar",
+      "payment:lightning": "yes",
+      "payment:lightning:operator": "square",
+      "payment:lightning_contactless": "no",
+      "payment:onchain": "no"
+    }
+  }
+]
