@@ -17,6 +17,7 @@ export interface Neighborhood {
 export class Lifestyle {
 	neighborhood_name: string;
 	score: number;
+	green_zones_score: number;
 	note?: string;
 }
 
@@ -180,15 +181,17 @@ export class DatabaseService implements OnModuleInit, OnModuleDestroy {
 		});
 	}
 
+	// --- Lifestyle (Connectivity) Methods ---
 	insertLifestyle(
 		neighborhoodName: string,
 		score: number,
+		greenZonesScore: number,
 		note: string | undefined,
 	): Promise<void> {
 		return new Promise((resolve, reject) => {
 			this.db.run(
-				`INSERT INTO lifestyle (neighborhood_name, score, note) VALUES (?, ?, ?)`,
-				[neighborhoodName, score, note],
+				`INSERT INTO lifestyle (neighborhood_name, score, green_zones_score, note) VALUES (?, ?, ?, ?)`,
+				[neighborhoodName, score, greenZonesScore, note],
 				(err) => {
 					if (err) reject(err);
 					else resolve();
@@ -200,12 +203,13 @@ export class DatabaseService implements OnModuleInit, OnModuleDestroy {
 	updateLifestyle(
 		neighborhoodName: string,
 		score: number,
+		greenZonesScore: number,
 		note: string | undefined,
 	): Promise<void> {
 		return new Promise((resolve, reject) => {
 			this.db.run(
-				`UPDATE lifestyle SET score = ?, note = ? WHERE neighborhood_name = ?`,
-				[score, note, neighborhoodName],
+				`UPDATE lifestyle SET score = ?, green_zones_score = ?, note = ? WHERE neighborhood_name = ?`,
+				[score, greenZonesScore, note, neighborhoodName],
 				(err) => {
 					if (err) reject(err);
 					else resolve();

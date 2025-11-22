@@ -5,6 +5,8 @@ import { ConnectivityCollectionResultDto } from './dto/connectivity_collection_r
 import { AxiosResponse } from 'axios';
 import { delay, firstValueFrom } from 'rxjs';
 import { DatabaseService, Neighborhood } from 'src/database/database.service';
+import { GreenZonesCollectionResultDto } from './dto/green_zones_collection_result.dto';
+import { GreenZonesResultDto } from './dto/green_zones_result.dto';
 
 @Injectable()
 export class LifestyleService {
@@ -13,43 +15,48 @@ export class LifestyleService {
 		private readonly databaseService: DatabaseService,
 	) {}
 
+	// --- Connectivity Logic ---
 	async getAllConnectivityData(): Promise<ConnectivityCollectionResultDto> {
 		const neighborhoods: Neighborhood[] =
 			await this.databaseService.getAllNeighborhoods();
 
 		const connectivityPromises = neighborhoods.map(async (neighborhood) => {
-            let connectivity = await this.databaseService.getLifestyleByNeighborhoodName(
-                neighborhood.name
-            );
+			let connectivity =
+				await this.databaseService.getLifestyleByNeighborhoodName(
+					neighborhood.name,
+				);
 
-            if (!connectivity || connectivity.score == 0) {
-                const apiResult = await this.getConnectivityDataForLocation(
-                    neighborhood.name,
-                    neighborhood.latitude,
-                    neighborhood.longitude,
-                );
-                delay(30000); // To avoid hitting Overpass API rate limits
+			if (!connectivity || connectivity.score == 0) {
+				const apiResult = await this.getConnectivityDataForLocation(
+					neighborhood.name,
+					neighborhood.latitude,
+					neighborhood.longitude,
+				);
+				await new Promise((r) => setTimeout(r, 15000)); // Rate limiting
 
-                if (connectivity?.score == 0) {
-                    await this.databaseService.updateLifestyle(
-                        apiResult.neighborhood_name,
-                        apiResult.score,
-                        apiResult.note
-                    );
-                } else {
-                    await this.databaseService.insertLifestyle(
-                        apiResult.neighborhood_name,
-                        apiResult.score,
-                        apiResult.note
-                    );
-                }
-                
-                connectivity = {
-                    neighborhood_name: apiResult.neighborhood_name,
-                    score: apiResult.score,
-                    note: apiResult.note,
-                };
-            }
+				if (connectivity?.score == 0) {
+					await this.databaseService.updateLifestyle(
+						apiResult.neighborhood_name,
+						apiResult.score,
+						0,
+						apiResult.note,
+					);
+				} else {
+					await this.databaseService.insertLifestyle(
+						apiResult.neighborhood_name,
+						apiResult.score,
+						0,
+						apiResult.note,
+					);
+				}
+
+				connectivity = {
+					neighborhood_name: apiResult.neighborhood_name,
+					score: apiResult.score,
+					green_zones_score: 0,
+					note: apiResult.note,
+				};
+			}
 
 			return connectivity;
 		});
@@ -84,7 +91,7 @@ export class LifestyleService {
 			const { data }: AxiosResponse = await firstValueFrom(
 				this.httpService.get(apiUrl),
 			);
-            
+
 			let count = 0;
 			if (data?.elements && data.elements.length > 0) {
 				// 'out count' usually returns { type: 'count', tags: { nodes: 'X', ways: 'Y', relations: 'Z', total: 'T' } }
@@ -108,39 +115,121 @@ export class LifestyleService {
 			};
 		} catch (error) {
 			console.error(
-				`Overpass API Error for ${neighborhood_name}:`,
+				`Connectivity API Error ${neighborhood_name}:`,
 				error.message,
 			);
-
-			// Fallback to Deterministic Simulation
-			const simulated = this.getSimulatedConnectivity(lat, lon);
-			return {
-				neighborhood_name: neighborhood_name,
-				score: 0, //simulated.score,
-				note: simulated.note,
-			};
+			return { neighborhood_name, score: 0, note: 'Error fetching data' };
 		}
 	}
 
-	private getSimulatedConnectivity(lat: number, lon: number): any {
-		// Create a pseudo-random number based on coordinates
-		const hash = Math.sin(lat * 1000) + Math.cos(lon * 1000);
-		const normalized = Math.abs(hash); // 0 to 1ish
+	// --- Green Zones Logic ---
+	async getAllGreenZonesData(): Promise<GreenZonesCollectionResultDto> {
+		const neighborhoods: Neighborhood[] =
+			await this.databaseService.getAllNeighborhoods();
 
-		let score = 0;
-		let note = '';
+		for (const neighborhood of neighborhoods) {
+			// Fetch the single unified row
+			let lifestyle = await this.databaseService.getLifestyleByNeighborhoodName(
+				neighborhood.name,
+			);
 
-		if (normalized > 0.7) {
-			score = 100;
-			note = 'Fiber Optic (Simulated High Speed)';
-		} else if (normalized > 0.4) {
-			score = 70;
-			note = 'Cable/4G (Simulated Medium Speed)';
-		} else {
-			score = 40;
-			note = 'DSL (Simulated Low Speed)';
+			// Check specifically for green_zones_score
+			if (!lifestyle || lifestyle.green_zones_score == 0) {
+				const apiResult = await this.getGreenZoneDataForLocation(
+					neighborhood.name,
+					neighborhood.latitude,
+					neighborhood.longitude,
+				);
+
+				await new Promise((r) => setTimeout(r, 3000)); // Rate limiting
+
+				if (!lifestyle) {
+					await this.databaseService.insertLifestyle(
+						apiResult.neighborhood_name,
+						0,
+						apiResult.score,
+						apiResult.note,
+					);
+				} else {
+					await this.databaseService.updateLifestyle(
+						apiResult.neighborhood_name,
+						lifestyle.score,
+						apiResult.score,
+						apiResult.note,
+					);
+				}
+
+				lifestyle = {
+					neighborhood_name: apiResult.neighborhood_name,
+					score: 0,
+					green_zones_score: apiResult.score,
+					note: apiResult.note,
+				};
+			}
 		}
 
-		return { score, note };
+		const results: GreenZonesResultDto[] = [];
+		for (const neighborhood of neighborhoods) {
+			const data = await this.databaseService.getLifestyleByNeighborhoodName(
+				neighborhood.name,
+			);
+			if (data) {
+				results.push({
+					neighborhood_name: data.neighborhood_name,
+					score: data.green_zones_score,
+					note: data.note,
+				});
+			}
+		}
+
+		return { green_zones: results };
+	}
+
+	private async getGreenZoneDataForLocation(
+		neighborhood_name: string,
+		lat: number,
+		lon: number,
+	): Promise<GreenZonesResultDto> {
+		// Query for parks, gardens, forests, and woods within 1km
+		const radius = 1000;
+		const query = `
+            [out:json];
+            (
+                way["leisure"="park"](around:${radius},${lat},${lon});
+                way["leisure"="garden"](around:${radius},${lat},${lon});
+                way["landuse"="forest"](around:${radius},${lat},${lon});
+                way["natural"="wood"](around:${radius},${lat},${lon});
+                relation["leisure"="park"](around:${radius},${lat},${lon});
+            );
+            out count;
+        `;
+
+		const apiUrl = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(query)}`;
+
+		try {
+			const { data }: AxiosResponse = await firstValueFrom(
+				this.httpService.get(apiUrl),
+			);
+
+			let count = 0;
+			if (data?.elements && data.elements.length > 0) {
+				const tags = data.elements[0].tags;
+				if (tags) count = parseInt(tags.total || tags.ways || '0', 10);
+			}
+
+			// Scoring: 5 substantial green areas = 100/100
+			const score = Math.min(count * 20, 100);
+
+			let note = `Nature Density: ${count} green areas found`;
+			if (score >= 80) note += ' (Very Green Area)';
+
+			return { neighborhood_name, score, note };
+		} catch (error) {
+			console.error(
+				`Green Zones API Error ${neighborhood_name}:`,
+				error.message,
+			);
+			return { neighborhood_name, score: 0, note: 'Error fetching green data' };
+		}
 	}
 }

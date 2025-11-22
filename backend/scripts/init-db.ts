@@ -152,7 +152,8 @@ db.serialize(() => {
   db.run(`
     CREATE TABLE lifestyle (
       neighborhood_name TEXT PRIMARY KEY,
-      score INTEGER NOT NULL,
+      score INTEGER NOT NULL DEFAULT 0,
+      green_zones_score INTEGER NOT NULL DEFAULT 0,
       note TEXT,
       FOREIGN KEY (neighborhood_name) REFERENCES neighborhoods(name)
     );
