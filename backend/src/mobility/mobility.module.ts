@@ -7,6 +7,12 @@ import { Neighborhood } from './neighborhood.entity';
 
 @Module({
   imports: [
+    TypeOrmModule.forRoot({
+      type: 'sqlite',
+      database: 'neighborhoods.db',
+      entities: [Neighborhood],
+      synchronize: true, // <--- CAMBIA ESTO A TRUE (Solo mientras desarrollamos)
+    }),
     HttpModule,
     TypeOrmModule.forFeature([Neighborhood])
   ],

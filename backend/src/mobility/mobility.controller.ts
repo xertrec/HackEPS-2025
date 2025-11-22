@@ -1,3 +1,4 @@
+// src/mobility/mobility.controller.ts
 import { Controller, Get } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -14,16 +15,13 @@ export class MobilityController {
 
   @Get('all')
   async getAllScores() {
+    // 1. Obtener TODOS los barrios de la BBDD
     const barrios = await this.neighborhoodRepo.find();
+
+    if (!barrios.length) return { msg: "BBDD vacía." };
     
-    if (!barrios.length) return { msg: "La BBDD está vacía o no se lee." };
-
-    const lista = barrios.map(b => ({
-        name: b.name,
-        lat: b.latitude,
-        lon: b.longitude
-    }));
-
-    return this.mobilityService.calculateScoresForList(lista);
+    // 2. Pasamos la lista completa al servicio.
+    // Él se encargará de ver cuál necesita cálculo y cuál no.
+    return this.mobilityService.calculateScoresForList(barrios);
   }
 }

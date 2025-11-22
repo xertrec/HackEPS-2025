@@ -1,26 +1,65 @@
+// src/mobility/mobility.service.ts
 import { Injectable } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
+import { InjectRepository } from '@nestjs/typeorm'; // <--- Nuevo
+import { Repository } from 'typeorm';               // <--- Nuevo
 import { firstValueFrom } from 'rxjs';
+import { Neighborhood } from './neighborhood.entity'; // <--- Nuevo
 
 @Injectable()
 export class MobilityService {
-  constructor(private readonly httpService: HttpService) {}
+  constructor(
+    private readonly httpService: HttpService,
+    
+    // Inyectamos la BBDD en el servicio para poder GUARDAR
+    @InjectRepository(Neighborhood)
+    private neighborhoodRepo: Repository<Neighborhood>,
+  ) {}
 
-  // --- 1. PROCESAR LISTA DE BARRIOS ---
-  async calculateScoresForList(barrios: any[]) {
-    // Límite de seguridad: 5 primeros
-    const safeList = barrios.slice(0, 50); 
-    console.log(`🚀 Calculando ${safeList.length} barrios...`);
+  // --- 1. LÓGICA INTELIGENTE (Cache) ---
+  async calculateScoresForList(barrios: Neighborhood[]) {
+    // Ya no necesitamos slice(0,5) porque si ya están calculados, irá rápido.
+    // Pero mantenemos un log para ver qué pasa.
+    console.log(`🔍 Revisando ${barrios.length} barrios...`);
 
-    const promises = safeList.map(b => 
-      this.calculateFullScore(b.name, parseFloat(b.lat), parseFloat(b.lon))
-    );
+    const resultados: any[] = [];
 
-    const results = await Promise.all(promises);
-    return results.sort((a, b) => b.puntuacion_total - a.puntuacion_total);
+    // Procesamos uno a uno (o en paralelo)
+    for (const barrio of barrios) {
+        
+      // CASO A: ¿YA TIENE NOTA? -> DEVOLVERLO DIRECTO
+      if (barrio.score !== null && barrio.score !== undefined) {
+        console.log(`✅ [CACHE] Barrio ${barrio.name} ya calculado: ${barrio.score}`);
+        resultados.push({
+            barrio: barrio.name,
+            puntuacion_total: barrio.score,
+            detalle: JSON.parse(barrio.details || '{}') // Convertimos texto a JSON
+        });
+        continue; // Pasamos al siguiente sin llamar a API externa
+      }
+
+      // CASO B: NO TIENE NOTA -> CALCULAR Y GUARDAR
+      console.log(`⚡ [API] Calculando ${barrio.name} desde cero...`);
+      
+      const calculo = await this.calculateFullScore(
+        barrio.name, 
+        barrio.latitude, 
+        barrio.longitude
+      );
+
+      // --- GUARDAR EN BBDD ---
+      barrio.score = calculo.puntuacion_total;
+      barrio.details = JSON.stringify(calculo.detalle); // Guardamos el JSON como texto string
+      await this.neighborhoodRepo.save(barrio);
+
+      resultados.push(calculo);
+    }
+
+    // Ordenar por nota
+    return resultados.sort((a, b) => b.puntuacion_total - a.puntuacion_total);
   }
 
-  // --- 2. CÁLCULO INDIVIDUAL ---
+  // --- 2. CÁLCULO INDIVIDUAL (Igual que antes) ---
   async calculateFullScore(barrio: string, lat: number, lon: number) {
     const RADIUS = 800; 
     try {
@@ -40,11 +79,11 @@ export class MobilityService {
         };
     } catch (error) {
         console.error(`Error en ${barrio}`, error.message);
-        return { barrio, puntuacion_total: 0, error: "Fallo datos" };
+        return { barrio, puntuacion_total: 0, error: "Fallo datos", detalle: {} };
     }
   }
 
-  // --- HELPERS PRIVADOS ---
+  // --- HELPERS PRIVADOS (Igual que antes) ---
   private async analyzeParking(lat: number, lon: number, r: number) {
     try {
       const urlA = `https://data.lacity.org/resource/s49e-q6j2.json?$where=within_circle(lat_lon, ${lat}, ${lon}, ${r})&$limit=500`;
@@ -73,7 +112,7 @@ export class MobilityService {
   }
 
   private async analyzeTraffic(lat: number, lon: number, r: number) {
-     return { score: 50 }; // Dummy data para evitar errores externos por ahora
+     return { score: 50 }; 
   }
 
   private async analyzeInfrastructure(lat: number, lon: number, r: number) {
