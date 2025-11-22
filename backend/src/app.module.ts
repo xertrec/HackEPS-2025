@@ -4,13 +4,22 @@ import { AppService } from './app.service';
 import { LifestyleModule } from './lifestyle/lifestyle.module';
 import { ServicesModule } from './services/services.module';
 import { DatabaseModule } from './database/database.module';
-import { SecurityModule } from './security/security.module';
-import { MobilityModule } from './mobility/mobility.module';
+
 import { MobilityController } from './mobility/mobility.controller';
+import { MobilityModule } from './mobility/mobility.module';
+import { SecurityModule } from './security/security.module';
+import { RecommendationsModule } from './recommendations/recommendations.module';
 
 @Module({
-	imports: [DatabaseModule, LifestyleModule, ServicesModule, MobilityModule, SecurityModule],
-	controllers: [AppController, MobilityController],
-	providers: [AppService],
+  imports: [
+    DatabaseModule,
+    LifestyleModule,
+    ServicesModule,
+    MobilityModule,
+    SecurityModule,
+    RecommendationsModule,
+  ],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}

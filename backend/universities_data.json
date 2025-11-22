@@ -1,0 +1,835 @@
+[
+  {
+    "id": 358781406,
+    "name": "California College of Medicine",
+    "lat": 34.0633445,
+    "lon": -118.211739,
+    "type": "college"
+  },
+  {
+    "id": 358784455,
+    "name": "Fuller Theological Seminary in California",
+    "lat": 34.1480627,
+    "lon": -118.1403486,
+    "type": "college"
+  },
+  {
+    "id": 358850275,
+    "name": "Bishop Johnson College of Nursing",
+    "lat": 34.0539007,
+    "lon": -118.2639633,
+    "type": "college"
+  },
+  {
+    "id": 358858178,
+    "name": "American Film Institute Conservatory",
+    "lat": 34.1079659,
+    "lon": -118.3101169,
+    "type": "college"
+  },
+  {
+    "id": 358858211,
+    "name": "Fashion Institute of Design and Marketing",
+    "lat": 34.04422,
+    "lon": -118.2599289,
+    "type": "college"
+  },
+  {
+    "id": 358858215,
+    "name": "Columbia College Hollywood",
+    "lat": 34.1796495,
+    "lon": -118.5389718,
+    "type": "college"
+  },
+  {
+    "id": 358858235,
+    "name": "Alliant International University",
+    "lat": 34.0807625,
+    "lon": -118.1515544,
+    "type": "university"
+  },
+  {
+    "id": 358858246,
+    "name": "Emperors College of Traditional Oriental Medicine",
+    "lat": 34.0303008,
+    "lon": -118.4850455,
+    "type": "college"
+  },
+  {
+    "id": 358858270,
+    "name": "Concorde Career College - North Hollywood",
+    "lat": 34.1863401,
+    "lon": -118.4036149,
+    "type": "college"
+  },
+  {
+    "id": 358858290,
+    "name": "Southern California Institute of Architecture",
+    "lat": 34.0431787,
+    "lon": -118.2328067,
+    "type": "university"
+  },
+  {
+    "id": 358858323,
+    "name": "Phillips Graduate Institute",
+    "lat": 34.1696008,
+    "lon": -118.5014709,
+    "type": "university"
+  },
+  {
+    "id": 358858385,
+    "name": "Los Angeles County College of Nursing and Allied Health",
+    "lat": 34.0631865,
+    "lon": -118.211744,
+    "type": "college"
+  },
+  {
+    "id": 358858469,
+    "name": "Platt College - Los Angeles",
+    "lat": 34.0809208,
+    "lon": -118.1515563,
+    "type": "university"
+  },
+  {
+    "id": 358858646,
+    "name": "Musicians Institute",
+    "lat": 34.1009721,
+    "lon": -118.3375812,
+    "type": "college"
+  },
+  {
+    "id": 358858653,
+    "name": "California Design College",
+    "lat": 34.0613908,
+    "lon": -118.2991149,
+    "type": "college"
+  },
+  {
+    "id": 618436626,
+    "name": "Art Center College of Design - South Campus",
+    "lat": 34.1291283,
+    "lon": -118.1483786,
+    "type": "college"
+  },
+  {
+    "id": 3180298833,
+    "name": "Le Cordon Bleu College of Culinary Arts",
+    "lat": 34.1460567,
+    "lon": -118.1395695,
+    "type": "college"
+  },
+  {
+    "id": 3732278076,
+    "name": "Glendale Community College Professional Development Center",
+    "lat": 34.2060541,
+    "lon": -118.230126,
+    "type": "college"
+  },
+  {
+    "id": 3947031769,
+    "name": "National Univ",
+    "lat": 34.1851917,
+    "lon": -118.5967731,
+    "type": "college"
+  },
+  {
+    "id": 3956252088,
+    "name": "University of Phoenix",
+    "lat": 34.178789,
+    "lon": -118.591275,
+    "type": "university"
+  },
+  {
+    "id": 5154343067,
+    "name": "Pierce College ASO Department",
+    "lat": 34.1856126,
+    "lon": -118.5775047,
+    "type": "college"
+  },
+  {
+    "id": 5154343068,
+    "name": "Financial Aid",
+    "lat": 34.1825706,
+    "lon": -118.5753053,
+    "type": "college"
+  },
+  {
+    "id": 5154343069,
+    "name": "Pierce College Student Health Center",
+    "lat": 34.1827947,
+    "lon": -118.575544,
+    "type": "college"
+  },
+  {
+    "id": 5154343071,
+    "name": "Unknown University",
+    "lat": 34.1838617,
+    "lon": -118.5695414,
+    "type": "college"
+  },
+  {
+    "id": 5154343072,
+    "name": "WVOC High School Equivalency Preparation",
+    "lat": 34.1830251,
+    "lon": -118.5697457,
+    "type": "college"
+  },
+  {
+    "id": 5154343073,
+    "name": "WVOC Video Production Class",
+    "lat": 34.1838112,
+    "lon": -118.5687506,
+    "type": "college"
+  },
+  {
+    "id": 5209151262,
+    "name": "Emeritus College",
+    "lat": 34.0169875,
+    "lon": -118.499216,
+    "type": "college"
+  },
+  {
+    "id": 5361958126,
+    "name": "Occidental College",
+    "lat": 34.1261596,
+    "lon": -118.2139571,
+    "type": "college"
+  },
+  {
+    "id": 5636283929,
+    "name": "Embry-Riddle Aeronautical University",
+    "lat": 33.8082375,
+    "lon": -118.1344224,
+    "type": "college"
+  },
+  {
+    "id": 5640792847,
+    "name": "Pacific Coast University School of Law",
+    "lat": 33.7861315,
+    "lon": -118.1406056,
+    "type": "college"
+  },
+  {
+    "id": 6779884336,
+    "name": "Glendale Career College",
+    "lat": 34.1489573,
+    "lon": -118.2553051,
+    "type": "college"
+  },
+  {
+    "id": 6779884337,
+    "name": "North-West College",
+    "lat": 34.1488914,
+    "lon": -118.2552594,
+    "type": "college"
+  },
+  {
+    "id": 8372546225,
+    "name": "UCLA Extension Downtown Los Angeles",
+    "lat": 34.0559517,
+    "lon": -118.2546303,
+    "type": "college"
+  },
+  {
+    "id": 8429489900,
+    "name": "Distance Education Center",
+    "lat": 33.8856019,
+    "lon": -118.328807,
+    "type": "college"
+  },
+  {
+    "id": 8429489901,
+    "name": "Learning Resources Center",
+    "lat": 33.8852898,
+    "lon": -118.328698,
+    "type": "college"
+  },
+  {
+    "id": 8429489902,
+    "name": "Library",
+    "lat": 33.8851168,
+    "lon": -118.328283,
+    "type": "college"
+  },
+  {
+    "id": 8429489903,
+    "name": "Music",
+    "lat": 33.8839994,
+    "lon": -118.3278,
+    "type": "college"
+  },
+  {
+    "id": 8429489904,
+    "name": "Haag Recital Hall",
+    "lat": 33.8839364,
+    "lon": -118.328276,
+    "type": "college"
+  },
+  {
+    "id": 8429489905,
+    "name": "Campus Theatre",
+    "lat": 33.8835111,
+    "lon": -118.328155,
+    "type": "college"
+  },
+  {
+    "id": 8429489907,
+    "name": "Arts and Behavoral Science",
+    "lat": 33.883478,
+    "lon": -118.329091,
+    "type": "college"
+  },
+  {
+    "id": 8429489908,
+    "name": "Art Gallery",
+    "lat": 33.8837898,
+    "lon": -118.328799,
+    "type": "college"
+  },
+  {
+    "id": 8429489909,
+    "name": "South Gym",
+    "lat": 33.8832992,
+    "lon": -118.329645,
+    "type": "college"
+  },
+  {
+    "id": 8429489910,
+    "name": "PE South",
+    "lat": 33.8835209,
+    "lon": -118.329781,
+    "type": "college"
+  },
+  {
+    "id": 8429489911,
+    "name": "Pool",
+    "lat": 33.8837296,
+    "lon": -118.3297496,
+    "type": "college"
+  },
+  {
+    "id": 8429489912,
+    "name": "Student Health Center",
+    "lat": 33.8839319,
+    "lon": -118.329814,
+    "type": "college"
+  },
+  {
+    "id": 8429500240,
+    "name": "Natural Science",
+    "lat": 33.8866735,
+    "lon": -118.3282771,
+    "type": "college"
+  },
+  {
+    "id": 8429500241,
+    "name": "Life Science",
+    "lat": 33.8867778,
+    "lon": -118.3276083,
+    "type": "college"
+  },
+  {
+    "id": 8429500242,
+    "name": "Chemistry",
+    "lat": 33.8864358,
+    "lon": -118.327551,
+    "type": "college"
+  },
+  {
+    "id": 8429500243,
+    "name": "Physics",
+    "lat": 33.8860784,
+    "lon": -118.3275067,
+    "type": "college"
+  },
+  {
+    "id": 8682927461,
+    "name": "UCLA Extension",
+    "lat": 34.1789931,
+    "lon": -118.6010186,
+    "type": "university"
+  },
+  {
+    "id": 9307471060,
+    "name": "UCLA Extension",
+    "lat": 34.0593833,
+    "lon": -118.4460507,
+    "type": "college"
+  },
+  {
+    "id": 9916907727,
+    "name": "Angeles College",
+    "lat": 34.0613552,
+    "lon": -118.2994343,
+    "type": "college"
+  },
+  {
+    "id": 10579991582,
+    "name": "Birmingham Community Charter High School",
+    "lat": 34.1888349,
+    "lon": -118.5043988,
+    "type": "college"
+  },
+  {
+    "id": 12119928687,
+    "name": "UCLA Downtown",
+    "lat": 34.0482667,
+    "lon": -118.2493269,
+    "type": "university"
+  },
+  {
+    "id": 12519671301,
+    "name": "Unknown University",
+    "lat": 34.2250695,
+    "lon": -118.4093686,
+    "type": "college"
+  },
+  {
+    "id": 12586089589,
+    "name": "Glendale Community College Professional Development Center",
+    "lat": 34.20592,
+    "lon": -118.2297546,
+    "type": "college"
+  },
+  {
+    "id": 13309605902,
+    "name": "Los Angeles College of Music",
+    "lat": 34.1403389,
+    "lon": -118.1502442,
+    "type": "college"
+  },
+  {
+    "id": 22965722,
+    "name": "Loyola Marymount University",
+    "lat": 33.968936,
+    "lon": -118.4195763,
+    "type": "university"
+  },
+  {
+    "id": 29111188,
+    "name": "California Institute of Technology",
+    "lat": 34.1370829,
+    "lon": -118.1253417,
+    "type": "university"
+  },
+  {
+    "id": 29111275,
+    "name": "Pasadena City College",
+    "lat": 34.1439403,
+    "lon": -118.1184846,
+    "type": "college"
+  },
+  {
+    "id": 29339592,
+    "name": "Los Angeles City College",
+    "lat": 34.0865339,
+    "lon": -118.2933857,
+    "type": "college"
+  },
+  {
+    "id": 30263638,
+    "name": "Santa Monica College",
+    "lat": 34.0167694,
+    "lon": -118.4706618,
+    "type": "college"
+  },
+  {
+    "id": 41698754,
+    "name": "Woodbury University",
+    "lat": 34.2081832,
+    "lon": -118.3416718,
+    "type": "university"
+  },
+  {
+    "id": 45306471,
+    "name": "El Camino College",
+    "lat": 33.8836925,
+    "lon": -118.3309339,
+    "type": "college"
+  },
+  {
+    "id": 46337238,
+    "name": "California State University Los Angeles",
+    "lat": 34.0665257,
+    "lon": -118.1683409,
+    "type": "university"
+  },
+  {
+    "id": 107761773,
+    "name": "California State University - Dominguez Hills",
+    "lat": 33.8626055,
+    "lon": -118.2573563,
+    "type": "university"
+  },
+  {
+    "id": 140620925,
+    "name": "Building 950",
+    "lat": 34.1292101,
+    "lon": -118.148385,
+    "type": "college"
+  },
+  {
+    "id": 149986479,
+    "name": "West Los Angeles College",
+    "lat": 34.0048204,
+    "lon": -118.387571,
+    "type": "college"
+  },
+  {
+    "id": 161235655,
+    "name": "University Park Campus",
+    "lat": 34.0218787,
+    "lon": -118.2858294,
+    "type": "university"
+  },
+  {
+    "id": 183818047,
+    "name": "Art Center College of Design",
+    "lat": 34.1687372,
+    "lon": -118.1850974,
+    "type": "university"
+  },
+  {
+    "id": 184488683,
+    "name": "UCLA Anderson School of Management",
+    "lat": 34.0739825,
+    "lon": -118.4436993,
+    "type": "university"
+  },
+  {
+    "id": 203437972,
+    "name": "Los Angeles Trade Technical College",
+    "lat": 34.0311638,
+    "lon": -118.270489,
+    "type": "college"
+  },
+  {
+    "id": 207858609,
+    "name": "California State University, Long Beach",
+    "lat": 33.7818448,
+    "lon": -118.1156463,
+    "type": "university"
+  },
+  {
+    "id": 249138487,
+    "name": "Charles R Drew University of Medicine and Science",
+    "lat": 33.9263529,
+    "lon": -118.2425985,
+    "type": "university"
+  },
+  {
+    "id": 249488547,
+    "name": "Los Angeles Southwest College",
+    "lat": 33.9284938,
+    "lon": -118.305707,
+    "type": "college"
+  },
+  {
+    "id": 258001694,
+    "name": "East Los Angeles College",
+    "lat": 34.0412928,
+    "lon": -118.149737,
+    "type": "college"
+  },
+  {
+    "id": 259687911,
+    "name": "Los Angeles Harbor College",
+    "lat": 33.7833756,
+    "lon": -118.2844565,
+    "type": "college"
+  },
+  {
+    "id": 261564536,
+    "name": "Institute for Creative Technologies",
+    "lat": 33.9827724,
+    "lon": -118.4052304,
+    "type": "university"
+  },
+  {
+    "id": 301881712,
+    "name": "Long Beach City College, Pacific Coast Campus",
+    "lat": 33.7919415,
+    "lon": -118.1741268,
+    "type": "college"
+  },
+  {
+    "id": 314623048,
+    "name": "Los Angeles Valley College",
+    "lat": 34.1757874,
+    "lon": -118.4182594,
+    "type": "university"
+  },
+  {
+    "id": 378628083,
+    "name": "\"Pierce Village\"",
+    "lat": 34.185234,
+    "lon": -118.5730143,
+    "type": "college"
+  },
+  {
+    "id": 380022854,
+    "name": "West Valley Occupational Center",
+    "lat": 34.1837213,
+    "lon": -118.569535,
+    "type": "college"
+  },
+  {
+    "id": 380318235,
+    "name": "Pierce College Equine Center",
+    "lat": 34.1856285,
+    "lon": -118.5852942,
+    "type": "college"
+  },
+  {
+    "id": 414681499,
+    "name": "SMC Airport Arts",
+    "lat": 34.0130138,
+    "lon": -118.4509391,
+    "type": "college"
+  },
+  {
+    "id": 420136651,
+    "name": "Cleveland Chiropractic College of Los Angeles",
+    "lat": 34.0813128,
+    "lon": -118.2910989,
+    "type": "college"
+  },
+  {
+    "id": 423254047,
+    "name": "The Los Angeles Film School",
+    "lat": 34.0984173,
+    "lon": -118.3283928,
+    "type": "university"
+  },
+  {
+    "id": 425580279,
+    "name": "Santa Monica College Center for Media and Design",
+    "lat": 34.031011,
+    "lon": -118.4678268,
+    "type": "college"
+  },
+  {
+    "id": 427628877,
+    "name": "Sci Arc",
+    "lat": 34.0441545,
+    "lon": -118.2328245,
+    "type": "college"
+  },
+  {
+    "id": 428128016,
+    "name": "Arizona State University CA center Broadway",
+    "lat": 34.039371,
+    "lon": -118.2596324,
+    "type": "university"
+  },
+  {
+    "id": 428128082,
+    "name": "Fashion Institute of Design & Merchandising",
+    "lat": 34.0442001,
+    "lon": -118.2600357,
+    "type": "college"
+  },
+  {
+    "id": 428955204,
+    "name": "Bishop Medical Teaching and Research",
+    "lat": 34.0602955,
+    "lon": -118.2045441,
+    "type": "university"
+  },
+  {
+    "id": 428955254,
+    "name": "LA-USC Clinical Sciences Annex",
+    "lat": 34.06222,
+    "lon": -118.1997984,
+    "type": "university"
+  },
+  {
+    "id": 428955258,
+    "name": "LA-USC Clinical Sciences Building",
+    "lat": 34.0627069,
+    "lon": -118.2000087,
+    "type": "university"
+  },
+  {
+    "id": 432053446,
+    "name": "Unknown University",
+    "lat": 34.1863386,
+    "lon": -118.4035972,
+    "type": "college"
+  },
+  {
+    "id": 439655732,
+    "name": "Occidental College",
+    "lat": 34.1272392,
+    "lon": -118.2091075,
+    "type": "university"
+  },
+  {
+    "id": 442277349,
+    "name": "Hebrew Union College - California Branch",
+    "lat": 34.0258487,
+    "lon": -118.2830845,
+    "type": "college"
+  },
+  {
+    "id": 442950386,
+    "name": "UCLA South Bay",
+    "lat": 33.7343684,
+    "lon": -118.3334986,
+    "type": "university"
+  },
+  {
+    "id": 450178995,
+    "name": "Building 1111",
+    "lat": 34.1280026,
+    "lon": -118.1476617,
+    "type": "college"
+  },
+  {
+    "id": 458800782,
+    "name": "Building 870",
+    "lat": 34.1315407,
+    "lon": -118.1483828,
+    "type": "college"
+  },
+  {
+    "id": 513457474,
+    "name": "William Carey International University",
+    "lat": 34.1725728,
+    "lon": -118.1186291,
+    "type": "college"
+  },
+  {
+    "id": 541642577,
+    "name": "USC Village",
+    "lat": 34.0256195,
+    "lon": -118.2853822,
+    "type": "university"
+  },
+  {
+    "id": 571477748,
+    "name": "Glendale Community College",
+    "lat": 34.1668915,
+    "lon": -118.2283417,
+    "type": "college"
+  },
+  {
+    "id": 576068272,
+    "name": "ArtCenter College of Design South Campus (Buildings 870, 950, and 1111)",
+    "lat": 34.1296796,
+    "lon": -118.1480082,
+    "type": "college"
+  },
+  {
+    "id": 621618238,
+    "name": "Pierce College",
+    "lat": 34.1837589,
+    "lon": -118.579801,
+    "type": "college"
+  },
+  {
+    "id": 633883634,
+    "name": "University of Santa Monica",
+    "lat": 34.0325752,
+    "lon": -118.4823177,
+    "type": "university"
+  },
+  {
+    "id": 635582372,
+    "name": "Santa Monica College",
+    "lat": 34.0220819,
+    "lon": -118.4898291,
+    "type": "college"
+  },
+  {
+    "id": 662558356,
+    "name": "Santa Monica College Malibu Campus",
+    "lat": 34.0372031,
+    "lon": -118.689672,
+    "type": "college"
+  },
+  {
+    "id": 727330946,
+    "name": "Mount St Mary's University Doheny Campus",
+    "lat": 34.0306129,
+    "lon": -118.277821,
+    "type": "university"
+  },
+  {
+    "id": 780727310,
+    "name": "Compton College",
+    "lat": 33.8776104,
+    "lon": -118.2115749,
+    "type": "college"
+  },
+  {
+    "id": 795884503,
+    "name": "LADWP Truesdale Training Center",
+    "lat": 34.2469311,
+    "lon": -118.3875905,
+    "type": "college"
+  },
+  {
+    "id": 854083601,
+    "name": "Mount Saint Mary's University",
+    "lat": 34.0854658,
+    "lon": -118.4820432,
+    "type": "university"
+  },
+  {
+    "id": 886562500,
+    "name": "South Gate Educational Center (East Los Angeles College)",
+    "lat": 33.9581735,
+    "lon": -118.2267845,
+    "type": "college"
+  },
+  {
+    "id": 903508122,
+    "name": "South Gate Educational Center (East Los Angeles College)",
+    "lat": 33.956659,
+    "lon": -118.2298071,
+    "type": "college"
+  },
+  {
+    "id": 1019840875,
+    "name": "Santa Monica College Bundy Campus",
+    "lat": 34.0154924,
+    "lon": -118.4450365,
+    "type": "college"
+  },
+  {
+    "id": 1156077355,
+    "name": "American University of Health Sciences",
+    "lat": 33.7962399,
+    "lon": -118.1714511,
+    "type": "university"
+  },
+  {
+    "id": 1156110800,
+    "name": "Otis College of Art and Design",
+    "lat": 33.9567047,
+    "lon": -118.4170764,
+    "type": "college"
+  },
+  {
+    "id": 1242254728,
+    "name": "Glendale Community College, Garfield Campus",
+    "lat": 34.1354616,
+    "lon": -118.2407234,
+    "type": "college"
+  },
+  {
+    "id": 1340874375,
+    "name": "University Park East Side Campus",
+    "lat": 34.0200624,
+    "lon": -118.2804654,
+    "type": "university"
+  },
+  {
+    "id": 999999,
+    "name": "University of California Los Angeles (UCLA)",
+    "lat": 34.0689,
+    "lon": -118.4452,
+    "type": "university"
+  }
+]

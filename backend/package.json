@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "0.0.1",
-  "description": "",
+  "description": "```bash\r $ npm install\r ```",
   "author": "",
   "private": true,
   "license": "UNLICENSED",
@@ -9,6 +9,7 @@
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
+    "prestart:dev": "ts-node scripts/check-data-files.ts",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
@@ -18,7 +19,9 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "init-db": "ts-node scripts/init-db.ts"
+    "init-db": "ts-node scripts/init-db.ts",
+    "fetch-leisure": "ts-node scripts/fetch-leisure-data.ts",
+    "fetch-universities": "ts-node scripts/fetch-universities.ts"
   },
   "dependencies": {
     "@esri/arcgis-rest-feature-service": "^4.4.1",
@@ -73,5 +76,10 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  }
+  },
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": []
 }
