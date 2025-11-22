@@ -31,7 +31,7 @@ export class ServicesController {
       // Obtener todos los porcentajes para cada barrio
       const result = await Promise.all(
         neighborhoods.map(async (neighborhood) => {
-          const [botigues, escoles, hospitals, comissaries, bombers, ociNocturno, ociDiurno] = await Promise.all([
+          const [botigues, escoles, hospitals, comissaries, bombers, ociNocturno, ociDiurno, universitats] = await Promise.all([
             this.servicesService.calculateShopsPercentage(
               neighborhood.name,
               neighborhood.latitude,
@@ -67,6 +67,11 @@ export class ServicesController {
               neighborhood.latitude,
               neighborhood.longitude,
             ),
+            this.servicesService.calculateUniversitiesPercentage(
+              neighborhood.name,
+              neighborhood.latitude,
+              neighborhood.longitude,
+            ),
           ]);
           
           return {
@@ -78,6 +83,7 @@ export class ServicesController {
             bombers,
             ociNocturno,
             ociDiurno,
+            universitats,
           };
         }),
       );

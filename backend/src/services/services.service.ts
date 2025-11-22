@@ -57,6 +57,14 @@ interface OverpassElement {
   tags?: Record<string, string>;
 }
 
+interface UniversityData {
+  id: number;
+  name: string;
+  lat: number;
+  lon: number;
+  type: string;
+}
+
 @Injectable()
 export class ServicesService {
   private readonly LA_OPEN_DATA_API = 'https://data.lacity.org/resource/6rrh-rzua.json';
@@ -70,6 +78,7 @@ export class ServicesService {
   private fireStationsData: FireStation[] | null = null;
   private nightlifeData: OverpassElement[] | null = null;
   private dayLeisureData: OverpassElement[] | null = null;
+  private universitiesData: UniversityData[] | null = null;
   private allShopsData: LABusinessData[] | null = null;
   private allSchoolsData: LABusinessData[] | null = null;
   private dataLoadPromise: Promise<void> | null = null;
@@ -161,8 +170,8 @@ export class ServicesService {
         return 0;
       }
 
-      // Radio de búsqueda: 2 km
-      const searchRadius = 2.0; // en km
+      // Radio de búsqueda: 3 km (aumentado para capturar mejor la densidad real)
+      const searchRadius = 3.0; // en km
 
       // Filtrar negocios dentro del radio REAL del barrio (circular)
       const businessesInNeighborhood = this.allShopsData.filter((business) => {
@@ -175,14 +184,38 @@ export class ServicesService {
         return distance <= searchRadius;
       });
 
-      // Calcular el porcentaje basado en densidad realista
-      // Koreatown/Downtown tienen 600-800 tiendas
-      // Barrios comerciales tienen 300-500 tiendas
-      // Barrios mixtos tienen 100-200 tiendas
-      // Barrios residenciales tienen 20-80 tiendas
-      // Normalizamos: 600+ tiendas = 100%
+      // Normalización realista basada en densidad comercial de LA (radio 3km):
+      // Con radio de 3km, esperamos ~2.25x más negocios que con 2km
+      // - Downtown/Koreatown: 1500-2500+ tiendas (distritos comerciales densos)
+      // - Beverly Hills/Westwood: 800-1200 tiendas (comercio de lujo/universitario)
+      // - Barrios comerciales: 400-800 tiendas
+      // - Barrios residenciales densos: 200-400 tiendas
+      // - Barrios residenciales dispersos: 50-200 tiendas
+      // - Áreas industriales/periféricas: 0-50 tiendas
+      // 
+      // Escala logarítmica para evitar que todo sea 100:
+      // 1500+ tiendas = 100%, 800 = 75%, 400 = 50%, 100 = 25%, 20 = 10%
       const shopsCount = businessesInNeighborhood.length;
-      const percentage = Math.min(Math.round((shopsCount / 600) * 100), 100);
+      let percentage: number;
+      
+      if (shopsCount >= 1500) {
+        percentage = 100;
+      } else if (shopsCount >= 800) {
+        // 800-1500: 75-100%
+        percentage = Math.round(75 + (25 * (shopsCount - 800) / 700));
+      } else if (shopsCount >= 400) {
+        // 400-800: 50-75%
+        percentage = Math.round(50 + (25 * (shopsCount - 400) / 400));
+      } else if (shopsCount >= 100) {
+        // 100-400: 25-50%
+        percentage = Math.round(25 + (25 * (shopsCount - 100) / 300));
+      } else if (shopsCount >= 20) {
+        // 20-100: 10-25%
+        percentage = Math.round(10 + (15 * (shopsCount - 20) / 80));
+      } else {
+        // 0-20: 0-10%
+        percentage = Math.round((shopsCount / 20) * 10);
+      }
 
       // Guardar en caché
       this.businessCache.set(cacheKey, percentage);
@@ -225,8 +258,8 @@ export class ServicesService {
         return 0;
       }
 
-      // Radio de búsqueda: 2 km
-      const searchRadius = 2.0; // en km
+      // Radio de búsqueda: 3 km (aumentado para capturar mejor la densidad real)
+      const searchRadius = 3.0; // en km
 
       // Filtrar escuelas dentro del radio REAL del barrio (circular)
       const schoolsInNeighborhood = this.allSchoolsData.filter((school) => {
@@ -239,13 +272,36 @@ export class ServicesService {
         return distance <= searchRadius;
       });
 
-      // Calcular el porcentaje basado en densidad realista
-      // Barrios grandes tienen 40-60 establecimientos educativos (incluye academias, centros de formación)
-      // Barrios típicos tienen 20-30
-      // Barrios pequeños tienen 5-15
-      // Normalizamos: 50+ escuelas/centros educativos = 100%
+      // Normalización realista para servicios educativos (radio 3km):
+      // NAICS 611 incluye: escuelas públicas/privadas, universidades, academias,
+      // centros de formación, tutorías, etc.
+      // Con radio de 3km, esperamos ~2.25x más establecimientos
+      // 
+      // - Barrios universitarios (Westwood): 150-200+ establecimientos
+      // - Barrios densos con escuelas (Koreatown): 80-150
+      // - Barrios típicos: 40-80
+      // - Barrios residenciales: 20-40
+      // - Áreas periféricas: 0-20
+      //
+      // Escala: 150+ = 100%, 80 = 50%, 30 = 25%
       const schoolsCount = schoolsInNeighborhood.length;
-      const percentage = Math.min(Math.round((schoolsCount / 50) * 100), 100);
+      let percentage: number;
+      
+      if (schoolsCount >= 150) {
+        percentage = 100;
+      } else if (schoolsCount >= 80) {
+        // 80-150: 50-100%
+        percentage = Math.round(50 + (50 * (schoolsCount - 80) / 70));
+      } else if (schoolsCount >= 30) {
+        // 30-80: 25-50%
+        percentage = Math.round(25 + (25 * (schoolsCount - 30) / 50));
+      } else if (schoolsCount >= 10) {
+        // 10-30: 10-25%
+        percentage = Math.round(10 + (15 * (schoolsCount - 10) / 20));
+      } else {
+        // 0-10: 0-10%
+        percentage = Math.round((schoolsCount / 10) * 10);
+      }
 
       // Guardar en caché
       this.businessCache.set(cacheKey, percentage);
@@ -664,6 +720,31 @@ export class ServicesService {
   }
 
   /**
+   * Carga datos de universidades desde archivo local
+   */
+  private loadUniversitiesData(): void {
+    if (this.universitiesData !== null) {
+      return; // Ya cargado
+    }
+
+    try {
+      // Buscar siempre en la raíz del proyecto
+      const filePath = path.join(process.cwd(), 'universities_data.json');
+      
+      const fileContent = fs.readFileSync(filePath, 'utf-8');
+      this.universitiesData = JSON.parse(fileContent);
+      if (this.universitiesData) {
+        console.log(`✓ Cargadas ${this.universitiesData.length} universidades/colleges`);
+      }
+    } catch (error) {
+      console.error('Error al cargar datos de universidades:', error.message);
+      console.error(`Ruta buscada: ${path.join(process.cwd(), 'universities_data.json')}`);
+      console.error('Ejecuta: npm run fetch-universities para descargar los datos');
+      this.universitiesData = [];
+    }
+  }
+
+  /**
    * Filtra lugares dentro de un radio específico
    */
   private filterByRadius(
@@ -703,21 +784,41 @@ export class ServicesService {
       // Cargar datos si no están cargados
       this.loadNightlifeData();
 
-      // Filtrar lugares de ocio nocturno en un radio de 2km
+      // Filtrar lugares de ocio nocturno en un radio de 3km (aumentado para mejor cobertura)
       const nightlifeSpots = this.filterByRadius(
         this.nightlifeData || [],
         latitude,
         longitude,
-        2000,
+        3000,
       );
 
-      // Normalización realista:
-      // - Hollywood/DTLA tienen 25-30+ locales nocturnos en 2km
-      // - Barrios de ocio (West Hollywood, Silver Lake) tienen 15-20
-      // - Barrios residenciales tienen 0-5
-      // - Barrios comerciales tienen 5-10
-      // Escala: 50+ lugares = 100%
-      const percentage = Math.min(Math.round((nightlifeSpots.length / 50) * 100), 100);
+      // Normalización realista basada en densidad de ocio nocturno en LA (radio 3km):
+      // Con radio de 3km, esperamos ~2.25x más locales que con 2km
+      // - Downtown/Arts District/Hollywood: 80-120+ locales (epicentros nocturnos)
+      // - West Hollywood/Koreatown/Santa Monica: 40-80 locales
+      // - Silver Lake/Echo Park/Venice: 20-40 locales
+      // - Barrios residenciales con algo de ocio: 10-20 locales
+      // - Barrios residenciales tranquilos: 0-10 locales
+      //
+      // Escala: 100+ = 100%, 50 = 60%, 20 = 30%, 8 = 15%
+      const count = nightlifeSpots.length;
+      let percentage: number;
+      
+      if (count >= 100) {
+        percentage = 100;
+      } else if (count >= 50) {
+        // 50-100: 60-100%
+        percentage = Math.round(60 + (40 * (count - 50) / 50));
+      } else if (count >= 20) {
+        // 20-50: 30-60%
+        percentage = Math.round(30 + (30 * (count - 20) / 30));
+      } else if (count >= 8) {
+        // 8-20: 15-30%
+        percentage = Math.round(15 + (15 * (count - 8) / 12));
+      } else {
+        // 0-8: 0-15%
+        percentage = Math.round((count / 8) * 15);
+      }
 
       this.businessCache.set(cacheKey, percentage);
       this.cacheTimestamp = now;
@@ -748,21 +849,48 @@ export class ServicesService {
       // Cargar datos si no están cargados
       this.loadDayLeisureData();
 
-      // Filtrar lugares de ocio diurno en un radio de 2km
+      // Filtrar lugares de ocio diurno en un radio de 3km (aumentado para mejor cobertura)
       const leisureSpots = this.filterByRadius(
         this.dayLeisureData || [],
         latitude,
         longitude,
-        2000,
+        3000,
       );
 
-      // Normalización realista:
-      // - Barrios turísticos/culturales (Santa Monica, Hollywood) tienen 80-100+ lugares
-      // - Barrios comerciales tienen 40-60 lugares
-      // - Barrios residenciales tienen 10-20 lugares
-      // Nota: Incluye cafeterías que son muy comunes en LA (994 en total)
-      // Escala: 100+ lugares = 100%
-      const percentage = Math.min(Math.round((leisureSpots.length / 100) * 100), 100);
+      // Normalización realista para ocio diurno en LA (radio 3km):
+      // Incluye: cines, teatros, museos, parques, cafés, centros de arte/deportes
+      // Nota: Las cafeterías son MUY comunes en LA (994 en total en la ciudad)
+      // Con radio de 3km, esperamos ~2.25x más lugares
+      //
+      // - Barrios culturales/turísticos (DTLA, Santa Monica, Hollywood): 300-400+ lugares
+      // - Barrios comerciales densos (Westwood, Koreatown, Venice): 150-300
+      // - Barrios mixtos con vida (Silver Lake, Culver City): 80-150
+      // - Barrios residenciales con servicios: 40-80
+      // - Barrios residenciales tranquilos: 10-40
+      // - Áreas industriales/periféricas: 0-10
+      //
+      // Escala: 350+ = 100%, 200 = 60%, 80 = 35%, 30 = 20%
+      const count = leisureSpots.length;
+      let percentage: number;
+      
+      if (count >= 350) {
+        percentage = 100;
+      } else if (count >= 200) {
+        // 200-350: 60-100%
+        percentage = Math.round(60 + (40 * (count - 200) / 150));
+      } else if (count >= 80) {
+        // 80-200: 35-60%
+        percentage = Math.round(35 + (25 * (count - 80) / 120));
+      } else if (count >= 30) {
+        // 30-80: 20-35%
+        percentage = Math.round(20 + (15 * (count - 30) / 50));
+      } else if (count >= 10) {
+        // 10-30: 10-20%
+        percentage = Math.round(10 + (10 * (count - 10) / 20));
+      } else {
+        // 0-10: 0-10%
+        percentage = Math.round((count / 10) * 10);
+      }
 
       this.businessCache.set(cacheKey, percentage);
       this.cacheTimestamp = now;
@@ -770,6 +898,126 @@ export class ServicesService {
       return percentage;
     } catch (error) {
       console.error(`Error al calcular ocio diurno para ${neighborhoodName}:`, error.message);
+      return 0;
+    }
+  }
+
+  /**
+   * Filtra universidades dentro de un radio específico
+   */
+  private filterUniversitiesByRadius(
+    universities: UniversityData[],
+    centerLat: number,
+    centerLon: number,
+    radiusMeters: number,
+  ): UniversityData[] {
+    const radiusKm = radiusMeters / 1000; // Convertir metros a km
+    return universities.filter(university => {
+      const distanceKm = this.calculateDistance(
+        centerLat,
+        centerLon,
+        university.lat,
+        university.lon,
+      );
+      return distanceKm <= radiusKm;
+    });
+  }
+
+  /**
+   * Calcula el porcentaje de acceso a universidades para un barrio
+   * @param neighborhoodName Nombre del barrio
+   * @param latitude Latitud del centro del barrio
+   * @param longitude Longitud del centro del barrio
+   * @returns Porcentaje de acceso a universidades (0-100)
+   */
+  async calculateUniversitiesPercentage(
+    neighborhoodName: string,
+    latitude: number,
+    longitude: number,
+  ): Promise<number> {
+    try {
+      const cacheKey = `universities_${neighborhoodName}`;
+      const now = Date.now();
+      if (this.businessCache.has(cacheKey) && 
+          (now - this.cacheTimestamp) < this.CACHE_DURATION) {
+        return this.businessCache.get(cacheKey) || 0;
+      }
+
+      // Cargar datos si no están cargados
+      this.loadUniversitiesData();
+
+      // Filtrar universidades en un radio de 4km (balanceado para capturar acceso real)
+      const nearbyUniversities = this.filterUniversitiesByRadius(
+        this.universitiesData || [],
+        latitude,
+        longitude,
+        4000, // 4km de radio - captura acceso razonable en LA
+      );
+
+      // Calcular puntuación ponderada por tipo y distancia
+      // Las universidades grandes (university) pesan más que colleges/extensions
+      let weightedScore = 0;
+      for (const uni of nearbyUniversities) {
+        const distance = this.calculateDistance(latitude, longitude, uni.lat, uni.lon);
+        
+        // Factor de peso por tipo
+        let typeWeight = 1.0;
+        if (uni.type === 'university') {
+          // Universidades principales pesan más
+          typeWeight = 1.5;
+        } else {
+          // Colleges, extensions, etc. pesan menos
+          typeWeight = 0.9;
+        }
+        
+        // Factor de distancia (más cerca = más puntos, decae exponencialmente)
+        // 0-1km: 1.0x, 1-2km: 0.7x, 2-3km: 0.4x, 3-4km: 0.2x
+        let distanceWeight = 1.0;
+        if (distance > 3.0) {
+          distanceWeight = 0.2;
+        } else if (distance > 2.0) {
+          distanceWeight = 0.4;
+        } else if (distance > 1.0) {
+          distanceWeight = 0.7;
+        }
+        
+        weightedScore += typeWeight * distanceWeight;
+      }
+
+      // Normalización basada en puntuación ponderada (radio 4km con decay):
+      // - Barrios universitarios principales (Westwood/UCLA, USC, Pasadena): 3.0+ puntos
+      // - Barrios con campus importantes (DTLA, Santa Monica, El Sereno): 2.0-3.0 puntos
+      // - Barrios con acceso bueno (Van Nuys, Hollywood): 1.0-2.0 puntos
+      // - Barrios con acceso básico: 0.3-1.0 puntos
+      // - Sin acceso cercano: 0-0.3 puntos
+      //
+      // Escala: 3.0+ = 100%, 2.0 = 75%, 1.0 = 50%, 0.3 = 20%
+      let percentage: number;
+      
+      if (weightedScore >= 3.0) {
+        percentage = 100;
+      } else if (weightedScore >= 2.0) {
+        // 2.0-3.0: 75-100%
+        percentage = Math.round(75 + (25 * (weightedScore - 2.0) / 1.0));
+      } else if (weightedScore >= 1.0) {
+        // 1.0-2.0: 50-75%
+        percentage = Math.round(50 + (25 * (weightedScore - 1.0) / 1.0));
+      } else if (weightedScore >= 0.3) {
+        // 0.3-1.0: 20-50%
+        percentage = Math.round(20 + (30 * (weightedScore - 0.3) / 0.7));
+      } else if (weightedScore > 0) {
+        // 0-0.3: 0-20%
+        percentage = Math.round((weightedScore / 0.3) * 20);
+      } else {
+        percentage = 0;
+      }
+
+      this.businessCache.set(cacheKey, percentage);
+      this.cacheTimestamp = now;
+
+      return percentage;
+    } catch (error) {
+      console.error(`Error al calcular universidades para ${neighborhoodName}:`, error.message);
       return 0;
     }
   }
