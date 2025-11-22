@@ -3,117 +3,371 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Enviar valoración general de la zona</title>
+  <title>Encuentra tu Barrio Ideal en Los Ángeles</title>
   <style>
-    body { font-family: Arial, sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
-    fieldset { margin-bottom: 1rem; padding: 1rem; border-radius:6px; }
-    label { display: block; margin: .5rem 0; }
-    .inline { display:flex; gap:1rem; align-items:center; flex-wrap:wrap; }
-    .msg { margin-top:1rem; }
-    textarea { width:100%; min-height:56px; resize:vertical; }
-    button { padding: .5rem 1rem; }
-    .small { font-size:.9rem; color:#555; margin-bottom:.5rem; }
+    * { box-sizing: border-box; }
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      max-width: 900px; 
+      margin: 0 auto; 
+      padding: 2rem 1rem; 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    .container {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    h1 { 
+      color: #333; 
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+    }
+    .subtitle {
+      color: #666;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+    fieldset { 
+      margin-bottom: 1.5rem; 
+      padding: 1.5rem; 
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      background: #fafafa;
+    }
+    legend { 
+      font-weight: bold; 
+      color: #667eea;
+      font-size: 1.2rem;
+      padding: 0 0.5rem;
+    }
+    label { 
+      display: block; 
+      margin: 0.8rem 0; 
+      font-weight: 500;
+      color: #333;
+    }
+    select, input[type="checkbox"] {
+      margin-top: 0.3rem;
+      cursor: pointer;
+    }
+    select {
+      width: 100%;
+      padding: 0.6rem;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+    select:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .checkbox-item input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin: 0;
+    }
+    button { 
+      padding: 1rem 2rem; 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    }
+    button:active {
+      transform: translateY(0);
+    }
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .msg { 
+      margin-top: 1.5rem; 
+      padding: 1rem;
+      border-radius: 8px;
+      font-weight: 500;
+    }
+    .msg.loading {
+      background: #e3f2fd;
+      color: #1976d2;
+      border-left: 4px solid #1976d2;
+    }
+    .msg.success {
+      background: #e8f5e9;
+      color: #2e7d32;
+      border-left: 4px solid #2e7d32;
+    }
+    .msg.error {
+      background: #ffebee;
+      color: #c62828;
+      border-left: 4px solid #c62828;
+    }
+    .results {
+      margin-top: 2rem;
+    }
+    .neighborhood-card {
+      background: white;
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .neighborhood-card:hover {
+      transform: translateX(5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .neighborhood-card h3 {
+      margin: 0 0 1rem 0;
+      color: #667eea;
+      font-size: 1.4rem;
+    }
+    .score {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #764ba2;
+      margin-bottom: 1rem;
+    }
+    .details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.8rem;
+      font-size: 0.9rem;
+    }
+    .detail-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.4rem;
+      background: #f5f5f5;
+      border-radius: 6px;
+    }
+    .detail-label {
+      color: #666;
+    }
+    .detail-value {
+      font-weight: bold;
+      color: #333;
+    }
   </style>
 </head>
 <body>
-  <h1>House </h1>
-  <p class="small">Selecciona una valoración general para cada categoría.</p>
+  <div class="container">
+    <h1>🏡 Encuentra tu Barrio Ideal</h1>
+    <p class="subtitle">Responde algunas preguntas sobre tu estilo de vida y te recomendaremos los mejores barrios de Los Ángeles para ti.</p>
 
-  <form id="zonaForm">
-    <fieldset>
-      <legend>Servicios</legend>
-      <div class="inline">
+    <form id="recommendationForm">
+      <!-- Edad -->
+      <fieldset>
+        <legend>👤 ¿Cuál es tu rango de edad?</legend>
         <label>
-          Nivel
-          <select name="servicios.nivel" required>
-            <option>Alto</option>
-            <option>Normal</option>
-            <option>Bajo</option>
+          <select name="edad" required>
+            <option value="">-- Selecciona --</option>
+            <option value="18-25">18-25 años (Joven adulto)</option>
+            <option value="26-35">26-35 años (Profesional joven)</option>
+            <option value="36-50">36-50 años (Establecido)</option>
+            <option value="51+">51+ años (Maduro)</option>
           </select>
         </label>
-      </div>
-    </fieldset>
+      </fieldset>
 
-    <fieldset>
-      <legend>Transporte</legend>
-      <div class="inline">
+      <!-- Situación Familiar -->
+      <fieldset>
+        <legend>👨‍👩‍👧‍👦 ¿Cuál es tu situación familiar?</legend>
         <label>
-          Nivel
-          <select name="transporte.nivel" required>
-            <option>Alto</option>
-            <option>Normal</option>
-            <option>Bajo</option>
+          <select name="situacionFamiliar" required>
+            <option value="">-- Selecciona --</option>
+            <option value="solo">Solo/a</option>
+            <option value="pareja">En pareja sin hijos</option>
+            <option value="hijos-pequenos">Con hijos pequeños (0-12 años)</option>
+            <option value="hijos-adolescentes">Con hijos adolescentes (13-18 años)</option>
+            <option value="multigeneracional">Familia multigeneracional</option>
           </select>
         </label>
-      </div>
-    </fieldset>
+      </fieldset>
 
-    <fieldset>
-      <legend>Seguridad</legend>
-      <div class="inline">
-        <label>
-          Nivel
-          <select name="seguridad.nivel" required>
-            <option>Alta</option>
-            <option>Normal</option>
-            <option>Baja</option>
-          </select>
-        </label>
-      </div>
-    </fieldset>
+      <!-- Estilo de Vida (múltiple selección) -->
+      <fieldset>
+        <legend>🎯 ¿Qué describe mejor tu estilo de vida? (puedes elegir varios)</legend>
+        <div class="checkbox-group">
+          <label class="checkbox-item">
+            <input type="checkbox" name="estiloVida" value="nocturna">
+            <span>Vida nocturna activa (bares, clubes, restaurantes)</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="estiloVida" value="diurna">
+            <span>Vida diurna activa (cafés, parques, museos, cultura)</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="estiloVida" value="tranquila">
+            <span>Vida tranquila y familiar</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="estiloVida" value="estudiante">
+            <span>Estudiante universitario</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="estiloVida" value="profesional">
+            <span>Profesional que trabaja desde casa</span>
+          </label>
+        </div>
+      </fieldset>
 
-    <fieldset>
-      <legend>Estilo de vida</legend>
-      <div class="inline">
-        <label>
-          Nivel
-          <select name="estiloVida.nivel" required>
-            <option>Alto</option>
-            <option>Normal</option>
-            <option>Bajo</option>
-          </select>
-        </label>
-      </div>
-    </fieldset>
+      <!-- Prioridades (múltiple selección) -->
+      <fieldset>
+        <legend>⭐ ¿Qué es más importante para ti? (elige hasta 3)</legend>
+        <div class="checkbox-group">
+          <label class="checkbox-item">
+            <input type="checkbox" name="prioridades" value="seguridad">
+            <span>Seguridad y tranquilidad</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="prioridades" value="servicios">
+            <span>Cercanía a servicios (tiendas, hospitales, bomberos)</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="prioridades" value="social">
+            <span>Vida social y entretenimiento</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="prioridades" value="educacion">
+            <span>Acceso a educación (escuelas, universidades)</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="prioridades" value="verde">
+            <span>Espacios verdes y ambiente natural</span>
+          </label>
+        </div>
+      </fieldset>
 
-    <button type="submit">Enviar</button>
-    <div id="status" class="msg" role="status" aria-live="polite"></div>
-  </form>
+      <button type="submit" id="submitBtn">🔍 Buscar mi Barrio Ideal</button>
+      <div id="status" class="msg" role="status" aria-live="polite"></div>
+    </form>
+
+    <div id="results" class="results" style="display: none;"></div>
+  </div>
 
   <script>
-    const form = document.getElementById('zonaForm');
+    const form = document.getElementById('recommendationForm');
     const statusEl = document.getElementById('status');
+    const resultsEl = document.getElementById('results');
+    const submitBtn = document.getElementById('submitBtn');
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      statusEl.textContent = 'Enviando...';
+      statusEl.className = 'msg loading';
+      statusEl.textContent = '🔄 Analizando tus preferencias y buscando los mejores barrios...';
+      submitBtn.disabled = true;
+      resultsEl.style.display = 'none';
 
       const formData = new FormData(form);
-      const payload = {};
-      for (const [key, value] of formData.entries()) {
-        // Construir objeto anidado a partir de nombres con punto: "categoria.campo"
-        if (key.includes('.')) {
-          const [parent, child] = key.split('.');
-          payload[parent] = payload[parent] || {};
-          payload[parent][child] = value.trim();
-        } else {
-          payload[key] = value.trim();
-        }
-      }
+      const payload = {
+        edad: formData.get('edad'),
+        situacionFamiliar: formData.get('situacionFamiliar'),
+        estiloVida: formData.getAll('estiloVida'),
+        prioridades: formData.getAll('prioridades')
+      };
 
       try {
-        const res = await fetch('http://localhost:3000', {
+        const res = await fetch('http://localhost:3000/api/recommendations', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
         });
-        if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
-        const data = await res.json().catch(() => null);
-        statusEl.textContent = 'Enviado correctamente' + (data ? ': ' + JSON.stringify(data) : '.');
+        
+        if (!res.ok) {
+          const errorText = await res.text();
+          throw new Error(`Error ${res.status}: ${errorText}`);
+        }
+        
+        const data = await res.json();
+        statusEl.className = 'msg success';
+        statusEl.textContent = `✅ ¡Encontramos ${data.recommendations.length} barrios perfectos para ti!`;
+        
+        displayResults(data);
       } catch (err) {
-        statusEl.textContent = 'Error al enviar: ' + err.message;
+        statusEl.className = 'msg error';
+        statusEl.textContent = '❌ Error: ' + err.message;
+        console.error(err);
+      } finally {
+        submitBtn.disabled = false;
       }
     });
+
+    function displayResults(data) {
+      resultsEl.style.display = 'block';
+      
+      const top5 = data.recommendations.slice(0, 5);
+      
+      resultsEl.innerHTML = `
+        <h2>🏆 Top 5 Barrios Recomendados para Ti</h2>
+        ${top5.map((item, index) => `
+          <div class="neighborhood-card">
+            <h3>${index + 1}. ${item.barrio}</h3>
+            <div class="score">Score: ${item.score.toFixed(1)}/100</div>
+            <div class="details">
+              <div class="detail-item">
+                <span class="detail-label">🛡️ Seguridad</span>
+                <span class="detail-value">${item.data.Seguridad}/100</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">🏪 Tiendas</span>
+                <span class="detail-value">${item.data.Botigues}/100</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">🏫 Escuelas</span>
+                <span class="detail-value">${item.data.Escoles}/100</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">🏥 Hospitales</span>
+                <span class="detail-value">${item.data.Hospitals}/100</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">🚒 Bomberos</span>
+                <span class="detail-value">${item.data.Bombers}/100</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">👮 Policía</span>
+                <span class="detail-value">${item.data.Policies}/100</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">🌙 Ocio Nocturno</span>
+                <span class="detail-value">${item.data.OciNocturn}/100</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">☀️ Ocio Diurno</span>
+                <span class="detail-value">${item.data.OciDiurn}/100</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">🎓 Universidades</span>
+                <span class="detail-value">${item.data.Universitats}/100</span>
+              </div>
+            </div>
+          </div>
+        `).join('')}
+      `;
+    }
   </script>
 </body>
 </html>

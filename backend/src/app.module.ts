@@ -8,6 +8,7 @@ import { DatabaseModule } from './database/database.module';
 import { MobilityController } from './mobility/mobility.controller';
 import { MobilityModule } from './mobility/mobility.module';
 import { SecurityModule } from './security/security.module';
+import { RecommendationsModule } from './recommendations/recommendations.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { SecurityModule } from './security/security.module';
     ServicesModule,
     MobilityModule,
     SecurityModule,
+    RecommendationsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
