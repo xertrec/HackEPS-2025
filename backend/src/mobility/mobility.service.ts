@@ -6,16 +6,81 @@ import { Repository } from 'typeorm';
 import { firstValueFrom } from 'rxjs';
 import { Neighborhood } from './neighborhood.entity';
 import { MOBILITY_CONFIG } from './mobility.constants';
+import * as fs from 'fs';
+import * as path from 'path';
 
 const C = MOBILITY_CONFIG;
 
+interface TransportStop {
+  lat: number;
+  lon: number;
+  type: string;
+  name?: string;
+}
+
 @Injectable()
 export class MobilityService {
+  private transportData: TransportStop[] = [];
+  private spatialIndex: Map<string, TransportStop[]> = new Map();
+  private readonly GRID_SIZE = 0.01; // ~1km de precisión
+
   constructor(
     private readonly httpService: HttpService,
     @InjectRepository(Neighborhood)
     private neighborhoodRepo: Repository<Neighborhood>,
-  ) {}
+  ) {
+    // Cargar datos de transporte al iniciar el servicio
+    this.loadTransportData();
+  }
+
+  private loadTransportData() {
+    try {
+      const dataPath = path.join(__dirname, '..', '..', 'transport_data.json');
+      if (fs.existsSync(dataPath)) {
+        const data = fs.readFileSync(dataPath, 'utf-8');
+        this.transportData = JSON.parse(data);
+        console.log(`✅ Cargados ${this.transportData.length} paradas de transporte desde caché local`);
+        
+        // Crear índice espacial para búsquedas rápidas
+        this.buildSpatialIndex();
+        console.log(`✅ Índice espacial creado con ${this.spatialIndex.size} celdas`);
+      } else {
+        console.warn('⚠️ No se encontró transport_data.json. Ejecuta: npx ts-node scripts/download-transport-data.ts');
+      }
+    } catch (e) {
+      console.error('❌ Error cargando datos de transporte:', e.message);
+    }
+  }
+
+  private buildSpatialIndex() {
+    for (const stop of this.transportData) {
+      const key = this.getGridKey(stop.lat, stop.lon);
+      if (!this.spatialIndex.has(key)) {
+        this.spatialIndex.set(key, []);
+      }
+      this.spatialIndex.get(key)!.push(stop);
+    }
+  }
+
+  private getGridKey(lat: number, lon: number): string {
+    const gridLat = Math.floor(lat / this.GRID_SIZE);
+    const gridLon = Math.floor(lon / this.GRID_SIZE);
+    return `${gridLat},${gridLon}`;
+  }
+
+  private getNearbyCells(lat: number, lon: number): string[] {
+    const keys: string[] = [];
+    const centerLat = Math.floor(lat / this.GRID_SIZE);
+    const centerLon = Math.floor(lon / this.GRID_SIZE);
+    
+    // Buscar en la celda actual y las 8 celdas vecinas
+    for (let dLat = -1; dLat <= 1; dLat++) {
+      for (let dLon = -1; dLon <= 1; dLon++) {
+        keys.push(`${centerLat + dLat},${centerLon + dLon}`);
+      }
+    }
+    return keys;
+  }
 
   // --- 1. GESTIÓN DE LISTA Y CACHÉ ---
   async calculateScoresForList(barrios: Neighborhood[]) {
@@ -81,6 +146,8 @@ export class MobilityService {
             return this.fetchLaCityData(apiConfig.id, lat, lon);
         } else if (apiConfig.type === 'OVERPASS') {
             return this.fetchOverpassData(apiConfig.query, lat, lon);
+        } else if (apiConfig.type === 'METRO_GTFS') {
+            return this.fetchMetroGTFSData(apiConfig.url, lat, lon);
         }
         return 0;
     });
@@ -114,6 +181,12 @@ export class MobilityService {
   }
 
   private async fetchOverpassData(queryPart: string, lat: number, lon: number): Promise<number> {
+    // Si tenemos datos locales de transporte y estamos buscando paradas de bus, usar caché
+    if (queryPart.includes('bus_stop') && this.transportData.length > 0) {
+      return this.countNearbyStops(lat, lon, 'bus_stop');
+    }
+    
+    // Si no hay caché, hacer petición a API (fallback)
     try {
         const fullQuery = `[out:json][timeout:3];(${queryPart}(around:${C.RADIUS},${lat},${lon}););out count;`;
         const url = `${C.URLS.OVERPASS_API}?data=${encodeURIComponent(fullQuery)}`;
@@ -123,5 +196,79 @@ export class MobilityService {
     } catch (e) {
         return 0;
     }
+  }
+
+  private countNearbyStops(lat: number, lon: number, type?: string): number {
+    let count = 0;
+    
+    // Usar índice espacial para reducir búsqueda
+    const nearbyCells = this.getNearbyCells(lat, lon);
+    
+    for (const cellKey of nearbyCells) {
+      const stops = this.spatialIndex.get(cellKey);
+      if (!stops) continue;
+      
+      for (const stop of stops) {
+        if (type && stop.type !== type) continue;
+        
+        const distance = this.calculateDistance(lat, lon, stop.lat, stop.lon);
+        if (distance <= C.RADIUS) {
+          count++;
+        }
+      }
+    }
+    return count;
+  }
+
+  private async fetchMetroGTFSData(url: string, lat: number, lon: number): Promise<number> {
+    try {
+        const res = await firstValueFrom(this.httpService.get(url, { responseType: 'text' }));
+        const lines = res.data.split('\n');
+        
+        if (lines.length < 2) return 0;
+        
+        // Parsear el header para encontrar las columnas
+        const header = lines[0].split(',');
+        const latIdx = header.findIndex(h => h.trim().toLowerCase() === 'stop_lat');
+        const lonIdx = header.findIndex(h => h.trim().toLowerCase() === 'stop_lon');
+        
+        if (latIdx === -1 || lonIdx === -1) return 0;
+        
+        // Contar paradas dentro del radio
+        let count = 0;
+        for (let i = 1; i < lines.length; i++) {
+            const cols = lines[i].split(',');
+            if (cols.length <= Math.max(latIdx, lonIdx)) continue;
+            
+            const stopLat = parseFloat(cols[latIdx]);
+            const stopLon = parseFloat(cols[lonIdx]);
+            
+            if (isNaN(stopLat) || isNaN(stopLon)) continue;
+            
+            // Calcular distancia en metros (aproximación simple)
+            const distance = this.calculateDistance(lat, lon, stopLat, stopLon);
+            if (distance <= C.RADIUS) {
+                count++;
+            }
+        }
+        
+        return count;
+    } catch (e) {
+        console.error(`Error fetching GTFS from ${url}:`, e.message);
+        return 0;
+    }
+  }
+
+  // Calcular distancia en metros entre dos coordenadas (fórmula Haversine simplificada)
+  private calculateDistance(lat1: number, lon1: number, lat2: number, lon2: number): number {
+    const R = 6371000; // Radio de la Tierra en metros
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    const a = 
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+      Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
   }
 }
