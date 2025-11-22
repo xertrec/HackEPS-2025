@@ -681,15 +681,21 @@ export class ServicesService {
       // Buscar siempre en la raíz del proyecto
       const filePath = path.join(process.cwd(), 'nightlife_data.json');
       
+      if (!fs.existsSync(filePath)) {
+        console.log('⚠️  nightlife_data.json no existe. Creando archivo vacío...');
+        fs.writeFileSync(filePath, '[]');
+        console.log('💡 Ejecuta "npm run fetch-leisure" para descargar los datos reales');
+        this.nightlifeData = [];
+        return;
+      }
+      
       const fileContent = fs.readFileSync(filePath, 'utf-8');
       this.nightlifeData = JSON.parse(fileContent);
       if (this.nightlifeData) {
         console.log(`✓ Cargados ${this.nightlifeData.length} lugares de ocio nocturno`);
       }
     } catch (error) {
-      console.error('Error al cargar datos de ocio nocturno:', error.message);
-      console.error(`Ruta buscada: ${path.join(process.cwd(), 'nightlife_data.json')}`);
-      console.error('Ejecuta: npm run fetch-leisure para descargar los datos');
+      console.error('❌ Error al cargar datos de ocio nocturno:', error.message);
       this.nightlifeData = [];
     }
   }
