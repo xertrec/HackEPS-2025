@@ -5,9 +5,10 @@ import { LifestyleModule } from './lifestyle/lifestyle.module';
 import { ServicesModule } from './services/services.module';
 import { MobilityController } from './mobility/mobility.controller';
 import { MobilityModule } from './mobility/mobility.module';
+import { SecurityModule } from './security/security.module';
 
 @Module({
-  imports: [LifestyleModule, ServicesModule, MobilityModule],
+  imports: [LifestyleModule, ServicesModule, MobilityModule, SecurityModule],
   controllers: [AppController, MobilityController],
   providers: [AppService],
 })
