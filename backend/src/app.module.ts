@@ -1,21 +1,19 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { LifestyleModule } from './lifestyle/lifestyle.module';
-import { ServicesModule } from './services/services.module';
-import { DatabaseModule } from './database/database.module';
-
-import { MobilityController } from './mobility/mobility.controller';
 import { MobilityModule } from './mobility/mobility.module';
-import { SecurityModule } from './security/security.module';
+import { Neighborhood } from './mobility/neighborhood.entity';
 
 @Module({
   imports: [
-    DatabaseModule,
-    LifestyleModule,
-    ServicesModule,
+    TypeOrmModule.forRoot({
+      type: 'sqlite',
+      database: 'neighborhoods.db', // Asegúrate que este archivo está en la raíz
+      entities: [Neighborhood],      // <--- IMPORTANTE
+      synchronize: false,
+    }),
     MobilityModule,
-    SecurityModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -1,43 +1,29 @@
-// src/mobility/mobility.controller.ts
 import { Controller, Get } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import { MobilityService } from './mobility.service';
+import { Neighborhood } from './neighborhood.entity';
 
 @Controller('mobility')
 export class MobilityController {
-  constructor(private readonly mobilityService: MobilityService) {}
+  constructor(
+    private readonly mobilityService: MobilityService,
+    @InjectRepository(Neighborhood)
+    private neighborhoodRepo: Repository<Neighborhood>,
+  ) {}
 
-  @Get('parking')
-  async getParking() {
-    return this.mobilityService.getParkingData();
-  }
+  @Get('all')
+  async getAllScores() {
+    const barrios = await this.neighborhoodRepo.find();
+    
+    if (!barrios.length) return { msg: "La BBDD está vacía o no se lee." };
 
-  @Get('airport')
-  async getAirport() {
-    return this.mobilityService.getAirportData();
-  }
+    const lista = barrios.map(b => ({
+        name: b.name,
+        lat: b.latitude,
+        lon: b.longitude
+    }));
 
-  @Get('traffic')
-  async getTraffic() {
-    return this.mobilityService.getTrafficCounts();
-  }
-
-  // BONUS: ¡Un endpoint que trae TODO junto!
-  // Ideal para tu Frontend del Hackathon
-  @Get('all-sources')
-  async getAll() {
-    const [parking, airport, traffic] = await Promise.all([
-      this.mobilityService.getParkingData(),
-      this.mobilityService.getAirportData(),
-      this.mobilityService.getTrafficCounts(),
-    ]);
-
-    return {
-      summary: 'Mobility Data Aggregation',
-      sources: {
-        parking,
-        airport,
-        traffic
-      }
-    };
+    return this.mobilityService.calculateScoresForList(lista);
   }
 }
