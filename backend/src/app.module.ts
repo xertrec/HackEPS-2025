@@ -10,7 +10,6 @@ import { MobilityModule } from './mobility/mobility.module';
 import { SecurityModule } from './security/security.module';
 
 @Module({
-  imports: [DatabaseModule, LifestyleModule, ServicesModule, MobilityModule, SecurityModule],
   imports: [
     DatabaseModule,
     LifestyleModule,

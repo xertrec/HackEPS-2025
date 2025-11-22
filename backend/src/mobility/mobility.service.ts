@@ -53,7 +53,7 @@ export class MobilityService {
       console.log(`📡 Conectando a Dataset: ${datasetId}...`);
       
       const response = await firstValueFrom(
-        this.httpService.get(baseUrl, { params: customParams })
+        this.httpService.get<any[]>(baseUrl, { params: customParams })
       );
       
       return {
