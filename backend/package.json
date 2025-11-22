@@ -21,6 +21,8 @@
     "init-db": "ts-node scripts/init-db.ts"
   },
   "dependencies": {
+    "@esri/arcgis-rest-feature-service": "^4.4.1",
+    "@esri/arcgis-rest-request": "^4.7.3",
     "@nestjs/common": "^11.0.1",
     "@nestjs/core": "^11.0.1",
     "@nestjs/platform-express": "^11.0.1",
