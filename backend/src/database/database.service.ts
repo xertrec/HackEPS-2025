@@ -20,9 +20,9 @@ export class DatabaseService implements OnModuleInit, OnModuleDestroy {
   private dbPath: string;
 
   onModuleInit() {
-    // En producción (dist), __dirname es dist/database
-    // En desarrollo, necesitamos ir a la raíz del proyecto
-    this.dbPath = path.join(__dirname, '..', '..', 'neighborhoods.db');
+    // Buscar la base de datos en la raíz del proyecto
+    // process.cwd() nos da la raíz del proyecto donde se ejecuta npm
+    this.dbPath = path.join(process.cwd(), 'neighborhoods.db');
     console.log('Intentando conectar a la base de datos en:', this.dbPath);
     
     this.db = new sqlite3.Database(this.dbPath, (err) => {

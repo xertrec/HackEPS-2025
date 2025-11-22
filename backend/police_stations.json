@@ -1,0 +1,23 @@
+[
+  {"division": "CENTRAL", "location": "251 E. 6TH ST.", "latitude": 34.044, "longitude": -118.244},
+  {"division": "RAMPART", "location": "1401 W. 6TH ST.", "latitude": 34.054, "longitude": -118.273},
+  {"division": "SOUTHWEST", "location": "1546 MARTIN LUTHER KING JR. BLVD.", "latitude": 34.011, "longitude": -118.301},
+  {"division": "HOLLENBECK", "location": "2111 E. 1ST ST.", "latitude": 34.048, "longitude": -118.218},
+  {"division": "HARBOR", "location": "2175 JOHN S. GIBSON BLVD.", "latitude": 33.742, "longitude": -118.273},
+  {"division": "HOLLYWOOD", "location": "1358 N. WILCOX AVE.", "latitude": 34.096, "longitude": -118.329},
+  {"division": "WILSHIRE", "location": "4861 VENICE BLVD.", "latitude": 34.044, "longitude": -118.347},
+  {"division": "WEST LOS ANGELES", "location": "1663 BUTLER AVE.", "latitude": 34.042, "longitude": -118.452},
+  {"division": "VAN NUYS", "location": "6240 SYLMAR AVE.", "latitude": 34.193, "longitude": -118.450},
+  {"division": "WEST VALLEY", "location": "19020 VANOWEN ST.", "latitude": 34.194, "longitude": -118.547},
+  {"division": "NORTHEAST", "location": "3353 SAN FERNANDO RD.", "latitude": 34.112, "longitude": -118.231},
+  {"division": "77TH STREET", "location": "7600 S. BROADWAY", "latitude": 33.971, "longitude": -118.276},
+  {"division": "NEWTON", "location": "3400 S. CENTRAL AVE.", "latitude": 34.009, "longitude": -118.255},
+  {"division": "PACIFIC", "location": "12312 CULVER BLVD.", "latitude": 33.992, "longitude": -118.414},
+  {"division": "NORTH HOLLYWOOD", "location": "11640 BURBANK BLVD.", "latitude": 34.182, "longitude": -118.373},
+  {"division": "FOOTHILL", "location": "12760 OSBORNE ST.", "latitude": 34.275, "longitude": -118.450},
+  {"division": "DEVONSHIRE", "location": "10250 ETIWANDA AVE.", "latitude": 34.261, "longitude": -118.533},
+  {"division": "SOUTHEAST", "location": "145 W. 108TH ST.", "latitude": 33.933, "longitude": -118.281},
+  {"division": "MISSION", "location": "11121 N. SEPULVEDA BLVD.", "latitude": 34.280, "longitude": -118.467},
+  {"division": "OLYMPIC", "location": "1130 S. VERMONT AVE.", "latitude": 34.046, "longitude": -118.292},
+  {"division": "TOPANGA", "location": "21501 SCHOENBORN ST.", "latitude": 34.215, "longitude": -118.597}
+]

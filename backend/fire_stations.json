@@ -1,0 +1,3314 @@
+[
+  {
+    "name": "Los Angeles County Fire Department - Station 8",
+    "address": "7643 Santa Monica Blvd.",
+    "city": "West Hollywood",
+    "latitude": 34.0910564108228,
+    "longitude": -118.356497635332,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department -  Station 182",
+    "address": "1059 N. White Ave.",
+    "city": "Pomona",
+    "latitude": 34.0676776126561,
+    "longitude": -117.759563233664,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "West Covina Fire Station #1",
+    "address": "819 S. Sunset Ave.",
+    "city": "West Covina",
+    "latitude": 34.0667123014953,
+    "longitude": -117.941071664505,
+    "organization": "City of West Covina"
+  },
+  {
+    "name": "West Covina Fire Station #2",
+    "address": "2441 E. Cortez Street",
+    "city": "West Covina",
+    "latitude": 34.0648036749008,
+    "longitude": -117.893153996481,
+    "organization": "City of West Covina"
+  },
+  {
+    "name": "West Covina Fire Station #4",
+    "address": "1815 S. Azusa Ave.",
+    "city": "West Covina",
+    "latitude": 34.0430946208015,
+    "longitude": -117.911720247673,
+    "organization": "City of West Covina"
+  },
+  {
+    "name": "West Covina Fire Station #5",
+    "address": "2650 E. Shadow Oak Dr.",
+    "city": "West Covina",
+    "latitude": 34.0198171595885,
+    "longitude": -117.890538832467,
+    "organization": "City of West Covina"
+  },
+  {
+    "name": "West Covina Fire Station #3",
+    "address": "1433 W. Puente Ave.",
+    "city": "West Covina",
+    "latitude": 34.083121703257,
+    "longitude": -117.936179314214,
+    "organization": "City of West Covina"
+  },
+  {
+    "name": "City Of Sierra Madre Fire Department",
+    "address": "242 W. Sierra Madre Blvd.",
+    "city": "Sierra Madre",
+    "latitude": 34.1615928454734,
+    "longitude": -118.058453222502,
+    "organization": "NULL"
+  },
+  {
+    "name": "Station 114 - Balboa Place - Air Operations",
+    "address": "8060 Balboa Place",
+    "city": "Van Nuys",
+    "latitude": 34.2189914468001,
+    "longitude": -118.5010411997,
+    "organization": "LA County"
+  },
+  {
+    "name": "La City Fire Station No. 3 - N. Fremont Ave.",
+    "address": "108 N. Fremont Ave.",
+    "city": "Los Angeles",
+    "latitude": 34.0585607930666,
+    "longitude": -118.252664745599,
+    "organization": "LA County"
+  },
+  {
+    "name": "La City Fire Station No. 92 - W. Pico Blvd.",
+    "address": "10556 W. Pico Blvd.",
+    "city": "Los Angeles",
+    "latitude": 34.0445257917411,
+    "longitude": -118.42077207174,
+    "organization": "LA County"
+  },
+  {
+    "name": "La City Station No. 43 - National Blvd.",
+    "address": "10234 National Blvd.",
+    "city": "Los Angeles",
+    "latitude": 34.0291362408096,
+    "longitude": -118.407565668304,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 1 - Pasadena Ave.",
+    "address": "2230 Pasadena Ave.",
+    "city": "Los Angeles",
+    "latitude": 34.0754977469758,
+    "longitude": -118.2178643406,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 10 - S. Olive St.",
+    "address": "1335 S. Olive St.",
+    "city": "Los Angeles",
+    "latitude": 34.0372654006909,
+    "longitude": -118.263948244953,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 100 - Louise Ave.",
+    "address": "6751 Louise Ave.",
+    "city": "Van Nuys",
+    "latitude": 34.1928112024761,
+    "longitude": -118.510470799005,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 101 - 25Th St.",
+    "address": "1414 25Th St.",
+    "city": "San Pedro",
+    "latitude": 34.033520838449,
+    "longitude": -118.292242050012,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 102 - Burbank Blvd.",
+    "address": "13200 Burbank Blvd.",
+    "city": "Van Nuys",
+    "latitude": 34.1719706561593,
+    "longitude": -118.420640282165,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 104 - Winnetka Ave.",
+    "address": "8349 Winnetka Ave.",
+    "city": "Canoga Park",
+    "latitude": 34.2211366519401,
+    "longitude": -118.570740611047,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 106 - Roscoe Blvd.",
+    "address": "23004 Roscoe Blvd.",
+    "city": "West Hills",
+    "latitude": 34.219025109106,
+    "longitude": -118.627576420166,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 107 - Devonshire St.",
+    "address": "20225 Devonshire St.",
+    "city": "Chatsworth",
+    "latitude": 34.2569549364735,
+    "longitude": -118.574394314727,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 108 - Mulholland Dr.",
+    "address": "12520 Mulholland Dr.",
+    "city": "Beverly Hills",
+    "latitude": 34.1282391922302,
+    "longitude": -118.40580197603,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 110 - Miner St.",
+    "address": "2945 Miner St.",
+    "city": "San Pedro",
+    "latitude": 33.7186415639423,
+    "longitude": -118.275780821596,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 111 - S. Seaside Ave.",
+    "address": "1444 S. Seaside Ave.",
+    "city": "Terminal Island",
+    "latitude": 33.7332492870465,
+    "longitude": -118.269497922567,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 112 - S. Harbor Blvd.",
+    "address": "444 S. Harbor Blvd.",
+    "city": "San Pedro",
+    "latitude": 33.7468573478272,
+    "longitude": -118.279886425111,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 13 - S. Vermont Ave.",
+    "address": "1206 S. Vermont Ave.",
+    "city": "Los Angeles",
+    "latitude": 34.0488558905699,
+    "longitude": -118.291440651038,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 14 - S. Central Ave.",
+    "address": "3401 S. Central Ave.",
+    "city": "Los Angeles",
+    "latitude": 34.0126711586272,
+    "longitude": -118.256690442116,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 15 - Hoover St.",
+    "address": "3000 Hoover St.",
+    "city": "Los Angeles",
+    "latitude": 34.0270855379804,
+    "longitude": -118.283590927949,
+    "organization": "LA City"
+  },
+  {
+    "name": "Station No. 16 - N. Eastern Ave.",
+    "address": "2011 N. Eastern Ave.",
+    "city": "Los Angeles",
+    "latitude": 34.0662524082319,
+    "longitude": -118.18044683371,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 17 - S. Santa Fe Ave.",
+    "address": "1601 S. Santa Fe Ave.",
+    "city": "Los Angeles",
+    "latitude": 34.0252458510131,
+    "longitude": -118.230267489423,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 18 - Balboa Blvd.",
+    "address": "12050 Balboa Blvd.",
+    "city": "Granada Hills",
+    "latitude": 34.2895474237436,
+    "longitude": -118.501517906591,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 2 - E. Cesar Chavez Ave.",
+    "address": "1962 E. Cesar E. Chavez Ave.",
+    "city": "Los Angeles",
+    "latitude": 34.0491343342038,
+    "longitude": -118.213454638686,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 20 - Sunset Blvd.",
+    "address": "2144 Sunset Blvd.",
+    "city": "Los Angeles",
+    "latitude": 34.0772384234749,
+    "longitude": -118.26531604957,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 27 - N. Cole Ave.",
+    "address": "1327 N. Cole Ave.",
+    "city": "Los Angeles",
+    "latitude": 34.0956519421305,
+    "longitude": -118.330007860457,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 28 - Corbin Ave.",
+    "address": "11641 Corbin Ave.",
+    "city": "Northridge",
+    "latitude": 34.2780957993819,
+    "longitude": -118.563622515476,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 33 - S. Main St.",
+    "address": "6406 S. Main St.",
+    "city": "Los Angeles",
+    "latitude": 33.9811760937642,
+    "longitude": -118.273772441983,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 34 - 7Th Ave.",
+    "address": "3661 7Th Ave.",
+    "city": "Los Angeles",
+    "latitude": 34.0210938154454,
+    "longitude": -118.32494195501,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 38 - 'I' St.",
+    "address": "124 I St.",
+    "city": "Wilmington",
+    "latitude": 33.7814052817886,
+    "longitude": -118.26162672366,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 39 - Sylvan St.",
+    "address": "14415 Sylvan St.",
+    "city": "Van Nuys",
+    "latitude": 34.1843586756544,
+    "longitude": -118.447303787804,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 4 - N. Main St.",
+    "address": "800 N. Main St.",
+    "city": "Los Angeles",
+    "latitude": 34.0606016838153,
+    "longitude": -118.235367043222,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 42 - Colorado Blvd.",
+    "address": "2021 Colorado Blvd.",
+    "city": "Los Angeles",
+    "latitude": 34.1388221043043,
+    "longitude": -118.211899144978,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 44 - Cypress Ave.",
+    "address": "1410 Cypress Ave.",
+    "city": "Los Angeles",
+    "latitude": 34.0969591681149,
+    "longitude": -118.230888045855,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 48 - S. Grand Ave.",
+    "address": "1601 S. Grand Ave.",
+    "city": "San Pedro",
+    "latitude": 33.7295270243927,
+    "longitude": -118.290329225674,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 49 - Yacht St., Berth 194",
+    "address": "400 Yacht St.",
+    "city": "Wilmington",
+    "latitude": 33.7651180310921,
+    "longitude": -118.257006122125,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 50 - Fletcher Dr.",
+    "address": "3036 Fletcher Dr.",
+    "city": "Los Angeles",
+    "latitude": 34.1154366190931,
+    "longitude": -118.244484648844,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 51 - Sepulveda Blvd.",
+    "address": "10435 Sepulveda Blvd.",
+    "city": "Los Angeles",
+    "latitude": 33.9422690720336,
+    "longitude": -118.396450960771,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 52 - Melrose Ave.",
+    "address": "4957 Melrose Ave.",
+    "city": "Los Angeles",
+    "latitude": 34.0838004430666,
+    "longitude": -118.308118056685,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 55 - E. York Blvd.",
+    "address": "4455 E. York Blvd.",
+    "city": "Eagle Rock",
+    "latitude": 34.1239324821679,
+    "longitude": -118.218981745565,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 56 - Rowena Ave.",
+    "address": "2759 Rowena Ave.",
+    "city": "Los Angeles",
+    "latitude": 34.1071655577589,
+    "longitude": -118.26405325142,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 57 - S. Vermont Ave.",
+    "address": "7800 S. Vermont Ave.",
+    "city": "Los Angeles",
+    "latitude": 33.9686020216215,
+    "longitude": -118.291319644679,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 6 - N. Virgil Ave.",
+    "address": "326 N. Virgil Ave.",
+    "city": "Los Angeles",
+    "latitude": 34.07750024366,
+    "longitude": -118.286629852978,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 62 - Centinela Ave.",
+    "address": "3631 Centinela Ave.",
+    "city": "Los Angeles",
+    "latitude": 34.0072687870809,
+    "longitude": -118.435831972407,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 66 - W. Slauson Ave.",
+    "address": "1909 W. Slauson Ave.",
+    "city": "Los Angeles",
+    "latitude": 33.9889235826363,
+    "longitude": -118.311757149258,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 68 - W. Washington Blvd.",
+    "address": "5023 W. Washington Blvd.",
+    "city": "Los Angeles",
+    "latitude": 34.0410495751716,
+    "longitude": -118.34929076069,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 76 - N. Cahuenga Blvd.",
+    "address": "3111 N. Cahuenga Blvd.",
+    "city": "Los Angeles",
+    "latitude": 34.127615265711,
+    "longitude": -118.346708366589,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 78 - Coldwater Canyon Ave.",
+    "address": "4230 Coldwater Canyon Ave.",
+    "city": "Studio City",
+    "latitude": 34.1460836732106,
+    "longitude": -118.414002380049,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 79 - S. Vermont Ave.",
+    "address": "18030 S. Vermont Ave.",
+    "city": "Gardena",
+    "latitude": 33.8663638799836,
+    "longitude": -118.290908435505,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 80 - World Way, West",
+    "address": "6911 World Way",
+    "city": "Los Angeles",
+    "latitude": 33.942952241927,
+    "longitude": -118.413938262815,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 81 - Nordhoff St.",
+    "address": "14123 Nordhoff St.",
+    "city": "Arleta",
+    "latitude": 34.2358173915794,
+    "longitude": -118.439374192401,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 82 - N. Bronson Ave.",
+    "address": "1800 N. Bronson Ave.",
+    "city": "Los Angeles",
+    "latitude": 34.1035269840796,
+    "longitude": -118.317849660049,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 83 - Balboa Blvd.",
+    "address": "5001 Balboa Blvd.",
+    "city": "Encino",
+    "latitude": 34.1618669806932,
+    "longitude": -118.501286994671,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 84 - Canoga Ave.",
+    "address": "5340 Canoga Ave.",
+    "city": "Woodland Hills",
+    "latitude": 34.167143904678,
+    "longitude": -118.597823811103,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 85 - W. 253Rd St.",
+    "address": "1331 W. 253Rd St.",
+    "city": "Harbor City",
+    "latitude": 33.7946177714716,
+    "longitude": -118.3000560325,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 86 - Vineland Ave.",
+    "address": "4305 Vineland Ave.",
+    "city": "North Hollywood",
+    "latitude": 34.1485487456732,
+    "longitude": -118.369861572255,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 88 - N. Sepulveda Blvd.",
+    "address": "5101 N. Sepulveda Blvd.",
+    "city": "Sherman Oaks",
+    "latitude": 34.1631277023889,
+    "longitude": -118.466402889533,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 89 - Laurel Canyon Blvd.",
+    "address": "7063 Laurel Canyon Blvd.",
+    "city": "North Hollywood",
+    "latitude": 34.1991257098096,
+    "longitude": -118.397789281856,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 9 - E. 7Th St.",
+    "address": "430 E. 7Th St.",
+    "city": "Los Angeles",
+    "latitude": 34.0411879714411,
+    "longitude": -118.247743442885,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 99 - Mulholland Dr.",
+    "address": "14145 Mulholland Dr.",
+    "city": "Beverly Hills",
+    "latitude": 34.1305758497625,
+    "longitude": -118.440839983548,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 22 - S. Glendale Ave.",
+    "address": "1201 S. Glendale Ave.",
+    "city": "Glendale",
+    "latitude": 34.1325105315137,
+    "longitude": -118.251853951596,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 24 - Canada Blvd.",
+    "address": "1734 Canada Blvd.",
+    "city": "Glendale",
+    "latitude": 34.1736348467152,
+    "longitude": -118.228550951487,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 25 - N. Chevy Chase Dr.",
+    "address": "353 N. Chevy Chase Dr.",
+    "city": "Glendale",
+    "latitude": 34.1512335734991,
+    "longitude": -118.237403850572,
+    "organization": "LA County"
+  },
+  {
+    "name": "Long Beach Fire Department",
+    "address": "925 Harbor Plaza Dr.",
+    "city": "Long Beach",
+    "latitude": 33.7524081733219,
+    "longitude": -118.196443611749,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station 1 - Culver Blvd.",
+    "address": "9600 Culver Blvd.",
+    "city": "Culver City",
+    "latitude": 34.0225830805963,
+    "longitude": -118.395003066612,
+    "organization": "LA County"
+  },
+  {
+    "name": "Culver City Fire Department",
+    "address": "9770 Culver Blvd.",
+    "city": "Culver City",
+    "latitude": 34.0209306102261,
+    "longitude": -118.395308866759,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station 2 - Washington Blvd.",
+    "address": "11252 Washington Blvd.",
+    "city": "Culver City",
+    "latitude": 34.0057982081091,
+    "longitude": -118.414110367972,
+    "organization": "City of Culver City"
+  },
+  {
+    "name": "Station 2 - Imperial Highway",
+    "address": "9556 Imperial Highway",
+    "city": "Downey",
+    "latitude": 33.9166513946136,
+    "longitude": -118.123388212626,
+    "organization": "LA County"
+  },
+  {
+    "name": "Downey Fire Department",
+    "address": "11111 Brookshire Ave.",
+    "city": "Downey",
+    "latitude": 33.9410439470155,
+    "longitude": -118.128676115963,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station 3 - Paramount Blvd.",
+    "address": "9900 Paramount Blvd.",
+    "city": "Downey",
+    "latitude": 33.9555794892601,
+    "longitude": -118.129196316608,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station 4 - Florence Ave.",
+    "address": "9349 Florence Ave.",
+    "city": "Downey",
+    "latitude": 33.9436080782844,
+    "longitude": -118.108733112264,
+    "organization": "LA County"
+  },
+  {
+    "name": "San Gabriel Fire Department",
+    "address": "1303 S. Del Mar Ave.",
+    "city": "San Gabriel",
+    "latitude": 34.0840619046679,
+    "longitude": -118.099255822115,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 2 - N. Del Mar Ave.",
+    "address": "115 N. Del Mar Ave.",
+    "city": "San Gabriel",
+    "latitude": 34.1036788367231,
+    "longitude": -118.099361622957,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 13 - Thornton Ave.",
+    "address": "2713 Thornton Ave.",
+    "city": "Burbank",
+    "latitude": 34.1953974032622,
+    "longitude": -118.340898272312,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 14 - W. Burbank Blvd.",
+    "address": "2305 W. Burbank Blvd.",
+    "city": "Burbank",
+    "latitude": 34.1790963506854,
+    "longitude": -118.336199570125,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 15 - W. Verdugo Ave.",
+    "address": "1420 W. Verdugo Ave.",
+    "city": "Burbank",
+    "latitude": 34.1683914203277,
+    "longitude": -118.32071796521,
+    "organization": "LA County"
+  },
+  {
+    "name": "Burbank Fire Department",
+    "address": "311 E. Orange Grove Ave.",
+    "city": "Burbank",
+    "latitude": 34.182955723491,
+    "longitude": -118.307832365223,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 3 - Carmenita Rd.",
+    "address": "15517 Carmenita Rd.",
+    "city": "Santa Fe Springs",
+    "latitude": 33.8895510967628,
+    "longitude": -118.047496897325,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 4 - Telegraph Rd.",
+    "address": "11736 Telegraph Rd.",
+    "city": "Santa Fe Springs",
+    "latitude": 33.9464231797965,
+    "longitude": -118.082854408893,
+    "organization": "LA County"
+  },
+  {
+    "name": "Fire Station 3",
+    "address": "3535 W. 182Nd St.",
+    "city": "Torrance",
+    "latitude": 33.8658280275136,
+    "longitude": -118.335332243902,
+    "organization": "LA County"
+  },
+  {
+    "name": "Fire Station 4",
+    "address": "5205 Calle Mayor",
+    "city": "Torrance",
+    "latitude": 33.8130599887536,
+    "longitude": -118.369630345334,
+    "organization": "LA County"
+  },
+  {
+    "name": "Fire Station 5",
+    "address": "3940 Del Amo Blvd.",
+    "city": "Torrance",
+    "latitude": 33.8466706243694,
+    "longitude": -118.355288345595,
+    "organization": "LA County"
+  },
+  {
+    "name": "Fire Station 6",
+    "address": "21401 Del Amo Circle",
+    "city": "Torrance",
+    "latitude": 33.8337141425876,
+    "longitude": -118.355444144555,
+    "organization": "LA County"
+  },
+  {
+    "name": "Fire Station 2",
+    "address": "25135 Robinson Way",
+    "city": "Torrance",
+    "latitude": 33.7964877897605,
+    "longitude": -118.337862638187,
+    "organization": "LA County"
+  },
+  {
+    "name": "Monterey Park Fire Department",
+    "address": "320 W. Newmark Ave.",
+    "city": "Monterey Park",
+    "latitude": 34.0600723895491,
+    "longitude": -118.126432524478,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station 105 - Temporary Location",
+    "address": "141 Alice St.",
+    "city": "Arcadia",
+    "latitude": 34.1316983344399,
+    "longitude": -118.02642991497,
+    "organization": "LA County"
+  },
+  {
+    "name": "Beverly Hills Fire Department",
+    "address": "445 N. Rexford. Dr.",
+    "city": "Beverly Hills",
+    "latitude": 34.0585995655126,
+    "longitude": -118.394159568607,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 3 - S. Doheny Dr.",
+    "address": "180 S. Doheny Dr.",
+    "city": "Beverly Hills",
+    "latitude": 34.0651502156886,
+    "longitude": -118.390020269523,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 3 - W. Rosecrans Ave.",
+    "address": "1133 W. Rosecrans Ave.",
+    "city": "Compton",
+    "latitude": 33.902327676092,
+    "longitude": -118.254424732168,
+    "organization": "LA County"
+  },
+  {
+    "name": "Manhattan Beach Fire Department",
+    "address": "400 15th St",
+    "city": "Manhattan Beach",
+    "latitude": 33.8877538558719,
+    "longitude": -118.40954098726,
+    "organization": "City of Manhattan Beach"
+  },
+  {
+    "name": "Station No. 2 - Manhattan Beach Blvd.",
+    "address": "1400 Manhattan Beach Blvd",
+    "city": "Manhattan Beach",
+    "latitude": 33.8870858769693,
+    "longitude": -118.389606803966,
+    "organization": "City of Manhattan Beach"
+  },
+  {
+    "name": "Redondo Beach Fire Department",
+    "address": "401 S. Broadway",
+    "city": "Redondo Beach",
+    "latitude": 33.8363755020762,
+    "longitude": -118.386940689972,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 2 - Grant Ave.",
+    "address": "2400 Grant Ave.",
+    "city": "Redondo Beach",
+    "latitude": 33.8693482564053,
+    "longitude": -118.368191849358,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 3 - Marina Way",
+    "address": "280 Marina Way",
+    "city": "Redondo Beach",
+    "latitude": 33.8494651024407,
+    "longitude": -118.397523951873,
+    "organization": "LA County"
+  },
+  {
+    "name": "Station No. 3 - Soto St.",
+    "address": "2800 Soto Ave.",
+    "city": "Vernon",
+    "latitude": 34.0137058698059,
+    "longitude": -118.219719635872,
+    "organization": "LA County"
+  },
+  {
+    "name": "Santa Monica Fire Department",
+    "address": "333 Olympic Dr.",
+    "city": "Santa Monica",
+    "latitude": 34.0055426754686,
+    "longitude": -118.104692616653,
+    "organization": "LA County"
+  },
+  {
+    "name": "Santa Monica Fire Department - Station 1",
+    "address": "1444 7Th St.",
+    "city": "Santa Monica",
+    "latitude": 34.0179281452761,
+    "longitude": -118.490868280676,
+    "organization": "LA County"
+  },
+  {
+    "name": "Santa Monica Fire Department - Station 2",
+    "address": "222 Hollister Ave.",
+    "city": "Santa Monica",
+    "latitude": 34.0046507439195,
+    "longitude": -118.48533637978,
+    "organization": "LA County"
+  },
+  {
+    "name": "Santa Monica Fire Department - Station 3",
+    "address": "1302 19Th St.",
+    "city": "Santa Monica",
+    "latitude": 34.0292521972382,
+    "longitude": -118.482003780198,
+    "organization": "LA County"
+  },
+  {
+    "name": "Santa Monica Fire Department - Station 5",
+    "address": "2450 Ashland Ave.",
+    "city": "Santa Monica",
+    "latitude": 34.0147601262475,
+    "longitude": -118.457207776661,
+    "organization": "LA County"
+  },
+  {
+    "name": "Fire Station 31",
+    "address": "135 S. Fair Oaks Ave.",
+    "city": "Pasadena",
+    "latitude": 34.1432526988457,
+    "longitude": -118.150760036228,
+    "organization": "LA County"
+  },
+  {
+    "name": "Fire Station 32",
+    "address": "2424 E. Villa St.",
+    "city": "Pasadena",
+    "latitude": 34.1540905626209,
+    "longitude": -118.100204927473,
+    "organization": "LA County"
+  },
+  {
+    "name": "Fire Station 36",
+    "address": "1140 N. Fair Oaks Ave.",
+    "city": "Pasadena",
+    "latitude": 34.1654231809066,
+    "longitude": -118.150244637663,
+    "organization": "LA County"
+  },
+  {
+    "name": "Fire Station 37",
+    "address": "3430 E. Foothill Blvd.",
+    "city": "Pasadena",
+    "latitude": 34.1496929834456,
+    "longitude": -118.079331024718,
+    "organization": "LA County"
+  },
+  {
+    "name": "Fire Station 38",
+    "address": "1150 Linda Vista Ave.",
+    "city": "Pasadena",
+    "latitude": 34.1670686393842,
+    "longitude": -118.177021541988,
+    "organization": "LA County"
+  },
+  {
+    "name": "Fire Station 39",
+    "address": "50 Ave. 64",
+    "city": "Pasadena",
+    "latitude": 34.1402273757919,
+    "longitude": -118.178907840596,
+    "organization": "LA County"
+  },
+  {
+    "name": "Pasadena Fire Department",
+    "address": "199 S. Los Robles Ave.",
+    "city": "Pasadena",
+    "latitude": 34.1424913392756,
+    "longitude": -118.141842134874,
+    "organization": "LA County"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 1",
+    "address": "1108 N. Eastern Ave.",
+    "city": "Los Angeles",
+    "latitude": 34.049875836426,
+    "longitude": -118.170787201517,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 10 (Battalion 7 Headquarters)",
+    "address": "1860 E. Del Amo",
+    "city": "Carson",
+    "latitude": 33.8464371109831,
+    "longitude": -118.235482705966,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 101",
+    "address": "606 W. Bonita Ave.",
+    "city": "Claremont",
+    "latitude": 34.0962174383086,
+    "longitude": -117.723611911279,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 102",
+    "address": "2040 N. Sumner Ave.",
+    "city": "Claremont",
+    "latitude": 34.1211222091945,
+    "longitude": -117.73818212405,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 103",
+    "address": "7300 S. Paramount Blvd.",
+    "city": "Pico Rivera",
+    "latitude": 33.9828128138084,
+    "longitude": -118.108211484985,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 104",
+    "address": "26901 Golden Valley Road",
+    "city": "Santa Clarita",
+    "latitude": 34.4282058478472,
+    "longitude": -118.506780318473,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 105",
+    "address": "18915 S. Santa Fe Ave.",
+    "city": "Compton",
+    "latitude": 33.8598071828915,
+    "longitude": -118.216583433785,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 106 (Battalion 14 Headquarters)",
+    "address": "27413 Indian Peak Rd.",
+    "city": "Rolling Hills Estates",
+    "latitude": 33.7721171648853,
+    "longitude": -118.376349293309,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 107",
+    "address": "18239 W. Soledad Canyon Rd.",
+    "city": "Canyon Country",
+    "latitude": 34.4168394601735,
+    "longitude": -118.451207048324,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 108",
+    "address": "28799 Rock Canyon Dr.",
+    "city": "Santa Clarita",
+    "latitude": 34.4688251216552,
+    "longitude": -118.514687673612,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 11",
+    "address": "2521 N. El Molino Ave.",
+    "city": "Altadena",
+    "latitude": 34.1885901241013,
+    "longitude": -118.132858136772,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 110",
+    "address": "4433 Admiralty Way",
+    "city": "Marina Del Rey",
+    "latitude": 33.9839704230067,
+    "longitude": -118.44859665188,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 111",
+    "address": "26829 Seco Canyon Rd.",
+    "city": "Valencia",
+    "latitude": 34.4341634368632,
+    "longitude": -118.532011633843,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 112",
+    "address": "8812 W. Ave. E-8",
+    "city": "Lancaster",
+    "latitude": 34.754406615959,
+    "longitude": -118.288208820055,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 114",
+    "address": "39939 N. 170Th St. E",
+    "city": "Palmdale",
+    "latitude": 34.6068618571806,
+    "longitude": -117.825470271421,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 115",
+    "address": "11317 Alondra Blvd.",
+    "city": "Norwalk",
+    "latitude": 33.8878298239208,
+    "longitude": -118.09215050408,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 116",
+    "address": "755 Victoria St.",
+    "city": "Carson",
+    "latitude": 33.8674427621442,
+    "longitude": -118.261896481256,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 117",
+    "address": "44851 30Th Street East",
+    "city": "Lancaster",
+    "latitude": 34.6986816328812,
+    "longitude": -118.077477540891,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 118",
+    "address": "17056 Gale Ave.",
+    "city": "City Of Industry",
+    "latitude": 34.0002610549879,
+    "longitude": -117.935521369512,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 119",
+    "address": "20480 E. Pathfinder Rd.",
+    "city": "Walnut",
+    "latitude": 33.9763692966955,
+    "longitude": -117.855499322547,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 12",
+    "address": "2760 N. Lincoln Ave.",
+    "city": "Altadena",
+    "latitude": 34.1929548523646,
+    "longitude": -118.158463490348,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 120 (Battalion 19 Headquarters)",
+    "address": "1051 S. Grand Ave.",
+    "city": "Diamond Bar",
+    "latitude": 34.001921431521,
+    "longitude": -117.814239227849,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angleles County Fire Department - Station 121",
+    "address": "346 Armitos Place",
+    "city": "Diamond Bar",
+    "latitude": 34.0259963953392,
+    "longitude": -117.793310896471,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 122",
+    "address": "2600 Greenmeadow Rd.",
+    "city": "Lakewood",
+    "latitude": 33.8336971727495,
+    "longitude": -118.160849031842,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 123",
+    "address": "26321 N. Sand Canyon Rd.",
+    "city": "Santa Clarita",
+    "latitude": 34.3849665388586,
+    "longitude": -118.414122069928,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 124",
+    "address": "25870 Hemingway Ave.",
+    "city": "Stevenson Ranch",
+    "latitude": 34.3874825193106,
+    "longitude": -118.582283838167,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 125",
+    "address": "5215 N. Las Virgenes Rd.",
+    "city": "Calabasas",
+    "latitude": 34.1511848474959,
+    "longitude": -118.697816836376,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 126 (Battalion 6 Headquarters)",
+    "address": "26320 Citrus St.",
+    "city": "Santa Clarita",
+    "latitude": 34.4150931446334,
+    "longitude": -118.553216265071,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 127",
+    "address": "2049 E. 223rd St.",
+    "city": "Carson",
+    "latitude": 33.8246656185359,
+    "longitude": -118.238379424133,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 128",
+    "address": "28450 Whites Cyn. Rd.",
+    "city": "Santa Clarita",
+    "latitude": 34.4420221316878,
+    "longitude": -118.472551503967,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 129",
+    "address": "42110 6Th Street West",
+    "city": "Lancaster",
+    "latitude": 34.648062914131,
+    "longitude": -118.140796746848,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 130",
+    "address": "44558 40Th Street West",
+    "city": "Lancaster",
+    "latitude": 34.6928339337146,
+    "longitude": -118.201120711405,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 131",
+    "address": "2629 E. Ave. S",
+    "city": "Palmdale",
+    "latitude": 34.5584488276514,
+    "longitude": -118.081285019285,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 132",
+    "address": "29310 Sand Canyon Rd.",
+    "city": "Santa Clarita",
+    "latitude": 34.4392767347689,
+    "longitude": -118.41766813533,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 134",
+    "address": "43225 N. 25Th Street West",
+    "city": "Lancaster",
+    "latitude": 34.6683050535495,
+    "longitude": -118.175035955204,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 135",
+    "address": "1846 East Ave. K-4",
+    "city": "Lancaster",
+    "latitude": 34.6710910786001,
+    "longitude": -118.095206212322,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 136",
+    "address": "3650 Bolz Ranch Rd.",
+    "city": "Palmdale",
+    "latitude": 34.6161456568969,
+    "longitude": -118.194796353402,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 14",
+    "address": "1401 W. 108th St.",
+    "city": "Los Angeles",
+    "latitude": 33.9385088964662,
+    "longitude": -118.300599383804,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 140",
+    "address": "8723 Elizabeth Lake Rd.",
+    "city": "Leona Valley",
+    "latitude": 34.6173345608909,
+    "longitude": -118.284890998173,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 141",
+    "address": "1124 W. Puente Ave.",
+    "city": "San Dimas",
+    "latitude": 34.0746125590263,
+    "longitude": -117.829475017009,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 144",
+    "address": "31981 Foxfield Dr.",
+    "city": "Westlake Village",
+    "latitude": 34.1390112195684,
+    "longitude": -118.819255564754,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 145 (Battalion 12 Headquarters)",
+    "address": "1525 S. Nogales Ave.",
+    "city": "Rowland Heights",
+    "latitude": 33.9893257163645,
+    "longitude": -117.889562219866,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 146",
+    "address": "20604 E. Loyalton Dr.",
+    "city": "Walnut",
+    "latitude": 34.0450949849476,
+    "longitude": -117.852809278381,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 147",
+    "address": "3161 E. Imperial Hwy.",
+    "city": "Lynwood",
+    "latitude": 33.9305220520511,
+    "longitude": -118.21430779946,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 148",
+    "address": "4264 Martin Luther King Jr. Blvd.",
+    "city": "Lynwood",
+    "latitude": 33.9221732417614,
+    "longitude": -118.190397154023,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 149",
+    "address": "31770 Ridge Route",
+    "city": "Castaic",
+    "latitude": 34.4965693894498,
+    "longitude": -118.616079501883,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 15",
+    "address": "11460 Santa Gertrudes Ave.",
+    "city": "Whittier",
+    "latitude": 33.9297053538525,
+    "longitude": -117.993456161445,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 151",
+    "address": "231 W. Mountain View Ave.",
+    "city": "Glendora",
+    "latitude": 34.1378160444373,
+    "longitude": -117.867650968256,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 152",
+    "address": "807 W. Cypress St.",
+    "city": "Covina",
+    "latitude": 34.0960183169114,
+    "longitude": -117.905923380576,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 153",
+    "address": "1577 E. Cypress St.",
+    "city": "Covina",
+    "latitude": 34.0961296595082,
+    "longitude": -117.857638863186,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 154 (Battalion 16 Headquarters)",
+    "address": "401 N. Second Ave.",
+    "city": "Covina",
+    "latitude": 34.0895948372958,
+    "longitude": -117.888344797549,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 156",
+    "address": "24505 Copper Hill Dr.",
+    "city": "Santa Clarita",
+    "latitude": 34.4540210174845,
+    "longitude": -118.566541541995,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 157",
+    "address": "15921 Spunky Canyon Rd.",
+    "city": "Green Valley",
+    "latitude": 34.6179292439343,
+    "longitude": -118.410167079172,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 158",
+    "address": "1650 W. 162nd Street",
+    "city": "Gardena",
+    "latitude": 33.8835032013677,
+    "longitude": -118.306093539932,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 159",
+    "address": "2030 W. 135th Street",
+    "city": "Gardena",
+    "latitude": 33.9089719838602,
+    "longitude": -118.314694552893,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 16",
+    "address": "8010 Compton Ave.",
+    "city": "Los Angeles",
+    "latitude": 33.9662933736501,
+    "longitude": -118.247413757393,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 160",
+    "address": "5323 W. Rosecrans Ave.",
+    "city": "Hawthorne",
+    "latitude": 33.9021455382133,
+    "longitude": -118.372964332129,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 161  (Battalion 18 Headquarters)",
+    "address": "4475 W. El Segundo Blvd.",
+    "city": "Hawthorne",
+    "latitude": 33.9166939021486,
+    "longitude": -118.354439230899,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 162",
+    "address": "12151 Crenshaw Blvd.",
+    "city": "Hawthorne",
+    "latitude": 33.9218882743583,
+    "longitude": -118.326870125461,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 163",
+    "address": "6320 Pine Ave.",
+    "city": "Bell",
+    "latitude": 33.9794342485671,
+    "longitude": -118.188535299124,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 164  (Battalion 13 Headquarters)",
+    "address": "6301 S. Santa Fe Ave.",
+    "city": "Huntington Park",
+    "latitude": 33.9833497563759,
+    "longitude": -118.230596805397,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 165",
+    "address": "3255 Saturn Ave.",
+    "city": "Huntington Park",
+    "latitude": 33.9762758471188,
+    "longitude": -118.208563222375,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 166  (Battalion 10 Headquarters)",
+    "address": "3615 Santa Anita Ave.",
+    "city": "El Monte",
+    "latitude": 34.0751799978018,
+    "longitude": -118.041795701021,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 167",
+    "address": "11567 Bryant Rd.",
+    "city": "El Monte",
+    "latitude": 34.0789823389217,
+    "longitude": -118.020815918562,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 168",
+    "address": "3207 Cogswell Rd.",
+    "city": "El Monte",
+    "latitude": 34.0646062368904,
+    "longitude": -118.018443837809,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 169",
+    "address": "5112 N. Peck Rd.",
+    "city": "El Monte",
+    "latitude": 34.0955645013153,
+    "longitude": -118.011891789876,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 17",
+    "address": "12006 Hadley St.",
+    "city": "Whittier",
+    "latitude": 33.9825145265398,
+    "longitude": -118.048896475622,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 170",
+    "address": "10701 S. Crenshaw Blvd.",
+    "city": "Inglewood",
+    "latitude": 33.9384088863914,
+    "longitude": -118.326893098027,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 171 (Battalion 20 Headquarters)",
+    "address": "141 W. Regent St.",
+    "city": "Inglewood",
+    "latitude": 33.9647397365073,
+    "longitude": -118.356832744586,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 172",
+    "address": "810 Centinela Ave.",
+    "city": "Inglewood",
+    "latitude": 33.9762133875658,
+    "longitude": -118.353390585343,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 173",
+    "address": "9001 S. Crenshaw Blvd.",
+    "city": "Inglewood",
+    "latitude": 33.9557256275411,
+    "longitude": -118.326810289383,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 18",
+    "address": "4518 W. Lennox Blvd.",
+    "city": "Inglewood",
+    "latitude": 33.9379658838345,
+    "longitude": -118.3556404822,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 183",
+    "address": "708 N. San Antonio",
+    "city": "Pomona",
+    "latitude": 34.0656035635336,
+    "longitude": -117.736366799203,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 184",
+    "address": "1980 W. Orange Grove",
+    "city": "Pomona",
+    "latitude": 34.0629839097507,
+    "longitude": -117.784864617624,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 185",
+    "address": "925 E. Lexington Ave.",
+    "city": "Pomona",
+    "latitude": 34.0375490000883,
+    "longitude": -117.737999037731,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 186",
+    "address": "280 E. Bonita Ave.",
+    "city": "Pomona",
+    "latitude": 34.0959133357582,
+    "longitude": -117.745276363599,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 187",
+    "address": "3325 Temple Ave.",
+    "city": "Pomona",
+    "latitude": 34.0463320675467,
+    "longitude": -117.808292680648,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 188",
+    "address": "18-A Village Loop Rd.",
+    "city": "Pomona",
+    "latitude": 34.0337042283595,
+    "longitude": -117.77005926343,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 19",
+    "address": "1729 W. Foothill Blvd.",
+    "city": "La Canada Flintridge",
+    "latitude": 34.2113177710681,
+    "longitude": -118.214423711611,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 191",
+    "address": "850 W. La Habra Blvd.",
+    "city": "La Habra",
+    "latitude": 33.9316724758767,
+    "longitude": -117.955753415198,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 192",
+    "address": "520 S. Habor Blvd.",
+    "city": "La Habra",
+    "latitude": 33.9269961570737,
+    "longitude": -117.932545101917,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 193",
+    "address": "1000 Risner Way",
+    "city": "La Habra",
+    "latitude": 33.9074273041418,
+    "longitude": -117.957413163833,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 194",
+    "address": "13540 South Beach Blvd.",
+    "city": "La Mirada",
+    "latitude": 33.9091577215404,
+    "longitude": -117.976782717716,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 2",
+    "address": "340 Palos Verdes Dr. W",
+    "city": "Palos Verdes",
+    "latitude": 33.7999380766728,
+    "longitude": -118.391655207187,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 20",
+    "address": "12110 E. Adoree St.",
+    "city": "Norwalk",
+    "latitude": 33.9131276176442,
+    "longitude": -118.074138983916,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 21",
+    "address": "4312 W. 147Th Street",
+    "city": "Lawndale",
+    "latitude": 33.8979977302014,
+    "longitude": -118.351167069064,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 22",
+    "address": "928 S. Gerhart Ave.",
+    "city": "Commerce",
+    "latitude": 34.0173409338061,
+    "longitude": -118.146912225231,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 23",
+    "address": "9548 E. Flower St.",
+    "city": "Bellflower",
+    "latitude": 33.8817943303271,
+    "longitude": -118.13015620093,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 24",
+    "address": "1050 W. Rancho Vista Blvd.",
+    "city": "Palmdale",
+    "latitude": 34.6014469974128,
+    "longitude": -118.149535764941,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department -Station 25",
+    "address": "9209 E. Slauson Ave.",
+    "city": "Pico Rivera",
+    "latitude": 33.9698811622976,
+    "longitude": -118.100444881773,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 26",
+    "address": "15336 E. Elliot Ave.",
+    "city": "La Puente",
+    "latitude": 34.0362903881482,
+    "longitude": -117.951335254291,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 27 (Battalion 3 Headquarters)",
+    "address": "6031 Rickenbacker Rd.",
+    "city": "Commerce",
+    "latitude": 33.9884946813793,
+    "longitude": -118.154140733345,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 28  (Battalion 8 Headquarters)",
+    "address": "7733 Greenleaf Ave.",
+    "city": "Whittier",
+    "latitude": 33.9709059358237,
+    "longitude": -118.037711383102,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 29",
+    "address": "14334 E. Los Angeles St.",
+    "city": "Baldwin Park",
+    "latitude": 34.0920291027971,
+    "longitude": -117.961880590147,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 3",
+    "address": "930 S. Eastern Ave.",
+    "city": "Los Angeles",
+    "latitude": 34.0230324737231,
+    "longitude": -118.173624959284,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 30 (Battalion 9 Headquarters)",
+    "address": "19030 Pioneer Blvd.",
+    "city": "Cerritos",
+    "latitude": 33.8575743806182,
+    "longitude": -118.081713731232,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 31",
+    "address": "7521 E. Somerset Blvd.",
+    "city": "Paramount",
+    "latitude": 33.8967200205682,
+    "longitude": -118.168084528124,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 32",
+    "address": "605 N. Angeleno Ave.",
+    "city": "Azusa",
+    "latitude": 34.1319026608094,
+    "longitude": -117.910452304655,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 33  (Battalion 11 Headquarters)",
+    "address": "44947 Date Ave.",
+    "city": "Lancaster",
+    "latitude": 34.6993920084389,
+    "longitude": -118.141388330482,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 34",
+    "address": "21207 S. Norwalk Blvd.",
+    "city": "Hawaiian Gardens",
+    "latitude": 33.8369888493194,
+    "longitude": -118.072308886431,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 35",
+    "address": "13717 Artesia Blvd.",
+    "city": "Cerritos",
+    "latitude": 33.873640454849,
+    "longitude": -118.039427524421,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 36",
+    "address": "127 W. 223rd St.",
+    "city": "Carson",
+    "latitude": 33.8246982961868,
+    "longitude": -118.277147151014,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 37",
+    "address": "38318 E. 9th St. East",
+    "city": "Palmdale",
+    "latitude": 34.5781425567369,
+    "longitude": -118.114036496937,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 38",
+    "address": "3907 W. 54th St.",
+    "city": "Los Angeles",
+    "latitude": 33.9933167407902,
+    "longitude": -118.342421055258,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 39",
+    "address": "7000 Garfield Ave.",
+    "city": "Bell Gardens",
+    "latitude": 33.9689538695842,
+    "longitude": -118.149273441256,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 4",
+    "address": "2644 N. San Gabriel Blvd.",
+    "city": "Rosemead",
+    "latitude": 34.0602629522953,
+    "longitude": -118.090185209873,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 40",
+    "address": "4864 S. Durfee Ave.",
+    "city": "Pico Rivera",
+    "latitude": 34.0014391767973,
+    "longitude": -118.07838388267,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 41",
+    "address": "1815 E. 120Th St.",
+    "city": "Los Angeles",
+    "latitude": 33.9249013690673,
+    "longitude": -118.240241802364,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 42",
+    "address": "9319 E. Valley Blvd.",
+    "city": "Rosemead",
+    "latitude": 34.0813852765295,
+    "longitude": -118.066604305313,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 43",
+    "address": "921 S. Stimson Ave.",
+    "city": "La Puente",
+    "latitude": 34.0103671343481,
+    "longitude": -117.955781051471,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 44",
+    "address": "1105 S. Highland Ave.",
+    "city": "Duarte",
+    "latitude": 34.1407214482313,
+    "longitude": -117.96695018479,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 45",
+    "address": "4020 Candlewood St.",
+    "city": "Lakewood",
+    "latitude": 33.853577377503,
+    "longitude": -118.144225520602,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 47",
+    "address": "5946 N. Kauffman Ave.",
+    "city": "Temple City",
+    "latitude": 34.1085120001648,
+    "longitude": -118.058134747264,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 48",
+    "address": "15546 E. Arrow Hwy.",
+    "city": "Irwindale",
+    "latitude": 34.1067635171148,
+    "longitude": -117.941314487294,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 49 (Battalion 21 Headquarters)",
+    "address": "13820 S. La Mirada Blvd.",
+    "city": "La Mirada",
+    "latitude": 33.9050822800272,
+    "longitude": -118.011440653856,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 5",
+    "address": "7225 N. Rosemead Blvd.",
+    "city": "San Gabriel",
+    "latitude": 34.1284149213147,
+    "longitude": -118.073513462116,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 50",
+    "address": "2327 S. Saybrook Ave.",
+    "city": "Commerce",
+    "latitude": 34.0009471843361,
+    "longitude": -118.140592591201,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 51",
+    "address": "3900 Lankershim Blvd.",
+    "city": "Universal City",
+    "latitude": 34.139558676176,
+    "longitude": -118.356657178715,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 53",
+    "address": "6124 Palos Verdes Dr. S",
+    "city": "Rancho Palos Verdes",
+    "latitude": 33.7447702516166,
+    "longitude": -118.384585381955,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 54",
+    "address": "4867 Southern Ave.",
+    "city": "South Gate",
+    "latitude": 33.9485013454937,
+    "longitude": -118.183881564463,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 55",
+    "address": "945 Avalon Cyn Rd.",
+    "city": "Avalon",
+    "latitude": 33.3331515891449,
+    "longitude": -118.335522691692,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 56",
+    "address": "12 Crest Rd. West",
+    "city": "Rolling Hills",
+    "latitude": 33.7567039644343,
+    "longitude": -118.354074978476,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 57",
+    "address": "5720 Gardendale St.",
+    "city": "South Gate",
+    "latitude": 33.9223759127473,
+    "longitude": -118.168201520378,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 58",
+    "address": "5757 S. Fairfax Ave.",
+    "city": "Los Angeles",
+    "latitude": 33.9879295091156,
+    "longitude": -118.363193718087,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 59",
+    "address": "10021 Scott Ave.",
+    "city": "Whittier",
+    "latitude": 33.9464554256451,
+    "longitude": -118.001090414283,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 6",
+    "address": "25517 S. Narbonne Ave.",
+    "city": "Lomita",
+    "latitude": 33.7918522703437,
+    "longitude": -118.320262304818,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 60",
+    "address": "2300 E. 27Th St.",
+    "city": "Signal Hill",
+    "latitude": 33.8060146013981,
+    "longitude": -118.164122820479,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 61",
+    "address": "20011 La Puente Rd.",
+    "city": "Walnut",
+    "latitude": 34.0208164506281,
+    "longitude": -117.865644507028,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 62",
+    "address": "3701 N. Mills Ave.",
+    "city": "Claremont",
+    "latitude": 34.1363655727803,
+    "longitude": -117.707760861718,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 63",
+    "address": "4526 Ramsdell Ave.",
+    "city": "La Crescenta",
+    "latitude": 34.2278740216158,
+    "longitude": -118.244023298374,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 64 (Battalion 2 Headquarters)",
+    "address": "164 S. Walnut Ave.",
+    "city": "San Dimas",
+    "latitude": 34.1054970136158,
+    "longitude": -117.802442723678,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 65",
+    "address": "4206 N. Cornell Rd.",
+    "city": "Agoura",
+    "latitude": 34.1343850026573,
+    "longitude": -118.753528924227,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 66",
+    "address": "2764 E. Eaton Canyon Dr.",
+    "city": "Pasadena",
+    "latitude": 34.1743938744989,
+    "longitude": -118.093822698693,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 67",
+    "address": "25801 Piuma Rd.",
+    "city": "Calabasas",
+    "latitude": 34.0781256898361,
+    "longitude": -118.694132629943,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 68",
+    "address": "24130 Calabasas Rd.",
+    "city": "Calabasas",
+    "latitude": 34.1517415600821,
+    "longitude": -118.652354968688,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 69",
+    "address": "401 S. Topanga Cyn Blvd.",
+    "city": "Topanga",
+    "latitude": 34.0838606553206,
+    "longitude": -118.600092774691,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 7 (Battalion 1 Headquarters)",
+    "address": "864 N. San Vicente Blvd.",
+    "city": "West Hollywood",
+    "latitude": 34.0869827489436,
+    "longitude": -118.385122169513,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 70 (Battalion 5 Headquarters)",
+    "address": "3970 Carbon Cyn Rd.",
+    "city": "Malibu",
+    "latitude": 34.0384625178455,
+    "longitude": -118.649714609502,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 71",
+    "address": "28722 W. Pacific Coast Hwy.",
+    "city": "Malibu",
+    "latitude": 34.0201609983716,
+    "longitude": -118.797405941034,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 72",
+    "address": "1832 Decker Canyon Rd.",
+    "city": "Malibu",
+    "latitude": 34.076629689431,
+    "longitude": -118.881148490695,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 73",
+    "address": "24875 N. Railroad Ave.",
+    "city": "Newhall",
+    "latitude": 34.3874771222061,
+    "longitude": -118.533852429204,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 74",
+    "address": "12587 N. Dexter Park Rd.",
+    "city": "San Fernando",
+    "latitude": 34.2958725720605,
+    "longitude": -118.375783456791,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 75",
+    "address": "23310 Lake Manor Dr.",
+    "city": "Chatsworth",
+    "latitude": 34.2378070408281,
+    "longitude": -118.634795593349,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 76",
+    "address": "27223 Henry Mayo Dr.",
+    "city": "Valencia",
+    "latitude": 34.4390991333657,
+    "longitude": -118.61057523728,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 77",
+    "address": "46833 Peace Valley Rd.",
+    "city": "Gorman",
+    "latitude": 34.7594132755219,
+    "longitude": -118.797451665182,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 78",
+    "address": "17021 W. Elizabeth Lake Rd.",
+    "city": "Palmdale",
+    "latitude": 34.6736473178645,
+    "longitude": -118.430888757123,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 79",
+    "address": "33957 Longview Rd.",
+    "city": "Pearlblossom",
+    "latitude": 34.5024675316561,
+    "longitude": -117.89695550428,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 80",
+    "address": "1533 W. Sierra Hwy.",
+    "city": "Acton",
+    "latitude": 34.4878438463347,
+    "longitude": -118.142111323261,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 81",
+    "address": "8710 W. Sierra Hwy.",
+    "city": "Agua Dulce",
+    "latitude": 34.5191819908042,
+    "longitude": -118.286424010436,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 82 (Battalion 4 Headquarters)",
+    "address": "352 W. Foothill Blvd.",
+    "city": "La Canada Flintridge",
+    "latitude": 34.1975202211936,
+    "longitude": -118.186373415965,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 83",
+    "address": "83 Miraleste Plaza",
+    "city": "Rancho Palos Verdes",
+    "latitude": 33.7491996259678,
+    "longitude": -118.325134501857,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 84",
+    "address": "5030 W. Ave. L-14",
+    "city": "Quartz Hill",
+    "latitude": 34.6471615483871,
+    "longitude": -118.21961534965,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 85",
+    "address": "650 E. Gladstone St.",
+    "city": "Glendora",
+    "latitude": 34.1136052122918,
+    "longitude": -117.851083873817,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 86",
+    "address": "520 S. Amelia Ave.",
+    "city": "Glendora",
+    "latitude": 34.1282354754296,
+    "longitude": -117.820176229361,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 87",
+    "address": "140 S. Second Ave.",
+    "city": "Industry",
+    "latitude": 34.0460989467062,
+    "longitude": -117.993332881499,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 88",
+    "address": "23720 W. Malibu Rd.",
+    "city": "Malibu",
+    "latitude": 34.0335605857784,
+    "longitude": -118.691810986491,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 89",
+    "address": "29575 Canwood St.",
+    "city": "Agoura Hills",
+    "latitude": 34.1478775626629,
+    "longitude": -118.76929213774,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 90",
+    "address": "10115 E. Rush St.",
+    "city": "South El Monte",
+    "latitude": 34.0521308744571,
+    "longitude": -118.049408411674,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 91",
+    "address": "2691 S. Turnbull Cyn Rd.",
+    "city": "Hacienda Heights",
+    "latitude": 33.9965459513177,
+    "longitude": -117.98846538736,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 92",
+    "address": "8905 E. Ave. U",
+    "city": "Littlerock",
+    "latitude": 34.5286996706683,
+    "longitude": -117.970964068122,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 94",
+    "address": "6421 E. Turnergrove St.",
+    "city": "Lakewood",
+    "latitude": 33.8464266689193,
+    "longitude": -118.106890784484,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 95",
+    "address": "137 W. Redondo Beach Blvd.",
+    "city": "Gardena",
+    "latitude": 33.8931976439745,
+    "longitude": -118.277610535554,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 96",
+    "address": "10630 S. Mills Ave.",
+    "city": "Whittier",
+    "latitude": 33.9370967521377,
+    "longitude": -118.040023080827,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 97",
+    "address": "846 Juniper Ridge",
+    "city": "Azusa",
+    "latitude": 34.1467358833258,
+    "longitude": -117.891075283303,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 98",
+    "address": "9814 Maplewood Ave.",
+    "city": "Bellflower",
+    "latitude": 33.8998911732864,
+    "longitude": -118.124961271889,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 99",
+    "address": "32550 Pacific Coast Hwy.",
+    "city": "Malibu",
+    "latitude": 34.0399407744306,
+    "longitude": -118.883632648094,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Glendale Fire Department - Station 21",
+    "address": "421 Oak St.",
+    "city": "Glendale",
+    "latitude": 34.1436218323824,
+    "longitude": -118.26190325277,
+    "organization": "fire.ci.glendale.ca.us"
+  },
+  {
+    "name": "Glendale Fire Department - Station 28",
+    "address": "4410 New York Ave.",
+    "city": "Glendale",
+    "latitude": 34.2303078420366,
+    "longitude": -118.252885260535,
+    "organization": "fire.ci.glendale.ca.us"
+  },
+  {
+    "name": "Glendale Fire Department - Station 26",
+    "address": "1145 N. Brand Blvd.",
+    "city": "Glendale",
+    "latitude": 34.1631908334747,
+    "longitude": -118.255673255013,
+    "organization": "fire.ci.glendale.ca.us"
+  },
+  {
+    "name": "Glendale Fire Department - Station 27",
+    "address": "1127 Western Ave.",
+    "city": "Glendale",
+    "latitude": 34.1721378331583,
+    "longitude": -118.289123261606,
+    "organization": "fire.ci.glendale.ca.us"
+  },
+  {
+    "name": "Glendale Fire Department - Station 23",
+    "address": "3301 E. Chevy Chase Dr.",
+    "city": "Glendale",
+    "latitude": 34.1740188381421,
+    "longitude": -118.199711246205,
+    "organization": "fire.ci.glendale.ca.us"
+  },
+  {
+    "name": "City Of Long Beach Fire Department",
+    "address": "3205 Lakewood Blvd.",
+    "city": "Long Beach",
+    "latitude": 33.8145298035017,
+    "longitude": -118.141066207199,
+    "organization": "www.longbeach.gov/fire"
+  },
+  {
+    "name": "Long Beach Fire Department - Fire Station 5",
+    "address": "7575 E. Wardlow Rd.",
+    "city": "Long Beach",
+    "latitude": 33.8188268067574,
+    "longitude": -118.08549719752,
+    "organization": "www.longbeach.gov/fire"
+  },
+  {
+    "name": "Long Beach Fire Department - Fire Station 12",
+    "address": "6509 Gundry Ave.",
+    "city": "Long Beach",
+    "latitude": 33.8731458073953,
+    "longitude": -118.175443217354,
+    "organization": "www.longbeach.gov/fire"
+  },
+  {
+    "name": "Long Beach Fire Department - Fire Station 1",
+    "address": "100 Magnolia Ave.",
+    "city": "Long Beach",
+    "latitude": 33.7687197936823,
+    "longitude": -118.197447213069,
+    "organization": "www.longbeach.gov/fire"
+  },
+  {
+    "name": "Long Beach Fire Department - Fire Station 11",
+    "address": "160 E. Market St.",
+    "city": "Long Beach",
+    "latitude": 33.8540118038846,
+    "longitude": -118.192350218483,
+    "organization": "www.longbeach.gov/fire"
+  },
+  {
+    "name": "Long Beach Fire Department - Fire Station 16",
+    "address": "2890 E. Wardlow Rd.",
+    "city": "Long Beach",
+    "latitude": 33.8139338015881,
+    "longitude": -118.154507210058,
+    "organization": "www.longbeach.gov/fire"
+  },
+  {
+    "name": "Long Beach Fire Department - Fire Station 8",
+    "address": "5365 E. 2nd St.",
+    "city": "Long Beach",
+    "latitude": 33.758851796904,
+    "longitude": -118.130818201886,
+    "organization": "www.longbeach.gov/fire"
+  },
+  {
+    "name": "Long Beach Fire Department - Fire Station 10",
+    "address": "1417 Peterson Ave.",
+    "city": "Long Beach",
+    "latitude": 33.7847637972802,
+    "longitude": -118.173246209949,
+    "organization": "www.longbeach.gov/fire"
+  },
+  {
+    "name": "Long Beach Fire Department - Fire Station 17",
+    "address": "2241 Argonne Ave.",
+    "city": "Long Beach",
+    "latitude": 33.7978828010618,
+    "longitude": -118.138357205004,
+    "organization": "www.longbeach.gov/fire"
+  },
+  {
+    "name": "Long Beach Fire Department - Fire Station 14",
+    "address": "5200 Eliot Ave.",
+    "city": "Long Beach",
+    "latitude": 33.7696097982574,
+    "longitude": -118.131814202403,
+    "organization": "www.longbeach.gov/fire"
+  },
+  {
+    "name": "Long Beach Fire Department - Fire Station 19",
+    "address": "3559 Clark Ave.",
+    "city": "Long Beach",
+    "latitude": 33.8219548039026,
+    "longitude": -118.137926206488,
+    "organization": "www.longbeach.gov/fire"
+  },
+  {
+    "name": "Long Beach Fire Department - Fire Station 9",
+    "address": "3917 Long Beach Blvd.",
+    "city": "Long Beach",
+    "latitude": 33.829288802111,
+    "longitude": -118.18949321603,
+    "organization": "www.longbeach.gov/fire"
+  },
+  {
+    "name": "Long Beach Fire Department - Fire Station 18",
+    "address": "3361 Palo Verde Ave.",
+    "city": "Long Beach",
+    "latitude": 33.818098806097,
+    "longitude": -118.108188202748,
+    "organization": "www.longbeach.gov/fire"
+  },
+  {
+    "name": "Long Beach Fire Department - Fire Station 6",
+    "address": "330 Windsor Way",
+    "city": "Long Beach",
+    "latitude": 33.7514737927982,
+    "longitude": -118.192478210678,
+    "organization": "www.longbeach.gov/fire"
+  },
+  {
+    "name": "Long Beach Fire Department - Fire Station 2",
+    "address": "1645 E. 3rd St.",
+    "city": "Long Beach",
+    "latitude": 33.7696977962175,
+    "longitude": -118.171109208084,
+    "organization": "www.longbeach.gov/fire"
+  },
+  {
+    "name": "Long Beach Fire Department - Fire Station 4",
+    "address": "411 Loma Ave.",
+    "city": "Long Beach",
+    "latitude": 33.7718227980524,
+    "longitude": -118.150398206012,
+    "organization": "www.longbeach.gov/fire"
+  },
+  {
+    "name": "Long Beach Fire Department - Fire Station 20",
+    "address": "1900 Pier D St.",
+    "city": "Long Beach",
+    "latitude": 33.7655477930037,
+    "longitude": -118.219371216253,
+    "organization": "www.longbeach.gov/fire"
+  },
+  {
+    "name": "Long Beach Fire Department - Fire Station 22",
+    "address": "6340 Atherton St.",
+    "city": "Long Beach",
+    "latitude": 33.7886308025572,
+    "longitude": -118.109073200061,
+    "organization": "www.longbeach.gov/fire"
+  },
+  {
+    "name": "Long Beach Fire Department - Fire Station 21",
+    "address": "225 Marina Dr.",
+    "city": "Long Beach",
+    "latitude": 33.750270796581,
+    "longitude": -118.110502196339,
+    "organization": "www.longbeach.gov/fire"
+  },
+  {
+    "name": "Long Beach Fire Department - Fire Station 7",
+    "address": "2295 Elm Ave.",
+    "city": "Long Beach",
+    "latitude": 33.7987187973677,
+    "longitude": -118.188534213441,
+    "organization": "www.longbeach.gov/fire"
+  },
+  {
+    "name": "Long Beach Fire Department - Fire Station 13",
+    "address": "2475 Adriatic Ave.",
+    "city": "Long Beach",
+    "latitude": 33.8021627963696,
+    "longitude": -118.214674218896,
+    "organization": "www.longbeach.gov/fire"
+  },
+  {
+    "name": "Long Beach Fire Department - Fire Station 3",
+    "address": "1222 Daisy Ave.",
+    "city": "Long Beach",
+    "latitude": 33.7817917960172,
+    "longitude": -118.199031214284,
+    "organization": "www.longbeach.gov/fire"
+  },
+  {
+    "name": "Long Beach Fire Department - Fire Station 24",
+    "address": "111 Pier S Ave.",
+    "city": "Long Beach",
+    "latitude": 33.7608727912485,
+    "longitude": -118.239735218672,
+    "organization": "www.longbeach.gov/fire"
+  },
+  {
+    "name": "Culver City Fire Department - Station 3",
+    "address": "6030 Bristol Pkwy",
+    "city": "Culver City",
+    "latitude": 33.9864498667262,
+    "longitude": -118.386781362418,
+    "organization": "www.culvercity.org"
+  },
+  {
+    "name": "Downey Fire Department - Station 1",
+    "address": "12222 Paramount Blvd.",
+    "city": "Downey",
+    "latitude": 33.929474814891,
+    "longitude": -118.146882217403,
+    "organization": "www.downeyca.org"
+  },
+  {
+    "name": "City Of Los Angeles Fire Department",
+    "address": "200 N Main St",
+    "city": "Los Angeles",
+    "latitude": 34.0532690828378,
+    "longitude": -118.24220004359,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 59 - West Los Angeles",
+    "address": "11505 Olympic Blvd.",
+    "city": "Los Angeles",
+    "latitude": 34.0365558104805,
+    "longitude": -118.44431827544,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 77 - Sun Valley",
+    "address": "9224 Sunland Blvd.",
+    "city": "Sun Valley",
+    "latitude": 34.2364968359971,
+    "longitude": -118.367279279605,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 109 - Encino Hills",
+    "address": "16500 Mulhulland Dr.",
+    "city": "Los Angeles",
+    "latitude": 34.1307528164704,
+    "longitude": -118.492202290392,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 69 - Pacific Palisades",
+    "address": "15045 Sunset Blvd.",
+    "city": "Pacific Palisades",
+    "latitude": 34.0444798061772,
+    "longitude": -118.522028288989,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 21 - South Los Angeles",
+    "address": "1192 E. 51st St.",
+    "city": "Los Angeles",
+    "latitude": 33.9969678155659,
+    "longitude": -118.254251241384,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 60 - North Hollywood",
+    "address": "5320 Tujunga Ave.",
+    "city": "North Hollywood",
+    "latitude": 34.1676568274297,
+    "longitude": -118.378851274904,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 47 - El Serena",
+    "address": "4575 Huntington Dr S",
+    "city": "Los Angeles",
+    "latitude": 34.0852936201881,
+    "longitude": -118.186781037133,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 87 - Granada Hills",
+    "address": "10124 Balboa Blvd.",
+    "city": "Northridge",
+    "latitude": 34.2546468299167,
+    "longitude": -118.502176303587,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 25 - South Boyle Heights",
+    "address": "2927 Whittier Blvd.",
+    "city": "Los Angeles",
+    "latitude": 34.0309658235626,
+    "longitude": -118.207689235539,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 91 - Sylmar",
+    "address": "14430 Polk St.",
+    "city": "Sylmar",
+    "latitude": 34.3089938392533,
+    "longitude": -118.447963299051,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 98 - Pacoima",
+    "address": "13035 Van Nuys Blvd.",
+    "city": "Pacoima",
+    "latitude": 34.2698958368504,
+    "longitude": -118.417297290853,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 65 - Watts",
+    "address": "1801 E. Century Blvd.",
+    "city": "Los Angeles",
+    "latitude": 33.9457888107703,
+    "longitude": -118.240320234326,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 19 - Brentwood",
+    "address": "12229 Sunset Blvd.",
+    "city": "Los Angeles",
+    "latitude": 34.0585668101678,
+    "longitude": -118.478631282985,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 61 - Fairfax",
+    "address": "5821 W. 3rd St.",
+    "city": "Los Angeles",
+    "latitude": 34.0692748189553,
+    "longitude": -118.346913262055,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 70 - Northridge",
+    "address": "9861 Reseda Blvd.",
+    "city": "Northridge",
+    "latitude": 34.2496318264409,
+    "longitude": -118.536322308698,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 97 - Laurel Canyon / Mulholland",
+    "address": "8021 Mulholland Dr.",
+    "city": "Los Angeles",
+    "latitude": 34.1261398234279,
+    "longitude": -118.374290271455,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 103 - Northridge / Csun",
+    "address": "18143 Parthenia St.",
+    "city": "Northridge",
+    "latitude": 34.2288068252028,
+    "longitude": -118.52888130452,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 23 - Palisades Highlands",
+    "address": "17281 Sunset Blvd.",
+    "city": "Pacific Palisades",
+    "latitude": 34.0424908030531,
+    "longitude": -118.554115293379,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 64 - South Los Angeles",
+    "address": "10811 S Main St",
+    "city": "Los Angeles",
+    "latitude": 33.9378453487013,
+    "longitude": -118.274083338514,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 74 - Tujunga / Sunland",
+    "address": "7777 Foothill Blvd.",
+    "city": "Tujunga",
+    "latitude": 34.2583708417014,
+    "longitude": -118.301717270759,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 12 - Highland Park / Arroyo Seco",
+    "address": "5921 N. Figueroa St.",
+    "city": "Los Angeles",
+    "latitude": 34.1110338332796,
+    "longitude": -118.19024923948,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 75 - Mission Hills",
+    "address": "15345 San Fernando Mission Blvd.",
+    "city": "Mission Hills",
+    "latitude": 34.2723458338837,
+    "longitude": -118.46680129848,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 58 - Pico / Robertson",
+    "address": "1556 S. Robertson Blvd.",
+    "city": "Los Angeles",
+    "latitude": 34.0507098144714,
+    "longitude": -118.384145266037,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 40 - Terminal Island",
+    "address": "330 Ferry St.",
+    "city": "San Pedro",
+    "latitude": 33.7467197888246,
+    "longitude": -118.261628220963,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 35 - Los Feliz",
+    "address": "1601 N. Hillhurst Ave.",
+    "city": "Los Angeles",
+    "latitude": 34.1000218259298,
+    "longitude": -118.287577254522,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 43 - Palms",
+    "address": "3690 Motor Ave.",
+    "city": "Los Angeles",
+    "latitude": 34.0230438107356,
+    "longitude": -118.405742268447,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 11 - Westlake / Macarther Park",
+    "address": "1819 W. 7th St.",
+    "city": "Los Angeles",
+    "latitude": 34.0553318208005,
+    "longitude": -118.273968248187,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 90 - Van Nuys Airport Area",
+    "address": "7921 Woodley Ave.",
+    "city": "Van Nuys",
+    "latitude": 34.2143868268779,
+    "longitude": -118.483946296894,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 24 - Shadow Hills / Sunland",
+    "address": "9411 Wentworth St.",
+    "city": "Sunland",
+    "latitude": 34.2639138408245,
+    "longitude": -118.336969276643,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 73 - Reseda",
+    "address": "7419 Reseda Blvd.",
+    "city": "Reseda",
+    "latitude": 34.2053698227305,
+    "longitude": -118.536261304669,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 8 - Porter Ranch",
+    "address": "11351 Tampa Ave.",
+    "city": "Northridge",
+    "latitude": 34.2769068283438,
+    "longitude": -118.558815314759,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 96 - Chatsworth",
+    "address": "21800 Marilla St.",
+    "city": "Chatsworth",
+    "latitude": 34.2474758231633,
+    "longitude": -118.603469319051,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 78 - Studio City / Valley Village",
+    "address": "4041 Whitsett Ave.",
+    "city": "Studio City",
+    "latitude": 34.1430288235575,
+    "longitude": -118.40537327844,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 93 - Tarzana",
+    "address": "19059 Ventura Blvd.",
+    "city": "Tarzana",
+    "latitude": 34.1727118181884,
+    "longitude": -118.549313303632,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 63 - Venice",
+    "address": "1930 Shell Ave.",
+    "city": "Venice",
+    "latitude": 33.9911028043946,
+    "longitude": -118.459590273577,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 105 - Woodland Hills",
+    "address": "6345 Fallbrook Ave.",
+    "city": "Woodland Hills",
+    "latitude": 34.185778814507,
+    "longitude": -118.623684317935,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 95 - Lax Area / Hotel District",
+    "address": "10010 International Rd.",
+    "city": "Los Angeles",
+    "latitude": 33.9451128031649,
+    "longitude": -118.38138925673,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 94 - Crenshaw District / Baldwin Hills",
+    "address": "4030 Crenshaw Blvd.",
+    "city": "Los Angeles",
+    "latitude": 34.0116608132259,
+    "longitude": -118.334824255185,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "La City Station No. 71 - S. Beverly Glen Blvd.",
+    "address": "107 S. Beverly Glen Blvd.",
+    "city": "Los Angeles",
+    "latitude": 34.0802648141703,
+    "longitude": -118.435359957861,
+    "organization": "City of Los Angeles"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 41 - Hollywood Hills / Northwest",
+    "address": "1439 N. Gardner St.",
+    "city": "Los Angeles",
+    "latitude": 34.0972988210986,
+    "longitude": -118.353045265975,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 46 - Coliseum",
+    "address": "4370 S. Hoover St.",
+    "city": "Los Angeles",
+    "latitude": 34.0040868154656,
+    "longitude": -118.286938247227,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 84 - Woodland Hills",
+    "address": "21050 Burbank Blvd.",
+    "city": "Woodland Hills",
+    "latitude": 34.1731108154639,
+    "longitude": -118.59171731103,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 26 - West Adams",
+    "address": "2009 S. Western Ave.",
+    "city": "Los Angeles",
+    "latitude": 34.0383138177146,
+    "longitude": -118.309245253139,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 37 - Westwood / Ucla",
+    "address": "1090 Veteran Ave.",
+    "city": "Los Angeles",
+    "latitude": 34.0597758117885,
+    "longitude": -118.449143278865,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 29 - Hancock Park",
+    "address": "4029 W. Wilshire Blvd.",
+    "city": "Los Angeles",
+    "latitude": 34.0618488196582,
+    "longitude": -118.315369255934,
+    "organization": "www.lafd.org"
+  },
+  {
+    "name": "Burbank Fire Department - Station 16",
+    "address": "1600 N. Bel Aire Dr.",
+    "city": "Burbank",
+    "latitude": 34.2002078352272,
+    "longitude": -118.3123292679,
+    "organization": "http://www.ci.burbank.ca.us/fire/"
+  },
+  {
+    "name": "Burbank Fire Department - Station 12",
+    "address": "644 N. Hollywood Way",
+    "city": "Burbank",
+    "latitude": 34.1620318291662,
+    "longitude": -118.343963269287,
+    "organization": "http://www.ci.burbank.ca.us/fire/"
+  },
+  {
+    "name": "City Of Santa Fe Springs Department Of Fire And Rescue",
+    "address": "11300 Greenstone Ave.",
+    "city": "Santa Fe Springs",
+    "latitude": 33.9288398206672,
+    "longitude": -118.057930202665,
+    "organization": "www.santafesprings.org"
+  },
+  {
+    "name": "Santa Fe Springs Department Of Fire And Rescue - Station 2",
+    "address": "8634 Dice Rd.",
+    "city": "Santa Fe Springs",
+    "latitude": 33.9625308235314,
+    "longitude": -118.065637206212,
+    "organization": "www.santafesprings.org"
+  },
+  {
+    "name": "City Of Torrance Fire Department",
+    "address": "1701 Crenshaw Blvd.",
+    "city": "Torrance",
+    "latitude": 33.8308357938977,
+    "longitude": -118.328994239966,
+    "organization": "www.torranceca.gov/TFD/"
+  },
+  {
+    "name": "Torrance Fire Department - Fire Prevention And Hazardous Materials Administration",
+    "address": "3031 Torrance Blvd.",
+    "city": "Torrance",
+    "latitude": 33.8370437950146,
+    "longitude": -118.341419241512,
+    "organization": "www.torranceca.gov/TFD/"
+  },
+  {
+    "name": "City Of Alhambra Fire Department - Station 74",
+    "address": "2505 W. Norwood Pl.",
+    "city": "Alhambra",
+    "latitude": 34.0757658313346,
+    "longitude": -118.15086623032,
+    "organization": "http://www.cityofalhambra.org/government/"
+  },
+  {
+    "name": "City Of Alhambra Fire Department - Station 73",
+    "address": "2200 W. Main St.",
+    "city": "Alhambra",
+    "latitude": 34.0921318328671,
+    "longitude": -118.147145230205,
+    "organization": "http://www.cityofalhambra.org/government/"
+  },
+  {
+    "name": "City Of Alhambra Fire Department - Station 72",
+    "address": "1215 S. Sixth St.",
+    "city": "Alhambra",
+    "latitude": 34.0801398322242,
+    "longitude": -118.129510226686,
+    "organization": "http://www.cityofalhambra.org/government/"
+  },
+  {
+    "name": "City Of Alhambra Fire Department",
+    "address": "301 N. First St.",
+    "city": "Alhambra",
+    "latitude": 34.0970848336753,
+    "longitude": -118.12979322772,
+    "organization": "http://www.cityofalhambra.org/government/"
+  },
+  {
+    "name": "City Of Arcadia Fire Department",
+    "address": "710 S. Santa Anita Ave.",
+    "city": "Arcadia",
+    "latitude": 34.1318618440585,
+    "longitude": -118.030901215133,
+    "organization": "www.ci.arcadia.ca.us/fire%20Depar"
+  },
+  {
+    "name": "Arcadia Fire Department - Station 107",
+    "address": "79 W. Orange Grove Ave.",
+    "city": "Arcadia",
+    "latitude": 34.1574698467238,
+    "longitude": -118.034309218126,
+    "organization": "www.ci.arcadia.ca.us/fire%20Depar"
+  },
+  {
+    "name": "Arcadia Fire Department - Station 106",
+    "address": "630 S. Baldwin Ave.",
+    "city": "Arcadia",
+    "latitude": 34.1336958434671,
+    "longitude": -118.054206218988,
+    "organization": "www.ci.arcadia.ca.us/fire%20Depar"
+  },
+  {
+    "name": "Beverly Hills Fire Department - Station 2",
+    "address": "1100 Coldwater Canyon",
+    "city": "Beverly Hills",
+    "latitude": 34.09045181767,
+    "longitude": -118.411895274722,
+    "organization": "www.beverlyhills.org"
+  },
+  {
+    "name": "Compton Fire Department - Station 2",
+    "address": "1320 E. Palmer St.",
+    "city": "Compton",
+    "latitude": 33.8982208081406,
+    "longitude": -118.209154224859,
+    "organization": "www.comptoncity.org"
+  },
+  {
+    "name": "Compton Fire Department - Station 4",
+    "address": "950 W. Walnut St.",
+    "city": "Compton",
+    "latitude": 33.8759388044389,
+    "longitude": -118.238597227263,
+    "organization": "www.comptoncity.org"
+  },
+  {
+    "name": "City Of Compton Fire Department - Headquarters",
+    "address": "201 S. Acacia Ave.",
+    "city": "Compton",
+    "latitude": 33.8949588059788,
+    "longitude": -118.226600227252,
+    "organization": "www.comptoncity.org"
+  },
+  {
+    "name": "El Segundo Fire Department - Station 2",
+    "address": "2261 E Mariposa Ave",
+    "city": "El Segundo",
+    "latitude": 33.9237076610283,
+    "longitude": -118.384070556336,
+    "organization": "www.elsegundo.org"
+  },
+  {
+    "name": "City Of La Verne Fire Department",
+    "address": "2061 Third St.",
+    "city": "La Verne",
+    "latitude": 34.1008288556164,
+    "longitude": -117.770849168527,
+    "organization": "www.lavernefire.org"
+  },
+  {
+    "name": "La Verne Fire Department - Station 2",
+    "address": "4785 Wheeler Ave.",
+    "city": "La Verne",
+    "latitude": 34.1246588580329,
+    "longitude": -117.776988171856,
+    "organization": "www.lavernefire.org"
+  },
+  {
+    "name": "Montebello Fire Department - Station No. 2",
+    "address": "1166 S. Greenwood Ave.",
+    "city": "Montebello",
+    "latitude": 33.991649824295,
+    "longitude": -118.121199218524,
+    "organization": "cityofmontebello.com"
+  },
+  {
+    "name": "Montebello Fire Department - Station No. 3",
+    "address": "2950 Via Acosta",
+    "city": "Montebello",
+    "latitude": 34.0238838264122,
+    "longitude": -118.134102223587,
+    "organization": "cityofmontebello.com"
+  },
+  {
+    "name": "City Of Montebello Fire Department",
+    "address": "600 N. Montebello Blvd.",
+    "city": "Montebello",
+    "latitude": 34.0190538278512,
+    "longitude": -118.104847218238,
+    "organization": "cityofmontebello.com"
+  },
+  {
+    "name": "City Of San Marino Fire Department",
+    "address": "2200 Huntington Dr.",
+    "city": "San Marino",
+    "latitude": 34.121227838185,
+    "longitude": -118.105740225588,
+    "organization": "http://www.sanmarinofire.org/"
+  },
+  {
+    "name": "City Of South Pasadena Fire Department",
+    "address": "817 Mound Ave.",
+    "city": "South Pasadena",
+    "latitude": 34.1166308356892,
+    "longitude": -118.151894233676,
+    "organization": "www.ci.south-pasadena.ca.us/fire"
+  },
+  {
+    "name": "Vernon Fire Department - Station 4",
+    "address": "4530 Bandini Blvd.",
+    "city": "Vernon",
+    "latitude": 33.9994328203873,
+    "longitude": -118.178973226943,
+    "organization": "www.cityofvernon.org/departments/fire"
+  },
+  {
+    "name": "Vernon Fire Department - Station 1",
+    "address": "3375 Fruitland Ave.",
+    "city": "Vernon",
+    "latitude": 33.9967838189204,
+    "longitude": -118.205710232999,
+    "organization": "www.cityofvernon.org/departments/fire"
+  },
+  {
+    "name": "Vernon Fire Department - Station 2",
+    "address": "4301 Santa Fe Ave.",
+    "city": "Vernon",
+    "latitude": 34.005221818051,
+    "longitude": -118.230407237869,
+    "organization": "www.cityofvernon.org/departments/fire"
+  },
+  {
+    "name": "City Of Vernon Fire Department",
+    "address": "4305 S Santa Fe Ave",
+    "city": "Vernon",
+    "latitude": 34.0049438982026,
+    "longitude": -118.23145263719,
+    "organization": "www.cityofvernon.org/departments/fire"
+  },
+  {
+    "name": "Pasadena Fire Department - Fire Station 34",
+    "address": "1360 E. Del Mar Blvd.",
+    "city": "Pasadena",
+    "latitude": 34.1413798394347,
+    "longitude": -118.122364230887,
+    "organization": "www.ci.pasadena.ca.us/fire/"
+  },
+  {
+    "name": "Pasadena Fire Department - Fire Station 33",
+    "address": "515 N. Lake Ave.",
+    "city": "Pasadena",
+    "latitude": 34.154717840187,
+    "longitude": -118.133060233976,
+    "organization": "www.ci.pasadena.ca.us/fire/"
+  },
+  {
+    "name": "City Of Avalon Fire Department",
+    "address": "420 Avalon Canyon Rd.",
+    "city": "Avalon",
+    "latitude": 33.3360427388199,
+    "longitude": -118.331039199903,
+    "organization": "www.cityofavalon.com/"
+  },
+  {
+    "name": "City Of West Covina Fire Department",
+    "address": "1444 W Garvey Ave S",
+    "city": "West Covina",
+    "latitude": 34.071387412453,
+    "longitude": -117.938857794615,
+    "organization": " "
+  },
+  {
+    "name": "Compton Fire Department - Station 3",
+    "address": "1133 W Rosecrans Ave",
+    "city": "Compton",
+    "latitude": 33.9038009659331,
+    "longitude": -118.245317351589,
+    "organization": " "
+  },
+  {
+    "name": "City Of El Segundo Fire Department",
+    "address": "314 Main St",
+    "city": "El Segundo",
+    "latitude": 33.9193284688691,
+    "longitude": -118.415891460954,
+    "organization": " "
+  },
+  {
+    "name": "City Of Manhattan Beach Fire Department",
+    "address": "400 15Th Pl",
+    "city": "Manhattan Beach",
+    "latitude": 33.8881350450198,
+    "longitude": -118.410294457996,
+    "organization": " "
+  },
+  {
+    "name": "Manhattan Beach Fire Department - Station 2",
+    "address": "1400 Manhattan Beach Blvd",
+    "city": "Manhattan Beach",
+    "latitude": 33.8871713272045,
+    "longitude": -118.389505753972,
+    "organization": " "
+  },
+  {
+    "name": "City Of Redondo Beach Fire Department",
+    "address": "401 S Broadway",
+    "city": "Redondo Beach",
+    "latitude": 33.836624661928,
+    "longitude": -118.386636349353,
+    "organization": " "
+  },
+  {
+    "name": "Redondo Beach Fire Department - Station 2",
+    "address": "2400 Grant Ave",
+    "city": "Redondo Beach",
+    "latitude": 33.8689868266721,
+    "longitude": -118.368450248789,
+    "organization": " "
+  },
+  {
+    "name": "Redondo Beach Fire Department - Station 3",
+    "address": "280 Marina Way",
+    "city": "Redondo Beach",
+    "latitude": 33.8472426319644,
+    "longitude": -118.398684852076,
+    "organization": " "
+  },
+  {
+    "name": "Glendale Fire Department - Station 29",
+    "address": "2465 Honolulu Ave",
+    "city": "Glendale",
+    "latitude": 34.2076651403997,
+    "longitude": -118.232933614298,
+    "organization": " "
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 5 - Westchester / Lax",
+    "address": "8900 S. Emerson Ave.",
+    "city": "Los Angeles",
+    "latitude": 33.9621708044777,
+    "longitude": -118.394476260609,
+    "organization": " "
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 49 - East Harbor Basin",
+    "address": "400 Yacht St",
+    "city": "Wilmington",
+    "latitude": 33.7656847706261,
+    "longitude": -118.255654922645,
+    "organization": " "
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 72 - Canoga Park",
+    "address": "6811 De  Soto Ave",
+    "city": "Canoga Park",
+    "latitude": 34.194333648513,
+    "longitude": -118.588706111881,
+    "organization": " "
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 110 - Fort Macarthur Area",
+    "address": "2945 Miner St",
+    "city": "San Pedro",
+    "latitude": 33.7170443851477,
+    "longitude": -118.275975121869,
+    "organization": " "
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 111 - Fish Harbor",
+    "address": "1444 S Seaside Ave",
+    "city": "Terminal Island",
+    "latitude": 33.7293493672238,
+    "longitude": -118.267706220732,
+    "organization": " "
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 112 - Ports O' Call / Terminal Cruise",
+    "address": "444 S Harbor Blvd",
+    "city": "San Pedro",
+    "latitude": 33.740416606469,
+    "longitude": -118.27842792466,
+    "organization": " "
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 114 - Air Operations / Crash Rescue",
+    "address": "8060 Balboa Blvd",
+    "city": "Van Nuys",
+    "latitude": 34.2189915754277,
+    "longitude": -118.50104039954,
+    "organization": " "
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 7 - Arleta",
+    "address": "14123 Nordhoff St",
+    "city": "Arleta",
+    "latitude": 34.2355079705733,
+    "longitude": -118.439761691963,
+    "organization": " "
+  },
+  {
+    "name": "Long Beach Fire Department - Fire Station 15",
+    "address": "Pier F. Berth 202",
+    "city": "Long Beach",
+    "latitude": 33.7717227956745,
+    "longitude": -118.182428209998,
+    "organization": " "
+  },
+  {
+    "name": "La Verne Fire Department - Station 3",
+    "address": "5100 Esperanza Dr",
+    "city": "La Verne",
+    "latitude": 34.1314900596381,
+    "longitude": -117.759199168993,
+    "organization": " "
+  },
+  {
+    "name": "Los Angeles Fire Department - Station 36 - North San Pedro",
+    "address": "1005 N Gaffey St",
+    "city": "San Pedro",
+    "latitude": 33.7531777080987,
+    "longitude": -118.293038927039,
+    "organization": " "
+  },
+  {
+    "name": "Monterey Park Fire Department - Station 2",
+    "address": "2001 S Garfield Ave",
+    "city": "Monterey Park",
+    "latitude": 34.0409905984138,
+    "longitude": -118.129227724542,
+    "organization": " "
+  },
+  {
+    "name": "Dalton Fire Station",
+    "address": "1090 Glendora Mountain Road",
+    "city": "Glendora",
+    "latitude": 34.1556581376846,
+    "longitude": -117.837248094292,
+    "organization": " "
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 143",
+    "address": "28580 Hasley Canyon Road",
+    "city": "Castaic",
+    "latitude": 34.4544123428558,
+    "longitude": -118.633752292278,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 150 (Battalion 22 Headquarters)",
+    "address": "19190 Golden Valley Road",
+    "city": "Santa Clarita",
+    "latitude": 34.3922480360447,
+    "longitude": -118.465022537768,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 93 (Battalion 17 Headquarters)",
+    "address": "5624 East Avenue R",
+    "city": "Palmdale",
+    "latitude": 34.5721927523219,
+    "longitude": -118.02869412083,
+    "organization": "Los Angeles County Fire Department"
+  },
+  {
+    "name": "Los Angeles County Fire Department - Station 100",
+    "address": "540 Pier Avenue",
+    "city": "Hermosa Beach",
+    "latitude": 33.8642757231843,
+    "longitude": -118.395920722876,
+    "organization": "Los Angeles County Fire Department"
+  }
+]
