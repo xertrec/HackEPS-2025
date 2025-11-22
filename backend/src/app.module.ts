@@ -17,7 +17,7 @@ import { SecurityModule } from './security/security.module';
     MobilityModule,
     SecurityModule,
   ],
-  controllers: [AppController, MobilityController],
+  controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
