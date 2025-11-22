@@ -24,4 +24,12 @@ export class MobilityController {
     // Él se encargará de ver cuál necesita cálculo y cuál no.
     return this.mobilityService.calculateScoresForList(barrios);
   }
+  @Get('reset')
+  async resetScores() {
+    // Ejecutamos SQL directo para poner las notas a NULL
+    await this.neighborhoodRepo.query(`UPDATE neighborhoods SET score = NULL, details = NULL`);
+    
+    console.log('🗑️ Caché borrada. Los barrios siguen ahí, pero sin nota.');
+    return "✅ Caché reseteada. Ahora ve a /mobility/all para recalcular con las nuevas APIs.";
+  }
 }
