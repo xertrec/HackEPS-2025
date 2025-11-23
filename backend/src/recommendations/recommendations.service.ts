@@ -995,36 +995,36 @@ export class RecommendationsService {
         }),
       );
 
-      // 4.5. FILTRO ABSOLUTO POR PRESUPUESTO: Eliminar barrios incompatibles
+      // 4.5. FILTRO PROGRESIVO POR PRESUPUESTO: Restricción según poder adquisitivo
       let filteredScores = neighborhoodScores;
       if (profile.presupuesto) {
         console.log(`💰 Aplicando filtro de presupuesto: ${profile.presupuesto}`);
         const budgetBeforeFilter = filteredScores.length;
         
-        if (profile.presupuesto === 'bajo' || profile.presupuesto === 'medio-bajo') {
-          // SOLO Low y Medium
+        if (profile.presupuesto === 'bajo') {
+          // SOLO Low - Restricción máxima
+          filteredScores = filteredScores.filter(n => 
+            n.lifestyle && n.lifestyle.salary === 'Low'
+          );
+          console.log(`   🔒 Restricción MÁXIMA: SOLO Low → Filtrados ${budgetBeforeFilter - filteredScores.length} barrios (${filteredScores.length} restantes)`);
+        } else if (profile.presupuesto === 'medio-bajo') {
+          // Low + Medium - Restricción moderada
           filteredScores = filteredScores.filter(n => 
             n.lifestyle && (n.lifestyle.salary === 'Low' || n.lifestyle.salary === 'Medium')
           );
-          console.log(`   🔒 Restricción: SOLO Low/Medium → Filtrados ${budgetBeforeFilter - filteredScores.length} barrios (${filteredScores.length} restantes)`);
+          console.log(`   🔒 Restricción MODERADA: Low/Medium → Filtrados ${budgetBeforeFilter - filteredScores.length} barrios (${filteredScores.length} restantes)`);
         } else if (profile.presupuesto === 'medio') {
-          // Principalmente Medium, aceptar Low
+          // Low + Medium - Restricción moderada (igual que medio-bajo)
           filteredScores = filteredScores.filter(n => 
-            n.lifestyle && (n.lifestyle.salary === 'Medium' || n.lifestyle.salary === 'Low')
+            n.lifestyle && (n.lifestyle.salary === 'Low' || n.lifestyle.salary === 'Medium')
           );
-          console.log(`   🔒 Restricción: Medium/Low → Filtrados ${budgetBeforeFilter - filteredScores.length} barrios (${filteredScores.length} restantes)`);
+          console.log(`   🔒 Restricción MODERADA: Low/Medium → Filtrados ${budgetBeforeFilter - filteredScores.length} barrios (${filteredScores.length} restantes)`);
         } else if (profile.presupuesto === 'medio-alto') {
-          // Medium y High
-          filteredScores = filteredScores.filter(n => 
-            n.lifestyle && (n.lifestyle.salary === 'Medium' || n.lifestyle.salary === 'High')
-          );
-          console.log(`   🔒 Restricción: Medium/High → Filtrados ${budgetBeforeFilter - filteredScores.length} barrios (${filteredScores.length} restantes)`);
+          // Todos (Low + Medium + High) - Sin restricción, otros criterios deciden
+          console.log(`   ✅ Sin restricción: Todos los niveles permitidos (otros criterios deciden)`);
         } else if (profile.presupuesto === 'alto') {
-          // SOLO High
-          filteredScores = filteredScores.filter(n => 
-            n.lifestyle && n.lifestyle.salary === 'High'
-          );
-          console.log(`   🔒 Restricción: SOLO High → Filtrados ${budgetBeforeFilter - filteredScores.length} barrios (${filteredScores.length} restantes)`);
+          // Todos (Low + Medium + High) - Sin restricción, otros criterios deciden
+          console.log(`   ✅ Sin restricción: Todos los niveles permitidos (otros criterios deciden)`);
         }
       }
 
