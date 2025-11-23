@@ -13,6 +13,8 @@ import { AirQualityCollectionResultDto } from './dto/air_quality/air_quality_col
 import { AirQualityResultDto } from './dto/air_quality/air_quality_result.dto';
 import { OccupabilityCollectionResultDto } from './dto/occupability/occupability_collection_result.dto';
 import { OccupabilityResultDto } from './dto/occupability/occupability_result.dto';
+import { AccessibilityCollectionResultDto } from './dto/accessibility/accessibility_collection_result.dto';
+import { AccessibilityResultDto } from './dto/accessibility/accessibility_result.dto';
 
 @Injectable()
 export class LifestyleService {
@@ -48,12 +50,14 @@ export class LifestyleService {
 						0,
 						0,
 						0,
+						0,
 						apiResult.note,
 					);
 				} else {
 					await this.databaseService.insertLifestyle(
 						apiResult.neighborhood_name,
 						apiResult.score,
+						0,
 						0,
 						0,
 						0,
@@ -69,6 +73,7 @@ export class LifestyleService {
 					noise_score: 0,
 					air_quality_score: 0,
 					ocupability_score: 0,
+					accessibility_score: 0,
 					note: apiResult.note,
 				};
 			}
@@ -166,6 +171,7 @@ export class LifestyleService {
 						0,
 						0,
 						0,
+						0,
 						apiResult.note,
 					);
 				} else {
@@ -173,6 +179,7 @@ export class LifestyleService {
 						apiResult.neighborhood_name,
 						lifestyle.score,
 						apiResult.score,
+						0,
 						0,
 						0,
 						0,
@@ -187,6 +194,7 @@ export class LifestyleService {
 					noise_score: 0,
 					air_quality_score: 0,
 					ocupability_score: 0,
+					accessibility_score: 0,
 					note: apiResult.note,
 				};
 			}
@@ -287,6 +295,7 @@ export class LifestyleService {
 						apiResult.score, // UPDATE NOISE
 						0,
 						0,
+						0,
 						apiResult.note,
 					);
 				} else {
@@ -295,6 +304,7 @@ export class LifestyleService {
 						0,
 						0,
 						apiResult.score,
+						0,
 						0,
 						0,
 						apiResult.note,
@@ -395,11 +405,13 @@ export class LifestyleService {
 						lifestyle.noise_score,
 						apiResult.score, // UPDATE AIR
 						0,
+						0,
 						apiResult.note,
 					);
 				} else {
 					await this.databaseService.insertLifestyle(
 						apiResult.neighborhood_name,
+						0,
 						0,
 						0,
 						0,
@@ -487,11 +499,13 @@ export class LifestyleService {
 						lifestyle.noise_score,
 						lifestyle.air_quality_score,
 						apiResult.score, // UPDATE OCCUPABILITY
+						0,
 						apiResult.note,
 					);
 				} else {
 					await this.databaseService.insertLifestyle(
 						apiResult.neighborhood_name,
+						0,
 						0,
 						0,
 						0,
@@ -563,6 +577,108 @@ export class LifestyleService {
 				neighborhood_name: name,
 				score: 0,
 				note: 'Error fetching job data',
+			};
+		}
+	}
+
+	// --- Accessibility Logic ---
+	async getAllAccessibilityData(): Promise<AccessibilityCollectionResultDto> {
+		const neighborhoods = await this.databaseService.getAllNeighborhoods();
+		for (const neighborhood of neighborhoods) {
+			let lifestyle = await this.databaseService.getLifestyleByNeighborhoodName(
+				neighborhood.name,
+			);
+			if (!lifestyle || lifestyle.accessibility_score === 0) {
+				const apiResult = await this.getAccessibilityDataForLocation(
+					neighborhood.name,
+					neighborhood.latitude,
+					neighborhood.longitude,
+				);
+				await new Promise((r) => setTimeout(r, 1500));
+				if (lifestyle) {
+					await this.databaseService.updateLifestyle(
+						apiResult.neighborhood_name,
+						lifestyle.score,
+						lifestyle.green_zones_score,
+						lifestyle.noise_score,
+						lifestyle.air_quality_score,
+						lifestyle.ocupability_score,
+						apiResult.score,
+						apiResult.note,
+					);
+				} else {
+					await this.databaseService.insertLifestyle(
+						apiResult.neighborhood_name,
+						0,
+						0,
+						0,
+						0,
+						0,
+						apiResult.score,
+						apiResult.note,
+					);
+				}
+			}
+		}
+		const results: AccessibilityResultDto[] = [];
+		for (const n of neighborhoods) {
+			const data = await this.databaseService.getLifestyleByNeighborhoodName(
+				n.name,
+			);
+			if (data) {
+                results.push({
+					neighborhood_name: data.neighborhood_name,
+					score: data.accessibility_score,
+					note: data.note,
+				});
+            }
+		}
+		return { accessibility: results };
+	}
+
+	private async getAccessibilityDataForLocation(
+		name: string,
+		lat: number,
+		lon: number,
+	): Promise<AccessibilityResultDto> {
+		const radius = 1000;
+		// Count bus stops, subway entrances, train stations, and taxi stands
+		const query = `
+            [out:json];
+            (
+                node["highway"="bus_stop"](around:${radius},${lat},${lon});
+                node["public_transport"="platform"](around:${radius},${lat},${lon});
+                node["railway"="station"](around:${radius},${lat},${lon});
+                node["railway"="subway_entrance"](around:${radius},${lat},${lon});
+                node["railway"="tram_stop"](around:${radius},${lat},${lon});
+                node["amenity"="taxi"](around:${radius},${lat},${lon});
+            );
+            out count;
+        `;
+		const apiUrl = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(query)}`;
+		try {
+			const { data } = await firstValueFrom(this.httpService.get(apiUrl));
+			let count = 0;
+			if (data?.elements?.[0]?.tags)
+				count = parseInt(
+					data.elements[0].tags.total || data.elements[0].tags.nodes || '0',
+					10,
+				);
+
+			// Scoring: 10+ transport points = 100/100
+			const score = Math.min(count * 10, 100);
+
+			let note = `Mobility: ${count} transport points found`;
+			if (score >= 80) note += ' (Excellent Connectivity)';
+			else if (score <= 20) note += ' (Car Dependent)';
+
+			return { neighborhood_name: name, score, note };
+		} catch (error) {
+			console.error(`Accessibility API Error ${name}:`, error.message);
+			return {
+				neighborhood_name: name,
+				score: 0,
+				note: 'Error fetching transport data',
 			};
 		}
 	}
