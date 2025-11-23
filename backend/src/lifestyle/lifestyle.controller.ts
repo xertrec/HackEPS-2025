@@ -1,4 +1,49 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
+import { ConnectivityCollectionResultDto } from './dto/connectivity/connectivity_collection_result.dto';
+import { LifestyleService } from './lifestyle.service';
+import { GreenZonesCollectionResultDto } from './dto/green_zones/green_zones_collection_result.dto';
+import { NoiseCollectionResultDto } from './dto/noise/noise_collection_result.dto';
+import { AirQualityCollectionResultDto } from './dto/air_quality/air_quality_collection_result.dto';
+import { OccupabilityCollectionResultDto } from './dto/occupability/occupability_collection_result.dto';
+import { AccessibilityCollectionResultDto } from './dto/accessibility/accessibility_collection_result.dto';
+import { SalaryCollectionResultDto } from './dto/salary/salary_collection_result.dto';
 
 @Controller('lifestyle')
-export class LifestyleController {}
+export class LifestyleController {
+	constructor(private readonly lifestyleService: LifestyleService) {}
+
+	@Get('connectivity')
+	async getConnectivity(): Promise<ConnectivityCollectionResultDto> {
+		return this.lifestyleService.getAllConnectivityData();
+	}
+
+	@Get('green-zones')
+	async getGreenZones(): Promise<GreenZonesCollectionResultDto> {
+		return this.lifestyleService.getAllGreenZonesData();
+	}
+
+	@Get('noise')
+	async getNoise(): Promise<NoiseCollectionResultDto> {
+		return this.lifestyleService.getAllNoiseData();
+	}
+
+	@Get('air-quality')
+	async getAirQuality(): Promise<AirQualityCollectionResultDto> {
+		return this.lifestyleService.getAllAirQualityData();
+	}
+
+	@Get('occupability')
+	async getOccupability(): Promise<OccupabilityCollectionResultDto> {
+		return this.lifestyleService.getAllOccupabilityData();
+	}
+
+	@Get('accessibility')
+	async getAccessibility(): Promise<AccessibilityCollectionResultDto> {
+		return this.lifestyleService.getAllAccessibilityData();
+	}
+
+	@Get('salary')
+	async getSalary(): Promise<SalaryCollectionResultDto> {
+		return this.lifestyleService.getAllSalaryData();
+	}
+}

@@ -148,4 +148,25 @@ db.serialize(() => {
       }
     });
   });
+
+  db.run(`
+    CREATE TABLE lifestyle (
+      neighborhood_name TEXT PRIMARY KEY,
+      score INTEGER NOT NULL DEFAULT 0,
+      green_zones_score INTEGER NOT NULL DEFAULT 0,
+      noise_score INTEGER NOT NULL DEFAULT 0,
+      air_quality_score INTEGER NOT NULL DEFAULT 0,
+      ocupability_score INTEGER NOT NULL DEFAULT 0,
+      accessibility_score INTEGER NOT NULL DEFAULT 0,
+      salary_classification TEXT NOT NULL DEFAULT 'Medium',
+      note TEXT,
+      FOREIGN KEY (neighborhood_name) REFERENCES neighborhoods(name)
+    );
+  `, (err) => {
+    if (err) {
+      console.error('Error al crear tabla lifestyle:', err);
+      return;
+    }
+    console.log('✓ Tabla lifestyle creada');
+  });
 });

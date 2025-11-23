@@ -9,11 +9,11 @@ export class ServicesController {
     private readonly servicesService: ServicesService,
   ) {}
 
-  // Endpoint de prueba
-  @Get('test')
-  test() {
-    return { status: 'OK', message: 'Controller funcionando' };
-  }
+	// Endpoint de prueba
+	@Get('test')
+	test() {
+		return { status: 'OK', message: 'Controller funcionando' };
+	}
 
   // Endpoint para limpiar el caché
   @Get('clear-cache')
