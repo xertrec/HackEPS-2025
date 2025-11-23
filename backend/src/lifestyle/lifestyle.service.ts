@@ -11,6 +11,8 @@ import { NoiseCollectionResultDto } from './dto/noise/noise_collection_result.dt
 import { NoiseResultDto } from './dto/noise/noise_result.dto';
 import { AirQualityCollectionResultDto } from './dto/air_quality/air_quality_collection_result.dto';
 import { AirQualityResultDto } from './dto/air_quality/air_quality_result.dto';
+import { OccupabilityCollectionResultDto } from './dto/occupability/occupability_collection_result.dto';
+import { OccupabilityResultDto } from './dto/occupability/occupability_result.dto';
 
 @Injectable()
 export class LifestyleService {
@@ -45,12 +47,14 @@ export class LifestyleService {
 						0,
 						0,
 						0,
+						0,
 						apiResult.note,
 					);
 				} else {
 					await this.databaseService.insertLifestyle(
 						apiResult.neighborhood_name,
 						apiResult.score,
+						0,
 						0,
 						0,
 						0,
@@ -63,7 +67,8 @@ export class LifestyleService {
 					score: apiResult.score,
 					green_zones_score: 0,
 					noise_score: 0,
-                    air_quality_score: 0,
+					air_quality_score: 0,
+					ocupability_score: 0,
 					note: apiResult.note,
 				};
 			}
@@ -160,6 +165,7 @@ export class LifestyleService {
 						apiResult.score,
 						0,
 						0,
+						0,
 						apiResult.note,
 					);
 				} else {
@@ -167,6 +173,7 @@ export class LifestyleService {
 						apiResult.neighborhood_name,
 						lifestyle.score,
 						apiResult.score,
+						0,
 						0,
 						0,
 						apiResult.note,
@@ -178,7 +185,8 @@ export class LifestyleService {
 					score: 0,
 					green_zones_score: apiResult.score,
 					noise_score: 0,
-                    air_quality_score: 0,
+					air_quality_score: 0,
+					ocupability_score: 0,
 					note: apiResult.note,
 				};
 			}
@@ -278,6 +286,7 @@ export class LifestyleService {
 						lifestyle.green_zones_score,
 						apiResult.score, // UPDATE NOISE
 						0,
+						0,
 						apiResult.note,
 					);
 				} else {
@@ -286,6 +295,7 @@ export class LifestyleService {
 						0,
 						0,
 						apiResult.score,
+						0,
 						0,
 						apiResult.note,
 					);
@@ -361,38 +371,51 @@ export class LifestyleService {
 	}
 
 	// --- Air Quality Logic ---
-    async getAllAirQualityData(): Promise<AirQualityCollectionResultDto> {
-        const neighborhoods = await this.databaseService.getAllNeighborhoods();
+	async getAllAirQualityData(): Promise<AirQualityCollectionResultDto> {
+		const neighborhoods = await this.databaseService.getAllNeighborhoods();
 
-        for (const neighborhood of neighborhoods) {
-            let lifestyle = await this.databaseService.getLifestyleByNeighborhoodName(neighborhood.name);
-
-            if (!lifestyle || lifestyle.air_quality_score === 0) {
-                const apiResult = await this.getAirQualityDataForLocation(
-                    neighborhood.name, neighborhood.latitude, neighborhood.longitude
-                );
-                await new Promise((r) => setTimeout(r, 1500));
-
-                if (lifestyle) {
-                    await this.databaseService.updateLifestyle(
-                        apiResult.neighborhood_name,
-                        lifestyle.score,
-                        lifestyle.green_zones_score,
-                        lifestyle.noise_score,
-                        apiResult.score, // UPDATE AIR
-                        apiResult.note,
-                    );
-                } else {
-                    await this.databaseService.insertLifestyle(
-                        apiResult.neighborhood_name, 0, 0, 0, apiResult.score, apiResult.note,
-                    );
-                }
-            }
-        }
-
-        const results: AirQualityResultDto[] = [];
 		for (const neighborhood of neighborhoods) {
-			const data = await this.databaseService.getLifestyleByNeighborhoodName(neighborhood.name);
+			let lifestyle = await this.databaseService.getLifestyleByNeighborhoodName(
+				neighborhood.name,
+			);
+
+			if (!lifestyle || lifestyle.air_quality_score === 0) {
+				const apiResult = await this.getAirQualityDataForLocation(
+					neighborhood.name,
+					neighborhood.latitude,
+					neighborhood.longitude,
+				);
+				await new Promise((r) => setTimeout(r, 1500));
+
+				if (lifestyle) {
+					await this.databaseService.updateLifestyle(
+						apiResult.neighborhood_name,
+						lifestyle.score,
+						lifestyle.green_zones_score,
+						lifestyle.noise_score,
+						apiResult.score, // UPDATE AIR
+						0,
+						apiResult.note,
+					);
+				} else {
+					await this.databaseService.insertLifestyle(
+						apiResult.neighborhood_name,
+						0,
+						0,
+						0,
+						0,
+						apiResult.score,
+						apiResult.note,
+					);
+				}
+			}
+		}
+
+		const results: AirQualityResultDto[] = [];
+		for (const neighborhood of neighborhoods) {
+			const data = await this.databaseService.getLifestyleByNeighborhoodName(
+				neighborhood.name,
+			);
 			if (data) {
 				results.push({
 					neighborhood_name: data.neighborhood_name,
@@ -402,36 +425,145 @@ export class LifestyleService {
 			}
 		}
 		return { air_quality: results };
-    }
+	}
 
-    private async getAirQualityDataForLocation(name: string, lat: number, lon: number): Promise<AirQualityResultDto> {
-        // Using Open-Meteo API (Free, no key required)
-        const apiUrl = `https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${lat}&longitude=${lon}&current=european_aqi`;
+	private async getAirQualityDataForLocation(
+		name: string,
+		lat: number,
+		lon: number,
+	): Promise<AirQualityResultDto> {
+		// Using Open-Meteo API (Free, no key required)
+		const apiUrl = `https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${lat}&longitude=${lon}&current=european_aqi`;
 
-        try {
-            const { data } = await firstValueFrom(this.httpService.get(apiUrl));
-            
-            // European AQI: 0-20 (Good), 20-40 (Fair), ..., >100 (Very Poor)
-            const aqi = data.current?.european_aqi || 50; // Default to moderate if missing
+		try {
+			const { data } = await firstValueFrom(this.httpService.get(apiUrl));
 
-            // Convert to our 0-100 scale where 100 is BEST (Clean Air)
-            // If AQI is 0 (Best), Score is 100.
-            // If AQI is 100 (Very Poor), Score is 0.
-            const score = Math.max(0, 100 - aqi);
+			// European AQI: 0-20 (Good), 20-40 (Fair), ..., >100 (Very Poor)
+			const aqi = data.current?.european_aqi || 50; // Default to moderate if missing
 
-            let qualityText = 'Moderate';
-            if (aqi < 20) qualityText = 'Excellent';
-            else if (aqi < 40) qualityText = 'Good';
-            else if (aqi > 80) qualityText = 'Poor';
+			// Convert to our 0-100 scale where 100 is BEST (Clean Air)
+			// If AQI is 0 (Best), Score is 100.
+			// If AQI is 100 (Very Poor), Score is 0.
+			const score = Math.max(0, 100 - aqi);
 
-            return {
-                neighborhood_name: name,
-                score: Math.round(score),
-                note: `AQI: ${aqi} (${qualityText})`
-            };
-        } catch (error) {
-            console.error(`Air Quality API Error ${name}:`, error.message);
-            return { neighborhood_name: name, score: 0, note: 'Error fetching AQI' };
-        }
-    }
+			let qualityText = 'Moderate';
+			if (aqi < 20) qualityText = 'Excellent';
+			else if (aqi < 40) qualityText = 'Good';
+			else if (aqi > 80) qualityText = 'Poor';
+
+			return {
+				neighborhood_name: name,
+				score: Math.round(score),
+				note: `AQI: ${aqi} (${qualityText})`,
+			};
+		} catch (error) {
+			console.error(`Air Quality API Error ${name}:`, error.message);
+			return { neighborhood_name: name, score: 0, note: 'Error fetching AQI' };
+		}
+	}
+
+	// --- Ocupability Logic ---
+	async getAllOccupabilityData(): Promise<OccupabilityCollectionResultDto> {
+		const neighborhoods = await this.databaseService.getAllNeighborhoods();
+
+		for (const neighborhood of neighborhoods) {
+			let lifestyle = await this.databaseService.getLifestyleByNeighborhoodName(
+				neighborhood.name,
+			);
+
+			if (!lifestyle || lifestyle.ocupability_score === 0) {
+				const apiResult = await this.getOccupabilityDataForLocation(
+					neighborhood.name,
+					neighborhood.latitude,
+					neighborhood.longitude,
+				);
+				await new Promise((r) => setTimeout(r, 2000));
+
+				if (lifestyle) {
+					await this.databaseService.updateLifestyle(
+						apiResult.neighborhood_name,
+						lifestyle.score,
+						lifestyle.green_zones_score,
+						lifestyle.noise_score,
+						lifestyle.air_quality_score,
+						apiResult.score, // UPDATE OCCUPABILITY
+						apiResult.note,
+					);
+				} else {
+					await this.databaseService.insertLifestyle(
+						apiResult.neighborhood_name,
+						0,
+						0,
+						0,
+						0,
+						apiResult.score,
+						apiResult.note,
+					);
+				}
+			}
+		}
+
+		const results: OccupabilityResultDto[] = [];
+		for (const neighborhood of neighborhoods) {
+			const data = await this.databaseService.getLifestyleByNeighborhoodName(
+				neighborhood.name,
+			);
+			if (data) {
+				results.push({
+					neighborhood_name: data.neighborhood_name,
+					score: data.ocupability_score,
+					note: data.note,
+				});
+			}
+		}
+		return { occupability: results };
+	}
+
+	private async getOccupabilityDataForLocation(
+		name: string,
+		lat: number,
+		lon: number,
+	): Promise<OccupabilityResultDto> {
+		const radius = 1000;
+		// Proxy for Employment: Count workplaces (Offices, Industrial, Commercial, Retail)
+		// This estimates "Job Availability" in the area.
+		const query = `
+            [out:json];
+            (
+                node["office"](around:${radius},${lat},${lon});
+                way["building"="office"](around:${radius},${lat},${lon});
+                way["building"="commercial"](around:${radius},${lat},${lon});
+                way["building"="industrial"](around:${radius},${lat},${lon});
+                way["landuse"="commercial"](around:${radius},${lat},${lon});
+                way["landuse"="industrial"](around:${radius},${lat},${lon});
+            );
+            out count;
+        `;
+		const apiUrl = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(query)}`;
+
+		try {
+			const { data } = await firstValueFrom(this.httpService.get(apiUrl));
+			let count = 0;
+			if (data?.elements?.[0]?.tags) {
+				const tags = data.elements[0].tags;
+				count = parseInt(tags.total || tags.ways || '0', 10);
+			}
+
+			// Score: 50 workplaces nearby = 100/100 Occupability (High Job Density)
+			const score = Math.min(count * 2, 100);
+
+			let note = `Job Density Proxy: ${count} workplaces found`;
+			if (score >= 80) note += ' (Business Hub)';
+			else if (score <= 20) note += ' (Residential/Low Employment)';
+
+			return { neighborhood_name: name, score, note };
+		} catch (error) {
+			console.error(`Occupability API Error ${name}:`, error.message);
+			return {
+				neighborhood_name: name,
+				score: 0,
+				note: 'Error fetching job data',
+			};
+		}
+	}
 }

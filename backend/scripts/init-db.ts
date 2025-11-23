@@ -156,6 +156,7 @@ db.serialize(() => {
       green_zones_score INTEGER NOT NULL DEFAULT 0,
       noise_score INTEGER NOT NULL DEFAULT 0,
       air_quality_score INTEGER NOT NULL DEFAULT 0,
+      ocupability_score INTEGER NOT NULL DEFAULT 0,
       note TEXT,
       FOREIGN KEY (neighborhood_name) REFERENCES neighborhoods(name)
     );

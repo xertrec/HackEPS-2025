@@ -4,6 +4,7 @@ import { LifestyleService } from './lifestyle.service';
 import { GreenZonesCollectionResultDto } from './dto/green_zones/green_zones_collection_result.dto';
 import { NoiseCollectionResultDto } from './dto/noise/noise_collection_result.dto';
 import { AirQualityCollectionResultDto } from './dto/air_quality/air_quality_collection_result.dto';
+import { OccupabilityCollectionResultDto } from './dto/occupability/occupability_collection_result.dto';
 
 @Controller('lifestyle')
 export class LifestyleController {
@@ -27,5 +28,10 @@ export class LifestyleController {
 	@Get('air-quality')
 	async getAirQuality(): Promise<AirQualityCollectionResultDto> {
 		return this.lifestyleService.getAllAirQualityData();
+	}
+
+	@Get('occupability')
+	async getOccupability(): Promise<OccupabilityCollectionResultDto> {
+		return this.lifestyleService.getAllOccupabilityData();
 	}
 }
