@@ -217,95 +217,141 @@ export class RecommendationsService {
       weights.Noise += 20; // Zonas verdes suelen ser más tranquilas
     }
 
-    // NUEVAS PREGUNTAS - AMBIENTE
+    // NUEVAS PREGUNTAS - AMBIENTE (CRÍTICO: debe dominar la decisión)
     if (profile.ambiente === 'urbano-bullicioso') {
-      weights.Connectivity += 30;
-      weights.Accessibility += 30;
-      weights.Occupability += 25;
-      weights.Noise -= 20; // No les molesta el ruido
-      weights.GreenZones -= 10;
-      weights.OciNocturn += 20;
-      weights.TransportePublico += 20;
-      weights.Taxis += 15;
-    } else if (profile.ambiente === 'residencial-tranquilo') {
-      weights.Noise += 40; // MUY importante la tranquilidad
-      weights.GreenZones += 30;
-      weights.Seguridad += 25;
-      weights.OciNocturn -= 15;
-      weights.Parking += 20;
-      weights.CaminarCorrer += 20;
-    } else if (profile.ambiente === 'equilibrado') {
-      weights.Noise += 20;
-      weights.GreenZones += 15;
-      weights.Connectivity += 15;
-      weights.Accessibility += 15;
-    } else if (profile.ambiente === 'naturaleza') {
-      weights.GreenZones += 50; // MÁXIMA prioridad
-      weights.Noise += 35;
-      weights.AirQuality += 30;
-      weights.CaminarCorrer += 25;
-      weights.CarrilesBici += 20;
-      weights.OciDiurn += 20;
-    }
-
-    // CALIDAD DEL AIRE
-    if (profile.calidadAire === 'muy-importante') {
-      weights.AirQuality += 50; // MÁXIMA prioridad
-      weights.GreenZones += 25;
-      weights.Noise += 15;
-    } else if (profile.calidadAire === 'importante') {
-      weights.AirQuality += 30;
-      weights.GreenZones += 15;
-    }
-    // Si es 'poco-importante' no ajustamos
-
-    // MODALIDAD DE TRABAJO
-    if (profile.modalidadTrabajo === 'oficina-centro') {
-      weights.Connectivity += 35;
-      weights.Accessibility += 40;
+      weights.Connectivity += 60;
+      weights.Accessibility += 60;
+      weights.Occupability += 50;
+      weights.Noise = 15; // FORZAR bajo (buscan ruido urbano)
+      weights.GreenZones = 20; // FORZAR bajo
+      weights.OciNocturn += 50;
       weights.TransportePublico += 40;
-      weights.Taxis += 20;
-      weights.Occupability += 20;
-    } else if (profile.modalidadTrabajo === 'oficina-suburbios') {
-      weights.Parking += 30;
-      weights.Accessibility += 20;
-      weights.TransportePublico += 15;
-    } else if (profile.modalidadTrabajo === 'remoto') {
-      weights.Connectivity += 45; // Internet crucial
-      weights.GreenZones += 25; // Importante para descanso
-      weights.Noise += 30; // Necesita tranquilidad para trabajar
-      weights.OciDiurn += 20;
-      weights.Botigues += 20;
-    } else if (profile.modalidadTrabajo === 'hibrido') {
-      weights.Connectivity += 30;
+      weights.Taxis += 35;
+      weights.Botigues += 35;
+    } else if (profile.ambiente === 'residencial-tranquilo') {
+      weights.Noise = 100; // FORZAR máximo en tranquilidad
+      weights.GreenZones += 70;
+      weights.Seguridad += 50;
+      weights.OciNocturn = Math.max(0, weights.OciNocturn - 50); // REDUCIR fuertemente
+      weights.Connectivity = Math.max(20, weights.Connectivity - 40);
+      weights.Accessibility = Math.max(20, weights.Accessibility - 30);
+      weights.Parking += 40;
+      weights.CaminarCorrer += 40;
+      weights.AirQuality += 50;
+      // REDUCIR importancia de servicios básicos
+      weights.Botigues = Math.max(30, weights.Botigues - 30);
+      weights.Hospitals = Math.max(40, weights.Hospitals - 25);
+    } else if (profile.ambiente === 'equilibrado') {
+      weights.Noise += 35;
+      weights.GreenZones += 30;
+      weights.Connectivity += 25;
       weights.Accessibility += 25;
-      weights.TransportePublico += 25;
-      weights.Parking += 20;
+    } else if (profile.ambiente === 'naturaleza') {
+      weights.GreenZones = 100; // FORZAR máximo naturaleza
+      weights.Noise = 100; // FORZAR máximo tranquilidad
+      weights.AirQuality = 100; // FORZAR máximo aire limpio
+      weights.CaminarCorrer += 50;
+      weights.CarrilesBici += 45;
+      weights.OciDiurn += 40;
+      // REDUCIR DRÁSTICAMENTE importancia de centro urbano
+      weights.Connectivity = Math.max(15, weights.Connectivity - 60);
+      weights.Occupability = Math.max(15, weights.Occupability - 50);
+      weights.OciNocturn = Math.max(0, weights.OciNocturn - 50);
+      weights.Accessibility = Math.max(20, weights.Accessibility - 40);
+      // REDUCIR importancia de servicios urbanos
+      weights.Botigues = Math.max(25, weights.Botigues - 40);
+      weights.Hospitals = Math.max(35, weights.Hospitals - 30);
     }
 
-    // TIPO DE VIVIENDA (proxy de nivel socioeconómico)
+    // CALIDAD DEL AIRE (impacto masivo)
+    if (profile.calidadAire === 'muy-importante') {
+      weights.AirQuality = 100; // FORZAR máximo
+      weights.GreenZones += 60;
+      weights.Noise += 40;
+      weights.Connectivity = Math.max(20, weights.Connectivity - 40);
+    } else if (profile.calidadAire === 'importante') {
+      weights.AirQuality += 60;
+      weights.GreenZones += 35;
+    } else if (profile.calidadAire === 'poco-importante') {
+      weights.AirQuality = Math.max(20, weights.AirQuality - 25);
+    }
+
+    // MODALIDAD DE TRABAJO (debe cambiar drásticamente ubicación)
+    if (profile.modalidadTrabajo === 'oficina-centro') {
+      // Si ya buscan naturaleza, no reducir tanto GreenZones (conflicto)
+      if (profile.ambiente !== 'naturaleza') {
+        weights.Connectivity += 70;
+        weights.Accessibility = 100; // FORZAR máximo - CRÍTICO
+        weights.TransportePublico += 70;
+        weights.Taxis += 40;
+        weights.Occupability += 50;
+        weights.GreenZones = Math.max(20, weights.GreenZones - 40);
+      } else {
+        // Busca naturaleza + oficina centro: barrios costeros con acceso a centro
+        weights.Connectivity += 40;
+        weights.Accessibility += 60;
+        weights.TransportePublico += 50;
+        // NO reducir GreenZones, mantener ambiente natural
+      }
+    } else if (profile.modalidadTrabajo === 'oficina-suburbios') {
+      weights.Parking += 60; // CRÍTICO tener coche
+      weights.Accessibility += 35;
+      weights.TransportePublico += 25;
+      weights.Connectivity = Math.max(30, weights.Connectivity - 30);
+      weights.GreenZones += 35;
+    } else if (profile.modalidadTrabajo === 'remoto') {
+      weights.Connectivity += 80; // Internet CRÍTICO
+      weights.GreenZones += 60; // Buscar calidad de vida
+      weights.Noise += 70; // CRÍTICO trabajar en tranquilidad
+      weights.OciDiurn += 40;
+      weights.Botigues += 30;
+      weights.AirQuality += 50;
+      weights.Accessibility = Math.max(25, weights.Accessibility - 40);
+      weights.TransportePublico = Math.max(25, weights.TransportePublico - 35);
+    } else if (profile.modalidadTrabajo === 'hibrido') {
+      weights.Connectivity += 55;
+      weights.Accessibility += 50;
+      weights.TransportePublico += 50;
+      weights.Parking += 40;
+      weights.GreenZones += 30;
+    } else if (profile.modalidadTrabajo === 'no-aplica') {
+      // Estudiantes, jubilados, etc. - priorizar calidad de vida
+      weights.GreenZones += 40;
+      weights.OciDiurn += 40;
+      weights.Seguridad += 30;
+      weights.Noise += 30;
+    }
+
+    // TIPO DE VIVIENDA (CRÍTICO: debe cambiar completamente los resultados)
     if (profile.tipoVivienda === 'premium') {
-      weights.Salary += 50; // Buscar barrios de nivel económico alto
-      weights.Seguridad += 25;
-      weights.GreenZones += 20;
-      weights.AirQuality += 20;
-      weights.Noise += 25;
-      weights.Botigues += 15;
+      weights.Salary = 100; // FORZAR máximo - BUSCAR barrios caros
+      weights.Seguridad += 60;
+      weights.GreenZones += 55;
+      weights.AirQuality += 55;
+      weights.Noise += 60;
+      weights.Botigues += 35;
+      weights.Accessibility = Math.max(30, weights.Accessibility - 20);
     } else if (profile.tipoVivienda === 'confortable') {
-      weights.Salary += 25; // Nivel medio-alto
-      weights.Seguridad += 15;
-      weights.Accessibility += 15;
+      weights.Salary += 50; // Nivel medio-alto
+      weights.Seguridad += 35;
+      weights.Accessibility += 30;
+      weights.GreenZones += 25;
     } else if (profile.tipoVivienda === 'economico') {
-      weights.Salary -= 20; // Buscar barrios más económicos
-      weights.Accessibility += 25; // Importante transporte público
-      weights.TransportePublico += 30;
-      weights.Occupability += 20; // Importante oportunidades de empleo cercanas
+      weights.Salary = -100; // FORZAR mínimo - EVITAR barrios caros
+      weights.Accessibility += 60;
+      weights.TransportePublico += 65;
+      weights.Occupability += 55;
+      weights.Connectivity += 35;
+      weights.GreenZones = Math.max(20, weights.GreenZones - 30);
     } else if (profile.tipoVivienda === 'compartido') {
-      weights.Salary -= 25;
-      weights.Universitats += 30;
-      weights.TransportePublico += 35;
-      weights.Occupability += 15;
-      weights.OciNocturn += 20;
+      weights.Salary = -80; // Buscar barrios económicos
+      weights.Universitats += 65;
+      weights.TransportePublico += 70;
+      weights.Occupability += 40;
+      weights.OciNocturn += 50;
+      weights.OciDiurn += 35;
+      weights.Connectivity += 50;
+      weights.Accessibility += 50;
     }
 
     // Normalizar: asegurar que están entre 0-100
@@ -352,18 +398,131 @@ export class RecommendationsService {
     // Añadir lifestyle scores si están disponibles
     if (lifestyle) {
       score += (lifestyle.connectivity * weights.Connectivity) / 100;
-      score += (lifestyle.greenZones * weights.GreenZones) / 100;
-      score += (lifestyle.noise * weights.Noise) / 100;
-      score += (lifestyle.airQuality * weights.AirQuality) / 100;
+      
+      // GREEN ZONES: Aplicar penalización si se busca naturaleza y no hay
+      if (weights.GreenZones >= 100) {
+        // Usuario busca MÁXIMA naturaleza: ELIMINAR barrios sin zonas verdes
+        if (lifestyle.greenZones < 60) {
+          score -= 100; // ELIMINACIÓN TOTAL
+        } else if (lifestyle.greenZones < 75) {
+          score -= 50; // Penalización fuerte
+        } else {
+          score += (lifestyle.greenZones * weights.GreenZones) / 100;
+        }
+      } else if (weights.GreenZones > 70) {
+        // Usuario busca naturaleza: penalizar barrios sin verde
+        if (lifestyle.greenZones < 50) {
+          score -= 60; // Penalización muy fuerte
+        } else {
+          score += (lifestyle.greenZones * weights.GreenZones) / 100;
+        }
+      } else {
+        score += (lifestyle.greenZones * weights.GreenZones) / 100;
+      }
+      
+      // NOISE: Aplicar penalización BRUTAL si no cumple requisitos
+      if (weights.Noise >= 100) {
+        // Usuario busca MÁXIMA tranquilidad: ELIMINAR barrios ruidosos
+        if (lifestyle.noise < 60) {
+          score -= 100; // PENALIZACIÓN BRUTAL - prácticamente elimina el barrio
+        } else if (lifestyle.noise < 75) {
+          score -= 40; // Penalización fuerte
+        } else {
+          score += (lifestyle.noise * weights.Noise) / 100;
+        }
+      } else if (weights.Noise > 60) {
+        // Usuario busca tranquilidad: penalizar fuerte barrios ruidosos
+        if (lifestyle.noise < 50) {
+          score -= 50; // Penalización muy grande
+        } else {
+          score += (lifestyle.noise * weights.Noise) / 100;
+        }
+      } else if (weights.Noise < 30) {
+        // Usuario busca ambiente urbano: penalizar barrios tranquilos
+        if (lifestyle.noise > 70) {
+          score -= 40; // Penalización por demasiado tranquilo
+        } else {
+          score += (lifestyle.noise * weights.Noise) / 100;
+        }
+      } else {
+        score += (lifestyle.noise * weights.Noise) / 100;
+      }
+      
+      // AIR QUALITY: Aplicar penalización si es crítico
+      if (weights.AirQuality >= 100) {
+        // Usuario busca MÁXIMA calidad aire: ELIMINAR barrios contaminados
+        if (lifestyle.airQuality < 60) {
+          score -= 100; // ELIMINACIÓN TOTAL
+        } else if (lifestyle.airQuality < 75) {
+          score -= 50; // Penalización fuerte
+        } else {
+          score += (lifestyle.airQuality * weights.AirQuality) / 100;
+        }
+      } else if (weights.AirQuality > 70) {
+        // Usuario prioriza calidad aire
+        if (lifestyle.airQuality < 50) {
+          score -= 60;
+        } else {
+          score += (lifestyle.airQuality * weights.AirQuality) / 100;
+        }
+      } else {
+        score += (lifestyle.airQuality * weights.AirQuality) / 100;
+      }
+      
       score += (lifestyle.occupability * weights.Occupability) / 100;
       score += (lifestyle.accessibility * weights.Accessibility) / 100;
       
-      // Salary: convertir High/Medium/Low a score numérico
-      let salaryScore = 50; // Por defecto Medium
-      if (lifestyle.salary === 'High') salaryScore = 85;
-      else if (lifestyle.salary === 'Medium') salaryScore = 50;
-      else if (lifestyle.salary === 'Low') salaryScore = 20;
-      score += (salaryScore * weights.Salary) / 100;
+      // Salary: manejo especial CON PENALIZACIONES BRUTALES
+      if (weights.Salary >= 100) {
+        // Buscan PREMIUM exclusivo: SOLO barrios High, ELIMINAR resto
+        if (lifestyle.salary === 'High') {
+          score += (100 * weights.Salary) / 100;
+        } else if (lifestyle.salary === 'Medium') {
+          score -= 60; // PENALIZACIÓN BRUTAL - Medium no es suficiente
+        } else if (lifestyle.salary === 'Low') {
+          score -= 120; // ELIMINACIÓN TOTAL
+        }
+      } else if (weights.Salary > 60) {
+        // Buscan barrios caros: PENALIZAR fuertemente los económicos
+        if (lifestyle.salary === 'High') {
+          score += (100 * weights.Salary) / 100;
+        } else if (lifestyle.salary === 'Medium') {
+          score -= 30; // Penalización fuerte
+        } else if (lifestyle.salary === 'Low') {
+          score -= 80; // PENALIZACIÓN MUY FUERTE
+        }
+      } else if (weights.Salary <= -80) {
+        // Buscan ECONÓMICO: SOLO barrios Low/Medium, ELIMINAR caros
+        const absWeight = Math.abs(weights.Salary);
+        if (lifestyle.salary === 'Low') {
+          score += (100 * absWeight) / 100;
+        } else if (lifestyle.salary === 'Medium') {
+          score += (60 * absWeight) / 100;
+        } else if (lifestyle.salary === 'High') {
+          score -= 120; // ELIMINACIÓN TOTAL de barrios caros
+        }
+      } else if (weights.Salary < -40) {
+        // Buscan barrios económicos: PENALIZAR los caros
+        const absWeight = Math.abs(weights.Salary);
+        if (lifestyle.salary === 'Low') {
+          score += (100 * absWeight) / 100;
+        } else if (lifestyle.salary === 'Medium') {
+          score += (50 * absWeight) / 100;
+        } else if (lifestyle.salary === 'High') {
+          score -= 80; // PENALIZACIÓN FUERTE por ser caro
+        }
+      } else if (weights.Salary > 0) {
+        // Buscan barrios caros pero no extremo
+        if (lifestyle.salary === 'High') score += (100 * weights.Salary) / 100;
+        else if (lifestyle.salary === 'Medium') score += (60 * weights.Salary) / 100;
+        else if (lifestyle.salary === 'Low') score += (20 * weights.Salary) / 100;
+      } else if (weights.Salary < 0) {
+        // Buscan barrios económicos pero no extremo
+        const absWeight = Math.abs(weights.Salary);
+        if (lifestyle.salary === 'Low') score += (100 * absWeight) / 100;
+        else if (lifestyle.salary === 'Medium') score += (60 * absWeight) / 100;
+        else if (lifestyle.salary === 'High') score += (20 * absWeight) / 100;
+      }
     }
 
     // Normalizar al peso total

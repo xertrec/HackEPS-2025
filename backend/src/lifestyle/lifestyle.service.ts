@@ -89,58 +89,158 @@ export class LifestyleService {
 			Math.pow(longitude - downtownLon, 2)
 		);
 		
-		// Barrios conocidos de alta calidad
+		// BARRIOS CATEGORIZADOS CON MÁS DETALLE
+		
+		// Barrios de alta calidad / premium (zonas exclusivas)
 		const highEndNeighborhoods = [
-			'Beverly Hills', 'Santa Monica', 'Malibu', 'Bel Air', 
-			'Pacific Palisades', 'Manhattan Beach', 'Hermosa Beach',
-			'West Hollywood', 'Brentwood', 'Westwood'
+			'Beverly Hills', 'Bel Air', 'Brentwood', 'Pacific Palisades',
+			'Manhattan Beach', 'Hermosa Beach', 'Palos Verdes'
 		];
 		
-		// Barrios con buena conectividad (cercanos al centro)
-		const centralNeighborhoods = [
-			'Downtown', 'Arts District', 'Little Tokyo', 'Chinatown',
-			'Koreatown', 'Hollywood', 'West LA'
+		// Barrios costeros (buena calidad aire, zonas verdes pero menos centrales)
+		const coastalNeighborhoods = [
+			'Santa Monica', 'Venice', 'Marina del Rey', 'Redondo Beach',
+			'El Segundo', 'Playa Vista'
 		];
 		
-		// Barrios con zonas verdes
-		const greenNeighborhoods = [
-			'Griffith Park', 'Silver Lake', 'Echo Park', 'Pasadena',
-			'Santa Monica', 'Pacific Palisades', 'Topanga'
+		// Barrios super céntricos (alta conectividad pero ruidosos y menos verdes)
+		const downtownNeighborhoods = [
+			'Downtown', 'Financial District', 'Bunker Hill'
 		];
 		
-		const isHighEnd = highEndNeighborhoods.some(n => name.includes(n));
-		const isCentral = centralNeighborhoods.some(n => name.includes(n));
-		const isGreen = greenNeighborhoods.some(n => name.includes(n));
+		// Barrios urbanos creativos (buena conectividad, moderado ruido)
+		const urbanCreativeNeighborhoods = [
+			'Arts District', 'Silver Lake', 'Echo Park', 'Los Feliz',
+			'West Hollywood', 'Culver City', 'Hollywood'
+		];
 		
-		// Calcular scores (0-100)
-		const connectivity = isCentral ? 
-			Math.min(95, 80 + Math.random() * 15) : 
-			Math.max(30, 70 - distanceFromCenter * 150);
+		// Barrios con zonas verdes y tranquilos (pero menos conectados)
+		const greenQuietNeighborhoods = [
+			'Pasadena', 'Griffith Park', 'Topanga', 'Studio City',
+			'Sherman Oaks', 'Encino', 'Woodland Hills'
+		];
 		
-		const greenZones = isGreen ? 
-			Math.min(95, 75 + Math.random() * 20) : 
-			Math.max(20, 60 - distanceFromCenter * 100);
+		// Barrios residenciales familiares (equilibrados pero menos emocionantes)
+		const residentialNeighborhoods = [
+			'Glendale', 'Burbank', 'Torrance', 'Alhambra',
+			'San Gabriel', 'Monterey Park', 'El Monte'
+		];
 		
-		// Ruido inverso a distancia del centro (centro = más ruido)
-		const noise = isCentral ? 
-			Math.max(30, 50 - Math.random() * 20) : 
-			Math.min(90, 60 + distanceFromCenter * 80);
+		// Barrios de clase trabajadora (económicos, menos servicios premium)
+		const workingClassNeighborhoods = [
+			'Boyle Heights', 'East Los Angeles', 'South LA',
+			'Wilmington', 'San Pedro', 'Harbor City', 'Watts'
+		];
 		
-		const airQuality = isHighEnd ? 
-			Math.min(95, 80 + Math.random() * 15) : 
-			Math.max(40, 65 + (distanceFromCenter * 50));
+		// Barrios universitarios / jóvenes (buena conectividad, más económicos)
+		const collegeNeighborhoods = [
+			'Westwood', 'Koreatown', 'Little Tokyo', 'Chinatown',
+			'University Park'
+		];
 		
-		const occupability = isCentral || isHighEnd ? 
-			Math.min(90, 70 + Math.random() * 20) : 
-			Math.max(35, 55 + Math.random() * 20);
+		// Detectar categoría del barrio
+		const isHighEnd = highEndNeighborhoods.some(n => name.toLowerCase().includes(n.toLowerCase()));
+		const isCoastal = coastalNeighborhoods.some(n => name.toLowerCase().includes(n.toLowerCase()));
+		const isDowntown = downtownNeighborhoods.some(n => name.toLowerCase().includes(n.toLowerCase()));
+		const isUrbanCreative = urbanCreativeNeighborhoods.some(n => name.toLowerCase().includes(n.toLowerCase()));
+		const isGreenQuiet = greenQuietNeighborhoods.some(n => name.toLowerCase().includes(n.toLowerCase()));
+		const isResidential = residentialNeighborhoods.some(n => name.toLowerCase().includes(n.toLowerCase()));
+		const isWorkingClass = workingClassNeighborhoods.some(n => name.toLowerCase().includes(n.toLowerCase()));
+		const isCollege = collegeNeighborhoods.some(n => name.toLowerCase().includes(n.toLowerCase()));
 		
-		const accessibility = isCentral ? 
-			Math.min(95, 80 + Math.random() * 15) : 
-			Math.max(25, 65 - distanceFromCenter * 120);
+		// Usar hash del nombre para generar variación consistente (no random cada vez)
+		const nameHash = name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+		const variation = (nameHash % 10) - 5; // Variación entre -5 y +4
 		
-		const salary = isHighEnd ? 'High' : 
-			(isCentral ? 'Medium' : 
-				(Math.random() > 0.5 ? 'Medium' : 'Low'));
+		// CALCULAR CONNECTIVITY (0-100) - RANGOS MÁS EXTREMOS
+		let connectivity = 50;
+		if (isDowntown) connectivity = 98;
+		else if (isCollege) connectivity = 90;
+		else if (isUrbanCreative) connectivity = 85;
+		else if (isCoastal) connectivity = 60;
+		else if (isHighEnd) connectivity = 55;
+		else if (isResidential) connectivity = 50;
+		else if (isWorkingClass) connectivity = 45;
+		else if (isGreenQuiet) connectivity = 30;
+		else connectivity = Math.max(20, Math.min(75, 60 - distanceFromCenter * 250));
+		connectivity = Math.max(15, Math.min(100, connectivity + variation));
+		
+		// CALCULAR GREEN ZONES (0-100) - RANGOS MÁS EXTREMOS
+		let greenZones = 50;
+		if (isGreenQuiet) greenZones = 95;
+		else if (isCoastal) greenZones = 90;
+		else if (isHighEnd) greenZones = 85;
+		else if (isResidential) greenZones = 70;
+		else if (isUrbanCreative) greenZones = 50;
+		else if (isCollege) greenZones = 45;
+		else if (isWorkingClass) greenZones = 35;
+		else if (isDowntown) greenZones = 15;
+		else greenZones = Math.max(25, Math.min(85, 55 - distanceFromCenter * 70));
+		greenZones = Math.max(10, Math.min(100, greenZones + variation));
+		
+		// CALCULAR NOISE (0-100, donde 100 = muy tranquilo, 0 = muy ruidoso) - MÁS EXTREMO
+		let noise = 50;
+		if (isDowntown) noise = 10;
+		else if (isCollege) noise = 30;
+		else if (isUrbanCreative) noise = 40;
+		else if (isWorkingClass) noise = 50;
+		else if (isCoastal) noise = 75;
+		else if (isResidential) noise = 80;
+		else if (isHighEnd) noise = 90;
+		else if (isGreenQuiet) noise = 95;
+		else noise = Math.max(25, Math.min(90, 45 + distanceFromCenter * 180));
+		noise = Math.max(5, Math.min(100, noise + variation));
+		
+		// CALCULAR AIR QUALITY (0-100) - MÁS EXTREMO
+		let airQuality = 50;
+		if (isCoastal) airQuality = 95;
+		else if (isGreenQuiet) airQuality = 90;
+		else if (isHighEnd) airQuality = 85;
+		else if (isResidential) airQuality = 70;
+		else if (isUrbanCreative) airQuality = 55;
+		else if (isCollege) airQuality = 50;
+		else if (isWorkingClass) airQuality = 40;
+		else if (isDowntown) airQuality = 25;
+		else airQuality = Math.max(30, Math.min(90, 55 + distanceFromCenter * 120));
+		airQuality = Math.max(20, Math.min(100, airQuality + variation));
+		
+		// CALCULAR OCCUPABILITY (oportunidades laborales) (0-100) - MÁS EXTREMO
+		let occupability = 50;
+		if (isDowntown) occupability = 98;
+		else if (isUrbanCreative) occupability = 85;
+		else if (isCollege) occupability = 75;
+		else if (isHighEnd) occupability = 70;
+		else if (isCoastal) occupability = 65;
+		else if (isWorkingClass) occupability = 55;
+		else if (isResidential) occupability = 50;
+		else if (isGreenQuiet) occupability = 35;
+		else occupability = Math.max(25, Math.min(85, 65 - distanceFromCenter * 180));
+		occupability = Math.max(20, Math.min(100, occupability + variation));
+		
+		// CALCULAR ACCESSIBILITY (transporte, servicios) (0-100) - MÁS EXTREMO
+		let accessibility = 50;
+		if (isDowntown) accessibility = 98;
+		else if (isCollege) accessibility = 92;
+		else if (isUrbanCreative) accessibility = 88;
+		else if (isCoastal) accessibility = 65;
+		else if (isHighEnd) accessibility = 55;
+		else if (isWorkingClass) accessibility = 50;
+		else if (isResidential) accessibility = 55;
+		else if (isGreenQuiet) accessibility = 30;
+		else accessibility = Math.max(20, Math.min(85, 65 - distanceFromCenter * 250));
+		accessibility = Math.max(15, Math.min(100, accessibility + variation));
+		
+		// CALCULAR SALARY (nivel económico del barrio) - MÁS REALISTA
+		let salary: string;
+		if (isHighEnd) salary = 'High'; // Beverly Hills, Bel Air, etc.
+		else if (isCoastal) salary = 'High'; // Santa Monica, Venice, etc. - costeros son caros
+		else if (isGreenQuiet) salary = 'High'; // Pasadena, Sherman Oaks - suburbios tranquilos caros
+		else if (isUrbanCreative) salary = 'Medium'; // Arts District, Silver Lake - gentrificados
+		else if (isResidential) salary = 'Medium'; // Glendale, Burbank - clase media
+		else if (isDowntown) salary = 'Low'; // Downtown - negocios pero no residencial caro
+		else if (isCollege) salary = 'Low'; // Westwood, Koreatown - áreas estudiantiles económicas
+		else if (isWorkingClass) salary = 'Low'; // Boyle Heights, East LA
+		else salary = distanceFromCenter > 0.1 ? 'Low' : 'Medium';
 		
 		return {
 			connectivity: Math.round(connectivity),
