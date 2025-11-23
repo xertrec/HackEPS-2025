@@ -628,11 +628,11 @@ export class RecommendationsService {
       }
     }
 
-    // Normalizar: asegurar que están entre 0-100
+    // Normalizar: asegurar que están entre -100 y 100 (permitir pesos negativos para presupuesto)
     Object.keys(weights).forEach((key) => {
       weights[key as keyof ServiceWeights] = Math.min(
         100,
-        Math.max(0, weights[key as keyof ServiceWeights]),
+        Math.max(-100, weights[key as keyof ServiceWeights]),
       );
     });
 
@@ -995,8 +995,41 @@ export class RecommendationsService {
         }),
       );
 
+      // 4.5. FILTRO ABSOLUTO POR PRESUPUESTO: Eliminar barrios incompatibles
+      let filteredScores = neighborhoodScores;
+      if (profile.presupuesto) {
+        console.log(`💰 Aplicando filtro de presupuesto: ${profile.presupuesto}`);
+        const budgetBeforeFilter = filteredScores.length;
+        
+        if (profile.presupuesto === 'bajo' || profile.presupuesto === 'medio-bajo') {
+          // SOLO Low y Medium
+          filteredScores = filteredScores.filter(n => 
+            n.lifestyle && (n.lifestyle.salary === 'Low' || n.lifestyle.salary === 'Medium')
+          );
+          console.log(`   🔒 Restricción: SOLO Low/Medium → Filtrados ${budgetBeforeFilter - filteredScores.length} barrios (${filteredScores.length} restantes)`);
+        } else if (profile.presupuesto === 'medio') {
+          // Principalmente Medium, aceptar Low
+          filteredScores = filteredScores.filter(n => 
+            n.lifestyle && (n.lifestyle.salary === 'Medium' || n.lifestyle.salary === 'Low')
+          );
+          console.log(`   🔒 Restricción: Medium/Low → Filtrados ${budgetBeforeFilter - filteredScores.length} barrios (${filteredScores.length} restantes)`);
+        } else if (profile.presupuesto === 'medio-alto') {
+          // Medium y High
+          filteredScores = filteredScores.filter(n => 
+            n.lifestyle && (n.lifestyle.salary === 'Medium' || n.lifestyle.salary === 'High')
+          );
+          console.log(`   🔒 Restricción: Medium/High → Filtrados ${budgetBeforeFilter - filteredScores.length} barrios (${filteredScores.length} restantes)`);
+        } else if (profile.presupuesto === 'alto') {
+          // SOLO High
+          filteredScores = filteredScores.filter(n => 
+            n.lifestyle && n.lifestyle.salary === 'High'
+          );
+          console.log(`   🔒 Restricción: SOLO High → Filtrados ${budgetBeforeFilter - filteredScores.length} barrios (${filteredScores.length} restantes)`);
+        }
+      }
+
       // 5. Ordenar por score descendente (ahora incluye tie-breaker)
-      neighborhoodScores.sort((a, b) => b.score - a.score);
+      filteredScores.sort((a, b) => b.score - a.score);
 
       console.log('✅ Recomendaciones calculadas exitosamente');
       console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
@@ -1004,7 +1037,7 @@ export class RecommendationsService {
       console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
       
       // Mostrar top 10 con breakdown detallado
-      neighborhoodScores.slice(0, 10).forEach((n, idx) => {
+      filteredScores.slice(0, 10).forEach((n, idx) => {
         console.log(`\n${idx + 1}. ${n.barrio}`);
         console.log(`   📊 Score Final: ${n.score.toFixed(2)} (Base: ${n.baseScore.toFixed(2)}, Noise: ${n.noise >= 0 ? '+' : ''}${n.noise.toFixed(2)})`);
         
@@ -1030,18 +1063,18 @@ export class RecommendationsService {
       });
       
       console.log('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-      console.log(`🎯 Resumen: Top 3 → ${neighborhoodScores.slice(0, 3).map(n => `${n.barrio} (${n.score.toFixed(1)})`).join(', ')}`);
+      console.log(`🎯 Resumen: Top 3 → ${filteredScores.slice(0, 3).map(n => `${n.barrio} (${n.score.toFixed(1)})`).join(', ')}`);
       console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
 
       return {
         profile: profile,
         weights: weights,
-        recommendations: neighborhoodScores,
+        recommendations: filteredScores,
         metadata: {
           runId,
           timestamp,
           seed,
-          totalNeighborhoods: neighborhoodScores.length,
+          totalNeighborhoods: filteredScores.length,
         },
       };
     } catch (error) {
