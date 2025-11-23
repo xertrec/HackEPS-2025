@@ -3,6 +3,10 @@ export interface UserProfile {
   situacionFamiliar: string;
   estiloVida: string[];
   prioridades: string[];
+  ambiente: string;
+  calidadAire: string;
+  modalidadTrabajo: string;
+  tipoVivienda: string;
 }
 
 export interface ServiceWeights {
@@ -20,6 +24,24 @@ export interface ServiceWeights {
   CarrilesBici: number;
   CaminarCorrer: number;
   Parking: number;
+  // Lifestyle weights
+  Connectivity: number;
+  GreenZones: number;
+  Noise: number;
+  AirQuality: number;
+  Occupability: number;
+  Accessibility: number;
+  Salary: number;
+}
+
+export interface LifestyleData {
+  connectivity: number;
+  greenZones: number;
+  noise: number;
+  airQuality: number;
+  occupability: number;
+  accessibility: number;
+  salary: string;
 }
 
 export interface NeighborhoodData {
@@ -44,6 +66,7 @@ export interface NeighborhoodRecommendation {
   barrio: string;
   score: number;
   data: NeighborhoodData;
+  lifestyle?: LifestyleData;
 }
 
 export interface RecommendationResponse {
