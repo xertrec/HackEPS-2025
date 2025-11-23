@@ -6,6 +6,7 @@
   <title>Encuentra tu Barrio Ideal en Los Ángeles | NeighborhoodFinder</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * { 
@@ -284,6 +285,72 @@
       margin-bottom: 0.5rem;
     }
     
+    .comparison-chart {
+      background: white;
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 10px 40px rgba(102, 126, 234, 0.15);
+      border: 2px solid #f0f0f0;
+    }
+    
+    .comparison-chart h3 {
+      text-align: center;
+      color: #1a1a1a;
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+    
+    .comparison-chart p {
+      text-align: center;
+      color: #666;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+    }
+    
+    .chart-container {
+      position: relative;
+      height: 500px;
+      width: 100%;
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .chart-container canvas {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    
+    .chart-legend {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.8rem 1.5rem;
+      background: #f8f9fa;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    
+    .legend-color {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    
     .neighborhood-card {
       background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
       border: none;
@@ -455,11 +522,7 @@
     <h2>Cuéntanos sobre ti</h2>
     <p style="color: #666; margin-bottom: 2rem; font-size: 1.05rem;">Responde estas preguntas y nuestro algoritmo inteligente encontrará los barrios perfectos para tu estilo de vida</p>
     
-    <div class="info-banner">
-      <p>
-        💡 <strong>Sistema Inteligente Mejorado</strong> • Ahora con 24 preguntas detalladas sobre tus necesidades de transporte, actividad física, ocio y servicios. Usamos TODOS nuestros datos reales: taxis, carriles bici, senderos, parking, universidades, vida nocturna y mucho más para encontrar tu match perfecto.
-      </p>
-    </div>
+    
 
     <form id="recommendationForm">
       <!-- Edad -->
@@ -646,21 +709,6 @@
         </label>
       </fieldset>
 
-      <!-- Vida Nocturna -->
-      <fieldset>
-        <legend>🌃 ¿Qué tan importante es tener vida nocturna cerca?</legend>
-        <label>
-          <select name="vidaNocturna" required>
-            <option value="">-- Selecciona --</option>
-            <option value="esencial">Esencial - Salgo frecuentemente</option>
-            <option value="importante">Importante - Me gusta tener opciones</option>
-            <option value="moderado">Moderado - Ocasionalmente</option>
-            <option value="no-importante">No es importante</option>
-            <option value="prefiero-evitar">Prefiero un barrio tranquilo</option>
-          </select>
-        </label>
-      </fieldset>
-
       <!-- Acceso a Hospitales -->
       <fieldset>
         <legend>🏥 ¿Qué tan importante es la cercanía a hospitales/centros médicos?</legend>
@@ -678,7 +726,7 @@
 
       <!-- Calidad de Escuelas -->
       <fieldset>
-        <legend>🏫 ¿Qué tan importante es la calidad de las escuelas?</legend>
+        <legend>🏫 ¿Qué tan importante es tener escuelas cerca?</legend>
         <label>
           <select name="calidadEscuelas" required>
             <option value="">-- Selecciona --</option>
@@ -874,7 +922,6 @@
         presupuesto: formData.get('presupuesto'),
         nivelSeguridad: formData.get('nivelSeguridad'),
         distanciaTrabajo: formData.get('distanciaTrabajo'),
-        vidaNocturna: formData.get('vidaNocturna'),
         accesoHospitales: formData.get('accesoHospitales'),
         calidadEscuelas: formData.get('calidadEscuelas'),
         accesoTiendas: formData.get('accesoTiendas'),
@@ -953,11 +1000,31 @@
       resultsEl.scrollIntoView({ behavior: 'smooth' });
       
       const top5 = data.recommendations.slice(0, 5);
+      const top3 = data.recommendations.slice(0, 3);
       
       resultsEl.innerHTML = `
         <div class="results-header">
           <h2>🏆 Tus Mejores Matches</h2>
           <p style="color: #666;">Analizamos ${data.recommendations.length} barrios</p>
+        </div>
+        
+        <div class="comparison-chart">
+          <h3>📊 Comparación de Top 3 Barrios</h3>
+          <p>Visualiza las fortalezas de cada barrio en diferentes categorías</p>
+          <div class="chart-container">
+            <canvas id="radarChart"></canvas>
+          </div>
+          <div class="chart-legend">
+            ${top3.map((item, i) => {
+              const colors = ['#667eea', '#f093fb', '#4facfe'];
+              return `
+                <div class="legend-item">
+                  <div class="legend-color" style="background: ${colors[i]}"></div>
+                  <span>${item.barrio} (${item.score.toFixed(0)}%)</span>
+                </div>
+              `;
+            }).join('')}
+          </div>
         </div>
         ${top5.map((item, index) => {
           const mapId = `map-${index}`;
@@ -1044,6 +1111,127 @@
           `;
         }).join('')}
       `;
+      
+      // Crear el gráfico radar después de renderizar el HTML
+      setTimeout(() => createRadarChart(top3), 100);
+    }
+    
+    function createRadarChart(top3) {
+      const ctx = document.getElementById('radarChart');
+      if (!ctx) return;
+      
+      // Destruir gráfico anterior si existe
+      if (window.radarChartInstance) {
+        window.radarChartInstance.destroy();
+      }
+      
+      // Preparar datos del radar
+      const categories = [
+        'Seguridad',
+        'Servicios',
+        'Transporte',
+        'Zonas Verdes',
+        'Tranquilidad',
+        'Calidad Aire',
+        'Movilidad',
+        'Conectividad'
+      ];
+      
+      const datasets = top3.map((item, index) => {
+        const colors = [
+          { border: '#667eea', bg: 'rgba(102, 126, 234, 0.2)' },
+          { border: '#f093fb', bg: 'rgba(240, 147, 251, 0.2)' },
+          { border: '#4facfe', bg: 'rgba(79, 172, 254, 0.2)' }
+        ];
+        
+        return {
+          label: item.barrio,
+          data: [
+            item.data.Seguridad || 0,
+            Math.round(((item.data.Botigues || 0) + (item.data.Escoles || 0) + (item.data.Hospitals || 0)) / 3),
+            item.data.TransportePublico || 0,
+            item.lifestyle?.greenZones || 0,
+            item.lifestyle?.noise || 0,
+            item.lifestyle?.airQuality || 0,
+            Math.round(((item.data.CarrilesBici || 0) + (item.data.Parking || 0) + (item.data.CaminarCorrer || 0)) / 3),
+            item.lifestyle?.connectivity || 0
+          ],
+          borderColor: colors[index].border,
+          backgroundColor: colors[index].bg,
+          borderWidth: 3,
+          pointBackgroundColor: colors[index].border,
+          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: colors[index].border,
+          pointRadius: 5,
+          pointHoverRadius: 7
+        };
+      });
+      
+      window.radarChartInstance = new Chart(ctx, {
+        type: 'radar',
+        data: {
+          labels: categories,
+          datasets: datasets
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          scales: {
+            r: {
+              beginAtZero: true,
+              max: 100,
+              ticks: {
+                stepSize: 20,
+                font: {
+                  size: 12,
+                  family: "'Inter', sans-serif"
+                },
+                backdropColor: 'transparent'
+              },
+              grid: {
+                color: 'rgba(0, 0, 0, 0.05)',
+                circular: true
+              },
+              pointLabels: {
+                font: {
+                  size: 14,
+                  family: "'Inter', sans-serif",
+                  weight: '600'
+                },
+                color: '#333'
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              display: false // Usamos nuestra propia leyenda personalizada
+            },
+            tooltip: {
+              backgroundColor: 'rgba(0, 0, 0, 0.8)',
+              padding: 12,
+              titleFont: {
+                size: 14,
+                family: "'Inter', sans-serif",
+                weight: '700'
+              },
+              bodyFont: {
+                size: 13,
+                family: "'Inter', sans-serif"
+              },
+              callbacks: {
+                label: function(context) {
+                  return context.dataset.label + ': ' + context.parsed.r + '/100';
+                }
+              }
+            }
+          },
+          animation: {
+            duration: 1500,
+            easing: 'easeInOutQuart'
+          }
+        }
+      });
     }
   </script>
 </body>
