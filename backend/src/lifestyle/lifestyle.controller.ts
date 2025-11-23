@@ -7,10 +7,19 @@ import { AirQualityCollectionResultDto } from './dto/air_quality/air_quality_col
 import { OccupabilityCollectionResultDto } from './dto/occupability/occupability_collection_result.dto';
 import { AccessibilityCollectionResultDto } from './dto/accessibility/accessibility_collection_result.dto';
 import { SalaryCollectionResultDto } from './dto/salary/salary_collection_result.dto';
+import { LiferesultResultDto } from './dto/lifestyle_result.dto';
+import { LifestyleCollectionResultDto } from './dto/lifestyle_collection_result.dto';
 
 @Controller('lifestyle')
 export class LifestyleController {
-	constructor(private readonly lifestyleService: LifestyleService) {}
+	constructor(
+        private readonly lifestyleService: LifestyleService
+    ) {}
+
+    @Get()
+    async getLifestyleData(): Promise<LifestyleCollectionResultDto> {
+        return this.lifestyleService.getLifestyleData();
+    }
 
 	@Get()
 	async getAllLifestyleData() {
