@@ -457,7 +457,7 @@
     
     <div class="info-banner">
       <p>
-        💡 <strong>Sistema Inteligente</strong> • Analizamos automáticamente más de 20 factores incluyendo movilidad, calidad de vida, servicios y seguridad para encontrar tu match perfecto.
+        💡 <strong>Sistema Inteligente Mejorado</strong> • Ahora con 24 preguntas detalladas sobre tus necesidades de transporte, actividad física, ocio y servicios. Usamos TODOS nuestros datos reales: taxis, carriles bici, senderos, parking, universidades, vida nocturna y mucho más para encontrar tu match perfecto.
       </p>
     </div>
 
@@ -601,6 +601,246 @@
         </label>
       </fieldset>
 
+      <!-- Presupuesto -->
+      <fieldset>
+        <legend>💰 ¿Cuál es tu presupuesto mensual para vivienda?</legend>
+        <label>
+          <select name="presupuesto" required>
+            <option value="">-- Selecciona --</option>
+            <option value="bajo">Menos de $1,500 (Económico)</option>
+            <option value="medio-bajo">$1,500 - $2,500 (Moderado)</option>
+            <option value="medio">$2,500 - $3,500 (Medio)</option>
+            <option value="medio-alto">$3,500 - $5,000 (Confortable)</option>
+            <option value="alto">Más de $5,000 (Premium)</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <!-- Nivel de Seguridad -->
+      <fieldset>
+        <legend>🛡️ ¿Qué tan importante es la seguridad del barrio?</legend>
+        <label>
+          <select name="nivelSeguridad" required>
+            <option value="">-- Selecciona --</option>
+            <option value="critico">Crítico - Es mi prioridad #1</option>
+            <option value="muy-importante">Muy importante</option>
+            <option value="importante">Importante</option>
+            <option value="moderado">Moderadamente importante</option>
+            <option value="bajo">No es mi mayor preocupación</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <!-- Distancia al trabajo -->
+      <fieldset>
+        <legend>🚗 ¿Cuál es tu distancia máxima aceptable al trabajo/estudios?</legend>
+        <label>
+          <select name="distanciaTrabajo" required>
+            <option value="">-- Selecciona --</option>
+            <option value="muy-cerca">Menos de 5 km (quiero estar muy cerca)</option>
+            <option value="cerca">5-10 km (cercanía razonable)</option>
+            <option value="media">10-20 km (distancia media)</option>
+            <option value="lejos">20-30 km (puedo desplazarme)</option>
+            <option value="no-importa">No importa / Trabajo remoto</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <!-- Vida Nocturna -->
+      <fieldset>
+        <legend>🌃 ¿Qué tan importante es tener vida nocturna cerca?</legend>
+        <label>
+          <select name="vidaNocturna" required>
+            <option value="">-- Selecciona --</option>
+            <option value="esencial">Esencial - Salgo frecuentemente</option>
+            <option value="importante">Importante - Me gusta tener opciones</option>
+            <option value="moderado">Moderado - Ocasionalmente</option>
+            <option value="no-importante">No es importante</option>
+            <option value="prefiero-evitar">Prefiero un barrio tranquilo</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <!-- Acceso a Hospitales -->
+      <fieldset>
+        <legend>🏥 ¿Qué tan importante es la cercanía a hospitales/centros médicos?</legend>
+        <label>
+          <select name="accesoHospitales" required>
+            <option value="">-- Selecciona --</option>
+            <option value="critico">Crítico - Tengo necesidades médicas</option>
+            <option value="muy-importante">Muy importante</option>
+            <option value="importante">Importante</option>
+            <option value="moderado">Moderadamente importante</option>
+            <option value="bajo">No es prioritario</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <!-- Calidad de Escuelas -->
+      <fieldset>
+        <legend>🏫 ¿Qué tan importante es la calidad de las escuelas?</legend>
+        <label>
+          <select name="calidadEscuelas" required>
+            <option value="">-- Selecciona --</option>
+            <option value="critico">Crítico - Tengo hijos en edad escolar</option>
+            <option value="muy-importante">Muy importante - Planeo tener hijos pronto</option>
+            <option value="importante">Importante</option>
+            <option value="moderado">Moderadamente importante</option>
+            <option value="no-aplica">No aplica - Sin hijos</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <!-- Acceso a Tiendas -->
+      <fieldset>
+        <legend>🏪 ¿Prefieres tener tiendas y comercios cerca?</legend>
+        <label>
+          <select name="accesoTiendas" required>
+            <option value="">-- Selecciona --</option>
+            <option value="esencial">Esencial - Necesito todo a pie</option>
+            <option value="muy-importante">Muy importante</option>
+            <option value="importante">Importante</option>
+            <option value="moderado">Moderadamente importante</option>
+            <option value="bajo">Puedo desplazarme</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <!-- Transporte Público -->
+      <fieldset>
+        <legend>🚌 ¿Qué tan importante es tener buen transporte público?</legend>
+        <label>
+          <select name="transportePublico" required>
+            <option value="">-- Selecciona --</option>
+            <option value="esencial">Esencial - No tengo coche</option>
+            <option value="muy-importante">Muy importante</option>
+            <option value="importante">Importante</option>
+            <option value="moderado">Moderadamente importante</option>
+            <option value="bajo">Tengo coche propio</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <!-- Uso de Taxis -->
+      <fieldset>
+        <legend>🚕 ¿Con qué frecuencia usas taxis/Uber/Lyft?</legend>
+        <label>
+          <select name="usoTaxis" required>
+            <option value="">-- Selecciona --</option>
+            <option value="muy-frecuente">Muy frecuente (diariamente)</option>
+            <option value="frecuente">Frecuente (varias veces por semana)</option>
+            <option value="ocasional">Ocasional (1-2 veces por semana)</option>
+            <option value="raro">Raro (menos de una vez por semana)</option>
+            <option value="nunca">Nunca o casi nunca</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <!-- Uso de Bicicleta -->
+      <fieldset>
+        <legend>🚴 ¿Planeas usar bicicleta como medio de transporte?</legend>
+        <label>
+          <select name="usoBicicleta" required>
+            <option value="">-- Selecciona --</option>
+            <option value="principal">Sí, será mi transporte principal</option>
+            <option value="frecuente">Sí, frecuentemente</option>
+            <option value="ocasional">Ocasionalmente</option>
+            <option value="recreativo">Solo recreativo</option>
+            <option value="no">No uso bicicleta</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <!-- Necesidad de Parking -->
+      <fieldset>
+        <legend>🅿️ ¿Necesitas parking disponible?</legend>
+        <label>
+          <select name="necesidadParking" required>
+            <option value="">-- Selecciona --</option>
+            <option value="critico">Crítico - Tengo 2+ vehículos</option>
+            <option value="muy-importante">Muy importante - Tengo vehículo</option>
+            <option value="importante">Importante</option>
+            <option value="moderado">Moderadamente importante</option>
+            <option value="no-necesario">No necesario - Sin vehículo</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <!-- Actividad Física -->
+      <fieldset>
+        <legend>🏃 ¿Practicas deporte o actividad física regularmente?</legend>
+        <label>
+          <select name="actividadFisica" required>
+            <option value="">-- Selecciona --</option>
+            <option value="diaria">Sí, diariamente (running, ciclismo, etc.)</option>
+            <option value="frecuente">Sí, varias veces por semana</option>
+            <option value="ocasional">Ocasionalmente</option>
+            <option value="gimnasio">Solo en gimnasio</option>
+            <option value="sedentario">No, estilo de vida sedentario</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <!-- Necesidad de Senderos -->
+      <fieldset>
+        <legend>🚶 ¿Necesitas senderos o espacios para caminar/correr?</legend>
+        <label>
+          <select name="necesidadSenderos" required>
+            <option value="">-- Selecciona --</option>
+            <option value="esencial">Esencial - Camino/corro diariamente</option>
+            <option value="muy-importante">Muy importante</option>
+            <option value="importante">Importante</option>
+            <option value="moderado">Moderadamente importante</option>
+            <option value="bajo">No es importante</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <!-- Cercanía a Universidades -->
+      <fieldset>
+        <legend>🎓 ¿Necesitas estar cerca de universidades?</legend>
+        <label>
+          <select name="cercaniauniversidad" required>
+            <option value="">-- Selecciona --</option>
+            <option value="critico">Crítico - Soy estudiante</option>
+            <option value="muy-importante">Muy importante - Trabajo en universidad</option>
+            <option value="importante">Importante - Tengo hijos universitarios</option>
+            <option value="moderado">Moderadamente importante</option>
+            <option value="no-aplica">No aplica</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <!-- Ocio Diurno -->
+      <fieldset>
+        <legend>☀️ ¿Qué tan importante es tener opciones de ocio diurno cerca? (cafeterías, museos, parques)</legend>
+        <label>
+          <select name="ocioDiurno" required>
+            <option value="">-- Selecciona --</option>
+            <option value="esencial">Esencial - Salgo mucho durante el día</option>
+            <option value="muy-importante">Muy importante</option>
+            <option value="importante">Importante</option>
+            <option value="moderado">Moderadamente importante</option>
+            <option value="bajo">No es importante</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <!-- Ocio Nocturno (ya existía como vidaNocturna, lo ajusto para ser más específico) -->
+      <fieldset>
+        <legend>🌙 ¿Qué tan importante es tener opciones de ocio nocturno? (bares, discotecas, restaurantes)</legend>
+        <label>
+          <select name="ocioNocturno" required>
+            <option value="">-- Selecciona --</option>
+            <option value="esencial">Esencial - Salgo frecuentemente por la noche</option>
+            <option value="muy-importante">Muy importante</option>
+            <option value="importante">Importante</option>
+            <option value="moderado">Moderadamente importante</option>
+            <option value="bajo">No es importante - Prefiero tranquilidad</option>
+          </select>
+        </label>
+      </fieldset>
+
       <button type="submit" id="submitBtn">🔍 Buscar mi Barrio Ideal</button>
       <div id="status" class="msg" role="status" aria-live="polite"></div>
     </form>
@@ -630,7 +870,23 @@
         ambiente: formData.get('ambiente'),
         calidadAire: formData.get('calidadAire'),
         modalidadTrabajo: formData.get('modalidadTrabajo'),
-        tipoVivienda: formData.get('tipoVivienda')
+        tipoVivienda: formData.get('tipoVivienda'),
+        presupuesto: formData.get('presupuesto'),
+        nivelSeguridad: formData.get('nivelSeguridad'),
+        distanciaTrabajo: formData.get('distanciaTrabajo'),
+        vidaNocturna: formData.get('vidaNocturna'),
+        accesoHospitales: formData.get('accesoHospitales'),
+        calidadEscuelas: formData.get('calidadEscuelas'),
+        accesoTiendas: formData.get('accesoTiendas'),
+        transportePublico: formData.get('transportePublico'),
+        usoTaxis: formData.get('usoTaxis'),
+        usoBicicleta: formData.get('usoBicicleta'),
+        necesidadParking: formData.get('necesidadParking'),
+        actividadFisica: formData.get('actividadFisica'),
+        necesidadSenderos: formData.get('necesidadSenderos'),
+        cercaniaUniversidad: formData.get('cercaniauniversidad'),
+        ocioDiurno: formData.get('ocioDiurno'),
+        ocioNocturno: formData.get('ocioNocturno')
       };
 
       try {

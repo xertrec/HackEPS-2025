@@ -3,14 +3,15 @@
 export const MOBILITY_CONFIG = {
   RADIUS: 1500,  // Aumentado a 1.5km para capturar mejor el área del barrio
   
-  // Divisores específicos por categoría para mejor normalización
-  // Basado en valores máximos observados en LA
+  // DIVISORES REBALANCEADOS: Usar percentil 80-85 en lugar de máximo absoluto
+  // Esto evita que un outlier extreme (Downtown) haga que todo lo demás sea bajo
+  // Objetivo: Mejor distribución entre 30-90 puntos en lugar de 5-100
   SCORE_DIVISORS: {
-    TRANSPORT: 270,    // ~270 paradas (Downtown LA) = 100 puntos
-    TAXIS: 2,          // 2 paradas de taxi = 100 puntos (hay muy pocas)
-    BIKE_LANES: 150,   // 150 carriles bici en radio = 100 puntos
-    FOOTPATHS: 1200,   // 1200 caminos peatonales = 100 puntos (más estricto)
-    PARKING: 200,      // 200 parkings en radio = 100 puntos
+    TRANSPORT: 180,    // ~180 paradas (percentil 85) = 100 puntos (antes 270)
+    TAXIS: 2,          // 2 paradas de taxi = 100 puntos (hay muy pocas, OK)
+    BIKE_LANES: 100,   // 100 carriles bici = 100 puntos (antes 150, más alcanzable)
+    FOOTPATHS: 800,    // 800 caminos = 100 puntos (antes 1200, más alcanzable)
+    PARKING: 140,      // 140 parkings = 100 puntos (antes 200, más alcanzable)
   },   
   
 

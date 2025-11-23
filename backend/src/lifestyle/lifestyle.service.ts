@@ -67,7 +67,7 @@ export class LifestyleService {
 		console.log(`✅ ${neighborhoods.length} barrios procesados en caché`);
 	}
 
-	// Calcular scores basados en ubicación geográfica y características del barrio
+	// Calcular scores basados SOLO en ubicación geográfica - SIN hardcodeo de barrios
 	private calculateLifestyleScores(neighborhood: Neighborhood): {
 		connectivity: number;
 		greenZones: number;
@@ -83,164 +83,99 @@ export class LifestyleService {
 		const downtownLat = 34.0522;
 		const downtownLon = -118.2437;
 		
-		// Calcular distancia al centro (en grados, aproximado)
+		// Costa oeste de LA (Santa Monica / Venice area)
+		const coastLat = 34.0195;
+		const coastLon = -118.4912;
+		
+		// Calcular distancia al centro
 		const distanceFromCenter = Math.sqrt(
 			Math.pow(latitude - downtownLat, 2) + 
 			Math.pow(longitude - downtownLon, 2)
 		);
 		
-		// BARRIOS CATEGORIZADOS CON MÁS DETALLE
+		// Calcular distancia a la costa
+		const distanceFromCoast = Math.sqrt(
+			Math.pow(latitude - coastLat, 2) + 
+			Math.pow(longitude - coastLon, 2)
+		);
 		
-		// Barrios de alta calidad / premium (zonas exclusivas)
-		const highEndNeighborhoods = [
-			'Beverly Hills', 'Bel Air', 'Brentwood', 'Pacific Palisades',
-			'Manhattan Beach', 'Hermosa Beach', 'Palos Verdes'
-		];
-		
-		// Barrios costeros (buena calidad aire, zonas verdes pero menos centrales)
-		const coastalNeighborhoods = [
-			'Santa Monica', 'Venice', 'Marina del Rey', 'Redondo Beach',
-			'El Segundo', 'Playa Vista'
-		];
-		
-		// Barrios super céntricos (alta conectividad pero ruidosos y menos verdes)
-		const downtownNeighborhoods = [
-			'Downtown', 'Financial District', 'Bunker Hill'
-		];
-		
-		// Barrios urbanos creativos (buena conectividad, moderado ruido)
-		const urbanCreativeNeighborhoods = [
-			'Arts District', 'Silver Lake', 'Echo Park', 'Los Feliz',
-			'West Hollywood', 'Culver City', 'Hollywood'
-		];
-		
-		// Barrios con zonas verdes y tranquilos (pero menos conectados)
-		const greenQuietNeighborhoods = [
-			'Pasadena', 'Griffith Park', 'Topanga', 'Studio City',
-			'Sherman Oaks', 'Encino', 'Woodland Hills'
-		];
-		
-		// Barrios residenciales familiares (equilibrados pero menos emocionantes)
-		const residentialNeighborhoods = [
-			'Glendale', 'Burbank', 'Torrance', 'Alhambra',
-			'San Gabriel', 'Monterey Park', 'El Monte'
-		];
-		
-		// Barrios de clase trabajadora (económicos, menos servicios premium)
-		const workingClassNeighborhoods = [
-			'Boyle Heights', 'East Los Angeles', 'South LA',
-			'Wilmington', 'San Pedro', 'Harbor City', 'Watts'
-		];
-		
-		// Barrios universitarios / jóvenes (buena conectividad, más económicos)
-		const collegeNeighborhoods = [
-			'Westwood', 'Koreatown', 'Little Tokyo', 'Chinatown',
-			'University Park'
-		];
-		
-		// Detectar categoría del barrio
-		const isHighEnd = highEndNeighborhoods.some(n => name.toLowerCase().includes(n.toLowerCase()));
-		const isCoastal = coastalNeighborhoods.some(n => name.toLowerCase().includes(n.toLowerCase()));
-		const isDowntown = downtownNeighborhoods.some(n => name.toLowerCase().includes(n.toLowerCase()));
-		const isUrbanCreative = urbanCreativeNeighborhoods.some(n => name.toLowerCase().includes(n.toLowerCase()));
-		const isGreenQuiet = greenQuietNeighborhoods.some(n => name.toLowerCase().includes(n.toLowerCase()));
-		const isResidential = residentialNeighborhoods.some(n => name.toLowerCase().includes(n.toLowerCase()));
-		const isWorkingClass = workingClassNeighborhoods.some(n => name.toLowerCase().includes(n.toLowerCase()));
-		const isCollege = collegeNeighborhoods.some(n => name.toLowerCase().includes(n.toLowerCase()));
-		
-		// Usar hash del nombre para generar variación consistente (no random cada vez)
+		// Usar hash del nombre para variación consistente
 		const nameHash = name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-		const variation = (nameHash % 10) - 5; // Variación entre -5 y +4
+		const variation = (nameHash % 25) - 12; // Variación entre -12 y +12 (más rango)
 		
-		// CALCULAR CONNECTIVITY (0-100) - RANGOS MÁS EXTREMOS
-		let connectivity = 50;
-		if (isDowntown) connectivity = 98;
-		else if (isCollege) connectivity = 90;
-		else if (isUrbanCreative) connectivity = 85;
-		else if (isCoastal) connectivity = 60;
-		else if (isHighEnd) connectivity = 55;
-		else if (isResidential) connectivity = 50;
-		else if (isWorkingClass) connectivity = 45;
-		else if (isGreenQuiet) connectivity = 30;
-		else connectivity = Math.max(20, Math.min(75, 60 - distanceFromCenter * 250));
-		connectivity = Math.max(15, Math.min(100, connectivity + variation));
+		// DISTRIBUCIÓN MÁS POLARIZADA: Rango 20-80 para crear diferencias claras
+		// Necesitamos que los barrios urbanos y suburbanos sean MUY diferentes
 		
-		// CALCULAR GREEN ZONES (0-100) - RANGOS MÁS EXTREMOS
-		let greenZones = 50;
-		if (isGreenQuiet) greenZones = 95;
-		else if (isCoastal) greenZones = 90;
-		else if (isHighEnd) greenZones = 85;
-		else if (isResidential) greenZones = 70;
-		else if (isUrbanCreative) greenZones = 50;
-		else if (isCollege) greenZones = 45;
-		else if (isWorkingClass) greenZones = 35;
-		else if (isDowntown) greenZones = 15;
-		else greenZones = Math.max(25, Math.min(85, 55 - distanceFromCenter * 70));
-		greenZones = Math.max(10, Math.min(100, greenZones + variation));
+		// CONNECTIVITY: Inversamente proporcional a distancia del centro
+		// Centro = 85, Lejos = 25 (MUY polarizado para diferenciar urbano vs suburbio)
+		let connectivity = Math.max(25, Math.min(85, 80 - (distanceFromCenter * 350)));
+		connectivity = Math.max(20, Math.min(90, connectivity + variation));
 		
-		// CALCULAR NOISE (0-100, donde 100 = muy tranquilo, 0 = muy ruidoso) - MÁS EXTREMO
-		let noise = 50;
-		if (isDowntown) noise = 10;
-		else if (isCollege) noise = 30;
-		else if (isUrbanCreative) noise = 40;
-		else if (isWorkingClass) noise = 50;
-		else if (isCoastal) noise = 75;
-		else if (isResidential) noise = 80;
-		else if (isHighEnd) noise = 90;
-		else if (isGreenQuiet) noise = 95;
-		else noise = Math.max(25, Math.min(90, 45 + distanceFromCenter * 180));
-		noise = Math.max(5, Math.min(100, noise + variation));
+		// GREEN ZONES: Directamente proporcional a distancia del centro
+		// Centro = 25, Lejos = 80 (MUY polarizado - centro tiene poco verde, lejos mucho)
+		let greenZones = Math.max(25, Math.min(80, 30 + (distanceFromCenter * 300)));
+		// Bonificación si está cerca de la costa (áreas costeras tienen playas/parques)
+		if (distanceFromCoast < 0.05) greenZones = Math.min(90, greenZones + 20);
+		greenZones = Math.max(20, Math.min(95, greenZones + variation));
 		
-		// CALCULAR AIR QUALITY (0-100) - MÁS EXTREMO
-		let airQuality = 50;
-		if (isCoastal) airQuality = 95;
-		else if (isGreenQuiet) airQuality = 90;
-		else if (isHighEnd) airQuality = 85;
-		else if (isResidential) airQuality = 70;
-		else if (isUrbanCreative) airQuality = 55;
-		else if (isCollege) airQuality = 50;
-		else if (isWorkingClass) airQuality = 40;
-		else if (isDowntown) airQuality = 25;
-		else airQuality = Math.max(30, Math.min(90, 55 + distanceFromCenter * 120));
-		airQuality = Math.max(20, Math.min(100, airQuality + variation));
+		// NOISE: Directamente proporcional a distancia del centro
+		// Centro = 20 (MUY ruidoso), Lejos = 80 (MUY tranquilo) - diferencia clara
+		let noise = Math.max(20, Math.min(80, 25 + (distanceFromCenter * 350)));
+		noise = Math.max(15, Math.min(90, noise + variation));
 		
-		// CALCULAR OCCUPABILITY (oportunidades laborales) (0-100) - MÁS EXTREMO
-		let occupability = 50;
-		if (isDowntown) occupability = 98;
-		else if (isUrbanCreative) occupability = 85;
-		else if (isCollege) occupability = 75;
-		else if (isHighEnd) occupability = 70;
-		else if (isCoastal) occupability = 65;
-		else if (isWorkingClass) occupability = 55;
-		else if (isResidential) occupability = 50;
-		else if (isGreenQuiet) occupability = 35;
-		else occupability = Math.max(25, Math.min(85, 65 - distanceFromCenter * 180));
-		occupability = Math.max(20, Math.min(100, occupability + variation));
+		// AIR QUALITY: Mejor en costa y lejos del centro
+		let airQuality = Math.max(30, Math.min(75, 40 + (distanceFromCenter * 250)));
+		// Bonificación costera (brisa marina = mejor aire)
+		if (distanceFromCoast < 0.05) airQuality = Math.min(90, airQuality + 25);
+		airQuality = Math.max(25, Math.min(95, airQuality + variation));
 		
-		// CALCULAR ACCESSIBILITY (transporte, servicios) (0-100) - MÁS EXTREMO
-		let accessibility = 50;
-		if (isDowntown) accessibility = 98;
-		else if (isCollege) accessibility = 92;
-		else if (isUrbanCreative) accessibility = 88;
-		else if (isCoastal) accessibility = 65;
-		else if (isHighEnd) accessibility = 55;
-		else if (isWorkingClass) accessibility = 50;
-		else if (isResidential) accessibility = 55;
-		else if (isGreenQuiet) accessibility = 30;
-		else accessibility = Math.max(20, Math.min(85, 65 - distanceFromCenter * 250));
-		accessibility = Math.max(15, Math.min(100, accessibility + variation));
+		// OCCUPABILITY: Inversamente proporcional a distancia del centro
+		// Centro = 85, Lejos = 25 (centro tiene trabajos, periferia no)
+		let occupability = Math.max(25, Math.min(85, 80 - (distanceFromCenter * 350)));
+		occupability = Math.max(20, Math.min(90, occupability + variation));
 		
-		// CALCULAR SALARY (nivel económico del barrio) - MÁS REALISTA
+		// ACCESSIBILITY: Inversamente proporcional a distancia del centro
+		// Centro = 85, Lejos = 20 (transporte público concentrado en centro)
+		let accessibility = Math.max(20, Math.min(85, 80 - (distanceFromCenter * 400)));
+		accessibility = Math.max(15, Math.min(90, accessibility + variation));
+		
+		// SALARY: Basado en combinación de factores - DISTRIBUCIÓN MÁS GRADUAL
+		// Usar distancias en combinación para crear gradiente más natural
+		let salaryScore = 50;
+		
+		// Costa = premium (pero gradual)
+		if (distanceFromCoast < 0.05) {
+			salaryScore = 75 + (Math.random() * 10); // 75-85
+		}
+		// Cerca de costa pero no pegado
+		else if (distanceFromCoast < 0.10) {
+			salaryScore = 65 + (Math.random() * 10); // 65-75
+		}
+		// Suburbios medios = premium/medio-alto
+		else if (distanceFromCenter > 0.08 && distanceFromCenter < 0.20) {
+			salaryScore = 60 + (Math.random() * 15); // 60-75
+		}
+		// Centro = económico/medio
+		else if (distanceFromCenter < 0.05) {
+			salaryScore = 35 + (Math.random() * 15); // 35-50
+		}
+		// Muy lejos = económico/medio-bajo
+		else if (distanceFromCenter > 0.25) {
+			salaryScore = 30 + (Math.random() * 15); // 30-45
+		}
+		// Intermedio - crear más variación
+		else {
+			salaryScore = 45 + (Math.random() * 20); // 45-65
+		}
+		
+		// Añadir variación basada en hash del nombre para consistencia
+		const salaryVariation = (nameHash % 10) - 5;
+		salaryScore = Math.max(25, Math.min(90, salaryScore + salaryVariation));
+		
 		let salary: string;
-		if (isHighEnd) salary = 'High'; // Beverly Hills, Bel Air, etc.
-		else if (isCoastal) salary = 'High'; // Santa Monica, Venice, etc. - costeros son caros
-		else if (isGreenQuiet) salary = 'High'; // Pasadena, Sherman Oaks - suburbios tranquilos caros
-		else if (isUrbanCreative) salary = 'Medium'; // Arts District, Silver Lake - gentrificados
-		else if (isResidential) salary = 'Medium'; // Glendale, Burbank - clase media
-		else if (isDowntown) salary = 'Low'; // Downtown - negocios pero no residencial caro
-		else if (isCollege) salary = 'Low'; // Westwood, Koreatown - áreas estudiantiles económicas
-		else if (isWorkingClass) salary = 'Low'; // Boyle Heights, East LA
-		else salary = distanceFromCenter > 0.1 ? 'Low' : 'Medium';
+		if (salaryScore >= 65) salary = 'High';
+		else if (salaryScore >= 40) salary = 'Medium';
+		else salary = 'Low';
 		
 		return {
 			connectivity: Math.round(connectivity),

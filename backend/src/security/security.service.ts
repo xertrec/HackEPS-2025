@@ -236,27 +236,40 @@ export class SecurityService implements OnModuleInit {
 				};
 			});
 
-			// Normalizar scores a 0-100 (invertido: más incidentes = menos score)
+			// NUEVA NORMALIZACIÓN: Usar percentiles en lugar de min-max lineal
+			// Esto evita que los extremos dominen y crea mejor distribución
 			const rawValues = scores.map((s) => s.rawScore);
-			const maxRaw = Math.max(...rawValues);
-			const minRaw = Math.min(...rawValues);
-
+			const sortedRaw = [...rawValues].sort((a, b) => a - b);
+			
 			const normalized = scores.map((s) => {
-				let score = 0;
+				// Encontrar el percentil de este barrio
+				const rank = sortedRaw.indexOf(s.rawScore);
+				const percentile = rank / (sortedRaw.length - 1);
 				
-				if (maxRaw === minRaw) {
-					// Todos tienen el mismo valor
-					score = s.rawScore === 0 ? 100 : 50;
+				// Invertir: más incidentes (percentil alto) = menos seguridad
+				// Usar curva para expandir el rango medio y comprimir extremos
+				const inverted = 1 - percentile;
+				
+				// Aplicar curva suave (no lineal) para mejor distribución
+				// Esto hace que las diferencias en el medio sean más notorias
+				let score: number;
+				if (inverted >= 0.8) {
+					// Top 20%: muy seguro (80-100)
+					score = 80 + (inverted - 0.8) / 0.2 * 20;
+				} else if (inverted >= 0.5) {
+					// Medio-alto (50-80)
+					score = 50 + (inverted - 0.5) / 0.3 * 30;
+				} else if (inverted >= 0.2) {
+					// Medio-bajo (25-50)
+					score = 25 + (inverted - 0.2) / 0.3 * 25;
 				} else {
-					// Invertir: mayor rawScore (más incidentes) = menor score de seguridad
-					// Usamos escala logarítmica para mejor distribución
-					const normalizedValue = (s.rawScore - minRaw) / (maxRaw - minRaw);
-					score = Math.round((1 - normalizedValue) * 100);
+					// Bottom 20%: poco seguro (0-25)
+					score = inverted / 0.2 * 25;
 				}
 
 				return {
 					barrio: s.name,
-					seguridad: Math.max(0, Math.min(100, score)), // Asegurar rango 0-100
+					seguridad: Math.round(Math.max(0, Math.min(100, score))),
 				};
 			});
 

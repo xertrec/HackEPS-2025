@@ -7,6 +7,23 @@ export interface UserProfile {
   calidadAire: string;
   modalidadTrabajo: string;
   tipoVivienda: string;
+  // Nuevas preguntas detalladas
+  presupuesto?: string;
+  nivelSeguridad?: string;
+  distanciaTrabajo?: string;
+  vidaNocturna?: string;
+  accesoHospitales?: string;
+  calidadEscuelas?: string;
+  accesoTiendas?: string;
+  transportePublico?: string;
+  usoTaxis?: string;
+  usoBicicleta?: string;
+  necesidadParking?: string;
+  actividadFisica?: string;
+  necesidadSenderos?: string;
+  cercaniaUniversidad?: string;
+  ocioDiurno?: string;
+  ocioNocturno?: string;
 }
 
 export interface ServiceWeights {
@@ -65,12 +82,22 @@ export interface NeighborhoodData {
 export interface NeighborhoodRecommendation {
   barrio: string;
   score: number;
+  baseScore?: number; // Score sin tie-breaker
+  noise?: number; // Ruido aplicado para tie-breaker
   data: NeighborhoodData;
   lifestyle?: LifestyleData;
+}
+
+export interface RecommendationMetadata {
+  runId: string;
+  timestamp: string;
+  seed: number;
+  totalNeighborhoods: number;
 }
 
 export interface RecommendationResponse {
   profile: UserProfile;
   weights: ServiceWeights;
   recommendations: NeighborhoodRecommendation[];
+  metadata?: RecommendationMetadata;
 }
