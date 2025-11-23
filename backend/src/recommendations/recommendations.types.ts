@@ -15,6 +15,11 @@ export interface ServiceWeights {
   OciNocturn: number;
   OciDiurn: number;
   Universitats: number;
+  TransportePublico: number;
+  Taxis: number;
+  CarrilesBici: number;
+  CaminarCorrer: number;
+  Parking: number;
 }
 
 export interface NeighborhoodData {
@@ -28,6 +33,11 @@ export interface NeighborhoodData {
   OciNocturn: number;
   OciDiurn: number;
   Universitats: number;
+  TransportePublico: number;
+  Taxis: number;
+  CarrilesBici: number;
+  CaminarCorrer: number;
+  Parking: number;
 }
 
 export interface NeighborhoodRecommendation {

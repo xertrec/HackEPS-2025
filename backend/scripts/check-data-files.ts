@@ -10,6 +10,26 @@ const requiredFiles = [
     description: 'Datos de transporte público'
   },
   {
+    name: 'taxi_data.json',
+    command: 'npx ts-node scripts/download-taxi-data.ts',
+    description: 'Datos de paradas de taxi'
+  },
+  {
+    name: 'bike_lanes_data.json',
+    command: 'npx ts-node scripts/download-bike-lanes-data.ts',
+    description: 'Datos de carriles bici'
+  },
+  {
+    name: 'footpaths_data.json',
+    command: 'npx ts-node scripts/download-footpaths-data.ts',
+    description: 'Datos de caminos peatonales'
+  },
+  {
+    name: 'parking_data.json',
+    command: 'npx ts-node scripts/download-parking-data.ts',
+    description: 'Datos de aparcamientos'
+  },
+  {
     name: 'nightlife_data.json',
     command: 'npm run fetch-leisure',
     description: 'Datos de ocio nocturno y diurno',
