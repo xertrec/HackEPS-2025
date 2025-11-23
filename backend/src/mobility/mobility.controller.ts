@@ -22,7 +22,17 @@ export class MobilityController {
     
     // 2. Pasamos la lista completa al servicio.
     // Él se encargará de ver cuál necesita cálculo y cuál no.
-    return this.mobilityService.calculateScoresForList(barrios);
+    const resultados = await this.mobilityService.calculateScoresForList(barrios);
+    
+    // 3. Formato simplificado: todas las métricas independientes
+    return resultados.map(r => ({
+      barrio: r.barrio,
+      parking: r.detalle.parking,
+      transporte_publico: r.detalle.transport,
+      taxis: r.detalle.taxis,
+      carriles_bici: r.detalle.bike_lanes,
+      caminar_correr: r.detalle.footpaths
+    }));
   }
   @Get('reset')
   async resetScores() {

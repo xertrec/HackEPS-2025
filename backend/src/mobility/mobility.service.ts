@@ -18,10 +18,51 @@ interface TransportStop {
   name?: string;
 }
 
+interface TaxiStop {
+  lat: number;
+  lon: number;
+  name?: string;
+  operator?: string;
+}
+
+interface BikeLane {
+  id: number;
+  lat: number;
+  lon: number;
+  type: string;
+  name?: string;
+}
+
+interface Footpath {
+  id: number;
+  lat: number;
+  lon: number;
+  type: string;
+  name?: string;
+  surface?: string;
+}
+
+interface ParkingSpot {
+  id: number;
+  lat: number;
+  lon: number;
+  type: string;
+  name?: string;
+  capacity?: number;
+}
+
 @Injectable()
 export class MobilityService {
   private transportData: TransportStop[] = [];
+  private taxiData: TaxiStop[] = [];
+  private bikeLaneData: BikeLane[] = [];
+  private footpathData: Footpath[] = [];
+  private parkingData: ParkingSpot[] = [];
   private spatialIndex: Map<string, TransportStop[]> = new Map();
+  private taxiSpatialIndex: Map<string, TaxiStop[]> = new Map();
+  private bikeLaneSpatialIndex: Map<string, BikeLane[]> = new Map();
+  private footpathSpatialIndex: Map<string, Footpath[]> = new Map();
+  private parkingSpatialIndex: Map<string, ParkingSpot[]> = new Map();
   private readonly GRID_SIZE = 0.01; // ~1km de precisión
 
   constructor(
@@ -29,14 +70,26 @@ export class MobilityService {
     @InjectRepository(Neighborhood)
     private neighborhoodRepo: Repository<Neighborhood>,
   ) {
-    // Cargar datos de transporte al iniciar el servicio
+    // Cargar todos los datos al iniciar el servicio
     this.loadTransportData();
+    this.loadTaxiData();
+    this.loadBikeLaneData();
+    this.loadFootpathData();
+    this.loadParkingData();
   }
 
   private loadTransportData() {
     try {
-      const dataPath = path.join(__dirname, '..', '..', 'transport_data.json');
+      // Intentar primero desde la raíz del proyecto (cuando está compilado)
+      let dataPath = path.join(process.cwd(), 'transport_data.json');
+      
+      // Si no existe, intentar desde el código fuente
+      if (!fs.existsSync(dataPath)) {
+        dataPath = path.join(__dirname, '..', '..', 'transport_data.json');
+      }
+      
       if (fs.existsSync(dataPath)) {
+        console.log(`📂 Cargando datos de transporte desde: ${dataPath}`);
         const data = fs.readFileSync(dataPath, 'utf-8');
         this.transportData = JSON.parse(data);
         console.log(`✅ Cargados ${this.transportData.length} paradas de transporte desde caché local`);
@@ -52,6 +105,33 @@ export class MobilityService {
     }
   }
 
+  private loadTaxiData() {
+    try {
+      // Intentar primero desde la raíz del proyecto
+      let dataPath = path.join(process.cwd(), 'taxi_data.json');
+      
+      // Si no existe, intentar desde el código fuente
+      if (!fs.existsSync(dataPath)) {
+        dataPath = path.join(__dirname, '..', '..', 'taxi_data.json');
+      }
+      
+      if (fs.existsSync(dataPath)) {
+        console.log(`📂 Cargando datos de taxis desde: ${dataPath}`);
+        const data = fs.readFileSync(dataPath, 'utf-8');
+        this.taxiData = JSON.parse(data);
+        console.log(`✅ Cargados ${this.taxiData.length} paradas de taxi desde caché local`);
+        
+        // Crear índice espacial para búsquedas rápidas
+        this.buildTaxiSpatialIndex();
+        console.log(`✅ Índice espacial de taxis creado con ${this.taxiSpatialIndex.size} celdas`);
+      } else {
+        console.warn('⚠️ No se encontró taxi_data.json. Ejecuta: npx ts-node scripts/download-taxi-data.ts');
+      }
+    } catch (e) {
+      console.error('❌ Error cargando datos de taxis:', e.message);
+    }
+  }
+
   private buildSpatialIndex() {
     for (const stop of this.transportData) {
       const key = this.getGridKey(stop.lat, stop.lon);
@@ -59,6 +139,127 @@ export class MobilityService {
         this.spatialIndex.set(key, []);
       }
       this.spatialIndex.get(key)!.push(stop);
+    }
+  }
+
+  private buildTaxiSpatialIndex() {
+    for (const taxi of this.taxiData) {
+      const key = this.getGridKey(taxi.lat, taxi.lon);
+      if (!this.taxiSpatialIndex.has(key)) {
+        this.taxiSpatialIndex.set(key, []);
+      }
+      this.taxiSpatialIndex.get(key)!.push(taxi);
+    }
+  }
+
+  private loadBikeLaneData() {
+    try {
+      // Intentar primero desde la raíz del proyecto
+      let dataPath = path.join(process.cwd(), 'bike_lanes_data.json');
+      
+      // Si no existe, intentar desde el código fuente
+      if (!fs.existsSync(dataPath)) {
+        dataPath = path.join(__dirname, '..', '..', 'bike_lanes_data.json');
+      }
+      
+      if (fs.existsSync(dataPath)) {
+        console.log(`📂 Cargando datos de carriles bici desde: ${dataPath}`);
+        const data = fs.readFileSync(dataPath, 'utf-8');
+        this.bikeLaneData = JSON.parse(data);
+        console.log(`✅ Cargados ${this.bikeLaneData.length} carriles bici desde caché local`);
+        
+        // Crear índice espacial para búsquedas rápidas
+        this.buildBikeLaneSpatialIndex();
+        console.log(`✅ Índice espacial de carriles bici creado con ${this.bikeLaneSpatialIndex.size} celdas`);
+      } else {
+        console.warn('⚠️ No se encontró bike_lanes_data.json. Ejecuta: npx ts-node scripts/download-bike-lanes-data.ts');
+      }
+    } catch (e) {
+      console.error('❌ Error cargando datos de carriles bici:', e.message);
+    }
+  }
+
+  private buildBikeLaneSpatialIndex() {
+    for (const lane of this.bikeLaneData) {
+      const key = this.getGridKey(lane.lat, lane.lon);
+      if (!this.bikeLaneSpatialIndex.has(key)) {
+        this.bikeLaneSpatialIndex.set(key, []);
+      }
+      this.bikeLaneSpatialIndex.get(key)!.push(lane);
+    }
+  }
+
+  private loadFootpathData() {
+    try {
+      // Intentar primero desde la raíz del proyecto
+      let dataPath = path.join(process.cwd(), 'footpaths_data.json');
+      
+      // Si no existe, intentar desde el código fuente
+      if (!fs.existsSync(dataPath)) {
+        dataPath = path.join(__dirname, '..', '..', 'footpaths_data.json');
+      }
+      
+      if (fs.existsSync(dataPath)) {
+        console.log(`📂 Cargando datos de caminos peatonales desde: ${dataPath}`);
+        const data = fs.readFileSync(dataPath, 'utf-8');
+        this.footpathData = JSON.parse(data);
+        console.log(`✅ Cargados ${this.footpathData.length} caminos peatonales desde caché local`);
+        
+        // Crear índice espacial para búsquedas rápidas
+        this.buildFootpathSpatialIndex();
+        console.log(`✅ Índice espacial de caminos peatonales creado con ${this.footpathSpatialIndex.size} celdas`);
+      } else {
+        console.warn('⚠️ No se encontró footpaths_data.json. Ejecuta: npx ts-node scripts/download-footpaths-data.ts');
+      }
+    } catch (e) {
+      console.error('❌ Error cargando datos de caminos peatonales:', e.message);
+    }
+  }
+
+  private buildFootpathSpatialIndex() {
+    for (const path of this.footpathData) {
+      const key = this.getGridKey(path.lat, path.lon);
+      if (!this.footpathSpatialIndex.has(key)) {
+        this.footpathSpatialIndex.set(key, []);
+      }
+      this.footpathSpatialIndex.get(key)!.push(path);
+    }
+  }
+
+  private loadParkingData() {
+    try {
+      // Intentar primero desde la raíz del proyecto
+      let dataPath = path.join(process.cwd(), 'parking_data.json');
+      
+      // Si no existe, intentar desde el código fuente
+      if (!fs.existsSync(dataPath)) {
+        dataPath = path.join(__dirname, '..', '..', 'parking_data.json');
+      }
+      
+      if (fs.existsSync(dataPath)) {
+        console.log(`📂 Cargando datos de parkings desde: ${dataPath}`);
+        const data = fs.readFileSync(dataPath, 'utf-8');
+        this.parkingData = JSON.parse(data);
+        console.log(`✅ Cargados ${this.parkingData.length} parkings desde caché local`);
+        
+        // Crear índice espacial para búsquedas rápidas
+        this.buildParkingSpatialIndex();
+        console.log(`✅ Índice espacial de parkings creado con ${this.parkingSpatialIndex.size} celdas`);
+      } else {
+        console.warn('⚠️ No se encontró parking_data.json. Ejecuta: npx ts-node scripts/download-parking-data.ts');
+      }
+    } catch (e) {
+      console.error('❌ Error cargando datos de parkings:', e.message);
+    }
+  }
+
+  private buildParkingSpatialIndex() {
+    for (const parking of this.parkingData) {
+      const key = this.getGridKey(parking.lat, parking.lon);
+      if (!this.parkingSpatialIndex.has(key)) {
+        this.parkingSpatialIndex.set(key, []);
+      }
+      this.parkingSpatialIndex.get(key)!.push(parking);
     }
   }
 
@@ -88,11 +289,10 @@ export class MobilityService {
     const resultados: any[] = [];
 
     for (const barrio of barrios) {
-      if (barrio.score !== null && barrio.score !== undefined) {
+      if (barrio.details) {
         console.log(`✅ [CACHE] ${barrio.name}`);
         resultados.push({
             barrio: barrio.name,
-            puntuacion_total: barrio.score,
             detalle: JSON.parse(barrio.details || '{}')
         });
         continue;
@@ -101,44 +301,48 @@ export class MobilityService {
       console.log(`⚡ [API] Calculando ${barrio.name}...`);
       const calculo = await this.calculateFullScore(barrio.name, Number(barrio.latitude), Number(barrio.longitude));
       
-      barrio.score = calculo.puntuacion_total;
+      // Guardamos solo los detalles (no hay score total)
       barrio.details = JSON.stringify(calculo.detalle);
       await this.neighborhoodRepo.save(barrio);
       resultados.push(calculo);
     }
-    return resultados.sort((a, b) => b.puntuacion_total - a.puntuacion_total);
+    // Ordenar por transporte público (métrica principal)
+    return resultados.sort((a, b) => (b.detalle?.transport || 0) - (a.detalle?.transport || 0));
   }
 
   // --- 2. CÁLCULO CENTRAL PARALELO ---
   async calculateFullScore(barrio: string, lat: number, lon: number) {
     try {
-        // Ejecutamos los 4 grupos de APIs a la vez
-        const [parking, transport, traffic, infra] = await Promise.all([
-            this.processCategoryGroup(C.DATA_SOURCES.PARKING, lat, lon),
-            this.processCategoryGroup(C.DATA_SOURCES.TRANSPORT, lat, lon),
-            this.processCategoryGroup(C.DATA_SOURCES.TRAFFIC, lat, lon),
-            this.processCategoryGroup(C.DATA_SOURCES.INFRA, lat, lon),
+        // Ejecutamos todos los grupos a la vez, pasando el tipo de categoría
+        const [parking, transport, taxis, bikeLanes, footpaths, traffic, infra] = await Promise.all([
+            this.processCategoryGroup(C.DATA_SOURCES.PARKING, lat, lon, 'PARKING'),
+            this.processCategoryGroup(C.DATA_SOURCES.TRANSPORT, lat, lon, 'TRANSPORT'),
+            this.processCategoryGroup(C.DATA_SOURCES.TAXIS, lat, lon, 'TAXIS'),
+            this.processCategoryGroup(C.DATA_SOURCES.BIKE_LANES, lat, lon, 'BIKE_LANES'),
+            this.processCategoryGroup(C.DATA_SOURCES.FOOTPATHS, lat, lon, 'FOOTPATHS'),
+            this.processCategoryGroup(C.DATA_SOURCES.TRAFFIC, lat, lon, 'TRAFFIC'),
+            this.processCategoryGroup(C.DATA_SOURCES.INFRA, lat, lon, 'INFRA'),
         ]);
 
-        const totalScore = 
-            (parking * C.SECTION_WEIGHTS.PARKING) + 
-            (transport * C.SECTION_WEIGHTS.TRANSPORT) + 
-            (traffic * C.SECTION_WEIGHTS.TRAFFIC) + 
-            (infra * C.SECTION_WEIGHTS.INFRA);
-
+        // No calculamos puntuación total - cada métrica es independiente
         return {
             barrio,
-            puntuacion_total: Math.round(totalScore),
-            detalle: { parking, transport, traffic, infra }
+            detalle: { 
+              parking,
+              transport, 
+              taxis,
+              bike_lanes: bikeLanes,
+              footpaths,
+            }
         };
     } catch (error) {
         console.error(`Error crítico en ${barrio}`, error.message);
-        return { barrio, puntuacion_total: 0, error: "Fallo datos", detalle: {} };
+        return { barrio, error: "Fallo datos", detalle: {} };
     }
   }
 
   // --- 3. MOTOR GENÉRICO ---
-  private async processCategoryGroup(apiList: any[], lat: number, lon: number): Promise<number> {
+  private async processCategoryGroup(apiList: any[], lat: number, lon: number, categoryType?: string): Promise<number> {
     if (!apiList || apiList.length === 0) return 0;
 
     const promises = apiList.map(apiConfig => {
@@ -148,6 +352,14 @@ export class MobilityService {
             return this.fetchOverpassData(apiConfig.query, lat, lon);
         } else if (apiConfig.type === 'METRO_GTFS') {
             return this.fetchMetroGTFSData(apiConfig.url, lat, lon);
+        } else if (apiConfig.type === 'LOCAL_TAXI') {
+            return Promise.resolve(this.countNearbyTaxis(lat, lon));
+        } else if (apiConfig.type === 'LOCAL_BIKE_LANE') {
+            return Promise.resolve(this.countNearbyBikeLanes(lat, lon));
+        } else if (apiConfig.type === 'LOCAL_FOOTPATH') {
+            return Promise.resolve(this.countNearbyFootpaths(lat, lon));
+        } else if (apiConfig.type === 'LOCAL_PARKING') {
+            return Promise.resolve(this.countNearbyParkings(lat, lon));
         }
         return 0;
     });
@@ -155,8 +367,23 @@ export class MobilityService {
     const results = await Promise.all(promises);
     const totalItems = results.reduce((sum, count) => sum + count, 0);
 
-    // Normalizar: Si encontramos 'SCORE_DIVISOR' elementos, es un 100.
-    return Math.min((totalItems / C.SCORE_DIVISOR) * 100, 100);
+    // Normalizar con divisor específico según la categoría
+    let divisor = 21; // default
+    if (categoryType === 'TRANSPORT') {
+      divisor = C.SCORE_DIVISORS.TRANSPORT;
+    } else if (categoryType === 'TAXIS') {
+      divisor = C.SCORE_DIVISORS.TAXIS;
+    } else if (categoryType === 'BIKE_LANES') {
+      divisor = C.SCORE_DIVISORS.BIKE_LANES;
+    } else if (categoryType === 'FOOTPATHS') {
+      divisor = C.SCORE_DIVISORS.FOOTPATHS;
+    } else if (categoryType === 'PARKING') {
+      divisor = C.SCORE_DIVISORS.PARKING;
+    }
+
+    // Calcular score normalizado entre 0-100
+    const score = Math.min((totalItems / divisor) * 100, 100);
+    return Math.round(score * 10) / 10; // Redondear a 1 decimal
   }
 
   // --- 4. FETCHERS INTELIGENTES ---
@@ -212,6 +439,86 @@ export class MobilityService {
         if (type && stop.type !== type) continue;
         
         const distance = this.calculateDistance(lat, lon, stop.lat, stop.lon);
+        if (distance <= C.RADIUS) {
+          count++;
+        }
+      }
+    }
+    return count;
+  }
+
+  private countNearbyTaxis(lat: number, lon: number): number {
+    let count = 0;
+    
+    // Usar índice espacial para reducir búsqueda
+    const nearbyCells = this.getNearbyCells(lat, lon);
+    
+    for (const cellKey of nearbyCells) {
+      const taxis = this.taxiSpatialIndex.get(cellKey);
+      if (!taxis) continue;
+      
+      for (const taxi of taxis) {
+        const distance = this.calculateDistance(lat, lon, taxi.lat, taxi.lon);
+        if (distance <= C.RADIUS) {
+          count++;
+        }
+      }
+    }
+    return count;
+  }
+
+  private countNearbyBikeLanes(lat: number, lon: number): number {
+    let count = 0;
+    
+    // Usar índice espacial para reducir búsqueda
+    const nearbyCells = this.getNearbyCells(lat, lon);
+    
+    for (const cellKey of nearbyCells) {
+      const lanes = this.bikeLaneSpatialIndex.get(cellKey);
+      if (!lanes) continue;
+      
+      for (const lane of lanes) {
+        const distance = this.calculateDistance(lat, lon, lane.lat, lane.lon);
+        if (distance <= C.RADIUS) {
+          count++;
+        }
+      }
+    }
+    return count;
+  }
+
+  private countNearbyFootpaths(lat: number, lon: number): number {
+    let count = 0;
+    
+    // Usar índice espacial para reducir búsqueda
+    const nearbyCells = this.getNearbyCells(lat, lon);
+    
+    for (const cellKey of nearbyCells) {
+      const paths = this.footpathSpatialIndex.get(cellKey);
+      if (!paths) continue;
+      
+      for (const path of paths) {
+        const distance = this.calculateDistance(lat, lon, path.lat, path.lon);
+        if (distance <= C.RADIUS) {
+          count++;
+        }
+      }
+    }
+    return count;
+  }
+
+  private countNearbyParkings(lat: number, lon: number): number {
+    let count = 0;
+    
+    // Usar índice espacial para reducir búsqueda
+    const nearbyCells = this.getNearbyCells(lat, lon);
+    
+    for (const cellKey of nearbyCells) {
+      const parkings = this.parkingSpatialIndex.get(cellKey);
+      if (!parkings) continue;
+      
+      for (const parking of parkings) {
+        const distance = this.calculateDistance(lat, lon, parking.lat, parking.lon);
         if (distance <= C.RADIUS) {
           count++;
         }
