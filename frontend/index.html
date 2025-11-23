@@ -176,6 +176,11 @@
   <div class="container">
     <h1>🏡 Encuentra tu Barrio Ideal</h1>
     <p class="subtitle">Responde algunas preguntas sobre tu estilo de vida y te recomendaremos los mejores barrios de Los Ángeles para ti.</p>
+    <div style="background: #e3f2fd; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; border-left: 4px solid #1976d2;">
+      <p style="margin: 0; font-size: 0.9rem; color: #1565c0;">
+        💡 <strong>Nuestro sistema inteligente</strong> analiza automáticamente factores de movilidad (transporte público, taxis, carriles bici, zonas peatonales y parking) según tu perfil, sin necesidad de que los selecciones directamente.
+      </p>
+    </div>
 
     <form id="recommendationForm">
       <!-- Edad -->
@@ -362,6 +367,52 @@
               <div class="detail-item">
                 <span class="detail-label">🎓 Universidades</span>
                 <span class="detail-value">${item.data.Universitats}/100</span>
+              </div>
+            </div>
+            <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem; color: #667eea;">🚗 Movilidad</h4>
+            <div class="details">
+              <div class="detail-item">
+                <span class="detail-label">🚌 Transporte Público</span>
+                <span class="detail-value">${item.data.TransportePublico}/100</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">🚕 Taxis</span>
+                <span class="detail-value">${item.data.Taxis}/100</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">🚴 Carriles Bici</span>
+                <span class="detail-value">${item.data.CarrilesBici}/100</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">🏃 Caminar/Correr</span>
+                <span class="detail-value">${item.data.CaminarCorrer}/100</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">🅿️ Parking</span>
+                <span class="detail-value">${item.data.Parking}/100</span>
+              </div>
+            </div>
+            <h4 style="margin-top: 1.5rem; margin-bottom: 0.8rem; color: #667eea;">🚗 Movilidad</h4>
+            <div class="details">
+              <div class="detail-item">
+                <span class="detail-label">🚌 Transporte Público</span>
+                <span class="detail-value">${item.data.TransportePublico}/100</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">🚕 Taxis</span>
+                <span class="detail-value">${item.data.Taxis}/100</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">🚴 Carriles Bici</span>
+                <span class="detail-value">${item.data.CarrilesBici}/100</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">🏃 Caminar/Correr</span>
+                <span class="detail-value">${item.data.CaminarCorrer}/100</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">🅿️ Parking</span>
+                <span class="detail-value">${item.data.Parking}/100</span>
               </div>
             </div>
           </div>
