@@ -16,11 +16,6 @@ export class LifestyleController {
         private readonly lifestyleService: LifestyleService
     ) {}
 
-    @Get()
-    async getLifestyleData(): Promise<LifestyleCollectionResultDto> {
-        return this.lifestyleService.getLifestyleData();
-    }
-
 	@Get()
 	async getAllLifestyleData() {
 		return this.lifestyleService.getAllLifestyleScores();
