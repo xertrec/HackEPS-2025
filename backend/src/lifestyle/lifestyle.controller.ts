@@ -3,6 +3,7 @@ import { ConnectivityCollectionResultDto } from './dto/connectivity/connectivity
 import { LifestyleService } from './lifestyle.service';
 import { GreenZonesCollectionResultDto } from './dto/green_zones/green_zones_collection_result.dto';
 import { NoiseCollectionResultDto } from './dto/noise/noise_collection_result.dto';
+import { AirQualityCollectionResultDto } from './dto/air_quality/air_quality_collection_result.dto';
 
 @Controller('lifestyle')
 export class LifestyleController {
@@ -21,5 +22,10 @@ export class LifestyleController {
 	@Get('noise')
 	async getNoise(): Promise<NoiseCollectionResultDto> {
 		return this.lifestyleService.getAllNoiseData();
+	}
+
+	@Get('air-quality')
+	async getAirQuality(): Promise<AirQualityCollectionResultDto> {
+		return this.lifestyleService.getAllAirQualityData();
 	}
 }

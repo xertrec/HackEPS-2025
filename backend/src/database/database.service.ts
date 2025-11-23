@@ -19,6 +19,7 @@ export class Lifestyle {
 	score: number;
 	green_zones_score: number;
   noise_score: number;
+  air_quality_score: number;
 	note?: string;
 }
 
@@ -188,12 +189,13 @@ export class DatabaseService implements OnModuleInit, OnModuleDestroy {
 		score: number,
 		greenZonesScore: number,
     noiseScore: number,
+    airQualityScore: number,
 		note: string | undefined,
 	): Promise<void> {
 		return new Promise((resolve, reject) => {
 			this.db.run(
-				`INSERT INTO lifestyle (neighborhood_name, score, green_zones_score, noise_score, note) VALUES (?, ?, ?, ?, ?)`,
-				[neighborhoodName, score, greenZonesScore, noiseScore, note],
+				`INSERT INTO lifestyle (neighborhood_name, score, green_zones_score, noise_score, air_quality_score, note) VALUES (?, ?, ?, ?, ?, ?)`,
+				[neighborhoodName, score, greenZonesScore, noiseScore, airQualityScore, note],
 				(err) => {
 					if (err) reject(err);
 					else resolve();
@@ -207,12 +209,13 @@ export class DatabaseService implements OnModuleInit, OnModuleDestroy {
 		score: number,
 		greenZonesScore: number,
     noiseScore: number,
+    airQualityScore: number,
 		note: string | undefined,
 	): Promise<void> {
 		return new Promise((resolve, reject) => {
 			this.db.run(
-				`UPDATE lifestyle SET score = ?, green_zones_score = ?, noise_score = ?, note = ? WHERE neighborhood_name = ?`,
-				[score, greenZonesScore, noiseScore, note, neighborhoodName],
+				`UPDATE lifestyle SET score = ?, green_zones_score = ?, noise_score = ?, air_quality_score = ?, note = ? WHERE neighborhood_name = ?`,
+				[score, greenZonesScore, noiseScore, airQualityScore, note, neighborhoodName],
 				(err) => {
 					if (err) reject(err);
 					else resolve();
