@@ -158,6 +158,7 @@ db.serialize(() => {
       air_quality_score INTEGER NOT NULL DEFAULT 0,
       ocupability_score INTEGER NOT NULL DEFAULT 0,
       accessibility_score INTEGER NOT NULL DEFAULT 0,
+      salary_classification TEXT NOT NULL DEFAULT 'Medium',
       note TEXT,
       FOREIGN KEY (neighborhood_name) REFERENCES neighborhoods(name)
     );
