@@ -21,7 +21,8 @@ export class Lifestyle {
 	noise_score: number;
 	air_quality_score: number;
 	ocupability_score: number;
-  accessibility_score: number;
+	accessibility_score: number;
+	salary_score: string;
 	note?: string;
 }
 
@@ -193,20 +194,22 @@ export class DatabaseService implements OnModuleInit, OnModuleDestroy {
 		noiseScore: number,
 		airQualityScore: number,
 		ocupabilityScore: number,
-    accessibilityScore: number,
+		accessibilityScore: number,
+		salaryScore: 'High' | 'Medium' | 'Low',
 		note: string | undefined,
 	): Promise<void> {
 		return new Promise((resolve, reject) => {
 			this.db.run(
-				`INSERT INTO lifestyle (neighborhood_name, score, green_zones_score, noise_score, air_quality_score, ocupability_score, accessibility_score, note) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+				`INSERT INTO lifestyle (neighborhood_name, score, green_zones_score, noise_score, air_quality_score, ocupability_score, accessibility_score, salary_classification, note) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
 				[
 					neighborhoodName,
 					score,
 					greenZonesScore,
 					noiseScore,
 					airQualityScore,
-          ocupabilityScore,
-          accessibilityScore,
+					ocupabilityScore,
+					accessibilityScore,
+					salaryScore,
 					note,
 				],
 				(err) => {
@@ -223,20 +226,22 @@ export class DatabaseService implements OnModuleInit, OnModuleDestroy {
 		greenZonesScore: number,
 		noiseScore: number,
 		airQualityScore: number,
-    ocupabilityScore: number,
-    accessibilityScore: number,
+		ocupabilityScore: number,
+		accessibilityScore: number,
+		salaryScore: 'High' | 'Medium' | 'Low',
 		note: string | undefined,
 	): Promise<void> {
 		return new Promise((resolve, reject) => {
 			this.db.run(
-				`UPDATE lifestyle SET score = ?, green_zones_score = ?, noise_score = ?, air_quality_score = ?, ocupability_score = ?, accessibility_score = ?, note = ? WHERE neighborhood_name = ?`,
+				`UPDATE lifestyle SET score = ?, green_zones_score = ?, noise_score = ?, air_quality_score = ?, ocupability_score = ?, accessibility_score = ?, salary_classification = ?, note = ? WHERE neighborhood_name = ?`,
 				[
 					score,
 					greenZonesScore,
 					noiseScore,
 					airQualityScore,
-          ocupabilityScore,
-          accessibilityScore,
+					ocupabilityScore,
+					accessibilityScore,
+					salaryScore,
 					note,
 					neighborhoodName,
 				],

@@ -6,6 +6,7 @@ import { NoiseCollectionResultDto } from './dto/noise/noise_collection_result.dt
 import { AirQualityCollectionResultDto } from './dto/air_quality/air_quality_collection_result.dto';
 import { OccupabilityCollectionResultDto } from './dto/occupability/occupability_collection_result.dto';
 import { AccessibilityCollectionResultDto } from './dto/accessibility/accessibility_collection_result.dto';
+import { SalaryCollectionResultDto } from './dto/salary/salary_collection_result.dto';
 
 @Controller('lifestyle')
 export class LifestyleController {
@@ -39,5 +40,10 @@ export class LifestyleController {
 	@Get('accessibility')
 	async getAccessibility(): Promise<AccessibilityCollectionResultDto> {
 		return this.lifestyleService.getAllAccessibilityData();
+	}
+
+	@Get('salary')
+	async getSalary(): Promise<SalaryCollectionResultDto> {
+		return this.lifestyleService.getAllSalaryData();
 	}
 }

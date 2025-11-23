@@ -15,6 +15,8 @@ import { OccupabilityCollectionResultDto } from './dto/occupability/occupability
 import { OccupabilityResultDto } from './dto/occupability/occupability_result.dto';
 import { AccessibilityCollectionResultDto } from './dto/accessibility/accessibility_collection_result.dto';
 import { AccessibilityResultDto } from './dto/accessibility/accessibility_result.dto';
+import { SalaryCollectionResultDto } from './dto/salary/salary_collection_result.dto';
+import { SalaryResultDto } from './dto/salary/salary_result.dto';
 
 @Injectable()
 export class LifestyleService {
@@ -51,6 +53,7 @@ export class LifestyleService {
 						0,
 						0,
 						0,
+						'Low',
 						apiResult.note,
 					);
 				} else {
@@ -62,6 +65,7 @@ export class LifestyleService {
 						0,
 						0,
 						0,
+						'Low',
 						apiResult.note,
 					);
 				}
@@ -74,6 +78,7 @@ export class LifestyleService {
 					air_quality_score: 0,
 					ocupability_score: 0,
 					accessibility_score: 0,
+					salary_score: 'Low',
 					note: apiResult.note,
 				};
 			}
@@ -172,6 +177,7 @@ export class LifestyleService {
 						0,
 						0,
 						0,
+						'Low',
 						apiResult.note,
 					);
 				} else {
@@ -183,6 +189,7 @@ export class LifestyleService {
 						0,
 						0,
 						0,
+						'Low',
 						apiResult.note,
 					);
 				}
@@ -195,6 +202,7 @@ export class LifestyleService {
 					air_quality_score: 0,
 					ocupability_score: 0,
 					accessibility_score: 0,
+					salary_score: 'Low',
 					note: apiResult.note,
 				};
 			}
@@ -296,6 +304,7 @@ export class LifestyleService {
 						0,
 						0,
 						0,
+						'Low',
 						apiResult.note,
 					);
 				} else {
@@ -307,6 +316,7 @@ export class LifestyleService {
 						0,
 						0,
 						0,
+						'Low',
 						apiResult.note,
 					);
 				}
@@ -406,6 +416,7 @@ export class LifestyleService {
 						apiResult.score, // UPDATE AIR
 						0,
 						0,
+						'Low',
 						apiResult.note,
 					);
 				} else {
@@ -417,6 +428,7 @@ export class LifestyleService {
 						0,
 						0,
 						apiResult.score,
+						'Low',
 						apiResult.note,
 					);
 				}
@@ -500,6 +512,7 @@ export class LifestyleService {
 						lifestyle.air_quality_score,
 						apiResult.score, // UPDATE OCCUPABILITY
 						0,
+						'Low',
 						apiResult.note,
 					);
 				} else {
@@ -511,6 +524,7 @@ export class LifestyleService {
 						0,
 						0,
 						apiResult.score,
+						'Low',
 						apiResult.note,
 					);
 				}
@@ -604,6 +618,7 @@ export class LifestyleService {
 						lifestyle.air_quality_score,
 						lifestyle.ocupability_score,
 						apiResult.score,
+						'Low',
 						apiResult.note,
 					);
 				} else {
@@ -615,6 +630,7 @@ export class LifestyleService {
 						0,
 						0,
 						apiResult.score,
+						'Low',
 						apiResult.note,
 					);
 				}
@@ -626,12 +642,12 @@ export class LifestyleService {
 				n.name,
 			);
 			if (data) {
-                results.push({
+				results.push({
 					neighborhood_name: data.neighborhood_name,
 					score: data.accessibility_score,
 					note: data.note,
 				});
-            }
+			}
 		}
 		return { accessibility: results };
 	}
@@ -679,6 +695,119 @@ export class LifestyleService {
 				neighborhood_name: name,
 				score: 0,
 				note: 'Error fetching transport data',
+			};
+		}
+	}
+
+	// --- Salary Logic ---
+	async getAllSalaryData(): Promise<SalaryCollectionResultDto> {
+		const neighborhoods = await this.databaseService.getAllNeighborhoods();
+		for (const neighborhood of neighborhoods) {
+			let lifestyle = await this.databaseService.getLifestyleByNeighborhoodName(
+				neighborhood.name,
+			);
+			if (!lifestyle || lifestyle.salary_score === 'Low') {
+				const apiResult = await this.getSalaryDataForLocation(
+					neighborhood.name,
+					neighborhood.latitude,
+					neighborhood.longitude,
+				);
+				await new Promise((r) => setTimeout(r, 1500));
+				if (lifestyle) {
+					await this.databaseService.updateLifestyle(
+						apiResult.neighborhood_name,
+						lifestyle.score,
+						lifestyle.green_zones_score,
+						lifestyle.noise_score,
+						lifestyle.air_quality_score,
+						lifestyle.ocupability_score,
+						lifestyle.accessibility_score,
+						apiResult.classification,
+						apiResult.note,
+					);
+				} else {
+					await this.databaseService.insertLifestyle(
+						apiResult.neighborhood_name,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						apiResult.classification,
+						apiResult.note,
+					);
+				}
+			}
+		}
+		const results: SalaryResultDto[] = [];
+		for (const n of neighborhoods) {
+			const data = await this.databaseService.getLifestyleByNeighborhoodName(
+				n.name,
+			);
+			if (data) {
+				results.push({
+					neighborhood_name: data.neighborhood_name,
+					classification: data.salary_score as 'High' | 'Medium' | 'Low',
+					note: data.note,
+				});
+			}
+		}
+		return { salary: results };
+	}
+
+	private async getSalaryDataForLocation(
+		name: string,
+		lat: number,
+		lon: number,
+	): Promise<SalaryResultDto> {
+		const radius = 1000;
+		// Proxy: Count wealthy amenities (Jewelry, Organic, Banks, Golf, Tennis)
+		const query = `
+            [out:json];
+            (
+                node["shop"="jewelry"](around:${radius},${lat},${lon});
+                node["shop"="organic"](around:${radius},${lat},${lon});
+                node["amenity"="bank"](around:${radius},${lat},${lon});
+                node["leisure"="golf_course"](around:${radius},${lat},${lon});
+                node["sport"="tennis"](around:${radius},${lat},${lon});
+            );
+            out count;
+        `;
+		const apiUrl = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(query)}`;
+
+		try {
+			const { data } = await firstValueFrom(this.httpService.get(apiUrl));
+			let count = 0;
+			if (data?.elements?.[0]?.tags)
+				count = parseInt(
+					data.elements[0].tags.total || data.elements[0].tags.nodes || '0',
+					10,
+				);
+
+			// Scoring logic
+			let score = 0;
+			let classification: 'High' | 'Medium' | 'Low' = 'Low';
+
+			if (count >= 15) {
+				score = 90;
+				classification = 'High';
+			} else if (count >= 5) {
+				score = 60;
+				classification = 'Medium';
+			} else {
+				score = 30;
+				classification = 'Low';
+			}
+
+			const note = `Economic Proxy: ${count} high-end amenities (Jewelry, Organic, Banks, etc.)`;
+			return { neighborhood_name: name, classification, note };
+		} catch (error) {
+			console.error(`Salary API Error ${name}:`, error.message);
+			return {
+				neighborhood_name: name,
+				classification: 'Low',
+				note: 'Error fetching economic data',
 			};
 		}
 	}
