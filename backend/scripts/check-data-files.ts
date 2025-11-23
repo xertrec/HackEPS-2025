@@ -10,6 +10,7 @@ const requiredFiles = [
     description: 'Datos de transporte público'
   },
   {
+<<<<<<< HEAD
     name: 'taxi_data.json',
     command: 'npx ts-node scripts/download-taxi-data.ts',
     description: 'Datos de paradas de taxi'
@@ -25,6 +26,8 @@ const requiredFiles = [
     description: 'Datos de caminos peatonales'
   },
   {
+=======
+>>>>>>> a84a3a26eff54cba94e6171efb3495fb1100b2bb
     name: 'nightlife_data.json',
     command: 'npm run fetch-leisure',
     description: 'Datos de ocio nocturno y diurno',

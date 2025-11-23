@@ -83,9 +83,29 @@ export class MobilityService {
       // Intentar primero desde la raíz del proyecto (cuando está compilado)
       let dataPath = path.join(process.cwd(), 'transport_data.json');
       
+<<<<<<< HEAD
       // Si no existe, intentar desde el código fuente
       if (!fs.existsSync(dataPath)) {
         dataPath = path.join(__dirname, '..', '..', 'transport_data.json');
+=======
+      const response = await firstValueFrom(
+        this.httpService.get<any[]>(baseUrl, { params: customParams })
+      );
+      
+      return {
+        dataset_id: datasetId,
+        count: response.data.length,
+        data: response.data
+      };
+
+    } catch (error) {
+      console.error(`❌ Error en Dataset ${datasetId}:`);
+      
+      if (error.response) {
+        console.error(`Status: ${error.response.status}`);
+      } else {
+        console.error(`Error: ${error.message}`);
+>>>>>>> a84a3a26eff54cba94e6171efb3495fb1100b2bb
       }
       
       if (fs.existsSync(dataPath)) {
