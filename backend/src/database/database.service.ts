@@ -309,6 +309,21 @@ export class DatabaseService implements OnModuleInit, OnModuleDestroy {
 		});
 	}
 
+  getAllLifestyles(): Promise<Lifestyle[]> {
+		return new Promise((resolve, reject) => {
+			this.db.all(
+				'SELECT * FROM lifestyle ORDER BY name',
+				(err, rows: Lifestyle[]) => {
+					if (err) {
+						reject(err);
+					} else {
+						resolve(rows);
+					}
+				},
+			);
+		});
+	}
+
 	// --- Lifestyle (Connectivity) Methods ---
 	insertLifestyle(
 		neighborhoodName: string,
