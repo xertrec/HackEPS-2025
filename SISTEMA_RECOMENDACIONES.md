@@ -603,6 +603,50 @@ El sistema hace **24 preguntas** organizadas en 8 categorías:
 
 ---
 
+## 📊 Matriz de Impacto: Preguntas → Métricas
+
+Esta tabla muestra qué preguntas del cuestionario afectan a cada métrica:
+
+| Pregunta | Seguridad | Transporte | Taxis | Bici | Senderos | Parking |
+|----------|-----------|------------|-------|------|----------|---------|
+| **Edad** | ✅ (+20 si 51+, -10 si 18-25) | ✅ (+30 si 18-25) | ✅ (+15 max) | ✅ (+25 max) | ✅ (+15 si 51+) | ✅ (+25 si 36-50, -10 si 18-25) |
+| **Situación Familiar** | ✅ (+30 hijos pequeños) | ✅ (+20 adolescentes) | ✅ (+15 solo) | ✅ (+20 solo) | ✅ (+20 hijos) | ✅ (+30 hijos pequeños) |
+| **Estilo Vida: Nocturna** | ✅ (+10) | ✅ (+15) | ✅✅ (+25) | ❌ | ❌ | ✅ (+10) |
+| **Estilo Vida: Estudiante** | ❌ | ✅✅ (+35) | ❌ | ✅✅ (+30) | ❌ | ❌ (-15) |
+| **Estilo Vida: Tranquila** | ✅✅ (+30) | ❌ | ❌ | ❌ | ✅ (+20) | ✅ (+15) |
+| **Prioridades: Seguridad** | ✅✅✅ (+30) | ❌ | ❌ | ❌ | ✅ (+15) | ❌ |
+| **Prioridades: Social** | ❌ | ✅ (+15) | ✅ (+20) | ❌ | ❌ | ❌ |
+| **Prioridades: Verde** | ❌ | ❌ | ❌ | ✅ (+25) | ✅✅ (+30) | ❌ |
+| **Ambiente: Urbano** | ❌ | ✅✅ (+35) | ✅✅ (+30) | ❌ | ❌ | ❌ |
+| **Ambiente: Tranquilo** | ✅✅ (+40) | ❌ | ❌ | ❌ | ✅✅ (+35) | ✅✅ (+35) |
+| **Ambiente: Naturaleza** | ❌ | ❌ | ❌ | ✅✅ (+40) | ✅✅✅ (+45) | ❌ |
+| **Modalidad: Centro** | ❌ | ✅✅✅ (+65) | ❌ | ❌ | ❌ | ❌ |
+| **Modalidad: Suburbios** | ❌ | ✅ (+25) | ❌ | ❌ | ❌ | ✅✅✅ (+55) |
+| **Modalidad: Remoto** | ❌ | ✅ (+20) | ❌ | ❌ | ❌ | ✅ (+20) |
+| **Tipo Vivienda: Premium** | ✅✅✅ (+50) | ❌ | ❌ | ❌ | ❌ | ❌ |
+| **Presupuesto: Bajo** | ❌ | ✅✅ (+40) | ❌ | ❌ | ❌ | ❌ |
+| **Presupuesto: Alto** | ✅✅ (+40) | ❌ | ❌ | ❌ | ❌ | ❌ |
+| **🔒 Nivel Seguridad** | ✅✅✅ (+60 si crítico) | ❌ | ❌ | ❌ | ❌ | ❌ |
+| **Distancia Trabajo: Cerca** | ❌ | ✅✅ (+40) | ❌ | ❌ | ❌ | ✅ (+20) |
+| **Distancia Trabajo: Lejos** | ❌ | ✅ (+15) | ❌ | ❌ | ❌ | ✅✅ (+45) |
+| **🚌 Transporte Público** | ❌ | ✅✅✅ (+70 si esencial) | ❌ | ❌ | ❌ | ❌ (-30 si esencial) |
+| **🚕 Uso Taxis** | ❌ | ❌ | ✅✅✅ (+70 si frecuente) | ❌ | ❌ | ❌ |
+| **🚴 Uso Bicicleta** | ❌ | ❌ | ❌ | ✅✅✅ (+80 si principal) | ❌ | ❌ (-30 si principal) |
+| **🅿️ Necesidad Parking** | ❌ | ❌ (-35 si no necesita) | ❌ | ❌ (+25 si no necesita) | ❌ | ✅✅✅ (+80 si crítico) |
+| **🏃 Actividad Física** | ❌ | ❌ | ❌ | ✅✅ (+40 si diaria) | ✅✅✅ (+60 si diaria) | ❌ |
+| **🚶 Necesidad Senderos** | ❌ | ❌ | ❌ | ❌ | ✅✅✅ (+70 si esencial) | ❌ |
+| **Calidad Escuelas** | ✅✅ (+35 si crítico) | ❌ | ❌ | ❌ | ❌ | ❌ |
+| **Ocio Nocturno** | ✅ (+25 si esencial) | ✅✅ (+35) | ✅✅✅ (+45) | ❌ | ❌ | ❌ |
+| **Ocio Diurno** | ❌ | ❌ | ❌ | ❌ | ✅ (+25) | ❌ |
+
+**Leyenda:**
+- ❌ = No afecta
+- ✅ = Afecta ligeramente (+5 a +15)
+- ✅✅ = Afecta moderadamente (+20 a +40)
+- ✅✅✅ = Afecta fuertemente (+45 a +80)
+
+---
+
 ## ⚖️ Sistema de Ponderación
 
 El sistema traduce las respuestas del usuario en **21 pesos numéricos** (0-100) que determinan la importancia de cada métrica.
@@ -930,7 +974,45 @@ Noise += 20
 
 ---
 
-#### 8. **Uso de Taxis**
+#### 8. **Transporte Público (Explícito)**
+
+Esta pregunta ajusta directamente el peso del **TransportePublico** del Mobility Service.
+
+**Esencial (sin coche):**
+```typescript
+TransportePublico += 70   // CRÍTICO
+Accessibility += 50
+Parking -= 30             // No tiene coche
+```
+
+**Muy Importante:**
+```typescript
+TransportePublico += 50
+Accessibility += 35
+```
+
+**Importante:**
+```typescript
+TransportePublico += 35
+Accessibility += 20
+```
+
+**Moderado:**
+```typescript
+TransportePublico += 20
+```
+
+**Bajo (tiene coche):**
+```typescript
+Parking += 40             // Prioriza parking
+TransportePublico += 5    // Peso mínimo
+```
+
+---
+
+#### 9. **Uso de Taxis**
+
+Esta pregunta ajusta el peso de **Taxis** del Mobility Service (datos de `taxi_data.json`).
 
 **Muy Frecuente:**
 ```typescript
@@ -949,9 +1031,16 @@ Connectivity += 20
 Taxis += 30
 ```
 
+**Raro:**
+```typescript
+Taxis += 10
+```
+
 ---
 
-#### 9. **Uso de Bicicleta**
+#### 10. **Uso de Bicicleta**
+
+Esta pregunta ajusta el peso de **CarrilesBici** del Mobility Service (datos de `bike_lanes_data.json`).
 
 **Transporte Principal:**
 ```typescript
@@ -1006,21 +1095,41 @@ Parking += 5          // Peso mínimo
 
 ---
 
-#### 11. **Actividad Física**
+#### 11. **Necesidad de Parking** (Continuación)
+
+Esta pregunta ajusta el peso de **Parking** del Mobility Service (datos de `parking_data.json`).
+
+**Moderado:**
+```typescript
+Parking += 20
+```
+
+**No Necesario (sin vehículo):**
+```typescript
+TransportePublico += 35  // Compensar sin coche
+CarrilesBici += 25
+Parking += 5             // Peso mínimo
+```
+
+---
+
+#### 12. **Actividad Física**
+
+Esta pregunta determina la importancia de **CaminarCorrer** (Mobility Service - datos de `footpaths_data.json`) y espacios verdes.
 
 **Diaria:**
 ```typescript
 GreenZones += 60
-CaminarCorrer += 60
+CaminarCorrer += 60      // ALTA prioridad senderos
 CarrilesBici += 40
 AirQuality += 40
-Noise += 30           // Ambientes tranquilos
+Noise += 30              // Ambientes tranquilos para deporte
 ```
 
 **Frecuente:**
 ```typescript
 GreenZones += 45
-CaminarCorrer += 45
+CaminarCorrer += 45      // Alta prioridad senderos
 CarrilesBici += 30
 AirQuality += 25
 ```
@@ -1033,13 +1142,20 @@ CaminarCorrer += 25
 
 **Solo Gimnasio:**
 ```typescript
-Botigues += 20        // Gimnasios en zonas comerciales
+Botigues += 20           // Gimnasios en zonas comerciales
 Connectivity += 15
+```
+
+**Sedentario:**
+```typescript
+// No añade peso a actividades físicas
 ```
 
 ---
 
-#### 12. **Necesidad de Senderos**
+#### 13. **Necesidad de Senderos**
+
+Esta pregunta ajusta directamente el peso de **CaminarCorrer** del Mobility Service (datos de `footpaths_data.json`).
 
 **Esencial:**
 ```typescript
@@ -1147,6 +1263,157 @@ Object.keys(weights).forEach(key => {
   weights[key] = Math.min(100, Math.max(0, weights[key]));
 });
 ```
+
+---
+
+## 🎯 Resumen: Impacto en Security y Mobility
+
+### 🛡️ Security Service (Seguridad)
+
+El **peso de Seguridad** se ve afectado por múltiples preguntas:
+
+#### Preguntas que AUMENTAN el peso de Seguridad:
+
+1. **Nivel de Seguridad (Explícito)**
+   - Crítico: +60
+   - Muy Importante: +45
+   - Importante: +30
+   - Moderado: +15
+
+2. **Edad**
+   - 51+ años: +20
+   - 36-50 años: +10
+   - 18-25 años: -10 (menos conservadores)
+
+3. **Situación Familiar**
+   - Hijos pequeños: +30 (CRÍTICO para familias)
+   - Hijos adolescentes: +25
+   - Multigeneracional: +20
+
+4. **Estilo de Vida**
+   - Vida tranquila: +30
+   - Vida nocturna activa: +10 (seguridad nocturna)
+
+5. **Prioridades**
+   - Seguridad como prioridad: +30
+
+6. **Ambiente**
+   - Residencial tranquilo: +40
+   - Naturaleza: +0 (implícito en tranquilidad)
+
+7. **Presupuesto**
+   - Alto (>$5,000): +40 (barrios caros = más seguros)
+   - Medio-Alto: +25
+
+8. **Tipo de Vivienda**
+   - Premium: +50
+   - Confortable: +30
+
+9. **Calidad de Escuelas**
+   - Crítico: +35 (escuelas buenas = barrios seguros)
+
+10. **Ocio Nocturno**
+    - Esencial: +25 (necesita seguridad para salir)
+
+**Score Final de Seguridad:**
+- Base: 50 puntos
+- Máximo posible: 100 puntos (normalizado)
+- Ejemplo Familia: 50 + 30 (hijos) + 60 (crítico) + 40 (ambiente) = 180 → normalizado a 100
+
+---
+
+### 🚗 Mobility Service (5 Métricas)
+
+#### 1. **TransportePublico** (datos de `transport_data.json`)
+
+**Preguntas que aumentan su peso:**
+- Transporte Público Explícito: Esencial +70, Muy Importante +50
+- Edad 18-25: +30 (jóvenes sin coche)
+- Edad 26-35: +20
+- Situación: Hijos adolescentes +20
+- Estilo: Estudiante +35
+- Ambiente: Urbano bullicioso +35
+- Modalidad Trabajo: Oficina centro +65, Híbrido +45
+- Presupuesto: Bajo +40 (sin coche)
+- Distancia Trabajo: Muy cerca +35, Cerca +40
+- Necesidad Parking: No necesario +35
+- Cercanía Universidad: Crítico +40
+
+**Score Máximo Posible:** Estudiante sin coche viviendo cerca universidad = ~165 puntos → normalizado a 100
+
+---
+
+#### 2. **Taxis** (datos de `taxi_data.json`)
+
+**Preguntas que aumentan su peso:**
+- Uso de Taxis: Muy frecuente +70, Frecuente +50, Ocasional +30
+- Edad 18-25: +10
+- Edad 26-35: +15
+- Situación: Solo/Pareja +15
+- Estilo: Vida nocturna +25
+- Prioridades: Social +20
+- Ambiente: Urbano bullicioso +30
+- Ocio Nocturno: Esencial +45, Muy importante +30
+
+**Score Máximo Posible:** Joven urbano con vida nocturna activa = ~120 puntos → normalizado a 100
+
+---
+
+#### 3. **CarrilesBici** (datos de `bike_lanes_data.json`)
+
+**Preguntas que aumentan su peso:**
+- Uso de Bicicleta: Principal +80, Frecuente +60, Ocasional +35, Recreativo +25
+- Edad 18-25: +25
+- Edad 26-35: +15
+- Situación: Solo/Pareja +20
+- Estilo: Vida diurna +20, Estudiante +30
+- Prioridades: Verde +25
+- Ambiente: Naturaleza +40
+- Actividad Física: Diaria +40, Frecuente +30
+- Necesidad Parking: No necesario +25
+
+**Score Máximo Posible:** Ciclista activo en ambiente natural = ~150 puntos → normalizado a 100
+
+---
+
+#### 4. **CaminarCorrer** (datos de `footpaths_data.json`)
+
+**Preguntas que aumentan su peso:**
+- Necesidad de Senderos: Esencial +70, Muy importante +55, Importante +40
+- Edad 51+: +15
+- Situación: Hijos pequeños +20 (parques)
+- Estilo: Vida diurna +25, Vida tranquila +20
+- Prioridades: Verde +30
+- Ambiente: Residencial tranquilo +35, Naturaleza +45
+- Actividad Física: Diaria +60, Frecuente +45, Ocasional +25
+- Acceso Tiendas: Esencial +30 (caminar a tiendas)
+- Ocio Diurno: Esencial +25
+
+**Score Máximo Posible:** Deportista en ambiente natural con senderos = ~180 puntos → normalizado a 100
+
+---
+
+#### 5. **Parking** (datos de `parking_data.json`)
+
+**Preguntas que aumentan su peso:**
+- Necesidad Parking: Crítico +80, Muy importante +60, Importante +40, Moderado +20
+- Edad 36-50: +25 (familias)
+- Edad 51+: +20
+- Situación: Hijos pequeños +30, Hijos adolescentes +25, Multigeneracional +25
+- Estilo: Vida nocturna +10
+- Ambiente: Residencial tranquilo +35
+- Modalidad Trabajo: Oficina suburbios +55, Híbrido +35
+- Presupuesto: **NO afecta directamente**
+- Distancia Trabajo: Media +35, Lejos +45
+- Transporte Público: Bajo +40 (tiene coche)
+
+**Preguntas que DISMINUYEN su peso:**
+- Transporte Público: Esencial -30
+- Uso Bicicleta: Principal -30
+- Necesidad Parking: No necesario (peso mínimo 5)
+- Edad 18-25: -10
+
+**Score Máximo Posible:** Familia con 2+ coches en suburbios = ~140 puntos → normalizado a 100
 
 ---
 
