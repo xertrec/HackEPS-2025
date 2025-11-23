@@ -1,8 +1,8 @@
 import { Controller, Get } from '@nestjs/common';
-import { ConnectivityCollectionResultDto } from './dto/connectivity_collection_result.dto';
+import { ConnectivityCollectionResultDto } from './dto/connectivity/connectivity_collection_result.dto';
 import { LifestyleService } from './lifestyle.service';
-import { GreenZonesCollectionResultDto } from './dto/green_zones_collection_result.dto';
-import { NoiseCollectionResultDto } from './dto/noise_collection_result.dto';
+import { GreenZonesCollectionResultDto } from './dto/green_zones/green_zones_collection_result.dto';
+import { NoiseCollectionResultDto } from './dto/noise/noise_collection_result.dto';
 
 @Controller('lifestyle')
 export class LifestyleController {

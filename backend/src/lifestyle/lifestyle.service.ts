@@ -1,14 +1,14 @@
 import { HttpService } from '@nestjs/axios';
 import { Injectable } from '@nestjs/common';
-import { ConnectivityResultDto } from './dto/connectivity_result.dto';
-import { ConnectivityCollectionResultDto } from './dto/connectivity_collection_result.dto';
+import { ConnectivityResultDto } from './dto/connectivity/connectivity_result.dto';
+import { ConnectivityCollectionResultDto } from './dto/connectivity/connectivity_collection_result.dto';
 import { AxiosResponse } from 'axios';
 import { delay, firstValueFrom } from 'rxjs';
 import { DatabaseService, Neighborhood } from 'src/database/database.service';
-import { GreenZonesCollectionResultDto } from './dto/green_zones_collection_result.dto';
-import { GreenZonesResultDto } from './dto/green_zones_result.dto';
-import { NoiseCollectionResultDto } from './dto/noise_collection_result.dto';
-import { NoiseResultDto } from './dto/noise_result.dto';
+import { GreenZonesCollectionResultDto } from './dto/green_zones/green_zones_collection_result.dto';
+import { GreenZonesResultDto } from './dto/green_zones/green_zones_result.dto';
+import { NoiseCollectionResultDto } from './dto/noise/noise_collection_result.dto';
+import { NoiseResultDto } from './dto/noise/noise_result.dto';
 
 @Injectable()
 export class LifestyleService {
@@ -41,15 +41,15 @@ export class LifestyleService {
 						apiResult.neighborhood_name,
 						apiResult.score,
 						0,
-                        0,
+						0,
 						apiResult.note,
 					);
 				} else {
 					await this.databaseService.insertLifestyle(
 						apiResult.neighborhood_name,
 						apiResult.score,
-                        0,
-                        0,
+						0,
+						0,
 						apiResult.note,
 					);
 				}
@@ -58,7 +58,7 @@ export class LifestyleService {
 					neighborhood_name: apiResult.neighborhood_name,
 					score: apiResult.score,
 					green_zones_score: 0,
-                    noise_score: 0,
+					noise_score: 0,
 					note: apiResult.note,
 				};
 			}
@@ -153,7 +153,7 @@ export class LifestyleService {
 						apiResult.neighborhood_name,
 						0,
 						apiResult.score,
-                        0,
+						0,
 						apiResult.note,
 					);
 				} else {
@@ -161,7 +161,7 @@ export class LifestyleService {
 						apiResult.neighborhood_name,
 						lifestyle.score,
 						apiResult.score,
-                        0,
+						0,
 						apiResult.note,
 					);
 				}
@@ -170,7 +170,7 @@ export class LifestyleService {
 					neighborhood_name: apiResult.neighborhood_name,
 					score: 0,
 					green_zones_score: apiResult.score,
-                    noise_score: 0,
+					noise_score: 0,
 					note: apiResult.note,
 				};
 			}
@@ -252,8 +252,8 @@ export class LifestyleService {
 			);
 
 			// Only fetch if data is missing or noiseScore is 0
-            // Note: A score of 0 might actually be valid (very noisy), but we assume 0 means uninitialized for this logic. 
-            // Ideally, use a separate flag or -1 for uninitialized.
+			// Note: A score of 0 might actually be valid (very noisy), but we assume 0 means uninitialized for this logic.
+			// Ideally, use a separate flag or -1 for uninitialized.
 			if (!lifestyle || lifestyle.noise_score === 0) {
 				const apiResult = await this.getNoiseDataForLocation(
 					neighborhood.name,
@@ -266,9 +266,9 @@ export class LifestyleService {
 				if (lifestyle) {
 					await this.databaseService.updateLifestyle(
 						apiResult.neighborhood_name,
-						lifestyle.score, 
-						lifestyle.green_zones_score, 
-                        apiResult.score, // UPDATE NOISE
+						lifestyle.score,
+						lifestyle.green_zones_score,
+						apiResult.score, // UPDATE NOISE
 						apiResult.note,
 					);
 				} else {
@@ -276,7 +276,7 @@ export class LifestyleService {
 						apiResult.neighborhood_name,
 						0,
 						0,
-                        apiResult.score,
+						apiResult.score,
 						apiResult.note,
 					);
 				}
@@ -299,13 +299,13 @@ export class LifestyleService {
 		return { noise: results };
 	}
 
-    private async getNoiseDataForLocation(
+	private async getNoiseDataForLocation(
 		neighborhood_name: string,
 		lat: number,
 		lon: number,
 	): Promise<NoiseResultDto> {
-        // Proxy for Noise: Count Bars, Nightclubs, and Major Roads.
-        // Higher Count = MORE NOISE = LOWER SCORE.
+		// Proxy for Noise: Count Bars, Nightclubs, and Major Roads.
+		// Higher Count = MORE NOISE = LOWER SCORE.
 		const radius = 1000;
 		const query = `
             [out:json];
@@ -329,19 +329,19 @@ export class LifestyleService {
 			let count = 0;
 			if (data?.elements && data.elements.length > 0) {
 				const tags = data.elements[0].tags;
-                // Sum up nodes and ways
+				// Sum up nodes and ways
 				if (tags) count = parseInt(tags.total || tags.nodes || '0', 10);
 			}
 
-			// Scoring Logic: INVERTED. 
-            // 0 noise sources = 100 Score (Peaceful).
-            // 50+ noise sources = 0 Score (Noisy).
+			// Scoring Logic: INVERTED.
+			// 0 noise sources = 100 Score (Peaceful).
+			// 50+ noise sources = 0 Score (Noisy).
 			const rawScore = Math.min(count * 2, 100); // Cap noise penalty at 100
-            const score = 100 - rawScore;
-			
+			const score = 100 - rawScore;
+
 			let note = `Noise Sources: ${count} (bars, main roads) found`;
 			if (score >= 80) note += ' (Very Tranquil)';
-            else if (score <= 40) note += ' (High Ambient Noise)';
+			else if (score <= 40) note += ' (High Ambient Noise)';
 
 			return { neighborhood_name, score, note };
 		} catch (error) {
