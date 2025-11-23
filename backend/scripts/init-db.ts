@@ -154,6 +154,7 @@ db.serialize(() => {
       neighborhood_name TEXT PRIMARY KEY,
       score INTEGER NOT NULL DEFAULT 0,
       green_zones_score INTEGER NOT NULL DEFAULT 0,
+      noise_score INTEGER NOT NULL DEFAULT 0,
       note TEXT,
       FOREIGN KEY (neighborhood_name) REFERENCES neighborhoods(name)
     );
