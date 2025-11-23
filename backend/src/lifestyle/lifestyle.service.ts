@@ -17,6 +17,7 @@ import { AccessibilityCollectionResultDto } from './dto/accessibility/accessibil
 import { AccessibilityResultDto } from './dto/accessibility/accessibility_result.dto';
 import { SalaryCollectionResultDto } from './dto/salary/salary_collection_result.dto';
 import { SalaryResultDto } from './dto/salary/salary_result.dto';
+import { LifestyleCollectionResultDto } from './dto/lifestyle_collection_result.dto';
 
 @Injectable()
 export class LifestyleService {
@@ -24,6 +25,22 @@ export class LifestyleService {
 		private readonly httpService: HttpService,
 		private readonly databaseService: DatabaseService,
 	) {}
+
+	async getLifestyleData(): Promise<LifestyleCollectionResultDto> {
+		this.getAllConnectivityData();
+		this.getAllGreenZonesData();
+		this.getAllNoiseData();
+		this.getAllAirQualityData();
+		this.getAllOccupabilityData();
+		this.getAllAccessibilityData();
+		this.getAllSalaryData();
+
+		const lifestyle = await this.databaseService.getAllLifestyles();
+		
+		return {
+			lifestyle
+		};
+	}
 
 	// --- Connectivity Logic ---
 	async getAllConnectivityData(): Promise<ConnectivityCollectionResultDto> {
